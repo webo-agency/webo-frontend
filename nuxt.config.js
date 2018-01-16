@@ -7,6 +7,7 @@ module.exports = {
     {
       src: '@nuxtjs/pwa',
       options: {
+        iconSrc: "~/assets/symbol.png",
         icon: {
           sizes: [512, 192, 380 ]
         }
@@ -52,7 +53,7 @@ module.exports = {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
         { rel: "icon", type: "image/png", sizes: "194x194", href: "/favicon-194x194.png" },
