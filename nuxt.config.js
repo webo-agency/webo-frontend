@@ -46,20 +46,20 @@ module.exports = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "Strona domowa Patryka Padus" },
+      { hid: "description", name: "description", content: "webo.design" },
       { name: "msapplication-TileColor", content: "#ffffff" },
       { name: "msapplication-TileImage", content: "/mstile-144x144.png" },
       { name: "theme-color", content: "#ffffff" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' },
       { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
-        { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
-        { rel: "icon", type: "image/png", sizes: "194x194", href: "/favicon-194x194.png" },
-        { rel: "icon", type: "image/png", sizes: "192x192", href: "/android-chrome-192x192.png" },
-        { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
-        { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" },
+      { rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+      { rel: "icon", type: "image/png", sizes: "194x194", href: "/favicon-194x194.png" },
+      { rel: "icon", type: "image/png", sizes: "192x192", href: "/android-chrome-192x192.png" },
+      { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' },
     ]
   },
   css: [
@@ -68,13 +68,15 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: "#3B8070" },
+  loading: { color: "#b2f1c7" },
   /*
   ** Customize manifest.json
   */
   manifest: {
-    name: "webo.design",
-    theme_color: "#3B8070",
+    name: "webo",
+    short_name: "webo",
+    theme_color: "#b2f1c7",
+    background_color: "#ffffff",
     icons: [
       {
         "src": "/android-chrome-36x36.png",
@@ -121,8 +123,7 @@ module.exports = {
         "sizes": "512x512",
         "type": "image/png"
       }
-    ],
-    "background_color": "#ffffff"
+    ]
   },
   /**
   * ServiceWorker
