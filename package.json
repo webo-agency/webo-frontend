@@ -22,10 +22,12 @@
     "bulma": "^0.4.0",
     "hover.css": "^2.2.0",
     "node-sass": "^4.5.1",
+    "normalize.css": "^7.0.0",
     "nuxt": "latest",
     "nuxt-i18n": "^1.0.2",
     "nuxt-modules": "latest",
     "sass-loader": "^6.0.3",
+    "vue-scrollactive": "^0.5.1",
     "wpapi": "^1.1.2"
   },
   "scripts": {

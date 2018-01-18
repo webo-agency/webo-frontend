@@ -15,8 +15,10 @@
   }
 </script>
 
-<style lang="scss" scoped>
-  .body {
+<style lang="scss">
+  @import '~normalize.css';
 
+  .body {
+    background: rgb(30,28,27);
   }
 </style>

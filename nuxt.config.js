@@ -38,6 +38,9 @@ module.exports = {
       }
     },
   ],
+  plugins:[
+    "~/plugins/scrollactive.js"
+  ],
   /*
   ** Headers of the page
   */
