@@ -1,10 +1,10 @@
 <template>
-    <div class="baner">
-        <div class="baner--inner">
-            <nuxt-link to="/">
-                <svg width="100%" height="100%" viewBox="0 0 3088 1038" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <section class="baner">
+        <div class="baner--wrapper">
+            <div class="banner--inner">
+                <nuxt-link to="/">
+                    <svg width="100%" height="100%" viewBox="0 0 3088 1038" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
                     <g transform="matrix(4.16667,0,0,4.16667,0,0)">
-                        <rect id="Artboard1" x="-367" y="-312" width="1440" height="2000" style="fill:none;"/>
                         <g transform="matrix(1,0,0,1,17.5,-13.5)">
                             <path d="M650.521,231.244L631.803,231.244L631.803,200.047L663,200.047L663,218.765C663,225.652 657.409,231.243 650.521,231.244ZM619.324,218.765L619.324,231.22L560.05,231.244C541.11,231.244 525.733,215.867 525.733,196.927L525.733,128.294C525.733,109.354 541.11,93.977 560.05,93.977L628.683,93.977C647.623,93.977 663,109.354 663,128.294L663,187.544L650.521,187.544L650.521,134.533C650.521,119.037 637.941,106.456 622.444,106.456L566.289,106.456C550.792,106.456 538.212,119.037 538.212,134.533L538.212,190.688C538.212,206.184 550.793,218.765 566.289,218.765L619.324,218.765Z" style="fill:white;"/>
                             <path d="M409.151,94.001L468.425,93.977C487.365,93.977 502.742,109.354 502.742,128.294L502.742,196.927C502.742,215.867 487.365,231.243 468.425,231.244L399.792,231.244C380.852,231.243 365.475,215.867 365.475,196.927L365.475,44.756L377.954,44.756L377.954,190.688C377.954,206.184 390.535,218.764 406.031,218.765L462.186,218.765C477.683,218.764 490.263,206.184 490.263,190.688L490.263,134.533C490.263,119.037 477.682,106.456 462.186,106.456L409.151,106.456L409.151,94.001Z" style="fill:white;"/>
@@ -13,13 +13,15 @@
                         </g>
                     </g>
                 </svg>
-            </nuxt-link>
+                </nuxt-link>
 
-            <h1 class="banner--title">
-               We're interactive agency working with that clients who want awesome of website's and brand's that takes ambitions towards their goals period
-            </h1>
+                <h1 class="banner--title">
+                    We're interactive agency working with that clients who want awesome of website's and brand's that takes ambitions towards their goals period
+                </h1>
+            </div>
+
         </div>
-    </div>
+    </section>
 </template>
 <script>
   export default {
@@ -37,7 +39,7 @@
         color: #fff;
     }
 
-    .baner--inner{
+    .baner--wrapper{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -45,11 +47,17 @@
         flex: 1 1 auto;
 
         background-color: rgba(0,0,0,1);
-        background-image: linear-gradient(left top, rgba(0,0,0,1) 0%, rgba(56,237,97,1) 100%);
+        background-image: linear-gradient(left top, rgba(35,31,32,1) 0%, rgba(16, 17, 135, 1) 100%);
+    }
+
+    .banner--inner{
+        display: block;
+        width: 735px;
     }
 
     .banner--title{
+        font-family: Roboto, Arial, sans-serif;
         text-align: center;
-        font-size: 12px;
+        font-size: 25px;
     }
 </style>

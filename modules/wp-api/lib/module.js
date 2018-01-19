@@ -9,6 +9,15 @@ module.exports = async function wp (moduleOptions) {
     fileName: 'wp.plugin.js',
     options
   });
+
+  // this.nuxt.hook('generate:before', async generator => {
+  //   console.log(generator);
+  //   // This will be called when a Nuxt generate starts
+  // }).then(function () {
+  //   console.log("Promise Resolved");
+  // }).catch(function () {
+  //   console.log("Promise Rejected");
+  // });
 };
 
 module.exports.meta = require('../package.json');

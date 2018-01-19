@@ -1,13 +1,13 @@
 <template>
   <div class="page index">
 
-    <section id="intro" class="section">
+    <div id="intro" class="section">
         <c-baner></c-baner>
-    </section>
+    </div>
 
-    <section id="contact" class="section">
+    <div id="contact" class="section">
         <c-contact></c-contact>
-    </section>
+    </div>
 
     <scrollactive active-class="active"
                   :alwaysTrack="true"
