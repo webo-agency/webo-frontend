@@ -4,13 +4,13 @@
             © 2018
         </div>
         <div class="footer--section footer--nip">
-            NIP: 123-456-12-34
+            NIP: 524 24 95 143
         </div>
         <div  class="footer--section footer--regon">
-            REGON: 123456789
+            REGON: 015 690 013
         </div>
         <div  class="footer--section footer--logo">
-            <nuxt-link to="/baner">
+            <nuxt-link to="/baner" class="footer--img">
                 <svg width="100%" height="100%" viewBox="0 0 3088 1038" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
                     <g transform="matrix(4.16667,0,0,4.16667,0,0)">
                         <g transform="matrix(1,0,0,1,17.5,-13.5)">
@@ -34,10 +34,18 @@
 <style lang="scss" scoped>
     .footer {
         display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        align-items: center;
         justify-content: space-around;
         width: 100%;
         color: #fff;
         min-height: 200px;
+        font-family: Roboto, Arial, sans-serif;
+
+        @media(min-width: 877px){
+            flex-direction: row;
+        }
     }
 
     .footer--section{
@@ -52,6 +60,14 @@
     }
 
     .footer--section.footer--logo{
-        justify-content: flex-start;
+        justify-content: center;
+
+        @media(min-width: 877px){
+            justify-content: flex-start;
+        }
+    }
+
+    .footer--img{
+        max-width: 100px;
     }
 </style>

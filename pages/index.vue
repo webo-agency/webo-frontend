@@ -9,14 +9,18 @@
         <c-contact></c-contact>
     </div>
 
-    <scrollactive active-class="active"
+    <scrollactive active-class="is-active"
                   :alwaysTrack="true"
                   :offset="0"
                   :duration="800"
                   bezier-easing-value=".5,0,.35,1"
                   ref="scrollactive" class="section-nav">
-      <a href="#intro" class="scrollactive-item">Intro</a>
-      <a href="#contact" class="scrollactive-item">Contact</a>
+      <a href="#intro" class="scrollactive-item section-nav--item">
+        <img src="~assets/arrow.svg" alt="Intro" class="section-nav--img"/>
+      </a>
+      <a href="#contact" class="scrollactive-item section-nav--item">
+        <img src="~assets/arrow.svg" alt="Contact" class="section-nav--img"/>
+      </a>
     </scrollactive>
 
   </div>
@@ -56,9 +60,43 @@
   }
 
   .section-nav{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 100;
+
+    @media(min-width: 992px){
+      display: block;
+    }
+  }
+
+  .section-nav--item{
     position: absolute;
     top: 0;
-    right: 0;
-    height: 0;
+    bottom: auto;
+    transition: all 0.3s;
+    visibility: visible;
+    opacity: 1;
+
+    &.is-active{
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  .section-nav--item + .section-nav--item{
+    top: auto;
+    bottom: 0;
+    transform: rotate(180deg);
+  }
+
+  .section-nav--img{
+    width: 100px;
+    height: 100px;
+    margin: 30px 0px;
   }
 </style>

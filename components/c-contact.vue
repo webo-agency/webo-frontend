@@ -16,10 +16,12 @@
                 <div class="contact--box-right">
                     <form class="contact--form">
                         <fieldset class="contact--form-fieldset">
-                            <input type="text" name="user" placeholder="Your email" content="contact--form-input"/>
-                            <button class="contact--form-button">
-                                Send
-                            </button>
+                            <div class="contact--form-wrapper">
+                                <input type="text" name="user" placeholder="Your email" class="contact--form-input"/>
+                                <button class="contact--form-button">
+                                    Send
+                                </button>
+                            </div>
                         </fieldset>
                     </form>
                 </div>
@@ -55,7 +57,7 @@
             bottom: 0;
             opacity: 0.5;
             background-color: rgba(0, 0, 0, 1);
-            background-image: linear-gradient(left top, rgba(35, 31, 32, 1) 0%, rgba(16, 17, 135, 1) 100%);
+            background-image: linear-gradient(left top, rgba(35, 31, 32, 1) 0%, #10AB87 100%);
         }
     }
 
@@ -66,14 +68,19 @@
         flex: 1 1 auto;
         z-index: 1;
         position: relative;
+        padding: 15px;
+        max-width: 950px;
+        width: 100%;
+        margin: auto;
     }
 
     .contact--box{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        align-items: flex-start;
+        align-items: center;
         justify-content: space-around;
+        flex: 1 1 auto;
     }
 
     .contact--title{
@@ -85,8 +92,60 @@
 
     .contact--text{
         font-family: Roboto, Arial, sans-serif;
-        font-size: 60px;
+        font-size: 78px;
         font-weight: 700;
-        line-height: 44px;
+        line-height: 49px;
+        max-width: 408px;
+        width: 100%;
     }
+
+    .contact--form-fieldset{
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact--form-wrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .contact--form-input{
+        flex: 1 1 auto;
+        padding: 11px;
+        width: 100%;
+        max-width: 270px;
+        font-size: 17px;
+        margin-right: 25px;
+        border: 4px solid #fff;
+        border-radius: 7px;
+        margin-bottom: 15px;
+
+        @media(min-width: 877px){
+            margin-top: 15px;
+        }
+    }
+
+    .contact--form-button{
+        flex: 0 0 auto;
+        padding: 9px 25px;
+        border: 4px solid #fff;
+        text-transform: uppercase;
+        color: #fff;
+        background: transparent;
+        border-radius: 7px;
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+
+        @media(min-width: 877px){
+            margin-top: 15px;
+        }
+    }
+
+
 </style>
