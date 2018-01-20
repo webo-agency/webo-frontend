@@ -18,7 +18,7 @@
                         <fieldset class="contact--form-fieldset">
                             <div class="contact--form-wrapper">
                                 <input type="text" name="user" placeholder="Your email" class="contact--form-input"/>
-                                <button class="contact--form-button">
+                                <button type="submit" class="contact--form-button">
                                     Send
                                 </button>
                             </div>
