@@ -58,7 +58,6 @@
     }
 
     .banner--title{
-        font-family: Roboto, Arial, sans-serif;
         text-align: center;
         font-size: 25px;
     }

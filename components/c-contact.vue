@@ -84,14 +84,12 @@
     }
 
     .contact--title{
-        font-family: Roboto, Arial, sans-serif;
         text-transform: uppercase;
         font-size: 50px;
         margin: 0 0 10px;
     }
 
     .contact--text{
-        font-family: Roboto, Arial, sans-serif;
         font-size: 78px;
         font-weight: 700;
         line-height: 49px;

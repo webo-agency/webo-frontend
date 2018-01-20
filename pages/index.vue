@@ -79,12 +79,12 @@
     top: 0;
     bottom: auto;
     transition: all 0.3s;
-    visibility: visible;
-    opacity: 1;
+    visibility: hidden;
+    opacity: 0;
 
-    &.is-active{
-      visibility: hidden;
-      opacity: 0;
+    &:not(.is-active){
+      visibility: visible;
+      opacity: 1;
     }
   }
 
@@ -97,6 +97,6 @@
   .section-nav--img{
     width: 100px;
     height: 100px;
-    margin: 30px 0px;
+    margin: 30px 0;
   }
 </style>

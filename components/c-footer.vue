@@ -41,7 +41,6 @@
         width: 100%;
         color: #fff;
         min-height: 200px;
-        font-family: Roboto, Arial, sans-serif;
 
         @media(min-width: 877px){
             flex-direction: row;
