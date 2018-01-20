@@ -15,7 +15,7 @@
                   :duration="800"
                   bezier-easing-value=".5,0,.35,1"
                   ref="scrollactive" class="section-nav">
-      <a href="#intro" class="scrollactive-item section-nav--item">
+      <a href="#intro" class="scrollactive-item section-nav--item is-active">
         <img src="~assets/arrow.svg" alt="Intro" class="section-nav--img"/>
       </a>
       <a href="#contact" class="scrollactive-item section-nav--item">
