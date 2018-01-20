@@ -14,7 +14,7 @@
                     </p>
                 </div>
                 <div class="contact--box-right">
-                    <form class="contact--form">
+                    <form class="contact--form" name="contact" data-netlify="true">
                         <fieldset class="contact--form-fieldset">
                             <div class="contact--form-wrapper">
                                 <input type="text" name="user" placeholder="Your email" class="contact--form-input"/>
