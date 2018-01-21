@@ -17,7 +17,7 @@
                     <form id="contact-form" class="contact--form" name="contact" action="" data-netlify="true" >
                         <fieldset class="contact--form-fieldset">
                             <div class="contact--form-wrapper">
-                                <input type="email" name="email" placeholder="Your email" class="contact--form-input"/>
+                                <input id="email" type="email" name="email" placeholder="Your email" class="contact--form-input"/>
                                 <button type="submit" class="contact--form-button">
                                     Send
                                 </button>
@@ -39,8 +39,20 @@
         e.preventDefault();
 
         var $form = $(this);
-        $.post($form.attr("action"), $form.serialize()).then(function() {
-          alert("Thank you for submission!");
+
+        $.ajax({
+          url: "https://docs.google.com/forms/d/1Wujqpeg6n80BZT8uirZ-bIAWWDIkqR8shvr40MPPXNo/formResponse",
+          data: {"emailAddress": $form.find("#email").val()},
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function() {
+              alert("Thank you for submission!");
+            },
+            200: function() {
+              alert("Thank you for submission!");
+            }
+          }
         });
       });
     }
