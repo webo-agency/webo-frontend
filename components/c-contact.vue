@@ -14,10 +14,10 @@
                     </p>
                 </div>
                 <div class="contact--box-right">
-                    <form class="contact--form" name="contact" data-netlify="true">
+                    <form id="contact-form" class="contact--form" name="contact" netlify >
                         <fieldset class="contact--form-fieldset">
                             <div class="contact--form-wrapper">
-                                <input type="text" name="user" placeholder="Your email" class="contact--form-input"/>
+                                <input type="email" name="email" placeholder="Your email" class="contact--form-input"/>
                                 <button type="submit" class="contact--form-button">
                                     Send
                                 </button>
@@ -30,8 +30,20 @@
     </section>
 </template>
 <script>
+  import $ from 'jquery';
+
   export default {
-    name: 'v-contact'
+    name: 'v-contact',
+    mounted: () => {
+      $("#contact-form").submit(function(e) {
+        e.preventDefault();
+
+        var $form = $(this);
+        $.post($form.attr("action"), $form.serialize()).then(function() {
+          alert("Thank you for submission!");
+        });
+      });
+    }
   }
 </script>
 
@@ -139,6 +151,7 @@
         font-size: 20px;
         text-align: center;
         margin-bottom: 15px;
+        cursor: pointer;
 
         @media(min-width: 877px){
             margin-top: 15px;
