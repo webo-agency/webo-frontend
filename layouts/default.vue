@@ -14,7 +14,7 @@
       cFooter
     },
     mounted: () => {
-      Tawk_API = Tawk_API || {};
+      Tawk_API = window.Tawk_API || {};
       Tawk_API.onLoad = function(){
         Tawk_API.maximize();
         var TAWK_Handler = $('body').children().filter(function( index ) {
