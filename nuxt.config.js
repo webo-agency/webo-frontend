@@ -19,24 +19,24 @@ module.exports = {
         endpoint: 'https://wp.padus.pl/wp-json'
       }
     },
-    {
-      src: 'nuxt-i18n',
-      options: {
-        defaultLocale: 'en',
-        locales: [
-          {
-            code: 'en',
-            iso: 'en-US',
-            name: 'English'
-          },
-          {
-            code: 'pl',
-            iso: 'pl-PL',
-            name: 'Polski'
-          }
-        ],
-      }
-    },
+    // {
+    //   src: 'nuxt-i18n',
+    //   options: {
+    //     defaultLocale: 'en',
+    //     locales: [
+    //       {
+    //         code: 'en',
+    //         iso: 'en-US',
+    //         name: 'English'
+    //       },
+    //       {
+    //         code: 'pl',
+    //         iso: 'pl-PL',
+    //         name: 'Polski'
+    //       }
+    //     ],
+    //   }
+    // },
   ],
   plugins:[
     "~/plugins/scrollactive.js"
@@ -157,7 +157,7 @@ module.exports = {
     */
   generate: {
     dir: "public",
-    routes: ['/', '/en']
+    routes: ['/']
   },
   render: {
     bundleRenderer: {
