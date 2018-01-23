@@ -14,7 +14,12 @@
       cFooter
     },
     mounted: () => {
-      TawkApi = window.TawkApi || {};
+      if (typeof window.TawkApi === "undefined") {
+        TawkApi = {};
+      } else {
+        TawkApi = window.TawkApi;
+      }
+
       TawkApi.onLoad = function() {
         TawkApi.maximize();
         let TawkHandler = $('body').children().filter(function(index) {
@@ -22,12 +27,15 @@
           const str = $(this).attr('id');
 
           while ((m = regex.exec(str)) !== null) {
-            // This is necessary to avoid infinite loops with zero-width matches
-            if (m.index === regex.lastIndex) {
-              regex.lastIndex++;
+            if (typeof window.TawkApi === "undefined") {
+              // This is necessary to avoid infinite loops with zero-width matches
+              if (m.index === regex.lastIndex) {
+                regex.lastIndex++;
+              }
+
+              return $(m);
             }
 
-            return $(m);
           }
         });
         $(TawkHandler).addClass('tawk-customize');
