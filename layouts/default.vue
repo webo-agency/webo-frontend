@@ -14,10 +14,10 @@
       cFooter
     },
     mounted: () => {
-      Tawk_API = window.Tawk_API || {};
-      Tawk_API.onLoad = function(){
-        Tawk_API.maximize();
-        var TAWK_Handler = $('body').children().filter(function( index ) {
+      TawkApi = window.TawkApi || {};
+      TawkApi.onLoad = function() {
+        TawkApi.maximize();
+        let TawkHandler = $('body').children().filter(function(index) {
           const regex = /^(\w+)-(\d+)$/g;
           const str = $(this).attr('id');
 
@@ -30,7 +30,7 @@
             return $(m);
           }
         });
-        $(TAWK_Handler).addClass('tawk-customize');
+        $(TawkHandler).addClass('tawk-customize');
       };
     }
   }
