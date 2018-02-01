@@ -26,7 +26,8 @@
           const regex = /^(\w+)-(\d+)$/g;
           const str = $(this).attr('id');
 
-          while ((m = regex.exec(str)) !== null) {
+          while (regex.exec(str) !== null) {
+            let m = regex.exec(str);
             if (typeof window.TawkApi === "undefined") {
               // This is necessary to avoid infinite loops with zero-width matches
               if (m.index === regex.lastIndex) {

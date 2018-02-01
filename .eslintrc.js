@@ -14,5 +14,7 @@ module.exports = {
     semi: 0,
     quotes: 0
   },
-  globals: {}
+  globals: {
+    "TawkApi": true
+  }
 };
