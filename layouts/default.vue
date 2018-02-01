@@ -28,14 +28,12 @@
 
           while (regex.exec(str) !== null) {
             let m = regex.exec(str);
-            if (typeof window.TawkApi === "undefined") {
-              // This is necessary to avoid infinite loops with zero-width matches
-              if (m.index === regex.lastIndex) {
-                regex.lastIndex++;
-              }
-
-              return $(m);
+            // This is necessary to avoid infinite loops with zero-width matches
+            if (m.index === regex.lastIndex) {
+              regex.lastIndex++;
             }
+
+            return $(m);
           }
         });
         $(TawkHandler).addClass('tawk-customize');
