@@ -36,7 +36,6 @@
 
               return $(m);
             }
-
           }
         });
         $(TawkHandler).addClass('tawk-customize');
