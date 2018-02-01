@@ -14,15 +14,12 @@
       cFooter
     },
     mounted: () => {
-      if (typeof window.TawkApi === "undefined") {
-        TawkApi = {};
-      } else {
-        TawkApi = window.TawkApi;
-      }
+      var TawkApi = TawkApi || {};
+      var Tawk_LoadStart = new Date(); /* eslint no-unused-vars: "off", camelcase: "off" */
 
       TawkApi.onLoad = function() {
-        TawkApi.maximize();
-        let TawkHandler = $('body').children().filter(function(index) {
+        window.TawkApi.maximize();
+        let TawkHandler = $('body').children().filter(function() {
           const regex = /^(\w+)-(\d+)$/g;
           const str = $(this).attr('id');
 
@@ -38,6 +35,16 @@
         });
         $(TawkHandler).addClass('tawk-customize');
       };
+
+      (function () {
+        var s1 = document.createElement("script");
+        var s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/592181bc76be7313d291db5e/default';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+      })();
     }
   }
 </script>
