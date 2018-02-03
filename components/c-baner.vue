@@ -1,7 +1,7 @@
 <template>
     <section class="baner">
         <div class="baner--wrapper">
-            <nuxt-link to="/">
+            <nuxt-link to="/" class="w-100">
                 <svg width="100%" height="100%" viewBox="0 0 4500 2813" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:1.5;">
                     <g transform="matrix(3.125,0,0,3.125,0,0)">
                         <g id="Head" transform="matrix(1,0,0,3,0,0)">
