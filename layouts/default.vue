@@ -29,7 +29,7 @@
     mounted: () => {
       var Tawk_API = Tawk_API || {};
       var Tawk_LoadStart = new Date(); /* eslint no-unused-vars: "off", camelcase: "off" */
-
+      debugger;/* eslint no-debugger: "off" */
       $("#fast-contact").click(function() {
         if (typeof Tawk_API === 'object') {
           if (typeof Tawk_API.maximize === 'function') {
