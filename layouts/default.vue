@@ -27,43 +27,45 @@
       cFooter
     },
     mounted: () => {
-      var Tawk_API = Tawk_API || {};
-      var Tawk_LoadStart = new Date(); /* eslint no-unused-vars: "off", camelcase: "off" */
+      $(window).load(function() {
+        var Tawk_API = Tawk_API || {};
+        var Tawk_LoadStart = new Date(); /* eslint no-unused-vars: "off", camelcase: "off" */
 
-      $("#fast-contact").click(function() {
-        if (typeof Tawk_API === 'object') {
-          if (typeof Tawk_API.maximize === 'function') {
-            Tawk_API.maximize();
-          }
-        }
-      });
-
-      Tawk_API.onChatMaximized = function() {
-        $("body").removeClass("tawk-close").addClass("tawk-open");
-      };
-
-      Tawk_API.onChatMinimized = function() {
-        $("body").removeClass("tawk-open").addClass("tawk-close");
-      };
-
-      Tawk_API.onLoad = function() {
-        $("body").addClass("tawk-loaded");
-        let TawkHandler = $('body').children().filter(function() {
-          const regex = /^(\w+)-(\d+)$/g;
-          const str = $(this).attr('id');
-
-          while (regex.exec(str) !== null) {
-            let m = regex.exec(str);
-            // This is necessary to avoid infinite loops with zero-width matches
-            if (m.index === regex.lastIndex) {
-              regex.lastIndex++;
+        $("#fast-contact").click(function() {
+          if (typeof Tawk_API === 'object') {
+            if (typeof Tawk_API.maximize === 'function') {
+              Tawk_API.maximize();
             }
-
-            return $(m);
           }
         });
-        $(TawkHandler).addClass('tawk-customize');
-      };
+
+        Tawk_API.onChatMaximized = function() {
+          $("body").removeClass("tawk-close").addClass("tawk-open");
+        };
+
+        Tawk_API.onChatMinimized = function() {
+          $("body").removeClass("tawk-open").addClass("tawk-close");
+        };
+
+        Tawk_API.onLoad = function() {
+          $("body").addClass("tawk-loaded");
+          let TawkHandler = $('body').children().filter(function() {
+            const regex = /^(\w+)-(\d+)$/g;
+            const str = $(this).attr('id');
+
+            while (regex.exec(str) !== null) {
+              let m = regex.exec(str);
+              // This is necessary to avoid infinite loops with zero-width matches
+              if (m.index === regex.lastIndex) {
+                regex.lastIndex++;
+              }
+
+              return $(m);
+            }
+          });
+          $(TawkHandler).addClass('tawk-customize');
+        };
+      });
     }
   }
 </script>
