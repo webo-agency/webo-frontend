@@ -8,21 +8,6 @@
     <div id="contact" class="section">
         <c-contact></c-contact>
     </div>
-
-    <scrollactive active-class="is-active"
-                  :alwaysTrack="true"
-                  :offset="0"
-                  :duration="800"
-                  bezier-easing-value=".5,0,.35,1"
-                  ref="scrollactive" class="section-nav">
-      <a href="#intro" class="scrollactive-item section-nav--item is-active">
-        <img src="~assets/arrow.svg" alt="Intro" class="section-nav--img"/>
-      </a>
-      <a href="#contact" class="scrollactive-item section-nav--item">
-        <img src="~assets/arrow.svg" alt="Contact" class="section-nav--img"/>
-      </a>
-    </scrollactive>
-
   </div>
 </template>
 
