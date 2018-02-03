@@ -34,11 +34,11 @@
       });
 
       Tawk_API.onChatMaximized = function() {
-        $("body").addClass("tawk-maximized");
+        $("body").removeClass("tawk-close").addClass("tawk-open");
       };
 
       Tawk_API.onChatMinimized = function() {
-        $("body").addClass("tawk-minimized");
+        $("body").removeClass("tawk-open").addClass("tawk-close");
       };
 
       Tawk_API.onLoad = function() {
@@ -86,5 +86,15 @@
     bottom: 15px;
     right: 15px;
     max-width: 50px;
+    z-index: 2000000001;
+    pointer-events: none;
+  }
+
+  .tawk-open .fast-contact{
+    display: none;
+  }
+
+  .tawk-close .fast-contact{
+    display: block;
   }
 </style>
