@@ -22,19 +22,27 @@
       cFooter
     },
     mounted: () => {
-      var TawkApi = TawkApi || {};
+      var Tawk_API = Tawk_API || {};
       var Tawk_LoadStart = new Date(); /* eslint no-unused-vars: "off", camelcase: "off" */
 
       $("#fast-contact").click(function() {
-        if (typeof TawkApi === 'object') {
-          if (typeof TawkApi.maximize === 'function') {
-            TawkApi.maximize();
+        if (typeof Tawk_API === 'object') {
+          if (typeof Tawk_API.maximize === 'function') {
+            Tawk_API.maximize();
           }
         }
       });
 
-      TawkApi.onLoad = function() {
-        window.TawkApi.maximize();
+      Tawk_API.onChatMaximized = function() {
+        $("body").addClass("tawk-maximized");
+      };
+
+      Tawk_API.onChatMinimized = function() {
+        $("body").addClass("tawk-minimized");
+      };
+
+      Tawk_API.onLoad = function() {
+        $("body").addClass("tawk-loaded");
         let TawkHandler = $('body').children().filter(function() {
           const regex = /^(\w+)-(\d+)$/g;
           const str = $(this).attr('id');
