@@ -609,9 +609,10 @@
         display: flex;
         justify-content: stretch;
         align-items: stretch;
-        min-height: 100vh;
         width: 100%;
         color: #fff;
+        min-width: 100vw;
+        max-height: 100vh;
     }
 
     .banner--wrapper{
@@ -639,5 +640,6 @@
 
     .banner--link{
         width: 100%;
+        height: 100%;
     }
 </style>
