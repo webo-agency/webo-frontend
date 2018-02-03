@@ -77,5 +77,6 @@
     position: fixed;
     bottom: 15px;
     right: 15px;
+    max-width: 50px;
   }
 </style>
