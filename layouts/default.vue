@@ -2,7 +2,7 @@
   <main class="body">
     <nuxt />
     <c-footer></c-footer>
-    <div id="fast-contact" class="fast-contact">
+    <div id="fast-contact" style="display: none" class="fast-contact">
       <svg width="100%" height="100%" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
             <g id="Head" transform="matrix(1,0,0,1,-3.002,-1.502)">
                 <path d="M25.503,39.002L2.999,39.002L2.999,1.499L40.502,1.499L40.502,23.997C40.502,32.277 33.777,39.002 25.503,39.002Z" style="fill:rgb(22,171,134);"/>
