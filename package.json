@@ -28,6 +28,7 @@
     "nuxt-i18n": "^1.0.2",
     "nuxt-modules": "latest",
     "sass-loader": "^6.0.3",
+    "three.js": "^0.77.1",
     "vue-scrollactive": "^0.5.1",
     "wpapi": "^1.1.2"
   },

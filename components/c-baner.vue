@@ -1,4 +1,5 @@
 <template>
+
     <section class="banner" id="banner">
         <div class="banner--wrapper">
             <svg width="100%" height="100%" viewBox="0 0 4500 2813" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:square;stroke-linejoin:round;stroke-miterlimit:1.5;">
@@ -188,6 +189,15 @@
 
   export default {
     name: 'c-baner',
+    head: {
+      script: [
+        {src: '//cdnjs.cloudflare.com/ajax/libs/dat-gui/0.5/dat.gui.min.js', charset: "UTF-8", crossorigin: "*"},
+        {src: '//s3-us-west-2.amazonaws.com/s.cdpn.io/168282/three.js', charset: "UTF-8", crossorigin: "*"},
+        {src: '//s3-us-west-2.amazonaws.com/s.cdpn.io/168282/MTLLoader.js', charset: "UTF-8", crossorigin: "*"},
+        {src: '//s3-us-west-2.amazonaws.com/s.cdpn.io/168282/OBJMTLLoader.js', charset: "UTF-8", crossorigin: "*"},
+        {src: '~assets/baner.js', charset: "UTF-8", crossorigin: "*"}
+      ]
+    },
     mounted() {
       $("#_Image5_2,#Menu").click(function() {
         $('html, body').animate({
