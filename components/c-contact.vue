@@ -41,7 +41,7 @@
         var $form = $(this);
 
         $.ajax({
-          url: "https://docs.google.com/forms/d/1Wujqpeg6n80BZT8uirZ-bIAWWDIkqR8shvr40MPPXNo/formResponse",
+          url: "https://docs.google.com/forms/d/12AM41enntn2RGXt2hpFJr1EhTLigmnL3XoA-T8ev_dE/formResponse",
           data: {"emailAddress": $form.find("#email").val()},
           type: "POST",
           dataType: "xml",
