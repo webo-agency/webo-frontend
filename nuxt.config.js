@@ -49,7 +49,7 @@ module.exports = {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "webo.design" },
+      { hid: "description", name: "description", content: "We are webo - agency opened for you" },
       { name: "msapplication-TileColor", content: "#ffffff" },
       { name: "msapplication-TileImage", content: "/mstile-144x144.png" },
       { name: "theme-color", content: "#ffffff" }

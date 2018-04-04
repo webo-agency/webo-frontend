@@ -18,11 +18,11 @@
   export default {
     head() {
       return {
-        title: `webo.design`,
+        title: `webo - Welcome in home of innovation`,
         meta: [
           {
             name: 'description',
-            content: 'webo.design'
+            content: 'We are webo - interdisciplinary agency opened for you needs'
           }
         ]
       }
