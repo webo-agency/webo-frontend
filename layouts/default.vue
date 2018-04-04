@@ -14,17 +14,14 @@
 </template>
 
 <script>
-  import $ from 'jquery';
   import cFooter from '~/components/c-footer.vue'
 
   export default {
-    head: {
-    },
+    head: {},
     components: {
       cFooter
     },
-    mounted: () => {
-    }
+    mounted: () => {}
   }
 </script>
 
