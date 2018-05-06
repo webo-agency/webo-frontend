@@ -1,3 +1,4 @@
 # Redirect domain aliases to primary domain
+/*    /index.html   200
 https://www.webo.design/* https://www.webo.agency/:splat 301!
 https://webo.design/* https://www.webo.agency/:splat 301!
