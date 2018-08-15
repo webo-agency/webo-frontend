@@ -1,9 +1,16 @@
 [[redirects]]
-  from = "http://webo.agency/.well-known/acme-challenge/*"
+  from = "/.well-known/acme-challenge/*"
   to = "https://www.webo.agency/"
   status = 200
   force = true
   headers = {Content-Type = "text/plain"}
+
+[[headers]]
+  for = "/.well-known/acme-challenge/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Content-Type = "text/plain"
 
 [[redirects]]
   from = "https://webo.design/*"
