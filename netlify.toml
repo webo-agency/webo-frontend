@@ -3,6 +3,7 @@
   to = "/robots.txt"
   status = 200
   force = true
+  headers = {Content-Type = "text/plain"}
 
 [[headers]]
   for = "/.well-known/acme-challenge/*"
