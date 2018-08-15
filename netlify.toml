@@ -1,6 +1,11 @@
 [[redirects]]
-  from = "http://webo.agency/.well-known/acme-challenge/_kPI49XZzxIohEASLxtKMfDEvAsxtlVd9nVxEOKetlM"
-  to = "https://webo.agency/.well-known/acme-challenge/_kPI49XZzxIohEASLxtKMfDEvAsxtlVd9nVxEOKetlM"
+  from = "http://webo.agency/.well-known/acme-challenge/*"
+  to = "https://www.webo.agency/"
   status = 200
   force = true
   headers = {Content-Type = "text/plain"}
+
+[[redirects]]
+  from = "https://webo.design/*"
+  to = "https://www.webo.agency/:splat"
+  status = 301
