@@ -13,8 +13,5 @@ module.exports = {
     "space-before-function-paren": 0,
     semi: 0,
     quotes: 0
-  },
-  globals: {
-    "TawkApi": true
   }
 };

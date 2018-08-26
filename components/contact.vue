@@ -33,7 +33,7 @@
   import $ from 'jquery';
 
   export default {
-    name: 'v-contact',
+    name: 'cContact',
     mounted: () => {
       $("#contact-form").submit(function(e) {
         e.preventDefault();

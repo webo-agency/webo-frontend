@@ -1,47 +1,5 @@
 module.exports = {
   /*
-  ** Extend nuxt using nuxt modules system (Alpha)
-  ** Learn more: https://github.com/nuxt/nuxt-modules
-  */
-  modules: [
-    {
-      src: '@nuxtjs/pwa',
-      options: {
-        iconSrc: "~/assets/symbol.png",
-        icon: {
-          sizes: [512, 192, 380 ]
-        }
-      }
-    },
-    {
-      src: '~/modules/wp-api',
-      options: {
-        endpoint: 'https://wp.padus.pl/wp-json'
-      }
-    },
-    // {
-    //   src: 'nuxt-i18n',
-    //   options: {
-    //     defaultLocale: 'en',
-    //     locales: [
-    //       {
-    //         code: 'en',
-    //         iso: 'en-US',
-    //         name: 'English'
-    //       },
-    //       {
-    //         code: 'pl',
-    //         iso: 'pl-PL',
-    //         name: 'Polski'
-    //       }
-    //     ],
-    //   }
-    // },
-  ],
-  plugins:[
-    "~/plugins/scrollactive.js"
-  ],
-  /*
   ** Headers of the page
   */
   head: {
@@ -63,11 +21,93 @@ module.exports = {
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
       { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' },
+    ],
+    script: [
+      { type: 'text/javascript', charset: 'utf-8', src: '/chat.js'}
     ]
   },
-  css: [
-    // '~/assets/style/app.styl'
+  /*
+  ** Modules
+  */
+  modules: [
+    {
+      src: '@nuxtjs/pwa',
+      options: {
+        iconSrc: "~/assets/symbol.png",
+        icon: {
+          sizes: [512, 192, 380 ]
+        }
+      }
+    },
+    {
+      src: 'bootstrap-vue/nuxt',
+      options: {
+        css: false
+      }
+    }
+    // {
+    //   src: 'nuxt-i18n',
+    //   options: {
+    //     defaultLocale: 'en',
+    //     locales: [
+    //       {
+    //         code: 'en',
+    //         iso: 'en-US',
+    //         name: 'English'
+    //       },
+    //       {
+    //         code: 'pl',
+    //         iso: 'pl-PL',
+    //         name: 'Polski'
+    //       }
+    //     ],
+    //   }
+    // },
   ],
+  /*
+  ** Plugins - scripts on all pages
+  */
+  plugins:[
+    "~/plugins/scrollactive.js"
+  ],
+  // css: [
+    // 'normalize.css/normalize.css'
+    //     "bootstrap/scss/functions.scss",
+    //     "bootstrap/scss/variables.scss",
+    //     "bootstrap/scss/mixins.scss",
+    //     "bootstrap/scss/root.scss",
+    //     "bootstrap/scss/reboot.scss",
+    //     "bootstrap/scss/type.scss",
+    //     "bootstrap/scss/images.scss",
+    //     "bootstrap/scss/code.scss",
+    //     "bootstrap/scss/grid.scss",
+    //     "bootstrap/scss/tables.scss",
+    //     "bootstrap/scss/forms.scss",
+    //     "bootstrap/scss/buttons.scss",
+    //     "bootstrap/scss/transitions.scss",
+    //     "bootstrap/scss/dropdown.scss",
+    //     "bootstrap/scss/button-group.scss",
+    //     "bootstrap/scss/input-group.scss",
+    //     "bootstrap/scss/custom-forms.scss",
+    //     "bootstrap/scss/nav.scss",
+    //     "bootstrap/scss/navbar.scss",
+    //     "bootstrap/scss/card.scss",
+    //     "bootstrap/scss/breadcrumb.scss",
+    //     "bootstrap/scss/pagination.scss",
+    //     "bootstrap/scss/badge.scss",
+    //     "bootstrap/scss/jumbotron.scss",
+    //     "bootstrap/scss/alert.scss",
+    //     "bootstrap/scss/progress.scss",
+    //     "bootstrap/scss/media.scss",
+    //     "bootstrap/scss/list-group.scss",
+    //     "bootstrap/scss/close.scss",
+    //     "bootstrap/scss/modal.scss",
+    //     "bootstrap/scss/tooltip.scss",
+    //     "bootstrap/scss/popover.scss",
+    //     "bootstrap/scss/carousel.scss",
+    //     "bootstrap/scss/utilities.scss",
+    //     "bootstrap/scss/print.scss"
+  // ],
   /*
   ** Customize the progress-bar color
   */
@@ -132,7 +172,9 @@ module.exports = {
   * ServiceWorker
   */
   workbox: {
-    globPatterns: '**\/*.{js,css,html,png}'
+    globPatterns: [
+      '**/*.{js,css,html,png}'
+    ]
   },
   /*
   ** Build configuration
@@ -150,7 +192,11 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
-    }
+    },
+    vendor: [
+      'axios',
+      '@nuxtjs/pwa'
+    ]
   },
     /*
     ** Generate SSR
@@ -159,10 +205,10 @@ module.exports = {
     dir: "public",
     routes: ['/']
   },
-  render: {
-    bundleRenderer: {
-      directives: {
-      }
-    }
-  }
+  // render: {
+  //   bundleRenderer: {
+  //     directives: {
+  //     }
+  //   }
+  // }
 };

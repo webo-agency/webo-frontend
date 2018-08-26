@@ -1,19 +1,18 @@
 <template>
   <div class="page index">
-
     <div id="intro" class="section">
-        <c-baner></c-baner>
+        <cBaner></cBaner>
     </div>
 
     <div id="contact" class="section">
-        <c-contact></c-contact>
+        <cContact></cContact>
     </div>
   </div>
 </template>
 
 <script>
-  import cBaner from '~/components/c-baner.vue'
-  import cContact from '~/components/c-contact.vue'
+  import cBaner from '~/components/banner.vue'
+  import cContact from '~/components/contact.vue'
 
   export default {
     head() {
@@ -30,11 +29,6 @@
     components: {
       cBaner,
       cContact
-    },
-    data() {
-      return {
-
-      }
     }
   }
 </script>

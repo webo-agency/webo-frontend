@@ -1,7 +1,7 @@
 <template>
   <div class="body">
       <header>
-          <c-header></c-header>
+        <cHeader></cHeader>
       </header>
       <main>
           <nuxt />
@@ -15,26 +15,25 @@
           </div>
       </main>
       <footer>
-          <c-footer></c-footer>
+        <cFooter></cFooter>
       </footer>
   </div>
 </template>
 
 <script>
-  import cFooter from '~/components/c-footer.vue'
+  import cHeader from '~/components/header.vue'
+  import cFooter from '~/components/footer.vue'
 
   export default {
     head: {},
     components: {
+      cHeader,
       cFooter
-    },
-    mounted: () => {}
+    }
   }
 </script>
 
-<style lang="scss">
-  @import '~normalize.css';
-
+<style lang="scss" scoped>
   .body {
     background: rgb(30,28,27);
     font-family: Roboto, Arial, sans-serif;
@@ -47,13 +46,5 @@
     max-width: 50px;
     z-index: 2000000001;
     pointer-events: none;
-  }
-
-  .tawk-open .fast-contact{
-    display: none;
-  }
-
-  .tawk-close .fast-contact{
-    display: block;
   }
 </style>
