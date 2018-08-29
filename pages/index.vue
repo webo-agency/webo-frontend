@@ -1,18 +1,24 @@
 <template>
   <div class="page index">
-    <div id="intro" class="section">
-        <cBaner></cBaner>
-    </div>
+    <!--<span v-t="'example'"></span>-->
 
-    <div id="contact" class="section">
-        <cContact></cContact>
-    </div>
+    <!--<div id="intro" class="section">-->
+        <!--<cBaner></cBaner>-->
+    <!--</div>-->
+
+    <!--<div id="contact" class="section">-->
+        <!--<cContact></cContact>-->
+    <!--</div>-->
   </div>
 </template>
 
 <script>
-  import cBaner from '~/components/banner.vue'
-  import cContact from '~/components/contact.vue'
+  // components: {
+  // cBaner,
+  // cContact
+  // }
+  // import cBaner from '~/components/banner.vue'
+  // import cContact from '~/components/contact.vue'
 
   export default {
     head() {
@@ -25,10 +31,6 @@
           }
         ]
       }
-    },
-    components: {
-      cBaner,
-      cContact
     }
   }
 </script>

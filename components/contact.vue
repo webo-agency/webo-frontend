@@ -42,7 +42,9 @@
 
         $.ajax({
           url: "https://docs.google.com/forms/d/12AM41enntn2RGXt2hpFJr1EhTLigmnL3XoA-T8ev_dE/formResponse",
-          data: {"emailAddress": $form.find("#email").val()},
+          data: {
+            "emailAddress": $form.find("#email").val()
+          },
           type: "POST",
           dataType: "xml",
           statusCode: {
@@ -66,7 +68,7 @@
         align-items: stretch;
         min-height: 100vh;
         width: 100%;
-        background-image: url(/alice-achterhof-85968.jpg);
+        /*background-image: url(/alice-achterhof-85968.jpg);*/
         background-repeat: no-repeat;
         background-size: cover;
         color: #fff;

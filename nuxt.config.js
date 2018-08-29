@@ -44,70 +44,27 @@ module.exports = {
       options: {
         css: false
       }
+    },
+    {
+      src: 'nuxt-sass-resources-loader',
+      options: {
+        resources: 'bootstrap/scss/bootstrap.scss'
+      }
     }
-    // {
-    //   src: 'nuxt-i18n',
-    //   options: {
-    //     defaultLocale: 'en',
-    //     locales: [
-    //       {
-    //         code: 'en',
-    //         iso: 'en-US',
-    //         name: 'English'
-    //       },
-    //       {
-    //         code: 'pl',
-    //         iso: 'pl-PL',
-    //         name: 'Polski'
-    //       }
-    //     ],
-    //   }
-    // },
   ],
   /*
   ** Plugins - scripts on all pages
   */
   plugins:[
-    "~/plugins/scrollactive.js"
+    '~/plugins/scrollactive.js',
+    '~/plugins/i18n.js'
   ],
-  // css: [
-    // 'normalize.css/normalize.css'
-    //     "bootstrap/scss/functions.scss",
-    //     "bootstrap/scss/variables.scss",
-    //     "bootstrap/scss/mixins.scss",
-    //     "bootstrap/scss/root.scss",
-    //     "bootstrap/scss/reboot.scss",
-    //     "bootstrap/scss/type.scss",
-    //     "bootstrap/scss/images.scss",
-    //     "bootstrap/scss/code.scss",
-    //     "bootstrap/scss/grid.scss",
-    //     "bootstrap/scss/tables.scss",
-    //     "bootstrap/scss/forms.scss",
-    //     "bootstrap/scss/buttons.scss",
-    //     "bootstrap/scss/transitions.scss",
-    //     "bootstrap/scss/dropdown.scss",
-    //     "bootstrap/scss/button-group.scss",
-    //     "bootstrap/scss/input-group.scss",
-    //     "bootstrap/scss/custom-forms.scss",
-    //     "bootstrap/scss/nav.scss",
-    //     "bootstrap/scss/navbar.scss",
-    //     "bootstrap/scss/card.scss",
-    //     "bootstrap/scss/breadcrumb.scss",
-    //     "bootstrap/scss/pagination.scss",
-    //     "bootstrap/scss/badge.scss",
-    //     "bootstrap/scss/jumbotron.scss",
-    //     "bootstrap/scss/alert.scss",
-    //     "bootstrap/scss/progress.scss",
-    //     "bootstrap/scss/media.scss",
-    //     "bootstrap/scss/list-group.scss",
-    //     "bootstrap/scss/close.scss",
-    //     "bootstrap/scss/modal.scss",
-    //     "bootstrap/scss/tooltip.scss",
-    //     "bootstrap/scss/popover.scss",
-    //     "bootstrap/scss/carousel.scss",
-    //     "bootstrap/scss/utilities.scss",
-    //     "bootstrap/scss/print.scss"
-  // ],
+  css: [
+    '@/assets/theme.scss'
+  ],
+  sassResources: [
+    'bootstrap/scss/bootstrap.scss'
+  ],
   /*
   ** Customize the progress-bar color
   */
@@ -180,6 +137,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    extractCSS: true,
     /*
     ** Run ESLINT on save
     */
@@ -193,22 +151,42 @@ module.exports = {
         });
       }
     },
+    babel: {
+      presets: [
+        [
+          'vue-app',
+          {
+            useBuiltIns: true,
+            targets: {
+              ie: 9,
+              uglify: true
+            }
+          }
+        ]
+      ]
+    },
     vendor: [
+      'babel-polyfill',
+      '@nuxtjs/pwa',
       'axios',
-      '@nuxtjs/pwa'
-    ]
+      'vue-i18n'
+    ],
   },
-    /*
-    ** Generate SSR
-    */
+  /*
+  ** Render loop
+  */
+  render: {
+    bundleRenderer: {
+      directives: {
+        t: require('vue-i18n-extensions').directive
+      }
+    }
+  },
+  /*
+  ** Generate SSR
+  */
   generate: {
     dir: "public",
     routes: ['/']
-  },
-  // render: {
-  //   bundleRenderer: {
-  //     directives: {
-  //     }
-  //   }
-  // }
+  }
 };
