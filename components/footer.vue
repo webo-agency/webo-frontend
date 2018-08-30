@@ -1,17 +1,20 @@
 <template>
     <div class="footer">
-        <div class="footer--section footer--copyright">
-            © 2018
-        </div>
-        <div class="footer--section footer--nip">
-            NIP: 524 24 95 143
-        </div>
-        <div  class="footer--section footer--regon">
-            REGON: 015 690 013
-        </div>
-        <div  class="footer--section footer--logo">
-            <nuxt-link to="/" class="footer--img">
-                <svg width="100%" height="100%" viewBox="0 0 3088 1038" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+        <div>
+            //Black bar
+            <!--
+            <div class="footer--section footer--copyright">
+                © 2018
+            </div>
+            <div class="footer--section footer--nip">
+                NIP: 524 24 95 143
+            </div>
+            <div  class="footer--section footer--regon">
+                REGON: 015 690 013
+            </div>
+            <div  class="footer--section footer--logo">
+                <nuxt-link to="/" class="footer--img">
+                    <svg width="100%" height="100%" viewBox="0 0 3088 1038" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
                     <g transform="matrix(4.16667,0,0,4.16667,0,0)">
                         <g transform="matrix(1,0,0,1,17.5,-13.5)">
                             <path d="M650.521,231.244L631.803,231.244L631.803,200.047L663,200.047L663,218.765C663,225.652 657.409,231.243 650.521,231.244ZM619.324,218.765L619.324,231.22L560.05,231.244C541.11,231.244 525.733,215.867 525.733,196.927L525.733,128.294C525.733,109.354 541.11,93.977 560.05,93.977L628.683,93.977C647.623,93.977 663,109.354 663,128.294L663,187.544L650.521,187.544L650.521,134.533C650.521,119.037 637.941,106.456 622.444,106.456L566.289,106.456C550.792,106.456 538.212,119.037 538.212,134.533L538.212,190.688C538.212,206.184 550.793,218.765 566.289,218.765L619.324,218.765Z" style="fill:white;"/>
@@ -21,7 +24,12 @@
                         </g>
                     </g>
                 </svg>
-            </nuxt-link>
+                </nuxt-link>
+            </div>
+            -->
+        </div>
+        <div>
+            //Grey bar
         </div>
     </div>
 </template>

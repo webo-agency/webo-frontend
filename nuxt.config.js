@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    baseUrl: process.env.URL || 'http://localhost:3000'
+  },
   /*
   ** Headers of the page
   */
@@ -50,14 +53,47 @@ module.exports = {
       options: {
         resources: 'bootstrap/scss/bootstrap.scss'
       }
+    },
+    {
+      src: 'nuxt-i18n',
+      options: {
+        baseUrl: process.env.BASE_URL,
+        strategy: 'prefix',
+        rootRedirect: 'pl',
+        defaultLocale: 'pl',
+        detectBrowserLanguage: {
+          useCookie: true,
+          cookieKey: 'i18n_redirected'
+        },
+        locales: [
+          {
+            code: 'en',
+            iso: 'en-GB'
+          },
+          {
+            code: 'pl',
+            iso: 'pl-PL'
+          }
+        ],
+        vueI18n: {
+          fallbackLocale: 'en',
+          messages: {
+            'en': {
+              welcome: 'Welcome'
+            },
+            'pl': {
+              welcome: 'Witaj'
+            }
+          }
+        }
+      }
     }
   ],
   /*
   ** Plugins - scripts on all pages
   */
   plugins:[
-    '~/plugins/scrollactive.js',
-    '~/plugins/i18n.js'
+    '~/plugins/scrollactive.js'
   ],
   css: [
     '@/assets/theme.scss'
@@ -168,8 +204,7 @@ module.exports = {
     vendor: [
       'babel-polyfill',
       '@nuxtjs/pwa',
-      'axios',
-      'vue-i18n'
+      'axios'
     ],
   },
   /*
@@ -187,6 +222,8 @@ module.exports = {
   */
   generate: {
     dir: "public",
-    routes: ['/']
+    routes: [
+      '/'
+    ]
   }
 };

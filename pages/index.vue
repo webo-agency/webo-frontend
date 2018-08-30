@@ -1,24 +1,41 @@
 <template>
   <div class="page index">
-    <!--<span v-t="'example'"></span>-->
-
-    <!--<div id="intro" class="section">-->
-        <!--<cBaner></cBaner>-->
-    <!--</div>-->
-
-    <!--<div id="contact" class="section">-->
-        <!--<cContact></cContact>-->
-    <!--</div>-->
+    <section>
+      <cBanner></cBanner>
+    </section>
+    <section>
+      <cAdvantages></cAdvantages>
+    </section>
+    <section>
+      <cWork></cWork>
+    </section>
+    <section>
+      <cTeam></cTeam>
+    </section>
+    <section>
+      <cTechnologies></cTechnologies>
+    </section>
+    <section>
+      <cPortfolio></cPortfolio>
+    </section>
+    <section>
+      <cPartners></cPartners>
+    </section>
+    <section>
+      <cContact></cContact>
+    </section>
   </div>
 </template>
 
 <script>
-  // components: {
-  // cBaner,
-  // cContact
-  // }
-  // import cBaner from '~/components/banner.vue'
-  // import cContact from '~/components/contact.vue'
+  import cBanner from '~/components/banner.vue';
+  import cAdvantages from '~/components/advantages.vue';
+  import cWork from '~/components/work.vue';
+  import cTeam from '~/components/team.vue';
+  import cTechnologies from "../components/technologies";
+  import cPortfolio from '~/components/portfolio.vue';
+  import cPartners from '~/components/partners.vue';
+  import cContact from '~/components/contact.vue';
 
   export default {
     head() {
@@ -31,6 +48,16 @@
           }
         ]
       }
+    },
+    components: {
+      cBanner,
+      cAdvantages,
+      cWork,
+      cTeam,
+      cTechnologies,
+      cPortfolio,
+      cPartners,
+      cContact
     }
   }
 </script>

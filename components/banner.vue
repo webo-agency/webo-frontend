@@ -1,9 +1,9 @@
 <template>
-    <section class="banner" id="banner">
+    <div class="banner" id="banner">
         <div class="banner--wrapper">
 
         </div>
-    </section>
+    </div>
 </template>
 <script>
   // import $ from 'jquery';

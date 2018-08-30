@@ -1,5 +1,6 @@
 <template>
-    <section class="contact">
+    <div class="contact">
+        //Contact section
         <div class="contact--inner">
             <div class="contact--box">
                 <div class="contact--box-left">
@@ -27,7 +28,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </template>
 <script>
   import $ from 'jquery';
