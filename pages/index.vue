@@ -1,27 +1,27 @@
 <template>
   <div class="page index">
-    <section>
+    <section id="banner" ref="banner">
       <cBanner></cBanner>
     </section>
-    <section>
+    <section id="advantages" ref="advantages">
       <cAdvantages></cAdvantages>
     </section>
-    <section>
+    <section id="work" ref="work">
       <cWork></cWork>
     </section>
-    <section>
+    <section id="team" ref="team">
       <cTeam></cTeam>
     </section>
-    <section>
+    <section id="technologies">
       <cTechnologies></cTechnologies>
     </section>
-    <section>
+    <section id="portfolio">
       <cPortfolio></cPortfolio>
     </section>
-    <section>
+    <section id="partners">
       <cPartners></cPartners>
     </section>
-    <section>
+    <section id="contact">
       <cContact></cContact>
     </section>
   </div>
@@ -63,8 +63,9 @@
 </script>
 
 <style lang="scss" scoped>
-  .section {
+  .page .section {
     position: relative;
+    min-height: 100vh;
   }
 
   .section-nav{

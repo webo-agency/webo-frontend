@@ -19,6 +19,7 @@
         width: 100%;
         color: #fff;
         min-width: 100vw;
+        height: 80vh;
         max-height: 100vh;
     }
 
@@ -30,7 +31,7 @@
         flex: 1 1 auto;
 
         background-color: rgba(0,0,0,1);
-        /*background-image: linear-gradient(left top, rgba(35,31,32,1) 0%, #10AB87 100%);*/
+        /*background-image: linear-gradient(right top, rgba(35,31,32,1) 0%, #10AB87 100%);*/
     }
 
     .banner--inner{

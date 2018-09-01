@@ -1,16 +1,11 @@
 <template>
-  <div class="body">
-      <p v-t="'welcome'"></p>
-      <header>
-        <cHeader></cHeader>
-      </header>
-      <main>
-          <nuxt />
-      </main>
-      <footer>
-        <cFooter></cFooter>
-      </footer>
-  </div>
+    <div class="body">
+        <cHeader mainTag="header"></cHeader>
+        <main>
+            <nuxt />
+        </main>
+        <cFooter mainTag="footer"></cFooter>
+    </div>
 </template>
 
 <script>
@@ -28,6 +23,8 @@
 
 <style lang="scss" scoped>
   .body {
+      /*position: relative;*/
+      /*overflow-y: scroll;*/
     /*background: rgb(30,28,27);*/
     /*font-family: Roboto, Arial, sans-serif;*/
   }

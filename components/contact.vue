@@ -82,8 +82,8 @@
             right: 0;
             top: 0;
             bottom: 0;
-            opacity: 0.5;
-            background-color: rgba(0, 0, 0, 1);
+            /*opacity: 0.5;*/
+            /*background-color: rgba(0, 0, 0, 1);*/
             /*background-image: linear-gradient(left top, rgba(35, 31, 32, 1) 0%, #10AB87 100%);*/
         }
     }

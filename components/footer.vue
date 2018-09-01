@@ -1,5 +1,5 @@
 <template>
-    <div class="footer">
+    <component v-bind:is="mainTag" class="footer">
         <div class="container links justify-content-center justify-content-sm-between">
             <nuxt-link class="logo" to="/">
                 <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" clip-rule="evenodd" width="167" height="50">
@@ -47,11 +47,12 @@
             <div>NIP: 524 24 95 143 <span class="pipe">|</span> REGON: 015 690 013</div>
             <div>webo.agency © {{ new Date().getFullYear() }}</div>
         </div>
-    </div>
+    </component>
 </template>
 <script>
   export default {
-    name: 'cFooter'
+    name: 'cFooter',
+    props: ['mainTag']
   }
 </script>
 
