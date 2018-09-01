@@ -49,12 +49,6 @@ module.exports = {
       }
     },
     {
-      src: 'nuxt-sass-resources-loader',
-      options: {
-        resources: 'bootstrap/scss/bootstrap.scss'
-      }
-    },
-    {
       src: 'nuxt-i18n',
       options: {
         baseUrl: process.env.BASE_URL,
@@ -98,13 +92,16 @@ module.exports = {
   css: [
     '@/assets/theme.scss'
   ],
-  sassResources: [
-    'bootstrap/scss/bootstrap.scss'
-  ],
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: "#b2f1c7" },
+  // loading: {
+  //   color: "#b2f1c7",
+  //   failedColor: 'red',
+  //   height: "2px",
+  //   duration: "5000"
+  // },
+  loading: './components/loading.vue',
   /*
   ** Customize manifest.json
   */
@@ -174,43 +171,29 @@ module.exports = {
   */
   build: {
     extractCSS: true,
+    publicPath: '/assets/',
     /*
     ** Run ESLINT on save
     */
-    extend(config, ctx) {
-      if (ctx.isClient) {
+    extend (config, { isDev }) {
+      if (isDev && process.client) {
         config.module.rules.push({
-          enforce: "pre",
+          enforce: 'pre',
           test: /\.(js|vue)$/,
-          loader: "eslint-loader",
+          loader: 'eslint-loader',
           exclude: /(node_modules)/
-        });
+        })
       }
-    },
-    babel: {
-      presets: [
-        [
-          'vue-app',
-          {
-            useBuiltIns: true,
-            targets: {
-              ie: 9,
-              uglify: true
-            }
-          }
-        ]
-      ]
-    },
-    vendor: [
-      'babel-polyfill',
-      '@nuxtjs/pwa',
-      'axios'
-    ],
+    }
   },
   /*
   ** Render loop
   */
   render: {
+    http2: {
+      push: true,
+      gzip: 9
+    },
     bundleRenderer: {
       directives: {
         t: require('vue-i18n-extensions').directive
@@ -222,8 +205,9 @@ module.exports = {
   */
   generate: {
     dir: "public",
+    fallback: "404.html",
     routes: [
-      '/'
+      '/',
     ]
   }
 };

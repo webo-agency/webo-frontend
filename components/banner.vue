@@ -6,17 +6,8 @@
     </div>
 </template>
 <script>
-  // import $ from 'jquery';
-
   export default {
     name: 'cBanner',
-    mounted() {
-      // $("#_Image5_2,#Menu").click(function() {
-      //   $('html, body').animate({
-      //     scrollTop: $("#banner").offset().top + $("#banner").outerHeight()
-      //   }, 2000);
-      // });
-    }
   }
 </script>
 
@@ -39,7 +30,7 @@
         flex: 1 1 auto;
 
         background-color: rgba(0,0,0,1);
-        background-image: linear-gradient(left top, rgba(35,31,32,1) 0%, #10AB87 100%);
+        /*background-image: linear-gradient(left top, rgba(35,31,32,1) 0%, #10AB87 100%);*/
     }
 
     .banner--inner{

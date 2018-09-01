@@ -68,10 +68,10 @@
         padding-top: 20px;
         padding-bottom: 20px;
 
-        @include media-breakpoint-up('md'){
+       /* @include media-breakpoint-up('md'){
             order: 2;
             width: auto;
-        }
+        }*/
     }
 
     .footer .links{

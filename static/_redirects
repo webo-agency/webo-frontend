@@ -1,4 +1,14 @@
+## ABSOLUTE
+
 # Redirect domain aliases to primary domain
-/*    /index.html   200
+#--------------------------------------------------------------------
 https://www.webo.design/* https://www.webo.agency/:splat 301!
 https://webo.design/* https://www.webo.agency/:splat 301!
+
+## RELATIVE
+
+# 404 page
+#--------------------------------------------------------------------
+/* /404.html 404
+/en/* /404.html 404
+/pl/* /404.html 404
