@@ -2,6 +2,7 @@
 <html class="no-js is-stop" {{ HTML_ATTRS }}>
     <head>
         <script id="init">document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, 'js');document.getElementById("init").remove();</script>
+        <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
         <style>
             .js.is-running:before,
             .is-stop:before{
@@ -18,7 +19,7 @@
                 background-position: 50%;
                 background-repeat: no-repeat;
                 background-size: 50%;
-                transition: all 0.5s;
+                background-size: 75vw 75vh;
             }
 
             .js.is-running:after,
@@ -35,14 +36,14 @@
                 background-repeat: no-repeat;
                 background-position: 50% 50%;
                 background-size: 50%;
-                transition: all 0.5s;
+                background-size: 75vw 75vh;
             }
 
             .js.is-running:not(.is-stop):before,
             .js.is-running:not(.is-stop):after{
                 visibility: hidden;
                 opacity: 0;
-                transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+                transition: visibility 0s linear 1s,opacity 0.5s linear 0.5s;
             }
 
             .js.is-running:after{
@@ -53,10 +54,10 @@
 
             @-webkit-keyframes app-pulse {
                 0% {
-                   opacity: 0;
+                    opacity: 0;
                 }
                 100% {
-                   opacity: 1;
+                    opacity: 1;
                 }
             }
             @keyframes app-pulse {
@@ -68,7 +69,6 @@
                 }
             }
         </style>
-        <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
         {{ HEAD }}
     </head>
     <body {{ BODY_ATTRS }}>
