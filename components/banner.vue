@@ -1,13 +1,29 @@
 <template>
-    <div class="banner" id="banner">
-        <div class="banner--wrapper">
-
+    <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="banner--wrapper col-7">
+                    <h1 class="banner--title decoration">Streaming Innovations</h1>
+                    <p class="banner--paragraph">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid corporis explicabo fugit
+                        rem vero voluptatem voluptatum? Consectetur culpa eligendi fuga harum, illo numquam provident quidem
+                        reprehenderit sapiente similique, sint velit. Adipisci animi atque dicta dolorem
+                    </p>
+                    <button class="banner--button btn btn-secondary">
+                        Start a project with us
+                    </button>
+                </div>
+                <div class="col-5 d-flex">
+                    <img src="~/assets/planeta.png" class="img-fluid m-auto banner--image" />
+                </div>
+            </div>
         </div>
-    </div>
+    </component>
 </template>
 <script>
   export default {
     name: 'cBanner',
+    props: ['mainTag','mainClass','mainId']
   }
 </script>
 
@@ -17,10 +33,8 @@
         justify-content: stretch;
         align-items: stretch;
         width: 100%;
-        color: #fff;
         min-width: 100vw;
-        height: 80vh;
-        max-height: 100vh;
+        height: 100%;
     }
 
     .banner--wrapper{
@@ -28,26 +42,35 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        flex: 1 1 auto;
-
-        background-color: rgba(0,0,0,1);
-        /*background-image: linear-gradient(right top, rgba(35,31,32,1) 0%, #10AB87 100%);*/
+        text-align: left;
+        margin: auto;
+        margin-left: 0;
+        padding: 75px 0;
     }
 
     .banner--inner{
         display: block;
         margin: 15px;
-        max-width: 735px;
         width: 100%;
     }
 
     .banner--title{
-        text-align: center;
-        font-size: 25px;
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
+        font-size: 63px;
     }
 
-    .banner--link{
-        width: 100%;
-        height: 100%;
+    .banner--image{
+        padding: 44px 0;
+    }
+
+    .banner--paragraph{
+        font-size: 22px;
+    }
+
+    .banner--button{
+        margin-left: 0;
+        margin-right: auto;
     }
 </style>

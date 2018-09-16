@@ -1,6 +1,5 @@
 <template>
-    <div class="contact">
-        //Contact section
+    <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="contact">
         <div class="contact--inner">
             <div class="contact--box">
                 <div class="contact--box-left">
@@ -28,13 +27,14 @@
                 </div>
             </div>
         </div>
-    </div>
+    </component>
 </template>
 <script>
   import $ from 'jquery';
 
   export default {
     name: 'cContact',
+    props: ['mainTag','mainClass','mainId'],
     mounted: () => {
       $("#contact-form").submit(function(e) {
         e.preventDefault();

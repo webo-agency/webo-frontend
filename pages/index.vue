@@ -1,29 +1,13 @@
 <template>
   <div class="page index">
-    <section id="banner" ref="banner">
-      <cBanner></cBanner>
-    </section>
-    <section id="advantages" ref="advantages">
-      <cAdvantages></cAdvantages>
-    </section>
-    <section id="work" ref="work">
-      <cWork></cWork>
-    </section>
-    <section id="team" ref="team">
-      <cTeam></cTeam>
-    </section>
-    <section id="technologies">
-      <cTechnologies></cTechnologies>
-    </section>
-    <section id="portfolio">
-      <cPortfolio></cPortfolio>
-    </section>
-    <section id="partners">
-      <cPartners></cPartners>
-    </section>
-    <section id="contact">
-      <cContact></cContact>
-    </section>
+    <cBanner mainTag="section" mainClass="section" mainId="banner"></cBanner>
+    <cAdvantages mainTag="section" mainClass="section" mainId="advantages"></cAdvantages>
+    <cWork mainTag="section" mainClass="section" mainId="work"></cWork>
+    <cTeam mainTag="section" mainClass="section" mainId="team"></cTeam>
+    <cTechnologies mainTag="section" mainClass="section" mainId="technologies"></cTechnologies>
+    <cPortfolio mainTag="section" mainClass="section" mainId="portfolio"></cPortfolio>
+    <cPartners mainTag="section" mainClass="section" mainId="partners"></cPartners>
+    <cContact mainTag="section" mainClass="section" mainId="contact"></cContact>
   </div>
 </template>
 
@@ -63,49 +47,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .page .section {
+  .section {
     position: relative;
-    min-height: 100vh;
-  }
-
-  .section-nav{
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 100px;
-    height: 100%;
-    z-index: 100;
-
-    @media(min-width: 992px){
-      display: block;
-    }
-  }
-
-  .section-nav--item{
-    position: absolute;
-    top: 0;
-    bottom: auto;
-    transition: all 0.3s;
-    visibility: hidden;
-    opacity: 0;
-
-    &:not(.is-active){
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  .section-nav--item + .section-nav--item{
-    top: auto;
-    bottom: 0;
-    transform: rotate(180deg);
-  }
-
-  .section-nav--img{
-    width: 100px;
-    height: 100px;
-    margin: 30px 0;
   }
 </style>

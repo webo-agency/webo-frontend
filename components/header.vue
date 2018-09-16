@@ -15,7 +15,7 @@
                     <path fill="#2f2d2c" d="M23.35-.003H0V3.11h23.35zM23.344 6.44H7.777v3.114h15.567zM23.355 12.884h-7.783v3.113h7.783z"/>
                 </svg>
 
-                <scrollactive class="links list-inline d-flex flex-row justify-content-between align-items-stretch flex-grow-0">
+                <scrollactive class="links list-inline d-flex flex-row justify-content-between align-items-stretch flex-grow-0" :offset="152">
                     <a href="#work" class="link scrollactive-item">About</a>
                     <a href="#team" class="link scrollactive-item">Meet Us</a>
                     <a href="#technologies" class="link scrollactive-item">Tech</a>
@@ -68,10 +68,9 @@
     }
 
     .header .link{
-        font-size: 21px;
+        font-size: 22px;
         padding: 42px 18px;
         font-weight: 700;
         margin: 18px auto auto;
-        color: #2f2d2c;
     }
 </style>

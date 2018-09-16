@@ -4,6 +4,8 @@
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
+$radius: 0.35;
+$transition-time: 0.2s;
 
 // Color system
 
@@ -21,21 +23,17 @@ $black:    #000 !default;
 
 $grays: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
-$grays: map-merge(
-      (
-          "100": $gray-100,
-          "200": $gray-200,
-          "300": $gray-300,
-          "400": $gray-400,
-          "500": $gray-500,
-          "600": $gray-600,
-          "700": $gray-700,
-          "800": $gray-800,
-          "900": $gray-900
-      ),
-      $grays
+$grays: (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
 );
-
 
 $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
@@ -48,51 +46,45 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
-$colors: () !default;
-// stylelint-disable-next-line scss/dollar-variable-default
-$colors: map-merge(
-    (
-          "blue":       $blue,
-          "indigo":     $indigo,
-          "purple":     $purple,
-          "pink":       $pink,
-          "red":        $red,
-          "orange":     $orange,
-          "yellow":     $yellow,
-          "green":      $green,
-          "teal":       $teal,
-          "cyan":       $cyan,
-          "white":      $white,
-          "gray":       $gray-600,
-          "gray-dark":  $gray-800
-    ),
-    $colors
+$colors: (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
 );
-//
-//$primary:       $blue !default;
-//$secondary:     $gray-600 !default;
-//$success:       $green !default;
-//$info:          $cyan !default;
-//$warning:       $yellow !default;
-//$danger:        $red !default;
-//$light:         $gray-100 !default;
-//$dark:          $gray-800 !default;
+
+$primary:       rgb(22,171,134);
+$secondary:     rgb(197,217,45);
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+$meteor:         rgb(21,110,88);
+$greenish:       #16A984;
 //
 //$theme-colors: () !default;
 //// stylelint-disable-next-line scss/dollar-variable-default
-//$theme-colors: map-merge(
-//                (
-//                        "primary":    $primary,
-//                        "secondary":  $secondary,
-//                        "success":    $success,
-//                        "info":       $info,
-//                        "warning":    $warning,
-//                        "danger":     $danger,
-//                        "light":      $light,
-//                        "dark":       $dark
-//                ),
-//                $theme-colors
-//);
+$theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+);
 //
 //// Set a specific jump point for requesting color jumps
 //$theme-color-interval:      8% !default;
@@ -153,28 +145,29 @@ $colors: map-merge(
 //                $sizes
 //);
 //
-//// Body
-////
-//// Settings for the `<body>` element.
+// Body
 //
-//$body-bg:                   $white !default;
-//$body-color:                $gray-900 !default;
-//
+// Settings for the `<body>` element.
+
+$body-bg:                   $white !default;
+$body-color:                rgb(62,59,58);
+
 //// Links
 ////
 //// Style anchor elements.
 //
-//$link-color:                theme-color("primary") !default;
-//$link-decoration:           none !default;
-//$link-hover-color:          darken($link-color, 15%) !default;
-//$link-hover-decoration:     underline !default;
+$link-color:                #2f2d2c;
+$link-decoration:           none;
+$link-hover-color:          $secondary;
+$link-hover-decoration:     none;
+
 //
-//// Paragraphs
-////
-//// Style p element.
+// Paragraphs
 //
-//$paragraph-margin-bottom:   1rem !default;
-//
+// Style p element.
+
+$paragraph-margin-bottom:   53px;
+
 //
 //// Grid breakpoints
 ////
@@ -203,7 +196,7 @@ $container-max-widths: (
         md: 720px,
         lg: 960px,
         xl: 1140px,
-        xxl: 1310px
+        xxl: 1440px
 ) !default;
 
 //@include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -213,8 +206,8 @@ $container-max-widths: (
 ////
 //// Set the number of columns and specify the width of the gutters.
 //
-//$grid-columns:                12 !default;
-//$grid-gutter-width:           30px !default;
+$grid-columns:                12;
+$grid-gutter-width:           0;
 //
 //// Components
 ////
@@ -226,7 +219,7 @@ $container-max-widths: (
 //$border-width:                1px !default;
 //$border-color:                $gray-300 !default;
 //
-//$border-radius:               .25rem !default;
+$border-radius:               0;
 //$border-radius-lg:            .3rem !default;
 //$border-radius-sm:            .2rem !default;
 //
@@ -239,9 +232,9 @@ $container-max-widths: (
 //
 //$caret-width:                 .3em !default;
 //
-//$transition-base:             all .2s ease-in-out !default;
-//$transition-fade:             opacity .15s linear !default;
-//$transition-collapse:         height .35s ease !default;
+$transition-base:             all $transition-time ease-in-out;
+$transition-fade:             opacity .15s linear;
+$transition-collapse:         height .35s ease;
 //
 //
 //// Fonts
@@ -264,14 +257,14 @@ $container-max-widths: (
 //
 //$font-weight-base:            $font-weight-normal !default;
 //$line-height-base:            1.5 !default;
-//
-//$h1-font-size:                $font-size-base * 2.5 !default;
+
+$h1-font-size:                50px;
 //$h2-font-size:                $font-size-base * 2 !default;
 //$h3-font-size:                $font-size-base * 1.75 !default;
 //$h4-font-size:                $font-size-base * 1.5 !default;
 //$h5-font-size:                $font-size-base * 1.25 !default;
 //$h6-font-size:                $font-size-base !default;
-//
+
 //$headings-margin-bottom:      ($spacer / 2) !default;
 //$headings-font-family:        inherit !default;
 //$headings-font-weight:        500 !default;
@@ -397,9 +390,9 @@ $container-max-widths: (
 //$btn-block-spacing-y:         .5rem !default;
 //
 //// Allows for customizing button radius independently from global border radius
-//$btn-border-radius:           $border-radius !default;
-//$btn-border-radius-lg:        $border-radius-lg !default;
-//$btn-border-radius-sm:        $border-radius-sm !default;
+$btn-border-radius:           0;
+$btn-border-radius-lg:        0;
+$btn-border-radius-sm:        0;
 //
 //$btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
 //
@@ -625,9 +618,9 @@ $container-max-widths: (
 //$nav-link-padding-x:                1rem !default;
 //$nav-link-disabled-color:           $gray-600 !default;
 //
-//$nav-tabs-border-color:             $gray-300 !default;
-//$nav-tabs-border-width:             $border-width !default;
-//$nav-tabs-border-radius:            $border-radius !default;
+$nav-tabs-border-color:             transparent;
+$nav-tabs-border-width:             0;
+$nav-tabs-border-radius:            0;
 //$nav-tabs-link-hover-border-color:  $gray-200 $gray-200 $nav-tabs-border-color !default;
 //$nav-tabs-link-active-color:        $gray-700 !default;
 //$nav-tabs-link-active-bg:           $body-bg !default;
@@ -997,3 +990,71 @@ $container-max-widths: (
 @import "~bootstrap/scss/carousel";
 @import "~bootstrap/scss/utilities";
 @import "~bootstrap/scss/print";
+
+a{
+  transition: $transition-base;
+
+  &:first-letter{
+    border-bottom: 3px solid transparent;
+  }
+}
+
+a:hover{
+  color: $secondary;
+  text-decoration: none;
+
+  &:first-letter{
+    border-bottom-color: $secondary;
+  }
+}
+
+p{
+  font-size: 29px;
+}
+
+.btn{
+  padding-left: 35px;
+  padding-right: 35px;
+  font-size: 29px;
+}
+
+.btn-secondary{
+  color: #ffffff;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+
+  &:hover{
+    background: transparent;
+    color: map-get($theme-colors, "secondary");
+    box-shadow: none;
+  }
+}
+
+.decoration{
+  position: relative;
+  display: inline-block;
+  margin: auto;
+  padding-bottom: 20px;
+
+  &:before{
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: map-get($theme-colors, "primary");
+    left: 4px;
+    bottom: 12px;
+    border-radius: 0 0 $radius*20*1px 0;
+    transform: translate(-100%, 0);
+  }
+}
+
+.decoration.decoration--white:before{
+  background: map-get($colors, "white");
+}
+
+.decoration.decoration--bottom-right:before{
+  left: auto;
+  right: -40px;
+  border-radius: 0 0 7px 0;
+  transform: translate(-100%, 0);
+}
