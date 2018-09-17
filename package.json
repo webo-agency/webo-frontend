@@ -26,6 +26,7 @@
     "nuxt-edge": "2.0.0-25595800.b11e9c0",
     "nuxt-i18n": "^5.2.1",
     "nuxt-sass-resources-loader": "^2.0.4",
+    "vue-awesome-swiper": "git://github.com/shrpne/vue-awesome-swiper#ssr-component",
     "vue-scrollactive": "^0.6.1"
   },
   "scripts": {
