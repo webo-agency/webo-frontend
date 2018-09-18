@@ -34,16 +34,10 @@
         swiperOption: {
           pagination: {
             el: '.swiper-pagination'
-          },
-          // some swiper options...
+          }
         }
       }
-    },
-    computed: {
-      swiper() {
-        return this.$refs.partners.swiper
-      }
-    },
+    }
   }
 </script>
 
