@@ -1008,6 +1008,10 @@ a:hover{
   }
 }
 
+a.no-decoration:first-letter{
+  border-bottom-width: 0;
+}
+
 p{
   font-size: 29px;
 }

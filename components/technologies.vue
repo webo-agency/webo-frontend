@@ -1,4 +1,4 @@
-<template>
+<template xmlns:v-swiper="http://www.w3.org/1999/xhtml">
     <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="technology">
         <div class="technology--wrapper">
             <div class="container">
@@ -9,38 +9,31 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <b-tabs nav-wrapper-class="technology--list" content-class="technology--description" card end class="technology--carousel">
-                            <b-tab active>
-                                <template slot="title">
-                                    <img src="~/assets/logo/css.svg" height="190"/>
-                                </template>
-                                <p>Tab Contents 1</p>
-                            </b-tab>
-                            <b-tab active>
-                                <template slot="title">
-                                    <img src="~/assets/logo/html5.svg" height="188"/>
-                                </template>
-                                <p>Tab Contents 2</p>
-                            </b-tab>
-                            <b-tab active>
-                                <template slot="title">
-                                    <img src="~/assets/logo/java.svg" height="213"/>
-                                </template>
-                                <p>Tab Contents 3</p>
-                            </b-tab>
-                            <b-tab active>
-                                <template slot="title">
-                                    <img src="~/assets/logo/nginx.svg" height="168"/>
-                                </template>
-                                <p>Tab Contents 4</p>
-                            </b-tab>
-                            <b-tab active>
-                                <template slot="title">
-                                    <img src="~/assets/logo/php.svg" height="138"/>
-                                </template>
-                                <p>Tab Contents 5</p>
-                            </b-tab>
-                        </b-tabs>
+
+                        <p class="technology--description">{{ technologyDescription }}</p>
+
+                        <div class="technology--carousel">
+                            <div v-swiper:technologyCarousel="swiperOption"  @slideChange="slideChangeEvent">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img src="~/assets/logo/css.svg" height="190"/>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="~/assets/logo/html5.svg" height="188"/>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="~/assets/logo/java.svg" height="213"/>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="~/assets/logo/nginx.svg" height="168"/>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="~/assets/logo/php.svg" height="138"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="technologyPagination" class="swiper-pagination technology--pagination"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -52,6 +45,37 @@
   export default {
     name: 'cTechnologies',
     props: ['mainTag','mainClass','mainId'],
+    data() {
+      return {
+        technologyDescription: "",
+        technologyArray: [
+          "CSS",
+          "HTML5",
+          "java",
+          "Nginx",
+          "PHP"
+        ],
+        swiperOption: {
+          slidesPerView: 5,
+          centeredSlides: true,
+          loop: true,
+          loopAdditionalSlides: 5,
+          slideToClickedSlide: true,
+          pagination: {
+            el: '#technologyPagination',
+            clickable: true
+          }
+        }
+      }
+    },
+    mounted: function () {
+      this.slideChangeEvent();
+    },
+    methods: {
+      slideChangeEvent(){
+        this.technologyDescription = this.technologyArray[this.technologyCarousel.realIndex];
+      }
+    }
   }
 </script>
 
@@ -81,38 +105,65 @@
         border-style: solid;
     }
 
-    .technology--list{
-        padding: 0;
-        background-color: white;
-        border-top: 0;
-    }
-
     .technology--description{
-        min-height: 200px;
+        min-height: 150px;
         font-size: 29px;
-    }
-
-    .technology--list li{
-        flex: 1 1 auto;
-        display: flex;
-        align-items: center;
-        margin: auto!important;
-        justify-content: center;
-    }
-
-    .technology--wrapper .technology--list img{
-        opacity: 0.25;
-        transition: all 0.3s;
-        width: 100%;
-    }
-
-    .technology--list a.active img,
-    .technology--list a:hover img{
-        opacity: 1;
     }
 
     .technology--carousel{
         margin-bottom: 80px;
     }
 
+    .technology--carousel .swiper-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        padding: 25px 0;
+    }
+
+    .technology--carousel .swiper-wrapper{
+        align-items: center;
+    }
+
+    .technology--carousel .swiper-slide{
+        opacity: 0.25;
+        transition: all 0.3s;
+    }
+
+    .technology--carousel .swiper-slide img{
+        height: 100%;
+        width: 129px;
+        max-height: 150px;
+    }
+
+    .technology--carousel .swiper-slide:hover,
+    .technology--carousel .swiper-slide-active{
+        opacity: 1;
+    }
+
+    .technology--pagination,
+    .technology--pagination.swiper-pagination {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 10px;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+
+    .technology--pagination .swiper-pagination-bullet{
+        margin: 0 5px;
+        height: 7px;
+        width: 34px;
+        border-radius: 5px;
+        background: #53657D;
+        transition: all 0.3s;
+        cursor: pointer;
+    }
+
+    .technology--pagination .swiper-pagination-bullet.swiper-pagination-bullet-active{
+        background: linear-gradient(to right, rgb(238,244,192) 0%,rgb(197,217,45) 100%);
+    }
 </style>

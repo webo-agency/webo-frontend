@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col">
                     <h1 class="decoration">Meet our team </h1>
-                    <p class="">
+                    <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum hic ipsam
                         laudantium. Delectus eius, quam.
                     </p>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="row">
-                <a href="#" class="team--more">Contact us →</a>
+                <a href="#" class="team--more no-decoration">Contact us →</a>
             </div>
         </div>
     </component>
@@ -78,5 +78,6 @@
         margin: auto;
         color: rgb(197,217,45);
         padding: 60px;
+        font-size: 29px;
     }
 </style>
