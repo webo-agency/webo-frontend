@@ -88,7 +88,7 @@ module.exports = {
   */
   plugins:[
     { src: '~/plugins/scrollactive.js', ssr: true },
-    { src: '~/plugins/swiper.js', ssr: true }
+    { src: '~/plugins/swiper.js', ssr: false }
   ],
   css: [
     '@/assets/theme.scss'
