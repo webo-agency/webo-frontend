@@ -81,6 +81,7 @@
 
 <style lang="scss" >
     .technology{
+        margin-bottom: 140px;
         text-align: center;
     }
 

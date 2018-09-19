@@ -2,7 +2,7 @@
     <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="partners">
         <div class="row">
             <div class="col">
-                <h1 class="decoration">Partners</h1>
+                <h1 class="partners--title decoration">Partners</h1>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eum, rerum. Ab aliquid
                     autem dolorum, ex nulla quod
@@ -66,6 +66,11 @@
 <style lang="scss" scoped>
     .partners{
         text-align: center;
+        margin-bottom: 110px;
+    }
+
+    .partners--title{
+        margin-bottom: 55px;
     }
 
     .partners--img{

@@ -13,7 +13,8 @@ module.exports = {
       { hid: "description", name: "description", content: "We are webo - agency opened for you" },
       { name: "msapplication-TileColor", content: "#ffffff" },
       { name: "msapplication-TileImage", content: "/mstile-144x144.png" },
-      { name: "theme-color", content: "#ffffff" }
+      { name: "theme-color", content: "#ffffff" },
+      { name: "robots", content: "NOINDEX,NOFOLLOW" }
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
