@@ -1,32 +1,43 @@
 <template>
     <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="contact">
-        <div class="contact--inner">
-            <div class="contact--box">
-                <div class="contact--box-left">
-                    <h1 class="contact--title">Say Hi!</h1>
-                    <p class="contact--text">
-                        Let's talk<br/>
-                        about<br/>
-                        your<br/>
-                        needs<br/>
-                        and keep<br/>
-                        in touch.
-                    </p>
+        <form id="contact-form" class="container" name="contact" action="">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-3">
+                    <h1>SAY Hello!</h1>
                 </div>
-                <div class="contact--box-right">
-                    <form id="contact-form" class="contact--form" name="contact" action="" data-netlify="true" >
-                        <fieldset class="contact--form-fieldset">
-                            <div class="contact--form-wrapper">
-                                <input id="email" type="email" name="email" placeholder="Your email" class="contact--form-input"/>
-                                <button type="submit" class="contact--form-button">
-                                    Send
-                                </button>
-                            </div>
-                        </fieldset>
-                    </form>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col">
+                            <input type="email" name="email" placeholder="Your email" class="contact--form-input"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label>
+                                <input type="checkbox" name="agreement"/> Lorem ipsum dolor sit amet,
+                                consectetur adipisicing elit. Assumenda cupiditate deserunt ea eius fugiat in, iste
+                                reprehenderit voluptatibus? Accusantium consequuntur maxime minus officia, quos rerum
+                                voluptatibus! Consequuntur qui ratione totam.
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col">
+                            <button type="submit" class="contact--form-button btn btn-secondary ">
+                                Send
+                            </button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <a href="#">Send message →</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
     </component>
 </template>
 <script>
@@ -67,5 +78,6 @@
       display: flex;
       flex-direction: row;
       background-color: #f0faf7;
+      padding: 60px;
   }
 </style>

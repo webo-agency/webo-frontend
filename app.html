@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="no-js is-stop" {{ HTML_ATTRS }}>
     <head>
-        <script id="init">document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, 'js');document.getElementById("init").remove();</script>
+        {{ HEAD }}
+        <script id="init">document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, 'js').replace(/\bis-stop\b/g, 'is-running');document.getElementById("init").remove();</script>
         <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
         <style>
             .js.is-running:before,
@@ -43,7 +44,7 @@
             .js.is-running:not(.is-stop):after{
                 visibility: hidden;
                 opacity: 0;
-                transition: visibility 0s linear 1s,opacity 0.5s linear 0.5s;
+                transition: visibility 0s linear 0.5s,opacity 0.3s linear 0.3s;
             }
 
             .js.is-running:after{
@@ -69,10 +70,8 @@
                 }
             }
         </style>
-        {{ HEAD }}
     </head>
     <body {{ BODY_ATTRS }}>
         {{ APP }}
-        <script id="loaded">function vueReady(){if(!!document.getElementById("loaded")){document.documentElement.className = document.documentElement.className.replace(/\bis-stop\b/g, 'is-running');document.getElementById("loaded").remove()}}setTimeout(vueReady, 2000);</script>
     </body>
 </html>
