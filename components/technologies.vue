@@ -89,12 +89,13 @@
         position: relative;
         margin: auto;
         padding: 240px 0;
+        overflow: hidden;
     }
 
     .technology--wrapper:before{
         content: '';
         position: absolute;
-        left: 0;
+        left: 50%;
         right: 0;
         top: 0;
         height: 1020px;
@@ -104,6 +105,7 @@
         border-width: 8px;
         border-color:  rgb(197,217,45);
         border-style: solid;
+        transform: translate(-50%,0);
     }
 
     .technology--description{

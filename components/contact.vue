@@ -1,5 +1,5 @@
 <template>
-    <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="contact">
+    <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="contact d-none d-lg-flex">
         <form id="contact-form" class="container" name="contact" action="">
             <div class="row align-items-center justify-content-center">
                 <div class="col-3">
