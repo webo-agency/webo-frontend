@@ -54,7 +54,7 @@
 
         </div>
         <div class="copyright">
-            <div class="shortcut"><a class="link" href="#">hello@webo.agency</a> <span class="text-primary my-3 my-md-auto">;)</span> <a class="link" href="#">+48 22 39 06 234</a></div>
+            <div class="shortcut"><a class="link" href="#">hello@webo.agency</a> <span class="link text-primary d-none d-sm-block mx-sm-3">;)</span> <a class="link" href="#">+48 22 39 06 234</a></div>
             <div class="note">webo © {{ new Date().getFullYear() }}</div>
         </div>
     </component>
@@ -69,6 +69,17 @@
 <style lang="scss" scoped>
     .footer{
         text-align: center;
+    }
+
+    .links{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+
+        @media(min-width: 191px){
+            flex-direction: row;
+        }
     }
 
     .menu{
@@ -95,9 +106,10 @@
     .link{
         font-size: 12px;
         word-break: break-all;
+        margin-bottom: 15px;
 
         @media(min-width: 191px){
-
+            margin-bottom: 20px;
         }
 
         @media(min-width: 320px){
@@ -122,12 +134,24 @@
         font-size: 12px;
         word-break: break-word;
         padding: 0 5px;
+        width: 100%;
 
         @media(min-width: 320px){
             word-break: normal;
             font-size: 16px;
             margin-left: 15px;
             margin-right: 15px;
+            padding: 0;
+        }
+
+        @media(min-width: 480px){
+            width: auto;
+        }
+
+        @media(min-width: 700px){
+            order: 2;
+            margin-left: 20px;
+            margin-right: 20px;
         }
     }
 
@@ -135,32 +159,43 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
-        max-width: 200px;
-        margin: auto;
+        justify-content: center;
+        margin: auto auto 20px;
+        width: 100%;
+        order: 1;
 
         @media(min-width: 191px){
             flex-direction: row;
             margin-bottom: 0;
         }
-    }
 
-    .social{
-        order: 1;
+        @media(min-width: 700px){
+            width: auto;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
     }
 
     .fb,
     .bh,
     .in{
-        margin: 0 auto;
+        padding: 0 15px;
 
         .link{
             display: block;
-            margin-bottom: 20px;
+            margin-top: 10px;
+            margin-bottom: 10px;
 
             @media(min-width: 191px){
+                /*margin-top: auto;*/
+                /*margin-bottom: auto;*/
+            }
+
+            @media(min-width: 700px){
                 padding-top: 20px;
                 padding-bottom: 20px;
+                margin-top: 0;
+                margin-bottom: 0;
             }
         }
     }
@@ -180,10 +215,12 @@
     .shortcut{
         display: flex;
         flex-direction: column;
-        margin: 0 0 15px;
 
-        @media(min-width: 191px){
-            margin-bottom: 18px;
+        @media(min-width: 700px){
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
         }
     }
 
@@ -192,8 +229,7 @@
         word-break: break-word;
         margin: 0 0 15px;
 
-        @media(min-width: 320px){
-            margin-top: 20px;
+        @media(min-width: 700px){
             padding-left: 10px;
         }
     }

@@ -4,9 +4,9 @@
     <cAdvantages mainTag="section" mainClass="section d-none d-md-flex" mainId="advantages"></cAdvantages>
     <cWork mainTag="section" mainClass="sectio d-none d-md-flexn" mainId="work"></cWork>
     <cTeam mainTag="section" mainClass="section d-none d-md-flex" mainId="team"></cTeam>
-    <cTechnologies mainTag="section" mainClass="section d-none d-md-flex" mainId="technologies"></cTechnologies>
+    <cTechnologies mainTag="section" mainClass="section d-none" mainId="technologies"></cTechnologies>
     <cPortfolio mainTag="section" mainClass="section d-none d-md-flex" mainId="portfolio"></cPortfolio>
-    <cPartners mainTag="section" mainClass="section d-none d-md-flex" mainId="partners"></cPartners>
+    <cPartners mainTag="section" mainClass="section d-none" mainId="partners"></cPartners>
     <cContact mainTag="section" mainClass="section d-none d-md-flex" mainId="contact"></cContact>
   </div>
 </template>

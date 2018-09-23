@@ -186,6 +186,7 @@
 
         @media (min-width: 191px) {
             flex-direction: row;
+            flex-grow: 0;
         }
 
         @media (min-width: 360px) {
@@ -203,7 +204,7 @@
         border: 0;
         text-transform: uppercase;
         font-size: 12px;
-        padding: 0 0 5px;
+        padding: 5px 0 5px;
 
         @media (min-width: 191px) {
             padding: 0 15px;
@@ -223,6 +224,13 @@
         word-break: break-all;
         height: 0;
         max-height: 999px;
+
+        &.is-active{
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            transition: 0.3s;
+        }
 
         @media (min-width: 191px) {
             position: absolute;
@@ -263,13 +271,6 @@
         @media (min-width: 1190px) {
             padding-left: 35px;
             padding-right: 35px;
-        }
-
-        &.is-active{
-            visibility: visible;
-            opacity: 1;
-            height: auto;
-            transition: 0.3s;
         }
     }
 
