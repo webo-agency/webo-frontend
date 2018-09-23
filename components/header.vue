@@ -16,7 +16,7 @@
                     <path fill="#2f2d2c" d="M23.35-.003H0V3.11h23.35zM23.344 6.44H7.777v3.114h15.567zM23.355 12.884h-7.783v3.113h7.783z"/>
                 </svg>
 
-                <button class="menu--button d-hg-none" v-on:click="showMenu" v-on:touch="showMenu">
+                <button class="button d-hg-none" v-on:click="showMenu" v-on:touch="showMenu">
                     Menu
                 </button>
 
@@ -92,7 +92,7 @@
         }
     }
 
-    .header .homepage{
+    .homepage{
         display: block;
         text-align: center;
         margin: auto;
@@ -165,8 +165,8 @@
         }
     }
 
-    .header .icon-end,
-    .header .icon-start{
+    .icon-end,
+    .icon-start{
         display: none;
         margin: 15px 0;
 
@@ -180,7 +180,7 @@
         }
     }
 
-    .header .menu{
+    .menu{
         flex-direction: column;
         flex-grow: 0;
 
@@ -198,7 +198,7 @@
         }
     }
 
-    .header .menu--button{
+    .button{
         text-transform: uppercase;
         font-size: 12px;
         padding: 0 0 5px;
@@ -209,7 +209,7 @@
         }
     }
 
-    .header .links{
+    .links{
         display: flex;
         z-index: 2000;
         background: #fff;
