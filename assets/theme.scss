@@ -1012,14 +1012,28 @@ a.no-decoration:first-letter{
 
 p{
   font-size: 29px;
+  max-width: 100%;
+  word-break: break-word;
+
+  @media (min-width: 191px) {
+    word-break: normal;
+  }
 }
 
 .btn{
-  padding-left: 15px;
-  padding-right: 15px;
-  font-size: 29px;
+  padding: 5px;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  overflow: hidden;
+
+  @media(min-width: 191px){
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 
   @media(min-width: 992px){
+    font-size: 29px;
     padding-left: 35px;
     padding-right: 35px;
   }
@@ -1040,7 +1054,10 @@ p{
   position: relative;
   display: inline-block;
   margin: auto;
-  padding-bottom: 20px;
+
+  @media (min-width: 1024px) {
+    padding-bottom: 20px;
+  }
 
   &:before{
     content: '';
@@ -1048,10 +1065,18 @@ p{
     width: 20px;
     height: 20px;
     background: map-get($theme-colors, "primary");
-    left: 4px;
-    bottom: 12px;
+    left: 0.063em;
+    bottom: 4px;
     border-radius: 0 0 $radius*20*1px 0;
     transform: translate(-100%, 0);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+
+    @media (min-width: 1024px) {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 }
 

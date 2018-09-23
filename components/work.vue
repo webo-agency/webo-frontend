@@ -1,6 +1,6 @@
 <template>
     <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="work">
-        <div class="work--outer">
+        <div class="work--outer flex-grow-1">
             <div class="work--inner">
                 <div class="work--wrapper">
                     <div class="container">
@@ -54,10 +54,7 @@
 <script>
   export default {
     name: 'cWork',
-    props: ['mainTag','mainClass','mainId'],
-    mounted() {
-      //
-    }
+    props: ['mainTag','mainClass','mainId']
   }
 </script>
 

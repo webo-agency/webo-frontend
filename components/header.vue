@@ -1,5 +1,5 @@
 <template>
-    <component v-bind:is="mainTag" class="header bg-white">
+    <component v-bind:is="mainTag" v-bind:class="mainClass" class="header bg-white">
         <div class="container d-flex flex-row flex-wrap justify-content-between">
             <nuxt-link class="homepage mx-xs-auto py-xs-0 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink-1" to="/">
                 <svg class="logo" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" clip-rule="evenodd" width="167" height="50">
@@ -16,28 +16,13 @@
                     <path fill="#2f2d2c" d="M23.35-.003H0V3.11h23.35zM23.344 6.44H7.777v3.114h15.567zM23.355 12.884h-7.783v3.113h7.783z"/>
                 </svg>
 
-                <button class="button d-hg-none" v-on:click="showMenu" v-on:touch="showMenu">
+                <button v-if="sections.length > 0" class="button d-hg-none" v-on:click="showMenu" v-on:touch="showMenu">
                     Menu
                 </button>
 
-                <scrollactive v-bind:class="{'is-active': menuVisible }" class="links list-inline justify-content-between align-items-stretch" :offset="152">
-                    <nuxt-link class="link scrollactive-item" to="/#work">
-                        About
-                    </nuxt-link>
-                    <nuxt-link class="link scrollactive-item" to="/#team">
-                        Meet Us
-                    </nuxt-link>
-                    <nuxt-link class="link scrollactive-item" to="/#technologies">
-                        Tech
-                    </nuxt-link>
-                    <nuxt-link class="link scrollactive-item" to="/#portfolio">
-                        Portfolio
-                    </nuxt-link>
-                    <nuxt-link class="link scrollactive-item" to="/#partners">
-                        Partners
-                    </nuxt-link>
-                    <nuxt-link class="link scrollactive-item" to="/#contact">
-                        SAY Hello!
+                <scrollactive v-if="sections.length > 0" v-bind:class="{'is-active': menuVisible }" class="links list-inline justify-content-between align-items-stretch" :offset="152">
+                    <nuxt-link v-for="(section, index) in sections" :key="`fruit-${index}`" class="link scrollactive-item" :to="`/#${section.id}`">
+                        {{section.title}}
                     </nuxt-link>
                 </scrollactive>
 
@@ -52,19 +37,27 @@
 <script>
   export default {
     name: 'cHeader',
-    props: ['mainTag'],
+    props: ['mainTag','mainClass'],
     methods: {
       showMenu: function(){
         this.$data.menuVisible = !this.$data.menuVisible;
-      }
-    },
-    components: {
-
+      },
     },
     data () {
       return {
-        menuVisible: false
+        menuVisible: false,
+        sections: []
       }
+    },
+    mounted() {
+      this.$root.$on('section', data => {
+        if ( !( data.id in this.sections ) ) {
+          this.sections.push(data);
+        }
+      });
+    },
+    beforeDestroy: function () {
+      this.sections = [];
     }
   }
 </script>
@@ -168,7 +161,7 @@
     .icon-end,
     .icon-start{
         display: none;
-        margin: 15px 0;
+        margin: 15px 5px;
 
         @media (min-width: 191px) {
            display: block;
@@ -207,7 +200,7 @@
         padding: 5px 0 5px;
 
         @media (min-width: 191px) {
-            padding: 0 15px;
+            padding: 0 10px;
             font-size: 19px;
         }
     }

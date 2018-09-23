@@ -70,6 +70,13 @@
     },
     mounted: function () {
       this.slideChangeEvent();
+
+      this.$root.$emit(
+        'section', {
+          'id': this.mainId,
+          'title': 'Tech'
+        }
+      );
     },
     methods: {
       slideChangeEvent(){

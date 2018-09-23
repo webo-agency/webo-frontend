@@ -46,7 +46,14 @@
   export default {
     name: 'cContact',
     props: ['mainTag','mainClass','mainId'],
-    mounted: () => {
+    mounted() {
+        this.$root.$emit(
+          'section', {
+            'id': this.mainId,
+            'title': 'SAY Hello!'
+          }
+        );
+
       $("#contact-form").submit(function(e) {
         e.preventDefault();
 

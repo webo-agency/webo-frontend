@@ -1,10 +1,10 @@
 <template>
     <div class="body">
-        <cHeader mainTag="header"></cHeader>
-        <main>
+        <cHeader mainClass="top" mainTag="header"></cHeader>
+        <main class="main">
             <nuxt />
         </main>
-        <cFooter mainTag="footer"></cFooter>
+        <cFooter mainClass="bottom" mainTag="footer"></cFooter>
     </div>
 </template>
 
@@ -21,6 +21,25 @@
   }
 </script>
 
+<style lang="scss" scoped>
+    .body{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .top,
+    .bottom{
+        flex: 0 0 auto;
+    }
+
+    .main{
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        flex: 1 1 auto;
+    }
+</style>
 <style lang="scss">
     .rocketchat-widget{
         position: sticky!important;

@@ -2,7 +2,7 @@
     <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="advantages">
         <div class="container">
             <div class="row">
-                <div class="col-4">
+                <div class="col-12 col-hg-4">
                     <div class="advantages--tabs row">
                         <span class="col h-100 d-flex align-center">
                             <img class="img-fluid advantages--img" src="~/assets/tarcza-normal.svg" height="89" />
@@ -31,10 +31,7 @@
 <script>
   export default {
     name: 'cAdvantages',
-    props: ['mainTag','mainClass','mainId'],
-    mounted() {
-      //
-    }
+    props: ['mainTag','mainClass','mainId']
   }
 </script>
 

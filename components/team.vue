@@ -47,7 +47,12 @@
     name: 'cTeam',
     props: ['mainTag','mainClass','mainId'],
     mounted() {
-      //
+      this.$root.$emit(
+        'section', {
+          'id': this.mainId,
+          'title': 'Meet Us'
+        }
+      );
     }
   }
 </script>

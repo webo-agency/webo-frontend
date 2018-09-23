@@ -1,5 +1,5 @@
 <template>
-    <component v-bind:is="mainTag" class="footer">
+    <component v-bind:is="mainTag" v-bind:class="mainClass" class="footer">
         <div class="container links justify-content-center justify-content-sm-between">
 
             <ul class="menu list-unstyled row">
@@ -62,7 +62,7 @@
 <script>
   export default {
     name: 'cFooter',
-    props: ['mainTag']
+    props: ['mainTag','mainClass']
   }
 </script>
 
@@ -179,16 +179,15 @@
     .fb,
     .bh,
     .in{
-        padding: 0 15px;
 
         .link{
             display: block;
             margin-top: 10px;
             margin-bottom: 10px;
+            padding: 0 5px;
 
             @media(min-width: 191px){
-                /*margin-top: auto;*/
-                /*margin-bottom: auto;*/
+                padding: 0 15px;
             }
 
             @media(min-width: 700px){
