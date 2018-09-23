@@ -1,6 +1,6 @@
 <template>
     <div class="body">
-        <cHeader class="header" mainTag="header"></cHeader>
+        <cHeader mainTag="header"></cHeader>
         <main>
             <nuxt />
         </main>

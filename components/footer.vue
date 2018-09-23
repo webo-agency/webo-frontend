@@ -2,30 +2,32 @@
     <component v-bind:is="mainTag" class="footer">
         <div class="container links justify-content-center justify-content-sm-between">
 
-            <ul class="list-unstyled row flex-grow-1">
+            <ul class="menu list-unstyled row flex-grow-1">
                 <li class="col-auto">
-                    <nuxt-link class="logo" to="/">
+                    <nuxt-link class="link" to="/">
                         Contact
                     </nuxt-link>
                 </li>
-                <li class="col-auto">
+                <li class="separator col-auto">
                     |
                 </li>
                 <li class="col-auto">
-                    <nuxt-link class="logo" to="/">
+                    <nuxt-link class="link" to="/">
                         Privacy
                     </nuxt-link>
                 </li>
-                <li class="col-auto">
+                <li class="separator col-auto">
                     |
                 </li>
                 <li class="col-auto">
-                    <nuxt-link class="logo" to="/">
+                    <nuxt-link class="link" to="/">
                         Status
                     </nuxt-link>
                 </li>
             </ul>
-            <address>ul. Elsnera 1/7, 44-100 Gliwice</address>
+
+            <address class="address">ul. Elsnera 1/7, 44-100 Gliwice</address>
+
             <ul class="social list-unstyled row mx-4 mx-md-0 flex-grow-1 flex-md-grow-0">
                 <li class="col-auto">
                     <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" clip-rule="evenodd" width="24" height="16">
@@ -47,9 +49,10 @@
                     </a>
                 </li>
             </ul>
+
         </div>
         <div class="copyright">
-            <div class="shortcut"><a href="#">hello@webo.agency</a> <span class="text-primary">;)</span> <a href="#">+48 22 39 06 234</a></div>
+            <div class="shortcut"><a class="link" href="#">hello@webo.agency</a> <span class="text-primary my-3 my-md-auto">;)</span> <a class="link" href="#">+48 22 39 06 234</a></div>
             <div class="note">webo © {{ new Date().getFullYear() }}</div>
         </div>
     </component>
@@ -66,49 +69,66 @@
         text-align: center;
     }
 
-    // First bar
-    .footer .logo{
-        width: 100%;
-        order: 0;
-        padding-top: 20px;
-        padding-bottom: 20px;
-
-       /* @include media-breakpoint-up('md'){
-            order: 2;
-            width: auto;
-        }*/
-    }
-
-    .footer .links{
+    .menu{
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        margin-bottom: 15px;
+
+        @media(min-width: 320px){
+            flex-direction: row;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     }
 
-    .footer .social,
-    .footer .info{
-        display: flex;
+    .link{
+        font-size: 12px;
+        word-break: break-all;
+
+        @media(min-width: 320px){
+            word-break: normal;
+            font-size: 16px;
+        }
+    }
+
+    .separator{
+        transform: rotate(90deg);
+        transform-origin: center center;
+    }
+
+    .address{
+        margin-bottom: 15px;
+        font-size: 12px;
+        word-break: break-word;
+        padding: 0 15px 15px;
+
+        @media(min-width: 320px){
+            word-break: normal;
+            font-size: 16px;
+        }
+    }
+
+    .social{
+        display: none;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         margin-bottom: 0;
+
+        @media(min-width: 191px){
+            display: flex;
+        }
     }
 
-    .footer .social{
+    .social{
         order: 1;
     }
 
-    .footer .info{
-        order: 3;
-    }
-
-    .footer .social .bh,
-    .footer .social .fb,
-    .footer .info .contact{
+    .social .bh,
+    .social .fb{
         padding-top: 20px;
         padding-bottom: 20px;
     }
@@ -116,17 +136,33 @@
 
     // Second bar
 
-    .footer .copyright{
-        padding: 13px;
+    .copyright{
+        margin: 0;
         color: #000;
+
+        @media(min-width: 191px){
+            padding: 13px;
+        }
     }
 
-    .footer .shortcut{
-        margin-bottom: 18px;
+    .shortcut{
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 15px;
+
+        @media(min-width: 191px){
+            margin-bottom: 18px;
+        }
     }
 
-    .footer .copyright .note{
-        margin-top: 20px;
-        padding-left: 10px;
+    .note{
+        font-size: 12px;
+        word-break: break-word;
+        margin: 0 0 15px;
+
+        @media(min-width: 191px){
+            margin-top: 20px;
+            padding-left: 10px;
+        }
     }
 </style>
