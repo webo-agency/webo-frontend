@@ -182,7 +182,7 @@
 
     .menu{
         flex-direction: column;
-        flex-grow: 0;
+        flex-grow: 1;
 
         @media (min-width: 191px) {
             flex-direction: row;
@@ -199,6 +199,8 @@
     }
 
     .button{
+        background: transparent;
+        border: 0;
         text-transform: uppercase;
         font-size: 12px;
         padding: 0 0 5px;
@@ -230,12 +232,23 @@
             bottom: auto;
             padding: 0;
             word-break: normal;
+
+            &.is-active {
+                overflow: auto;
+                height: calc(100vh - 108px);
+            }
         }
 
         @media (min-width: 360px) {
             position: fixed;
             top: 80px;
             height: auto;
+
+            &.is-active {
+                overflow: auto;
+                bottom: 0;
+                height: auto;
+            }
         }
 
         @media (min-width: 1024px) {

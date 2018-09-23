@@ -21,6 +21,27 @@
   }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+    .rocketchat-widget{
+        position: sticky!important;
+        width: 100%;
+        height: 350px;
+        bottom: 0px;
+        right: 0px;
+        z-index: 100!important;
+        left: 0px;
+        overflow: hidden;
 
+
+        @media (min-width: 191px) {
+            position: fixed!important;
+            width: 100%;
+            height: 350px;
+            bottom: 0px;
+            right: 0px;
+            z-index: 12345;
+            left: 0px;
+            overflow: hidden;
+        }
+    }
 </style>
