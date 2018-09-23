@@ -1,7 +1,7 @@
 <template>
     <component v-bind:is="mainTag" class="header sticky-top bg-white">
         <div class="container d-flex flex-row flex-wrap justify-content-between">
-            <nuxt-link class="homepage mx-xs-auto py-xs-0 w-xs-auto nuxt-link-active flex-grow-1 flex-shrink-1" to="/">
+            <nuxt-link class="homepage mx-xs-auto py-xs-0 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink-1" to="/">
                 <svg class="logo" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" clip-rule="evenodd" width="167" height="50">
                     <title>webo</title>
                     <path class="letter" fill="#16ab86" d="M28.127 50h-1.322v-3.364c3.987-.173 7.171-3.466 7.177-7.51V13.198h3.34l.005 27.602c0 5.078-4.121 9.201-9.2 9.201zM3.347 13.197v25.93c.005 4.043 3.189 7.336 7.174 7.51L9.201 50C4.122 50 0 45.877 0 40.8l.006-27.603h3.34zM18.663 50H9.201l1.32-3.364h4.798l-.002-11.695h3.34l.007 15.06z"/>
@@ -11,16 +11,16 @@
                 </svg>
             </nuxt-link>
 
-            <div class="menu d-flex flex-row justify-content-between align-items-stretch m-auto">
+            <div class="menu d-flex justify-content-between align-items-stretch m-auto">
                 <svg class="icon-end" width="24px" height="16px" xmlns="http://www.w3.org/2000/svg">
                     <path fill="#2f2d2c" d="M23.35-.003H0V3.11h23.35zM23.344 6.44H7.777v3.114h15.567zM23.355 12.884h-7.783v3.113h7.783z"/>
                 </svg>
 
-                <button class="menu--button d-lg-none">
+                <button class="menu--button d-hg-none" v-on:click="showMenu" v-on:touch="showMenu">
                     Menu
                 </button>
 
-                <scrollactive class="links list-inline d-none d-lg-flex flex-row justify-content-between align-items-stretch flex-grow-0" :offset="152">
+                <scrollactive v-bind:class="{'is-active': menuVisible }" class="links list-inline justify-content-between align-items-stretch" :offset="152">
                     <nuxt-link class="link scrollactive-item" to="/#work">
                         About
                     </nuxt-link>
@@ -54,10 +54,17 @@
     name: 'cHeader',
     props: ['mainTag'],
     methods: {
-
+      showMenu: function(){
+        this.$data.menuVisible = !this.$data.menuVisible;
+      }
     },
     components: {
 
+    },
+    data () {
+      return {
+        menuVisible: false
+      }
     }
   }
 </script>
@@ -90,7 +97,7 @@
             margin-bottom: 15px;
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             margin-top: 42px;
             margin-bottom: 42px;
             transition: 0s;
@@ -156,14 +163,19 @@
            display: block;
         }
 
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             margin-top: 67px;
             margin-bottom: 67px;
         }
     }
 
     .header .menu{
+        flex-direction: column;
         flex-grow: 0;
+
+        @media (min-width: 191px) {
+            flex-direction: row;
+        }
 
         @media (min-width: 360px) {
             flex-grow: 1;
@@ -187,20 +199,74 @@
     }
 
     .header .links{
+        display: flex;
+        z-index: 2000;
+        background: #fff;
+        flex-direction: column;
         margin: 0;
-        padding: 0 15px;
+        visibility: hidden;
+        opacity: 0;
+        flex: 0 1 auto;
+        word-break: break-all;
+        height: 0;
+        max-height: 999px;
+
+        @media (min-width: 191px) {
+            position: absolute;
+            top: 108px;
+            left: 0;
+            right: 0;
+            bottom: auto;
+            padding: 0;
+            word-break: normal;
+        }
+
+        @media (min-width: 360px) {
+            position: fixed;
+            top: 80px;
+            height: auto;
+        }
+
+        @media (min-width: 1024px) {
+            position: relative;
+            top: auto;
+            flex-direction: row;
+            visibility: visible;
+            opacity: 1;
+            padding: 0 15px;
+        }
 
         @media (min-width: 1190px) {
             padding-left: 35px;
             padding-right: 35px;
         }
+
+        &.is-active{
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            transition: 0.3s;
+        }
     }
 
+
     .header .link{
-        font-size: 22px;
-        padding: 42px 18px;
+        flex: 1 1 auto;
         font-weight: 700;
-        margin: 18px auto auto;
         transition: all 0.3s;
+        text-align: center;
+        font-size: 10px;
+        padding: 15px 0;
+
+        @media (min-width: 191px) {
+            font-size: 22px;
+            padding: 15px 18px;
+        }
+
+        @media (min-width: 1024px) {
+            margin: 18px auto auto;
+            padding: 42px 18px;
+            transition: 0s;
+        }
     }
 </style>

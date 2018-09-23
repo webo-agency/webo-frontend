@@ -180,6 +180,7 @@ $grid-breakpoints: (
         sm: 576px,
         md: 768px,
         lg: 992px,
+        hg: 1024px,
         xl: 1200px,
         xxl: 1370px
 ) !default;
@@ -1014,9 +1015,14 @@ p{
 }
 
 .btn{
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
   font-size: 29px;
+
+  @media(min-width: 992px){
+    padding-left: 35px;
+    padding-right: 35px;
+  }
 }
 
 .btn-secondary{

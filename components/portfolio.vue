@@ -11,28 +11,28 @@
         </div>
         <div class="row">
             <div class="col-12 col-sm-6 col-lg-3">
-                <img src="https://placekitten.com/g/480/300"/>
+                <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
-                <img src="https://placekitten.com/g/480/300"/>
+                <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
-                <img src="https://placekitten.com/g/480/300"/>
+                <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
-                <img src="https://placekitten.com/g/480/300"/>
+                <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
-                <img src="https://placekitten.com/g/480/300"/>
+                <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
-                <img src="https://placekitten.com/g/480/300"/>
+                <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
-                <img src="https://placekitten.com/g/480/300"/>
+                <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
             </div>
             <div class="col-12 col-sm-6 col-lg-3">
-                <img src="https://placekitten.com/g/480/300"/>
+                <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
             </div>
         </div>
     </component>
