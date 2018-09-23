@@ -1,5 +1,5 @@
 <template>
-    <component v-bind:is="mainTag" class="header sticky-top bg-white">
+    <component v-bind:is="mainTag" class="header bg-white">
         <div class="container d-flex flex-row flex-wrap justify-content-between">
             <nuxt-link class="homepage mx-xs-auto py-xs-0 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink-1" to="/">
                 <svg class="logo" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" clip-rule="evenodd" width="167" height="50">
@@ -72,12 +72,23 @@
 
 <style lang="scss" scoped>
     .header{
+        position: relative;
+        display: none;
+        align-items: center;
+
+        @media (min-width: 50px) {
+            display: flex;
+        }
+
         @media (min-width: 320px) {
             padding: 0 15px;
         }
 
-        @media(max-width: 319px){
-            position: relative;
+        @media(min-width: 320px){
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            z-index: 1020;
         }
     }
 
