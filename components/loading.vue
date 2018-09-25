@@ -8,10 +8,11 @@
 </template>
 
 <script lang="js">
-  import Vue from 'vue'
+  import Vue from 'vue';
+
   export default {
     name: 'nuxt-loading',
-    data () {
+    data() {
       return {
         percent: 0,
         show: false,
@@ -19,14 +20,17 @@
         duration: 5000,
         height: '2px',
         color: '#b2f1c7',
-        failedColor: 'red',
-        }
+        failedColor: 'red'
+      }
     },
-    mounted: function(){
-      try{window.vueReady()}catch(e){}; //Emit call to function outside of vue
+    mounted: function () {
+      try {
+        window.vueReady()
+      } catch (e) {
+      }
     },
     methods: {
-      start () {
+      start() {
         this.show = true
         this.canSuccess = true
         if (this._timer) {
@@ -42,33 +46,33 @@
         }, 100)
         return this
       },
-      set (num) {
+      set(num) {
         this.show = true
         this.canSuccess = true
         this.percent = Math.floor(num)
         return this
       },
-      get () {
+      get() {
         return Math.floor(this.percent)
       },
-      increase (num) {
+      increase(num) {
         this.percent = this.percent + Math.floor(num)
         return this
       },
-      decrease (num) {
+      decrease(num) {
         this.percent = this.percent - Math.floor(num)
         return this
       },
-      finish () {
+      finish() {
         this.percent = 100;
         this.hide();
         return this
       },
-      pause () {
+      pause() {
         clearInterval(this._timer)
         return this
       },
-      hide () {
+      hide() {
         clearInterval(this._timer)
         this._timer = null
         setTimeout(() => {
@@ -81,7 +85,7 @@
         }, 500)
         return this
       },
-      fail () {
+      fail() {
         this.canSuccess = false
         return this
       }
@@ -99,7 +103,7 @@
         width: 0%;
         transition: width 0.2s, opacity 0.4s;
         opacity: 1;
-        background-color: #efc14e;
+        background-color: #EFC14E;
         z-index: 999999;
     }
 </style>

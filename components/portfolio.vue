@@ -42,7 +42,11 @@
 <script>
   export default {
     name: 'cPortfolio',
-    props: ['mainTag','mainClass','mainId'],
+    props: [
+      'mainTag',
+      'mainClass',
+      'mainId'
+    ],
     mounted() {
       this.$root.$emit(
         'section', {

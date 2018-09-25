@@ -44,7 +44,11 @@
 <script>
   export default {
     name: 'cTechnologies',
-    props: ['mainTag','mainClass','mainId'],
+    props: [
+      'mainTag',
+      'mainClass',
+      'mainId'
+    ],
     data() {
       return {
         technologyDescription: "",
@@ -79,7 +83,7 @@
       );
     },
     methods: {
-      slideChangeEvent(){
+      slideChangeEvent() {
         this.technologyDescription = this.technologyArray[this.technologyCarousel.realIndex];
       }
     }

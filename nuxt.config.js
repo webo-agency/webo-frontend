@@ -178,15 +178,36 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    extend (config, { isDev }) {
-      if (isDev && process.client) {
+    extend (config, { isDev, isClient }) {
+      if (isDev) {
         config.module.rules.push({
-          enforce: 'pre',
+          enforce: "pre",
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+          loader: "eslint-loader",
           exclude: /(node_modules)/
-        })
+        });
       }
+
+      config.module.rules.forEach((rule) => {
+        if (rule.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/') {
+            rule.oneOf = [
+            {
+              loader: 'vue-svg-loader',
+              resourceQuery: /\?inline/i,
+              options: {
+                svgo: {
+                  plugins: [
+                    { removeDoctype: true },
+                    { removeComments: true },
+                    { prefixIds: true },
+                  ],
+                },
+              },
+            }
+          ].concat(rule.use);
+          delete rule.use;
+        }
+      });
     }
   },
   /*

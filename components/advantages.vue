@@ -31,7 +31,11 @@
 <script>
   export default {
     name: 'cAdvantages',
-    props: ['mainTag','mainClass','mainId']
+    props: [
+      'mainTag',
+      'mainClass',
+      'mainId'
+    ]
   }
 </script>
 
@@ -45,8 +49,6 @@
     .advantages--tabs{
         align-items: center;
         height: 100%;
-        margin-left: -30px;
-        margin-right: -30px;
     }
 
     .advantages--img{
@@ -55,8 +57,8 @@
         margin: auto;
         height: 100%;
         max-height: 125px;
-        margin-left: 30px;
-        margin-right: 30px;
+        padding-left: 30px;
+        padding-right: 30px;
         transition: 0.3s;
 
         &:hover{
@@ -69,6 +71,8 @@
         top: 0;
         bottom: 0;
         left: 0;
+        right: 0;
+        margin: auto;
         visibility: hidden;
         opacity: 0;
         transition: 0.3s;

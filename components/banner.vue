@@ -23,7 +23,11 @@
 <script>
   export default {
     name: 'cBanner',
-    props: ['mainTag','mainClass','mainId'],
+    props: [
+      'mainTag',
+      'mainClass',
+      'mainId'
+    ],
     mounted() {
       this.$root.$emit(
         'section', {
@@ -66,8 +70,7 @@
         }
 
         @media(min-width: 1024px){
-            padding-top: 75px;
-            padding-bottom: 75px;
+            padding: 75px 0;
         }
     }
 

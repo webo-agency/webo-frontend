@@ -45,7 +45,11 @@
 <script>
   export default {
     name: 'cTeam',
-    props: ['mainTag','mainClass','mainId'],
+    props: [
+      'mainTag',
+      'mainClass',
+      'mainId'
+    ],
     mounted() {
       this.$root.$emit(
         'section', {

@@ -54,7 +54,11 @@
 <script>
   export default {
     name: 'cWork',
-    props: ['mainTag','mainClass','mainId']
+    props: [
+      'mainTag',
+      'mainClass',
+      'mainId'
+    ]
   }
 </script>
 
@@ -65,12 +69,12 @@
     }
 
     .work--outer{
-        background-image: url("/assets/cloud-one.svg");
+        background-image: url("~assets/cloud-one.svg");
         background-position: 0 0;
     }
 
     .work--inner{
-        background-image: url("/assets/cloud-two.svg");
+        background-image: url("~assets/cloud-two.svg");
         background-position: 100% 100%;
     }
 

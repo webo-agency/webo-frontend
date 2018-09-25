@@ -32,12 +32,16 @@
 <script>
   export default {
     name: 'cPartners',
-    props: ['mainTag','mainClass','mainId'],
+    props: [
+      'mainTag',
+      'mainClass',
+      'mainId'
+    ],
     methods: {
       slideChange() {
         console.log('jea');
         return true;
-      },
+      }
     },
     data() {
       return {
