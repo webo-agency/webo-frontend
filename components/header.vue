@@ -1,7 +1,7 @@
 <template>
-    <component v-bind:is="mainTag" v-bind:class="mainClass" class="header bg-white">
+    <component v-bind:is="mainTag" v-bind:class="{mainClass, 'is-top': isTop, 'is-scroll-down': isGoingUp}" class="header bg-white">
         <div class="container d-flex flex-row flex-wrap justify-content-between">
-            <nuxt-link class="homepage mx-xs-auto py-xs-0 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink-1" to="/">
+            <nuxt-link v-bind:class="{'is-top': !isTop}" class="homepage mx-xs-auto py-xs-0 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink-1" to="/">
                 <svg class="logo" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round"
                      stroke-miterlimit="1.414" clip-rule="evenodd" width="167" height="50">
                     <title>webo</title>
@@ -25,7 +25,7 @@
 
                 <scrollactive v-if="sections.length > 0" v-bind:class="{'is-active': menuVisible }"
                               class="links list-inline justify-content-between align-items-stretch" :offset="152">
-                    <nuxt-link v-for="(section, index) in sections" :key="`fruit-${index}`"
+                    <nuxt-link v-for="(section, index) in sections" :key="`fruit-${index}`" v-bind:class="{'is-top': !isTop}"
                                class="link scrollactive-item" :to="`/#${section.id}`">
                         {{section.title}}
                     </nuxt-link>
@@ -54,15 +54,25 @@
     methods: {
       showMenu: function () {
         this.$data.menuVisible = !this.$data.menuVisible;
+      },
+      onScroll (e) {
+        this.isTop = !(window.scrollY > 0);
+        this.isGoingUp = (window.scrollY > this._scrollPosition);
+        this._scrollPosition = window.scrollY;
       }
     },
     data() {
       return {
+        isTop: true,
+        isGoingUp: false,
         menuVisible: false,
-        sections: []
+        sections: [],
+        _scrollPosition: 0
       }
     },
     mounted() {
+      window.addEventListener('scroll', this.onScroll, { passive: true });
+
       this.$root.$on('section', data => {
         if (!(data.id in this.sections)) {
           this.sections.push(data);
@@ -71,6 +81,7 @@
     },
     beforeDestroy: function () {
       this.sections = [];
+      window.removeEventListener('scroll', this.onScroll, { passive: true });
     }
   }
 </script>
@@ -80,6 +91,7 @@
         position: relative;
         display: none;
         align-items: center;
+        transition: 0.3s;
 
         @media (min-width: 50px) {
             display: flex;
@@ -94,6 +106,21 @@
             position: sticky;
             top: 0;
             z-index: 1020;
+        }
+
+        &.is-scroll-down:not(.is-top):not(:hover):not(:focus){
+            animation: 0.5s hideWhenScroll 2s;
+            animation-fill-mode: both;
+        }
+    }
+
+    @keyframes hideWhenScroll {
+        from {
+            transform: translate(0, 0);
+        }
+
+        to {
+            transform: translate(0, -100%);
         }
     }
 
@@ -117,6 +144,12 @@
             margin-top: 42px;
             margin-bottom: 42px;
             transition: 0s;
+        }
+
+        &.is-top{
+            transition: all 0.3s 0.5s;
+            margin-top: 15px;
+            margin-bottom: 15px;
         }
     }
 
@@ -284,7 +317,7 @@
         }
     }
 
-    .header .link {
+    .link {
         flex: 1 1 auto;
         font-weight: 700;
         transition: all 0.3s;
@@ -301,6 +334,14 @@
             /*margin: 18px auto auto;*/
             padding: 42px 18px;
             transition: 0s;
+        }
+
+        &.is-top{
+            @media (min-width: 1024px) {
+                transition: all 0.3s;
+                padding: 24px 18px 23px;
+                margin: auto;
+            }
         }
     }
 </style>
