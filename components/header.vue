@@ -16,7 +16,7 @@
                 </svg>
             </nuxt-link>
 
-            <div class="menu d-flex justify-content-between align-items-stretch m-auto">
+            <div class="menu d-flex justify-content-between align-items-stretch m-auto m-hg-0">
                 <svgMeteorEnd class="icon-start" width="24px" height="16px"/>
 
                 <button v-if="sections.length > 0" class="button d-hg-none" v-on:click="showMenu" v-on:touch="showMenu">
@@ -24,7 +24,7 @@
                 </button>
 
                 <scrollactive v-if="sections.length > 0" v-bind:class="{'is-active': menuVisible }"
-                              class="links list-inline justify-content-between align-items-stretch" :offset="152">
+                              class="links list-inline justify-content-between align-items-stretch" :offset="80">
                     <nuxt-link v-for="(section, index) in sections" :key="`fruit-${index}`" v-bind:class="{'is-top': !isTop}"
                                class="link scrollactive-item" :to="`/#${section.id}`">
                         {{section.title}}
@@ -148,8 +148,8 @@
 
         &.is-top{
             transition: all 0.3s 0.5s;
-            margin-top: 15px;
-            margin-bottom: 15px;
+            margin-top: 12px;
+            margin-bottom: 18px;
         }
     }
 
@@ -311,13 +311,16 @@
             padding: 0 15px;
         }
 
-        @media (min-width: 1190px) {
-            padding-left: 35px;
-            padding-right: 35px;
-        }
+        /*@media (min-width: 1190px) {*/
+            /*padding-left: 35px;*/
+            /*padding-right: 35px;*/
+        /*}*/
     }
 
     .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex: 1 1 auto;
         font-weight: 700;
         transition: all 0.3s;
@@ -334,12 +337,13 @@
             /*margin: 18px auto auto;*/
             padding: 42px 18px;
             transition: 0s;
+            height: 100%;
         }
 
         &.is-top{
             @media (min-width: 1024px) {
                 transition: all 0.3s;
-                padding: 24px 18px 23px;
+                padding: 0 18px;
                 margin: auto;
             }
         }
