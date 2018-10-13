@@ -250,11 +250,11 @@ $font-family-base:            $font-family-sans-serif !default;
 //$font-size-lg:                ($font-size-base * 1.25) !default;
 //$font-size-sm:                ($font-size-base * .875) !default;
 //
-//$font-weight-light:           300 !default;
-//$font-weight-normal:          400 !default;
-//$font-weight-bold:            700 !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
 //
-//$font-weight-base:            $font-weight-normal !default;
+$font-weight-base:            300 !default;
 //$line-height-base:            1.5 !default;
 
 $h1-font-size:                50px;
@@ -266,7 +266,7 @@ $h1-font-size:                50px;
 
 //$headings-margin-bottom:      ($spacer / 2) !default;
 //$headings-font-family:        inherit !default;
-//$headings-font-weight:        500 !default;
+$headings-font-weight:        700 !default;
 //$headings-line-height:        1.2 !default;
 //$headings-color:              inherit !default;
 //
