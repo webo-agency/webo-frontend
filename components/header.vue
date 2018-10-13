@@ -98,7 +98,7 @@
         }
 
         @media (min-width: 320px) {
-            padding: 0 15px;
+            padding: 0 15px 0 23px;
         }
 
         @media(min-width: 320px) {
@@ -106,6 +106,10 @@
             position: sticky;
             top: 0;
             z-index: 1020;
+        }
+
+        @media(min-width: 1024px) {
+            padding: 0 30px 0 23px;
         }
 
         &.is-scroll-down:not(.is-top):not(:hover):not(:focus){
@@ -245,13 +249,13 @@
     .button {
         background: transparent;
         border: 0;
-        text-transform: uppercase;
         font-size: 12px;
         padding: 5px 0 5px;
+        font-weight: 700;
 
         @media (min-width: 191px) {
             padding: 0 10px;
-            font-size: 19px;
+            font-size: 16px;
         }
     }
 
