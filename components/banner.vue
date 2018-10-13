@@ -84,7 +84,7 @@
         text-align: left;
         margin-left: 0;
         margin-right: auto;
-        font-size: 16px;
+        font-size: 40px;
         word-break: break-word;
         padding-bottom: 10px;
 
@@ -102,7 +102,7 @@
     }
 
     .banner--paragraph{
-        font-size: 12px;
+        font-size: 13px;
         margin-bottom: 15px;
 
         @media(min-width: 992px){

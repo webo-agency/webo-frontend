@@ -1,12 +1,12 @@
 <template>
   <div class="page index">
     <cBanner mainTag="section" mainClass="section" mainId="banner"></cBanner>
-    <cAdvantages mainTag="section" mainClass="section" mainId="advantages"></cAdvantages>
-    <cWork mainTag="section" mainClass="sectio" mainId="work"></cWork>
-    <cTeam mainTag="section" mainClass="section" mainId="team"></cTeam>
-    <cTechnologies mainTag="section" mainClass="section" mainId="technologies"></cTechnologies>
-    <cPortfolio mainTag="section" mainClass="section" mainId="portfolio"></cPortfolio>
-    <cPartners mainTag="section" mainClass="section" mainId="partners"></cPartners>
+    <!--<cAdvantages mainTag="section" mainClass="section" mainId="advantages"></cAdvantages>-->
+    <!--<cWork mainTag="section" mainClass="sectio" mainId="work"></cWork>-->
+    <!--<cTeam mainTag="section" mainClass="section" mainId="team"></cTeam>-->
+    <!--<cTechnologies mainTag="section" mainClass="section" mainId="technologies"></cTechnologies>-->
+    <!--<cPortfolio mainTag="section" mainClass="section" mainId="portfolio"></cPortfolio>-->
+    <!--<cPartners mainTag="section" mainClass="section" mainId="partners"></cPartners>-->
     <cContact mainTag="section" mainClass="section" mainId="contact"></cContact>
   </div>
 </template>
