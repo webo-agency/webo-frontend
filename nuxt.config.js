@@ -1,3 +1,4 @@
+process.noDeprecation = true;
 module.exports = {
   env: {
     baseUrl: process.env.URL || 'http://localhost:3000'

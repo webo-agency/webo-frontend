@@ -1,8 +1,8 @@
 <template>
     <component v-bind:is="mainTag" v-bind:class="{mainClass, 'is-top': isTop, 'is-scroll-down': isGoingUp}" class="header bg-white">
         <div class="container d-flex flex-row flex-wrap justify-content-between">
-            <nuxt-link v-bind:class="{'is-top': !isTop}" class="homepage mx-xs-auto py-xs-0 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink-1" to="/">
-                <svg class="logo" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round"
+            <nuxt-link v-bind:class="{'is-top': !isTop}" class="homepage py-xs-0 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink-1" to="/">
+                <svg class="logo" viewbox="0 0 167 50" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" stroke-linejoin="round"
                      stroke-miterlimit="1.414" clip-rule="evenodd" width="167" height="50">
                     <title>webo</title>
                     <path class="letter" fill="#16ab86"
@@ -16,14 +16,14 @@
                 </svg>
             </nuxt-link>
 
-            <div class="menu d-flex justify-content-between align-items-stretch m-auto m-hg-0">
+            <div class="menu d-flex justify-content-between align-items-center m-sm-auto m-hg-0">
                 <svgMeteorEnd class="icon-start" width="24px" height="16px"/>
 
                 <button v-if="sections.length > 0" class="button d-hg-none" v-on:click="showMenu" v-on:touch="showMenu">
                     Menu
                 </button>
 
-                <scrollactive v-if="sections.length > 0" v-bind:class="{'is-active': menuVisible }"
+                <scrollactive v-if="sections.length > 0" v-bind:class="{'is-active': menuVisible, 'is-top': !isTop}"
                               class="links list-inline justify-content-between align-items-stretch" :offset="80">
                     <nuxt-link v-for="(section, index) in sections" :key="`fruit-${index}`" v-bind:class="{'is-top': !isTop}"
                                class="link scrollactive-item" :to="`/#${section.id}`">
@@ -92,18 +92,17 @@
         display: none;
         align-items: center;
         transition: 0.3s;
-        padding: 0 15px;
+
+        @media (min-width: 191px) {
+            padding: 0 15px;
+        }
 
         @media (min-width: 50px) {
             display: flex;
         }
 
         @media (min-width: 280px) {
-            padding: 0 15px 0 5px;
-        }
-
-        @media (min-width: 321px) {
-            padding: 0 15px 0 23px;
+            padding: 0 15px;
         }
 
         @media(min-width: 320px) {
@@ -111,6 +110,11 @@
             position: sticky;
             top: 0;
             z-index: 1020;
+            padding: 0 7px;
+        }
+
+        @media(min-width: 360px) {
+            padding: 0 30px;
         }
 
         @media(min-width: 1024px) {
@@ -134,8 +138,9 @@
     }
 
     .homepage {
-        display: block;
+        display: flex;
         text-align: center;
+        justify-content: center;
         margin: auto;
         width: 100%;
         order: 0;
@@ -144,6 +149,11 @@
 
         @media (min-width: 280px) {
             width: auto;
+            margin: 5px 5px 5px 0;
+        }
+
+        @media (min-width: 320px) {
+            margin-left: 25px;
         }
 
         @media (min-width: 360px) {
@@ -151,6 +161,8 @@
             width: auto;
             margin-top: 15px;
             margin-bottom: 15px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         @media (min-width: 1024px) {
@@ -160,14 +172,35 @@
         }
 
         &.is-top{
-            transition: all 0.3s 0.5s;
-            margin-top: 12px;
-            margin-bottom: 18px;
+            @media (min-width: 360px) {
+                transition: all 0.3s 0.5s;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
         }
     }
 
     .logo {
         transition: width 0.3s 0s, height 0.3s 0s;
+        width: 100%;
+
+        @media (min-width: 50px) and (max-width: 190px) {
+            height: auto;
+            width: 100%;
+            margin: auto;
+            overflow: visible;
+            transition: width 0s 0s, height 0.3s 0s, margin 0s 0s;
+        }
+
+        @media (min-width: 280px){
+            transform: scale(0.5988);
+            transform-origin: left;
+        }
+
+        @media (min-width: 360px){
+            transform: none;
+            transform-origin: center;
+        }
 
         .letter {
             visibility: visible;
@@ -191,38 +224,24 @@
             transition: translate 0s 0s, opacity 0.3s 0.6s, visibility 0.3s 0.6s;
         }
 
-        @media (min-width: 50px) and (max-width: 190px) {
-            height: 39px;
-            width: 39px;
-            margin: auto;
-            overflow: visible;
-            transition: width 0s 0s, height 0.3s 0s, margin 0s 0s;
-
-            .letter,
-            .letter:nth-child(2),
-            .letter:nth-child(3),
-            .letter:nth-child(4) {
+        .letter,
+        .letter:nth-child(2),
+        .letter:nth-child(3),
+        .letter:nth-child(4) {
+            @media (min-width: 50px) and (max-width: 190px) {
                 visibility: hidden;
                 opacity: 0;
                 transition: opacity 0s 0s, visibility 0s 0s, translate 0s 0s;
             }
+        }
 
-            .letter.symbol {
-                transform: translate(-129px, -12px);
+        .letter.symbol {
+            @media (min-width: 50px) and (max-width: 190px) {
+                transform: translate(-65px, -7px);
                 visibility: visible;
                 opacity: 1;
                 transition: translate 0s 0s, opacity 0.3s 0.6s, visibility 0.3s 0.6s;
             }
-        }
-
-        @media (min-width: 280px){
-            transform: scale(0.5988);
-            transform-origin: left;
-        }
-
-        @media (min-width: 360px){
-            transform: none;
-            transform-origin: center;
         }
     }
 
@@ -230,6 +249,7 @@
     .icon-start {
         display: none;
         margin: 15px 5px;
+        height: 18px;
 
         @media (min-width: 360px) {
             display: block;
@@ -246,17 +266,30 @@
         }
     }
 
+    .icon-start {
+        height: 16.5px;
+    }
+
     .menu {
         flex-direction: column;
         flex-grow: 1;
+        width: 100%;
+        padding: 0 5px;
 
         @media (min-width: 191px) {
             flex-direction: row;
             flex-grow: 0;
+            padding: 0;
+        }
+
+        @media (min-width: 280px) {
+            width: auto;
+            margin: 0 0 0 auto;
         }
 
         @media (min-width: 360px) {
             flex-grow: 1;
+            margin: auto;
 
             &:before {
                 content: '';
@@ -267,14 +300,26 @@
 
     .button {
         background: transparent;
-        border: 0;
-        font-size: 12px;
+        font-size: 10px;
         padding: 5px 0 5px;
         font-weight: 700;
+        -webkit-appearance: none;
+        width: 100%;
+        border-radius: 5px;
+        max-width: 169px;
+        margin: auto;
+        border: 1px solid rgba(0, 0, 0, 0.12);
 
         @media (min-width: 191px) {
-            padding: 0 10px;
+            padding: 3px 10px;
+            font-size: 12px;
+        }
+
+        @media (min-width: 360px) {
+            padding: 0 5px;
             font-size: 16px;
+            width: auto;
+            border: 0;
         }
     }
 
@@ -291,13 +336,6 @@
         height: 0;
         max-height: 99999rem;
 
-        &.is-active {
-            visibility: visible;
-            opacity: 1;
-            height: auto;
-            transition: 0.3s;
-        }
-
         @media (min-width: 191px) {
             position: absolute;
             top: 60px;
@@ -306,23 +344,12 @@
             bottom: auto;
             padding: 0;
             word-break: normal;
-
-            &.is-active {
-                overflow: auto;
-                height: calc(100vh - 60px);
-            }
         }
 
         @media (min-width: 360px) {
             position: fixed;
             top: 80px;
             height: auto;
-
-            &.is-active {
-                overflow: auto;
-                bottom: 0;
-                height: auto;
-            }
         }
 
         @media (min-width: 1024px) {
@@ -334,19 +361,64 @@
             padding: 0 15px;
         }
 
-        /*@media (min-width: 1190px) {*/
-            /*padding-left: 35px;*/
-            /*padding-right: 35px;*/
-        /*}*/
+        &.is-active {
+            visibility: visible;
+            opacity: 1;
+            height: auto;
+            transition: 0.3s;
+
+            @media (min-width: 191px) {
+                overflow: auto;
+                height: calc(100vh - 86px);
+                top: 86px;
+            }
+
+            @media (min-width: 280px) {
+                top: 60px;
+            }
+
+            @media (min-width: 320px) {
+                top: 60px;
+            }
+
+            @media (min-width: 360px) {
+                overflow: auto;
+                bottom: 0;
+                height: auto;
+                top: 80px;
+            }
+
+            @media (min-width: 1024px) {
+                top: auto;
+            }
+        }
+
+
+        &.is-active.is-top{
+            @media (min-width: 320px) {
+                top: 60px;
+            }
+
+            @media (min-width: 360px) {
+                top: 70px;
+            }
+
+            @media (min-width: 1024px) {
+                top: auto;
+            }
+        }
     }
 
     .link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         flex: 1 1 auto;
         font-weight: 700;
         transition: all 0.3s;
         text-align: center;
         font-size: 10px;
-        padding: 15px 0;
+        padding: 5px;
 
         @media (min-width: 191px) {
             font-size: 22px;
@@ -360,7 +432,6 @@
         }
 
         @media (min-width: 1024px) {
-            /*margin: 18px auto auto;*/
             padding: 42px 18px;
             transition: 0s;
             height: 100%;

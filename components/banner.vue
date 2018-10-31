@@ -58,15 +58,37 @@
         margin-bottom: 15px;
         padding-left: 5px;
         padding-right: 5px;
+        max-width: 600px;
+        margin-top: 15px;
+
+        &:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgb(22,171,134);
+            width: 100%;
+            border-radius: 10px;
+        }
 
         @media (min-width: 191px) {
             padding-bottom: 15px;
-            margin: auto auto auto 0;
+            padding-left: 15px;
+            padding-right: 15px;
+            margin-top: calc(25px + 5vh);
+            margin-bottom: calc(25px + 5vh);
+        }
+
+        @media (min-width: 320px) {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 30px;
         }
 
         @media (min-width: 360px) {
-            padding-left: 15px;
-            padding-right: 15px;
+            margin-top: calc(50px + 5vh);
+            margin-bottom: calc(50px + 5vh);
         }
 
         @media(min-width: 1024px){
@@ -84,16 +106,21 @@
         text-align: left;
         margin-left: 0;
         margin-right: auto;
-        font-size: 40px;
         word-break: break-word;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
 
-        @media (min-width: 191px) {
+        @media (min-width: 280px) {
             word-break: normal;
+        }
+
+        @media (min-width: 360px) {
+            font-size: 40px;
+            line-height: 40px;
         }
 
         @media(min-width: 992px){
             font-size: 63px;
+            line-height: normal;
         }
     }
 
@@ -102,8 +129,11 @@
     }
 
     .banner--paragraph{
-        font-size: 13px;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
+
+        @media(min-width: 360px){
+            font-size: 15px;
+        }
 
         @media(min-width: 992px){
             margin-bottom: 53px;
