@@ -1,46 +1,75 @@
 <template xmlns:v-swiper="http://www.w3.org/1999/xhtml">
-    <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="partners">
-        <div class="row">
-            <div class="col">
-                <h1 class="partners--title decoration">Partners</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eum, rerum. Ab aliquid
-                    autem dolorum, ex nulla quod
-                </p>
+  <component
+    :is="mainTag"
+    :id="mainId"
+    :class="mainClass"
+    class="partners"
+  >
+    <div class="row">
+      <div class="col">
+        <h1 class="partners--title decoration">Partners</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eum, rerum. Ab aliquid
+          autem dolorum, ex nulla quod
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <div
+          v-swiper:mySwiper="swiperOption"
+          @slideChange="slideChange"
+        >
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="~/assets/logo/zadarma.svg"
+                width="88"
+                height="26"
+                class="partners--img"
+              >
             </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <div v-swiper:mySwiper="swiperOption" @slideChange="slideChange">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <img src="~/assets/logo/zadarma.svg" width="88" height="26" class="partners--img"/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="~/assets/logo/smartmage.svg" width="86" height="26" class="partners--img"/>
-                        </div>
-                        <div class="swiper-slide">
-                            <img src="~/assets/logo/inkubatory.svg" width="104" height="26" class="partners--img"/>
-                        </div>
-                    </div>
-                    <div class="swiper-pagination d-lg-none"></div>
-                </div>
+            <div class="swiper-slide">
+              <img
+                src="~/assets/logo/smartmage.svg"
+                width="86"
+                height="26"
+                class="partners--img"
+              >
             </div>
+            <div class="swiper-slide">
+              <img
+                src="~/assets/logo/inkubatory.svg"
+                width="104"
+                height="26"
+                class="partners--img"
+              >
+            </div>
+          </div>
+          <div class="swiper-pagination d-lg-none" />
         </div>
-    </component>
+      </div>
+    </div>
+  </component>
 </template>
 <script>
   export default {
-    name: 'cPartners',
-    props: [
-      'mainTag',
-      'mainClass',
-      'mainId'
-    ],
-    methods: {
-      slideChange() {
-        console.log('jea');
-        return true;
+    name: 'CPartners',
+    props: {
+      'mainTag': {
+        type: String,
+        default: '',
+        required: false
+      },
+      'mainClass': {
+        type: String,
+        default: '',
+        required: false
+      },
+      'mainId': {
+        type: String,
+        default: '',
+        required: false
       }
     },
     data() {
@@ -71,6 +100,11 @@
           'title': 'Partners'
         }
       );
+    },
+    methods: {
+      slideChange() {
+        return true;
+      }
     }
   }
 </script>

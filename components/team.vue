@@ -1,55 +1,87 @@
 <template>
-    <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="team">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h1 class="decoration">Meet our team </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum hic ipsam
-                        laudantium. Delectus eius, quam.
-                    </p>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-auto">
-                    <a href="#" class="team--person">
-                        <h2 class="team--name">Patryk Padus</h2>
-                        <img src="~/assets/person.svg"/>
-                    </a>
-                </div>
-                <div class="col-auto">
-                    <a href="#" class="team--person">
-                        <h2 class="team--name">Aneta Węglińska</h2>
-                        <img src="~/assets/person.svg"/>
-                    </a>
-                </div>
-                <div class="col-auto">
-                    <a href="#" class="team--person">
-                        <h2 class="team--name">Izabela Rucińska</h2>
-                        <img src="~/assets/person.svg"/>
-                    </a>
-                </div>
-                <div class="col-auto">
-                    <a href="#" class="team--person">
-                        <h2 class="team--name">Aneta Węglińska</h2>
-                        <img src="~/assets/person.svg"/>
-                    </a>
-                </div>
-            </div>
-            <div class="row">
-                <a href="#" class="team--more no-decoration">Contact us →</a>
-            </div>
+  <component
+    :is="mainTag"
+    :id="mainId"
+    :class="mainClass"
+    class="team"
+  >
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="decoration">Meet our team </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum hic ipsam
+            laudantium. Delectus eius, quam.
+          </p>
         </div>
-    </component>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <a
+            href="#"
+            class="team--person"
+          >
+            <h2 class="team--name">Patryk Padus</h2>
+            <img src="~/assets/person.svg">
+          </a>
+        </div>
+        <div class="col-auto">
+          <a
+            href="#"
+            class="team--person"
+          >
+            <h2 class="team--name">Aneta Węglińska</h2>
+            <img src="~/assets/person.svg">
+          </a>
+        </div>
+        <div class="col-auto">
+          <a
+            href="#"
+            class="team--person"
+          >
+            <h2 class="team--name">Izabela Rucińska</h2>
+            <img src="~/assets/person.svg">
+          </a>
+        </div>
+        <div class="col-auto">
+          <a
+            href="#"
+            class="team--person"
+          >
+            <h2 class="team--name">Aneta Węglińska</h2>
+            <img src="~/assets/person.svg">
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <a
+          href="#"
+          class="team--more no-decoration"
+        >Contact us →</a>
+      </div>
+    </div>
+  </component>
 </template>
 <script>
   export default {
-    name: 'cTeam',
-    props: [
-      'mainTag',
-      'mainClass',
-      'mainId'
-    ],
+    name: 'CTeam',
+    props: {
+      'mainTag': {
+        type: String,
+        default: '',
+        required: false
+      },
+      'mainClass': {
+        type: String,
+        default: '',
+        required: false
+      },
+      'mainId': {
+        type: String,
+        default: '',
+        required: false
+      }
+    },
     mounted() {
       this.$root.$emit(
         'section', {

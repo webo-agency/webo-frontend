@@ -1,52 +1,93 @@
 <template>
-    <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="portfolio">
-        <div class="container d-flex flex-column">
-            <div class="row">
-                <div class="col">
-                    <h1 class="portfolio--title decoration">Portfolio</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum hic ipsam
-                        laudantium. Delectus eius, quam.
-                    </p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <img src="https://placekitten.com/g/480/300" class="img-fluid"/>
-                </div>
-            </div>
+  <component
+    :is="mainTag"
+    :id="mainId"
+    :class="mainClass"
+    class="portfolio"
+  >
+    <div class="container d-flex flex-column">
+      <div class="row">
+        <div class="col">
+          <h1 class="portfolio--title decoration">Portfolio</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum hic ipsam
+            laudantium. Delectus eius, quam.
+          </p>
         </div>
-    </component>
+      </div>
+      <div class="row">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <img
+            src="https://placekitten.com/g/480/300"
+            class="img-fluid"
+          >
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <img
+            src="https://placekitten.com/g/480/300"
+            class="img-fluid"
+          >
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <img
+            src="https://placekitten.com/g/480/300"
+            class="img-fluid"
+          >
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <img
+            src="https://placekitten.com/g/480/300"
+            class="img-fluid"
+          >
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <img
+            src="https://placekitten.com/g/480/300"
+            class="img-fluid"
+          >
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <img
+            src="https://placekitten.com/g/480/300"
+            class="img-fluid"
+          >
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <img
+            src="https://placekitten.com/g/480/300"
+            class="img-fluid"
+          >
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <img
+            src="https://placekitten.com/g/480/300"
+            class="img-fluid"
+          >
+        </div>
+      </div>
+    </div>
+  </component>
 </template>
 <script>
   export default {
-    name: 'cPortfolio',
-    props: [
-      'mainTag',
-      'mainClass',
-      'mainId'
-    ],
+    name: 'CPortfolio',
+    props: {
+      'mainTag': {
+        type: String,
+        default: '',
+        required: false
+      },
+      'mainClass': {
+        type: String,
+        default: '',
+        required: false
+      },
+      'mainId': {
+        type: String,
+        default: '',
+        required: false
+      }
+    },
     mounted() {
       this.$root.$emit(
         'section', {

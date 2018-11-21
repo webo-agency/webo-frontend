@@ -16,8 +16,6 @@ var domIsReady = (function(domIsReady) {
           }
         });
       }
-    } else {
-      console.error('The callback is not a function!');
     }
   };
 

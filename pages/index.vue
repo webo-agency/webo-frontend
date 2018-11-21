@@ -1,13 +1,45 @@
 <template>
   <div class="page index">
-    <cBanner mainTag="section" mainClass="section" mainId="banner"></cBanner>
-    <!--<cAdvantages mainTag="section" mainClass="section" mainId="advantages"></cAdvantages>-->
-    <!--<cWork mainTag="section" mainClass="sectio" mainId="work"></cWork>-->
-    <!--<cTeam mainTag="section" mainClass="section" mainId="team"></cTeam>-->
-    <!--<cTechnologies mainTag="section" mainClass="section" mainId="technologies"></cTechnologies>-->
-    <!--<cPortfolio mainTag="section" mainClass="section" mainId="portfolio"></cPortfolio>-->
-    <!--<cPartners mainTag="section" mainClass="section" mainId="partners"></cPartners>-->
-    <cContact mainTag="section" mainClass="section" mainId="contact"></cContact>
+    <cBanner
+      main-tag="section"
+      main-class="section"
+      main-id="banner"
+    />
+    <cAdvantages
+      main-tag="section"
+      main-class="section"
+      main-id="advantages"
+    />
+    <cWork
+      main-tag="section"
+      main-class="sectio"
+      main-id="work"
+    />
+    <cTeam
+      main-tag="section"
+      main-class="section"
+      main-id="team"
+    />
+    <cTechnologies
+      main-tag="section"
+      main-class="section"
+      main-id="technologies"
+    />
+    <cPortfolio
+      main-tag="section"
+      main-class="section"
+      main-id="portfolio"
+    />
+    <cPartners
+      main-tag="section"
+      main-class="section"
+      main-id="partners"
+    />
+    <cContact
+      main-tag="section"
+      main-class="section"
+      main-id="contact"
+    />
   </div>
 </template>
 
@@ -47,7 +79,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .page{
+  .page {
     width: 100%;
     margin: auto;
   }

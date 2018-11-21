@@ -179,7 +179,7 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    extend (config, { isDev, isClient }) {
+    extend (config, { isDev }) {
       if (isDev) {
         config.module.rules.push({
           enforce: "pre",

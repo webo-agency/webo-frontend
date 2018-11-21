@@ -1,54 +1,92 @@
 <template xmlns:v-swiper="http://www.w3.org/1999/xhtml">
-    <component v-bind:is="mainTag" v-bind:class="mainClass" v-bind:id="mainId" class="technology">
-        <div class="technology--wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h1 class="decoration decoration--bottom-right">Technologies</h1>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-
-                        <p class="technology--description">{{ technologyDescription }}</p>
-
-                        <div class="technology--carousel">
-                            <div v-swiper:technologyCarousel="swiperOption"  @slideChange="slideChangeEvent">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <img src="~/assets/logo/css.svg" height="190"/>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="~/assets/logo/html5.svg" height="188"/>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="~/assets/logo/java.svg" height="213"/>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="~/assets/logo/nginx.svg" height="168"/>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <img src="~/assets/logo/php.svg" height="138"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="technologyPagination" class="swiper-pagination technology--pagination"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <component
+    :is="mainTag"
+    :id="mainId"
+    :class="mainClass"
+    class="technology"
+  >
+    <div class="technology--wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="decoration decoration--bottom-right">Technologies</h1>
+          </div>
         </div>
-    </component>
+        <div class="row">
+          <div class="col">
+
+            <p class="technology--description">{{ technologyDescription }}</p>
+
+            <div class="technology--carousel">
+              <div
+                v-swiper:technologyCarousel="swiperOption"
+                @slideChange="slideChangeEvent"
+              >
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img
+                      src="~/assets/logo/css.svg"
+                      height="190"
+                    >
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="~/assets/logo/html5.svg"
+                      height="188"
+                    >
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="~/assets/logo/java.svg"
+                      height="213"
+                    >
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="~/assets/logo/nginx.svg"
+                      height="168"
+                    >
+                  </div>
+                  <div class="swiper-slide">
+                    <img
+                      src="~/assets/logo/php.svg"
+                      height="138"
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                id="technologyPagination"
+                class="swiper-pagination technology--pagination"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </component>
 </template>
 
 <script>
   export default {
-    name: 'cTechnologies',
-    props: [
-      'mainTag',
-      'mainClass',
-      'mainId'
-    ],
+    name: 'CTechnologies',
+    props: {
+      'mainTag': {
+        type: String,
+        default: '',
+        required: false
+      },
+      'mainClass': {
+        type: String,
+        default: '',
+        required: false
+      },
+      'mainId': {
+        type: String,
+        default: '',
+        required: false
+      }
+    },
     data() {
       return {
         technologyDescription: "",
