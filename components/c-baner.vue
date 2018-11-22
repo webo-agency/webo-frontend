@@ -102,7 +102,7 @@
                                 <text x="0px" y="0px" style="font-family:'AdobeGothicStd-Bold', 'Adobe Gothic Std', sans-serif;font-weight:700;font-size:20.833px;fill:white;">want awesome project of website&apos;s and brand&apos;s that takes</text>
                             </g>
                             <g transform="matrix(1,0,0,1,527.192,645.749)">
-                                <text x="0px" y="0px" style="font-family:'AdobeGothicStd-Bold', 'Adobe Gothic Std', sans-serif;font-weight:700;font-size:20.833px;fill:white;">ambition towards their goals period</text>
+                                <text x="0px" y="0px" style="font-family:'AdobeGothicStd-Bold', 'Adobe Gothic Std', sans-serif;font-weight:700;font-size:20.833px;fill:white;">ambition towards their goals <period></period></text>
                             </g>
                         </g>
                         <g id="Menu" transform="matrix(1,0,0,1,142.373,0)">
@@ -121,7 +121,7 @@
                                 </g>
                             </g>
                             <g id="Normal" transform="matrix(1.11111,0,0,0.37037,1010.26,20.611)">
-                                <text x="0px" y="0px" style="font-family:'AdobeGothicStd-Bold', 'Adobe Gothic Std', sans-serif;font-weight:700;font-size:15px;fill:white;">SAY HI!</text>
+                                <text x="0px" y="0px" style="font-family:'AdobeGothicStd-Bold', 'Adobe Gothic Std', sans-serif;font-weight:700;font-size:15px;fill:white;">TEMPORARY WEBSITE</text>
                             </g>
                         </g>
                         <g id="webo" transform="matrix(0.32,-0,-0,0.106667,0,0)">
