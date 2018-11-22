@@ -109,17 +109,6 @@
                             <g transform="matrix(0.22038,0,0,0.0734601,600.375,-91.435)">
                                 <path d="M2232.72,1526.09L2197.28,1526.09L2197.28,1467.03L2256.34,1467.03L2256.34,1502.46C2256.34,1515.5 2245.75,1526.09 2232.72,1526.09Z" style="fill:white;"/>
                             </g>
-                            <g transform="matrix(1,0,0,1,200.943,-0.0609399)">
-                                <g transform="matrix(-0.774277,0,0,0.0520241,1612.77,13.7737)">
-                                    <rect x="1062.63" y="49.2" width="19.373" height="12.815" style="fill:white;"/>
-                                </g>
-                                <g transform="matrix(-0.516185,0,0,0.0520241,1338.51,15.1535)">
-                                    <rect x="1062.63" y="49.2" width="19.373" height="12.815" style="fill:white;"/>
-                                </g>
-                                <g transform="matrix(-0.258092,0,0,0.0520241,1064.26,16.5332)">
-                                    <rect x="1062.63" y="49.2" width="19.373" height="12.815" style="fill:white;"/>
-                                </g>
-                            </g>
                             <g id="Normal" transform="matrix(1.11111,0,0,0.37037,1010.26,20.611)">
                                 <text x="0px" y="0px" style="font-family:'AdobeGothicStd-Bold', 'Adobe Gothic Std', sans-serif;font-weight:700;font-size:15px;fill:white;">TEMPORARY WEBSITE</text>
                             </g>
