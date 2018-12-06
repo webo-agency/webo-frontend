@@ -22,7 +22,7 @@
                 type="email"
                 name="email"
                 placeholder="Your e-mail address"
-                class="contact--form-input"
+                class="contact--form-input mb-3"
               >
             </div>
           </div>

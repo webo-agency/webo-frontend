@@ -25,7 +25,7 @@ module.exports = {
       { rel: "icon", type: "image/png", sizes: "192x192", href: "/android-chrome-192x192.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
       { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat' },
     ],
     script: [
       { type: 'text/javascript', charset: 'utf-8', src: '/chat.js'}

@@ -246,17 +246,17 @@
         links: [
           {
             title: "Contact",
-            location: "/test",
+            location: "/",
             label: "Contact"
           },
           {
             title: "Privacy",
-            location: "/test",
+            location: "/",
             label: "Privacy"
           },
           {
             title: "Status",
-            location: "/test",
+            location: "/",
             label: "Status"
           }
         ]
