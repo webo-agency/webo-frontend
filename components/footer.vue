@@ -7,34 +7,16 @@
     <div class="container links justify-content-center justify-content-sm-between">
 
       <ul class="menu list-unstyled row">
-        <li class="col-auto">
+        <li
+          v-for="link in links"
+          :key="link.id"
+          class="col-auto menu--element"
+        >
           <nuxt-link
             class="link"
-            to="/"
+            :to="link.location"
           >
-            Contact
-          </nuxt-link>
-        </li>
-        <li class="separator col-auto">
-          |
-        </li>
-        <li class="col-auto">
-          <nuxt-link
-            class="link"
-            to="/"
-          >
-            Privacy
-          </nuxt-link>
-        </li>
-        <li class="separator col-auto">
-          |
-        </li>
-        <li class="col-auto">
-          <nuxt-link
-            class="link"
-            to="/"
-          >
-            Status
+            {{ link.title }}
           </nuxt-link>
         </li>
       </ul>
@@ -234,7 +216,7 @@
         class="link"
         href="#"
       >hello@webo.agency</a> <span
-        class="link text-primary d-none d-sm-block mx-sm-3"
+        class="link text-primary d-none d-md-block mx-sm-3"
       >;)</span> <a
         class="link"
         href="#"
@@ -258,6 +240,27 @@
         default: '',
         required: false
       }
+    },
+    data: function(){
+      return {
+        links: [
+          {
+            title: "Contact",
+            location: "/test",
+            label: "Contact"
+          },
+          {
+            title: "Privacy",
+            location: "/test",
+            label: "Privacy"
+          },
+          {
+            title: "Status",
+            location: "/test",
+            label: "Status"
+          }
+        ]
+      }
     }
   }
 </script>
@@ -273,9 +276,10 @@
     flex-wrap: wrap;
     align-items: center;
 
-    @media(min-width: 191px) {
+    @media (min-width: 800px) {
       flex-direction: row;
     }
+
   }
 
   .menu {
@@ -284,7 +288,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 0;
 
     @media(min-width: 191px) {
       flex-direction: row;
@@ -296,6 +300,21 @@
     @media(min-width: 320px) {
       padding-top: 20px;
       padding-bottom: 20px;
+    }
+
+    @media (min-width: 800px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  .menu--element{
+    &:after{
+      content: '|';
+      margin: 0 15px;
+    }
+
+    &:last-child:after{
+      display: none;
     }
   }
 
@@ -397,6 +416,7 @@
     svg {
       max-height: 28px;
       width: auto;
+      min-width: 40px;
     }
   }
 

@@ -3,7 +3,7 @@
     :is="mainTag"
     :id="mainId"
     :class="mainClass"
-    class="contact d-none d-lg-flex"
+    class="contact"
   >
     <form
       id="contact-form"
@@ -12,10 +12,10 @@
       action=""
     >
       <div class="row align-items-center justify-content-center">
-        <div class="col">
-          <h1>SAY Hello!</h1>
+        <div class="col-12 col-lg">
+          <h1 class="mb-0">SAY Hello!</h1>
         </div>
-        <div class="col-6 mx-5">
+        <div class="col-12 col-lg-6 mx-5 my-3">
           <div class="row">
             <div class="col">
               <input
@@ -32,12 +32,12 @@
                 <input
                   type="checkbox"
                   name="agreement"
-                > [Do dodania]
+                > Wyrazam zgodę na przetwarzanie moich danych osobowych podanych w powyzszym formularzu przez Fundacje Akademickie Inkubatory Przedsiębiorczości z siedzibą w Warszawie. Wiem, ze w kazdej chwili będę mogl odwolac zgode.
               </label>
             </div>
           </div>
         </div>
-        <div class="col">
+        <div class="col-12 col-lg">
           <div class="row">
             <div class="col">
               <button
@@ -124,8 +124,13 @@
     display: flex;
     flex-direction: row;
     background-color: #F0FAF7;
-    padding: 60px;
+    padding: 30px;
+
+    @media(min-width: 768px){
+      padding: 60px;
+    }
   }
+
 
   .contact--form-input{
     width: 100%;
