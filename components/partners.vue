@@ -3,7 +3,7 @@
     :is="mainTag"
     :id="mainId"
     :class="mainClass"
-    class="partners"
+    class="partners container"
   >
     <div class="row">
       <div class="col">
@@ -75,6 +75,7 @@
     data() {
       return {
         swiperOption: {
+          autoplay: 2000,
           slidesPerView: 3,
           slidesPerGroup: 1,
           centeredSlides: true,
@@ -83,13 +84,16 @@
           allowTouchMove: false,
           breakpoints: {
             768: {
-              allowTouchMove: true
+              allowTouchMove: true,
+              centeredSlides: false,
+              slidesPerView: 2
+            },
+            400: {
+              centeredSlides: true,
+              slidesPerView: 1
             }
           },
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-          }
+          pagination: false,//{el: '.swiper-pagination', clickable: true}
         }
       }
     },

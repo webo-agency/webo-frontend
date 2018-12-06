@@ -15,7 +15,7 @@
           </p>
         </div>
       </div>
-      <div class="row justify-content-center">
+      <div class="team--container row justify-content-center">
         <div class="col-auto">
           <a
             href="#"
@@ -99,10 +99,20 @@
         padding: 120px 15px 15px;
     }
 
+    .team--container{
+      max-width: 900px;
+      margin: auto;
+      
+      @media (min-width: 1350px) {
+        max-width: none;
+      }
+    }
+
     .team--person{
         display: block;
         max-width: 100%;
         width: 300px;
+        margin: 15px;
     }
 
     .team--name{

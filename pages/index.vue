@@ -5,11 +5,11 @@
       main-class="section"
       main-id="banner"
     />
-    <cAdvantages
-      main-tag="section"
-      main-class="section"
-      main-id="advantages"
-    />
+    <!--<cAdvantages-->
+    <!--main-tag="section"-->
+    <!--main-class="section"-->
+    <!--main-id="advantages"-->
+    <!--/>-->
     <cWork
       main-tag="section"
       main-class="sectio"
@@ -45,7 +45,7 @@
 
 <script>
   import cBanner from '~/components/banner.vue';
-  import cAdvantages from '~/components/advantages.vue';
+  // import cAdvantages from '~/components/advantages.vue';
   import cWork from '~/components/work.vue';
   import cTeam from '~/components/team.vue';
   import cTechnologies from "../components/technologies";
@@ -67,7 +67,7 @@
     },
     components: {
       cBanner,
-      cAdvantages,
+      // cAdvantages,
       cWork,
       cTeam,
       cTechnologies,

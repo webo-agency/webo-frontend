@@ -1027,6 +1027,8 @@ p{
 }
 
 button{
+  cursor: pointer;
+
   &:focus{
     outline: 0;
     color: map-get($theme-colors, "secondary");
@@ -1036,6 +1038,20 @@ button{
 h1{
   @media (min-width: 360px) {
     font-size: 50px;
+  }
+}
+
+input[type=checkbox]{
+  border: 2px solid map-get($theme-colors, "secondary");
+  appearance: none;
+  width: 12px;
+  height: 12px;
+
+  &:focus,
+  &:active,
+  &:checked{
+    outline: none;
+    background-color: map-get($theme-colors, "secondary");
   }
 }
 
@@ -1063,7 +1079,11 @@ h1{
   color: #ffffff;
   box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
 
-  &:hover{
+  &:active,
+  &.focus,
+  &:focus,
+  &:hover,
+  &:hover:focus{
     background: transparent;
     color: map-get($theme-colors, "secondary");
     box-shadow: none;

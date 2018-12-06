@@ -102,6 +102,20 @@
           centeredSlides: true,
           loop: true,
           loopAdditionalSlides: 5,
+          allowTouchMove: true,
+          breakpoints: {
+            900: {
+              slidesPerView: 4,
+              centeredSlides: false
+            },
+            768: {
+              slidesPerView: 3,
+              centeredSlides: true
+            },
+            400: {
+              slidesPerView: 1
+            }
+          },
           slideToClickedSlide: true,
           pagination: {
             el: '#technologyPagination',
