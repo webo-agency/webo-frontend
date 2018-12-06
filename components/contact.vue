@@ -32,10 +32,7 @@
                 <input
                   type="checkbox"
                   name="agreement"
-                > Lorem ipsum dolor sit amet,
-                consectetur adipisicing elit. Assumenda cupiditate deserunt ea eius fugiat in, iste
-                reprehenderit voluptatibus? Accusantium consequuntur maxime minus officia, quos rerum
-                voluptatibus! Consequuntur qui ratione totam.
+                > [Do dodania]
               </label>
             </div>
           </div>
