@@ -20,21 +20,21 @@
     <!--main-class="section"-->
     <!--main-id="team"-->
     <!--/>-->
-    <cTechnologies
-      main-tag="section"
-      main-class="section"
-      main-id="technologies"
-    />
+    <!--<cTechnologies-->
+    <!--main-tag="section"-->
+    <!--main-class="section"-->
+    <!--main-id="technologies"-->
+    <!--/>-->
     <!--<cPortfolio-->
     <!--main-tag="section"-->
     <!--main-class="section"-->
     <!--main-id="portfolio"-->
     <!--/>-->
-    <cPartners
-      main-tag="section"
-      main-class="section"
-      main-id="partners"
-    />
+    <!--<cPartners-->
+    <!--main-tag="section"-->
+    <!--main-class="section"-->
+    <!--main-id="partners"-->
+    <!--/>-->
     <cContact
       main-tag="section"
       main-class="section"
@@ -48,9 +48,9 @@
   // import cAdvantages from '~/components/advantages.vue';
   // import cWork from '~/components/work.vue';
   // import cTeam from '~/components/team.vue';
-  import cTechnologies from "../components/technologies";
+  // import cTechnologies from "../components/technologies";
   // import cPortfolio from '~/components/portfolio.vue';
-  import cPartners from '~/components/partners.vue';
+  // import cPartners from '~/components/partners.vue';
   import cContact from '~/components/contact.vue';
 
   export default {
@@ -70,9 +70,9 @@
       // cAdvantages,
       // cWork,
       // cTeam,
-      cTechnologies,
+      // cTechnologies,
       // cPortfolio,
-      cPartners,
+      // cPartners,
       cContact
     }
   }
