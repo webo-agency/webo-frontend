@@ -4,7 +4,7 @@
     :class="mainClass"
     class="footer"
   >
-    <div class="container links justify-content-center justify-content-sm-between">
+    <div class="container links justify-content-center justify-content-sm-between px-3">
 
       <ul class="menu list-unstyled row">
         <li
@@ -292,8 +292,8 @@
 
     @media(min-width: 191px) {
       flex-direction: row;
-      margin-left: 15px;
-      margin-right: 15px;
+      /*margin-left: 15px;*/
+      /*margin-right: 15px;*/
       justify-content: center;
     }
 
@@ -354,8 +354,8 @@
     @media(min-width: 320px) {
       word-break: normal;
       font-size: 16px;
-      margin-left: 15px;
-      margin-right: 15px;
+      /*margin-left: 15px;*/
+      /*margin-right: 15px;*/
       padding: 0;
     }
 
@@ -365,8 +365,8 @@
 
     @media(min-width: 700px) {
       order: 2;
-      margin-left: 20px;
-      margin-right: 20px;
+      /*margin-left: 20px;*/
+      /*margin-right: 20px;*/
     }
   }
 

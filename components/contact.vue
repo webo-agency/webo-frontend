@@ -11,7 +11,7 @@
       name="contact"
       action=""
     >
-      <div class="row align-items-center justify-content-center">
+      <div class="row align-items-center justify-content-center mx-3">
         <div class="col-12 col-lg">
           <h1 class="mb-0">SAY Hello!</h1>
         </div>
@@ -37,7 +37,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-lg">
+        <div class="col-12 col-lg contact--buttons">
           <div class="row">
             <div class="col">
               <button
@@ -124,10 +124,10 @@
     display: flex;
     flex-direction: row;
     background-color: #F0FAF7;
-    padding: 30px;
+    padding: 30px 0;
 
-    @media(min-width: 768px){
-      padding: 60px;
+    @media(min-width: 1440px){
+      padding: 60px 0;
     }
   }
 
@@ -150,5 +150,11 @@
   .contact--label{
     font-size: 12px;
     cursor: pointer;
+  }
+
+  .contact--buttons{
+    @media (min-width: 1106px) {
+      text-align: right;
+    }
   }
 </style>
