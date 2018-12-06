@@ -245,14 +245,14 @@
       return {
         links: [
           {
-            title: "Contact",
+            title: "Kontakt",
             location: "/",
-            label: "Contact"
+            label: "Kontakt"
           },
           {
-            title: "Privacy",
+            title: "Prywatność",
             location: "/",
-            label: "Privacy"
+            label: "Prywatność"
           },
           {
             title: "Status",

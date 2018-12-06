@@ -3,18 +3,18 @@
     :is="mainTag"
     :id="mainId"
     :class="mainClass"
-    class="banner"
+    class="banner px-3"
   >
     <div class="container">
       <div class="row">
         <div class="banner--wrapper col-12 col-hg-7">
-          <h1 class="banner--title decoration">Streaming Innovations</h1>
+          <h1 class="banner--title decoration">Streaming innowacji</h1>
           <p class="banner--paragraph">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid corporis explicabo fugit
-            rem vero voluptatem voluptatum? Consectetur culpa eligendi fuga harum, illo numquam provident quidem
-            reprehenderit sapiente similique, sint velit. Adipisci animi atque dicta dolorem </p>
+            Pracując ściśle i z pasją wdrażamy nowe rozwiązania jak również dbamy o te istniejące systemy by osiągnąć wspólnie zamierzony biznesowy cel.
+            (Strona nadal w trakcie tworzenia :))
+          </p>
           <button class="banner--button btn btn-secondary">
-            Start a project with us
+            Rozpocznij z nami projekt
           </button>
         </div>
         <div class="col-5 d-none d-hg-flex">
@@ -51,7 +51,7 @@
       this.$root.$emit(
         'section', {
           'id': this.mainId,
-          'title': 'About'
+          'title': 'O nas'
         }
       );
     }
@@ -75,8 +75,8 @@
     justify-content: center;
     text-align: left;
     margin-bottom: 15px;
-    padding-left: 5px;
-    padding-right: 5px;
+    /*padding-left: 5px;*/
+    /*padding-right: 5px;*/
     max-width: 600px;
     margin-top: 15px;
 
@@ -93,15 +93,15 @@
 
     @media (min-width: 191px) {
       padding-bottom: 15px;
-      padding-left: 15px;
-      padding-right: 15px;
+      /*padding-left: 15px;*/
+      /*padding-right: 15px;*/
       /*margin-top: calc(25px + 5vh);*/
       /*margin-bottom: calc(25px + 5vh);*/
     }
 
     @media (min-width: 320px) {
-      padding-left: 30px;
-      padding-right: 30px;
+      /*padding-left: 30px;*/
+      /*padding-right: 30px;*/
       padding-top: 30px;
     }
 

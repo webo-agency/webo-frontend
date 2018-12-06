@@ -1109,8 +1109,8 @@ input[type=checkbox]{
     width: 20px;
     height: 20px;
     background: map-get($theme-colors, "primary");
-    left: 0.063em;
-    bottom: 4px;
+    left: 0.093em;
+    bottom: 15px;
     border-radius: 0 0 $radius*20*1px 0;
     transform: translate(-100%, 0);
     opacity: 0;

@@ -130,7 +130,7 @@
       this.$root.$emit(
         'section', {
           'id': this.mainId,
-          'title': 'Tech'
+          'title': 'Technologie'
         }
       );
     },

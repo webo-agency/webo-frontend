@@ -22,8 +22,8 @@
                   earum id impedit libero natus possimus tempora temporibus velit! Amet autem beatae </p>
               </div>
             </div>
-            <div class="row">
-              <div class="col work--hover">
+            <div class="row flex-wrap px-3">
+              <div class="col-12 col-md-4 work--hover">
                 <img
                   src="~/assets/branding-normal.svg"
                   class="img-fluid work--image"
@@ -36,7 +36,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aliquid
                   architecto asperiores consequuntur dolore </p>
               </div>
-              <div class="col work--hover">
+              <div class="col-12 col-md-4 work--hover">
                 <img
                   src="~/assets/programming-normal.svg"
                   class="img-fluid work--image"
@@ -49,7 +49,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, aliquid
                   architecto asperiores consequuntur dolore </p>
               </div>
-              <div class="col work--hover">
+              <div class="col-12 col-md-4 work--hover">
                 <img
                   src="~/assets/support-normal.svg"
                   class="img-fluid work--image"
@@ -133,8 +133,12 @@
   }
 
   .work--image {
-    max-height: 257px;
     transition: 0.3s;
+    max-height: 150px;
+
+    @media (min-width: 768px) {
+      max-height: 257px;
+    }
   }
 
   .work--image.is-hover {

@@ -21,7 +21,7 @@
               <input
                 type="email"
                 name="email"
-                placeholder="Your e-mail address"
+                placeholder="Twój adres email..."
                 class="contact--form-input mb-3"
               >
             </div>
@@ -103,15 +103,15 @@
             dataType: "xml",
             statusCode: {
               0: function () {
-                alert("Thank you for submission!");
+                alert("Dziękujemy za zgłoszenie!");
               },
               200: function () {
-                alert("Thank you for submission!");
+                alert("Dziękujemy za zgłoszenie!");
               }
             }
           });
         } else {
-          alert("Pleas provide valid email!");
+          alert("Niepoprawny adres email!");
         }
 
       });

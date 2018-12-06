@@ -7,10 +7,9 @@
   >
     <div class="row">
       <div class="col">
-        <h1 class="partners--title decoration">Partners</h1>
+        <h1 class="partners--title decoration">Partnerzy</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor eum, rerum. Ab aliquid
-          autem dolorum, ex nulla quod
+          Ścisła współpraca by uzyskać więcej za mniej
         </p>
       </div>
     </div>
@@ -101,7 +100,7 @@
       this.$root.$emit(
         'section', {
           'id': this.mainId,
-          'title': 'Partners'
+          'title': 'Partnerzy'
         }
       );
     },
