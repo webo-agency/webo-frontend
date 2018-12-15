@@ -1,19 +1,57 @@
 <template>
   <div class="page index">
-
-    <div id="intro" class="section">
-        <c-baner></c-baner>
-    </div>
-
-    <div id="contact" class="section">
-        <c-contact></c-contact>
-    </div>
+    <cBanner
+      main-tag="section"
+      main-class="section"
+      main-id="banner"
+    />
+    <!--<cAdvantages-->
+    <!--main-tag="section"-->
+    <!--main-class="section"-->
+    <!--main-id="advantages"-->
+    <!--/>-->
+    <!--<cWork-->
+    <!--main-tag="section"-->
+    <!--main-class="sectio"-->
+    <!--main-id="work"-->
+    <!--/>-->
+    <!--<cTeam-->
+    <!--main-tag="section"-->
+    <!--main-class="section"-->
+    <!--main-id="team"-->
+    <!--/>-->
+    <!--<cTechnologies-->
+    <!--main-tag="section"-->
+    <!--main-class="section"-->
+    <!--main-id="technologies"-->
+    <!--/>-->
+    <!--<cPortfolio-->
+    <!--main-tag="section"-->
+    <!--main-class="section"-->
+    <!--main-id="portfolio"-->
+    <!--/>-->
+    <!--<cPartners-->
+    <!--main-tag="section"-->
+    <!--main-class="section"-->
+    <!--main-id="partners"-->
+    <!--/>-->
+    <cContact
+      main-tag="section"
+      main-class="section"
+      main-id="contact"
+    />
   </div>
 </template>
 
 <script>
-  import cBaner from '~/components/c-baner.vue'
-  import cContact from '~/components/c-contact.vue'
+  import cBanner from '~/components/banner.vue';
+  // import cAdvantages from '~/components/advantages.vue';
+  // import cWork from '~/components/work.vue';
+  // import cTeam from '~/components/team.vue';
+  // import cTechnologies from "../components/technologies";
+  // import cPortfolio from '~/components/portfolio.vue';
+  // import cPartners from '~/components/partners.vue';
+  import cContact from '~/components/contact.vue';
 
   export default {
     head() {
@@ -28,60 +66,29 @@
       }
     },
     components: {
-      cBaner,
+      cBanner,
+      // cAdvantages,
+      // cWork,
+      // cTeam,
+      // cTechnologies,
+      // cPortfolio,
+      // cPartners,
       cContact
-    },
-    data() {
-      return {
-
-      }
     }
   }
 </script>
 
 <style lang="scss" scoped>
+  .page {
+    width: 100%;
+    margin: auto;
+  }
+
   .section {
     position: relative;
   }
+</style>
 
-  .section-nav{
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    width: 100px;
-    height: 100%;
-    z-index: 100;
+<style lang="scss">
 
-    @media(min-width: 992px){
-      display: block;
-    }
-  }
-
-  .section-nav--item{
-    position: absolute;
-    top: 0;
-    bottom: auto;
-    transition: all 0.3s;
-    visibility: hidden;
-    opacity: 0;
-
-    &:not(.is-active){
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-  .section-nav--item + .section-nav--item{
-    top: auto;
-    bottom: 0;
-    transform: rotate(180deg);
-  }
-
-  .section-nav--img{
-    width: 100px;
-    height: 100px;
-    margin: 30px 0;
-  }
 </style>
