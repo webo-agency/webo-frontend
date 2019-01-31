@@ -19,6 +19,7 @@
           <div class="row">
             <div class="col">
               <input
+                id="email"
                 type="email"
                 name="email"
                 placeholder="Twój adres email..."

@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import Scrollactive from 'vue-scrollactive'
+import ScrollActive from 'vue-scrollactive'
 
-Vue.use(Scrollactive);
+Vue.use(ScrollActive);

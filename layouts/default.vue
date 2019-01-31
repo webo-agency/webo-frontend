@@ -23,6 +23,9 @@
     components: {
       cHeader,
       cFooter
+    },
+    mounted(){
+      // this.$bugsnag.notify(new Error('Test'), { severity: 'info' });
     }
   }
 </script>

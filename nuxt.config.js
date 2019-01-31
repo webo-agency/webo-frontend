@@ -1,11 +1,9 @@
 process.noDeprecation = true;
 module.exports = {
   env: {
-    baseUrl: process.env.URL || 'http://localhost:3000'
+    baseUrl: process.env.URL || 'http://localhost:3000',
+    stage: process.env.CONTEXT || 'developer',
   },
-  /*
-  ** Headers of the page
-  */
   head: {
     title: "webo.design",
     meta: [
@@ -35,6 +33,14 @@ module.exports = {
   ** Modules
   */
   modules: [
+    {
+      src: '~/modules/bugsnag',
+      options: {
+        apiKey: 'e84d63a6f7b1a2db9acda61d3dc7d892',
+        appType: 'frontend',
+        releaseStage: process.env.CONTEXT || 'developer'
+      }
+    },
     {
       src: '@nuxtjs/pwa',
       options: {
@@ -180,14 +186,14 @@ module.exports = {
     ** Run ESLINT on save
     */
     extend (config, { isDev }) {
-      if (isDev) {
-        config.module.rules.push({
-          enforce: "pre",
-          test: /\.(js|vue)$/,
-          loader: "eslint-loader",
-          exclude: /(node_modules)/
-        });
-      }
+      // if (isDev) {
+      //   config.module.rules.push({
+      //     enforce: "pre",
+      //     test: /\.(js|vue)$/,
+      //     loader: "eslint-loader",
+      //     exclude: /(node_modules)/
+      //   });
+      // }
 
       config.module.rules.forEach((rule) => {
         if (rule.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/') {
