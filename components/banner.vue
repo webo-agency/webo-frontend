@@ -3,12 +3,14 @@
     :is="mainTag"
     :id="mainId"
     :class="mainClass"
-    class="banner px-3"
+    class="banner px-35"
   >
     <div class="container">
       <div class="row">
         <div class="banner--wrapper col-12 col-hg-7">
-          <h1 class="banner--title decoration">Streaming innowacji</h1>
+          <h1 class="banner--title decoration">
+            Streaming innowacji
+          </h1>
           <p class="banner--paragraph">
             Pracując ściśle i z pasją wdrażamy nowe rozwiązania jak również dbamy o te istniejące systemy by osiągnąć wspólnie zamierzony biznesowy cel.
             (Strona nadal w trakcie tworzenia :))
@@ -47,6 +49,12 @@
         required: false
       }
     },
+    data() {
+      return {
+        title: "",
+        document: "TEST"
+      }
+    },
     mounted() {
       this.$root.$emit(
         'section', {
@@ -54,7 +62,7 @@
           'title': 'O nas'
         }
       );
-    }
+    },
   }
 </script>
 

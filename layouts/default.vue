@@ -24,6 +24,15 @@
       cHeader,
       cFooter
     },
+    data() {
+      return {
+        document: true,
+      }
+    },
+    async asyncData ({ params }) {
+      let { data } = await params.app.$prismic.api.getSingle('banner');
+      return { document: data }
+    },
     mounted(){
       // this.$bugsnag.notify(new Error('Test'), { severity: 'info' });
     }

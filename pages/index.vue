@@ -5,36 +5,36 @@
       main-class="section"
       main-id="banner"
     />
-    <!--<cAdvantages-->
-    <!--main-tag="section"-->
-    <!--main-class="section"-->
-    <!--main-id="advantages"-->
-    <!--/>-->
-    <!--<cWork-->
-    <!--main-tag="section"-->
-    <!--main-class="sectio"-->
-    <!--main-id="work"-->
-    <!--/>-->
-    <!--<cTeam-->
-    <!--main-tag="section"-->
-    <!--main-class="section"-->
-    <!--main-id="team"-->
-    <!--/>-->
-    <!--<cTechnologies-->
-    <!--main-tag="section"-->
-    <!--main-class="section"-->
-    <!--main-id="technologies"-->
-    <!--/>-->
-    <!--<cPortfolio-->
-    <!--main-tag="section"-->
-    <!--main-class="section"-->
-    <!--main-id="portfolio"-->
-    <!--/>-->
-    <!--<cPartners-->
-    <!--main-tag="section"-->
-    <!--main-class="section"-->
-    <!--main-id="partners"-->
-    <!--/>-->
+    <cAdvantages
+      main-tag="section"
+      main-class="section"
+      main-id="advantages"
+    />
+    <cWork
+      main-tag="section"
+      main-class="sectio"
+      main-id="work"
+    />
+    <cTeam
+      main-tag="section"
+      main-class="section"
+      main-id="team"
+    />
+    <cTechnologies
+      main-tag="section"
+      main-class="section"
+      main-id="technologies"
+    />
+    <cPortfolio
+      main-tag="section"
+      main-class="section"
+      main-id="portfolio"
+    />
+    <cPartners
+      main-tag="section"
+      main-class="section"
+      main-id="partners"
+    />
     <cContact
       main-tag="section"
       main-class="section"
@@ -45,12 +45,12 @@
 
 <script>
   import cBanner from '~/components/banner.vue';
-  // import cAdvantages from '~/components/advantages.vue';
-  // import cWork from '~/components/work.vue';
-  // import cTeam from '~/components/team.vue';
-  // import cTechnologies from "../components/technologies";
-  // import cPortfolio from '~/components/portfolio.vue';
-  // import cPartners from '~/components/partners.vue';
+  import cAdvantages from '~/components/advantages.vue';
+  import cWork from '~/components/work.vue';
+  import cTeam from '~/components/team.vue';
+  import cTechnologies from "../components/technologies";
+  import cPortfolio from '~/components/portfolio.vue';
+  import cPartners from '~/components/partners.vue';
   import cContact from '~/components/contact.vue';
 
   export default {
@@ -67,12 +67,12 @@
     },
     components: {
       cBanner,
-      // cAdvantages,
-      // cWork,
-      // cTeam,
-      // cTechnologies,
-      // cPortfolio,
-      // cPartners,
+      cAdvantages,
+      cWork,
+      cTeam,
+      cTechnologies,
+      cPortfolio,
+      cPartners,
       cContact
     }
   }

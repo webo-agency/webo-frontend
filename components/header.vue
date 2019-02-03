@@ -66,6 +66,7 @@
           :class="{'is-active': menuVisible, 'is-top': !isTop}"
           class="links list-inline justify-content-between align-items-stretch"
           :offset="80"
+          :offset-height="80"
         >
           <nuxt-link
             v-for="(section, index) in sections"

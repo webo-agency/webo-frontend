@@ -57,15 +57,28 @@ module.exports = {
       }
     },
     {
+      src: 'prismic-nuxt',
+      options: {
+        endpoint: 'https://webo.cdn.prismic.io/api/v2',
+        linkResolver: function () {
+          return '/preview'
+        },
+        htmlSerializer: function () {
+          // Optional HTML Serializer
+        }
+      }
+    },
+    {
       src: 'nuxt-i18n',
       options: {
         baseUrl: process.env.BASE_URL,
         strategy: 'prefix',
-        rootRedirect: 'pl',
-        defaultLocale: 'pl',
+        rootRedirect: 'en',
+        defaultLocale: 'en',
         detectBrowserLanguage: {
           useCookie: true,
-          cookieKey: 'i18n_redirected'
+          cookieKey: 'language',
+          fallbackLocale: 'en'
         },
         locales: [
           {
