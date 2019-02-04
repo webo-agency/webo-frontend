@@ -9,14 +9,13 @@
       <div class="row">
         <div class="banner--wrapper col-12 col-hg-7">
           <h1 class="banner--title decoration">
-            Streaming innowacji
+            {{ title }}
           </h1>
           <p class="banner--paragraph">
-            Pracując ściśle i z pasją wdrażamy nowe rozwiązania jak również dbamy o te istniejące systemy by osiągnąć wspólnie zamierzony biznesowy cel.
-            (Strona nadal w trakcie tworzenia :))
+            {{ description }}
           </p>
           <button class="banner--button btn btn-secondary">
-            Rozpocznij z nami projekt
+            {{ button }}
           </button>
         </div>
         <div class="col-5 d-none d-hg-flex">
@@ -51,8 +50,18 @@
     },
     data() {
       return {
-        title: "",
         document: "TEST"
+      }
+    },
+    computed: {
+      title () {
+        return this.$store.state.banner.title
+      },
+      description () {
+        return this.$store.state.banner.description
+      },
+      button () {
+        return this.$store.state.banner.button
       }
     },
     mounted() {

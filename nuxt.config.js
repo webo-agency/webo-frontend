@@ -252,7 +252,8 @@ module.exports = {
     fallback: "404.html",
     routes: [
       '/',
-      '/privacy-policy'
+      '/pl/privacy-policy',
+      '/en/privacy-policy'
     ]
   }
 };

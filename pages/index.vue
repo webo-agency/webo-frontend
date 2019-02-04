@@ -54,6 +54,10 @@
   import cContact from '~/components/contact.vue';
 
   export default {
+    async fetch ({ store }) {
+      let document = await store.$prismic.api.getSingle('banner');
+      store.commit('banner/load', document.data );
+    },
     head() {
       return {
         title: `webo - Welcome in home of innovation`,
@@ -74,6 +78,8 @@
       cPortfolio,
       cPartners,
       cContact
+    },
+    mounted() {
     }
   }
 </script>
