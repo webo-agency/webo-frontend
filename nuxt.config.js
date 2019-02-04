@@ -73,7 +73,7 @@ module.exports = {
       options: {
         baseUrl: process.env.BASE_URL,
         strategy: 'prefix',
-        rootRedirect: 'en',
+        rootRedirect: null,
         defaultLocale: 'en',
         detectBrowserLanguage: {
           useCookie: true,
@@ -252,6 +252,8 @@ module.exports = {
     fallback: "404.html",
     routes: [
       '/',
+      '/pl',
+      '/en',
       '/pl/privacy-policy',
       '/en/privacy-policy'
     ]
