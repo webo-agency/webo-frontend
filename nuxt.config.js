@@ -73,7 +73,7 @@ module.exports = {
       options: {
         baseUrl: process.env.BASE_URL,
         strategy: 'prefix_and_default',
-        rootRedirect: 'en',
+        rootRedirect: null, //ERROR on production
         defaultLocale: 'en',
         detectBrowserLanguage: {
           useCookie: true,
