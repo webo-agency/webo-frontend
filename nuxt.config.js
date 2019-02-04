@@ -72,7 +72,7 @@ module.exports = {
       src: 'nuxt-i18n',
       options: {
         baseUrl: process.env.BASE_URL,
-        strategy: 'prefix',
+        strategy: 'prefix_and_default',
         rootRedirect: null,
         defaultLocale: 'en',
         detectBrowserLanguage: {
