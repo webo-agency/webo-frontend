@@ -9,7 +9,7 @@
       <div class="col">
         <h1 class="partners--title decoration">Partnerzy</h1>
         <p>
-          Ścisła współpraca by uzyskać więcej za mniej
+          Ścisła współpraca by uzyskać więcej za mniej bez utraty jakości
         </p>
       </div>
     </div>

@@ -5,26 +5,26 @@
       main-class="section"
       main-id="banner"
     />
-    <cAdvantages
-      main-tag="section"
-      main-class="section"
-      main-id="advantages"
-    />
-    <cWork
-      main-tag="section"
-      main-class="sectio"
-      main-id="work"
-    />
-    <cTeam
-      main-tag="section"
-      main-class="section"
-      main-id="team"
-    />
-    <cTechnologies
-      main-tag="section"
-      main-class="section"
-      main-id="technologies"
-    />
+    <!--<cAdvantages-->
+      <!--main-tag="section"-->
+      <!--main-class="section"-->
+      <!--main-id="advantages"-->
+    <!--/>-->
+    <!--<cWork-->
+      <!--main-tag="section"-->
+      <!--main-class="sectio"-->
+      <!--main-id="work"-->
+    <!--/>-->
+    <!--<cTeam-->
+      <!--main-tag="section"-->
+      <!--main-class="section"-->
+      <!--main-id="team"-->
+    <!--/>-->
+    <!--<cTechnologies-->
+      <!--main-tag="section"-->
+      <!--main-class="section"-->
+      <!--main-id="technologies"-->
+    <!--/>-->
     <cPortfolio
       main-tag="section"
       main-class="section"
@@ -55,7 +55,9 @@
 
   export default {
     async fetch ({ store }) {
-      let document = await store.$prismic.api.getSingle('banner');
+      let document = await store.$prismic.api.getSingle('banner', {
+        lang : store.app.i18n.locales.find(x => x.code === store.state.i18n.locale).iso
+      });
       store.commit('banner/load', document.data );
     },
     head() {
@@ -71,10 +73,10 @@
     },
     components: {
       cBanner,
-      cAdvantages,
-      cWork,
-      cTeam,
-      cTechnologies,
+      // cAdvantages,
+      // cWork,
+      // cTeam,
+      // cTechnologies,
       cPortfolio,
       cPartners,
       cContact

@@ -50,7 +50,7 @@
     },
     data() {
       return {
-        document: "TEST"
+        // document: "TEST"
       }
     },
     computed: {

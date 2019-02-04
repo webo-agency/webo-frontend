@@ -73,7 +73,7 @@ module.exports = {
       options: {
         baseUrl: process.env.BASE_URL,
         strategy: 'prefix_and_default',
-        rootRedirect: null,
+        rootRedirect: 'en',
         defaultLocale: 'en',
         detectBrowserLanguage: {
           useCookie: true,
@@ -87,7 +87,7 @@ module.exports = {
           },
           {
             code: 'pl',
-            iso: 'pl-PL'
+            iso: 'pl'
           }
         ],
         vueI18n: {

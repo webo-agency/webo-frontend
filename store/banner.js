@@ -8,6 +8,7 @@ export const getters = {};
 
 export const mutations = {
   load(state, data){
+    debugger;
     let elFirst = data.title.shift();
     state.title = elFirst.text;
 
@@ -29,6 +30,7 @@ export const mutations = {
 
 export const actions = {
   load(state, data){
+    debugger;
     let elFirst = data.title.shift();
     state.title = elFirst.text;
 
