@@ -10,8 +10,7 @@
         <div class="col">
           <h1 class="portfolio--title decoration">Portfolio</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum hic ipsam
-            laudantium. Delectus eius, quam.
+            Nasze portfolio znajdziesz na Behance
           </p>
         </div>
       </div>
