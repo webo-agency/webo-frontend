@@ -77,7 +77,7 @@
       // cWork,
       // cTeam,
       // cTechnologies,
-      cPortfolio,
+      // cPortfolio,
       cPartners,
       cContact
     },
