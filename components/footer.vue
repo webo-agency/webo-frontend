@@ -246,17 +246,17 @@
         links: [
           {
             title: "Kontakt",
-            location: "/",
+            location: "/#contact-form",
             label: "Kontakt"
           },
           {
             title: "Prywatność",
-            location: "/",
+            location: "/privacy-policy",
             label: "Prywatność"
           },
           {
             title: "Status",
-            location: "/",
+            location: "http://status.webo.agency",
             label: "Status"
           }
         ]

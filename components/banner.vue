@@ -14,7 +14,10 @@
           <p class="banner--paragraph">
             {{ description }}
           </p>
-          <button class="banner--button btn btn-secondary">
+          <button
+            class="banner--button btn btn-secondary"
+            @click="setFocus"
+          >
             {{ button }}
           </button>
         </div>
@@ -71,6 +74,12 @@
           'title': 'O nas'
         }
       );
+    },
+    methods: {
+      setFocus() {
+        window.location = "/privacy-policy";
+        this.$store.commit('contact/focus', true );
+      },
     },
   }
 </script>

@@ -20,6 +20,7 @@
             <div class="col">
               <input
                 id="email"
+                ref="email"
                 type="email"
                 name="email"
                 placeholder="Twój adres email..."
@@ -80,6 +81,32 @@
         default: '',
         required: false
       }
+    },
+    data() {
+      return {
+        inputFocused: false
+      }
+    },
+    watch: {
+      inputFocused: function (val) {
+        if(val){
+          this.$refs.email.$el.focus();
+        }
+      }
+    },
+    created() {
+      this.$store.watch(
+        // When the returned result changes...
+        function (state) {
+          return state
+        },
+        // Run this callback
+        function (newVal, oldVal) {
+          if(newVal){
+            this.inputFocused(this.$store.contact.inputFocus);
+          }
+        }
+      );
     },
     mounted() {
       this.$root.$emit(
