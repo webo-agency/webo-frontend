@@ -77,7 +77,7 @@
     },
     methods: {
       setFocus() {
-        window.location = "/privacy-policy";
+        window.location = "/#contact-form";
         this.$store.commit('contact/focus', true );
       },
     },
