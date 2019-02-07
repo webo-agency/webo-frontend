@@ -172,8 +172,8 @@
     }
 
     @media(min-width: 1024px) {
-      margin-top: 32px;
-      margin-bottom: 32px;
+      /*margin-top: 32px;*/
+      /*margin-bottom: 32px;*/
     }
 
     &:not(.is-top){
