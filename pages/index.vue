@@ -30,11 +30,11 @@
       <!--main-class="section"-->
       <!--main-id="portfolio"-->
     <!--/>-->
-    <cPartners
-      main-tag="section"
-      main-class="section"
-      main-id="partners"
-    />
+    <!--<cPartners-->
+      <!--main-tag="section"-->
+      <!--main-class="section"-->
+      <!--main-id="partners"-->
+    <!--/>-->
     <cContact
       main-tag="section"
       main-class="section"
@@ -50,7 +50,7 @@
   // import cTeam from '~/components/team.vue';
   // import cTechnologies from "../components/technologies";
   // import cPortfolio from '~/components/portfolio.vue';
-  import cPartners from '~/components/partners.vue';
+  // import cPartners from '~/components/partners.vue';
   import cContact from '~/components/contact.vue';
 
   export default {
@@ -78,7 +78,7 @@
       // cTeam,
       // cTechnologies,
       // cPortfolio,
-      cPartners,
+      // cPartners,
       cContact
     },
     mounted() {
