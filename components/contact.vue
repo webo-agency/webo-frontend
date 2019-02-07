@@ -178,6 +178,7 @@
   .contact--label{
     font-size: 12px;
     cursor: pointer;
+    overflow: hidden;
   }
 
   .contact--buttons{

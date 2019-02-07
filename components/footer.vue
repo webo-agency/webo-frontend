@@ -7,6 +7,15 @@
     <div class="container links justify-content-center justify-content-sm-between px-3">
 
       <ul class="menu list-unstyled row">
+        <li class="col-auto menu--element">
+          <a
+            href="/#privacy-policy"
+            class="link"
+            @click.self.prevent="setFocus()"
+          >
+            Kontakt
+          </a>
+        </li>
         <li
           v-for="link in links"
           :key="link.id"
@@ -18,6 +27,14 @@
           >
             {{ link.title }}
           </nuxt-link>
+        </li>
+        <li class="col-auto menu--element">
+          <a
+            href="http://status.webo.agency"
+            class="link"
+          >
+            Status
+          </a>
         </li>
       </ul>
 
@@ -245,23 +262,21 @@
       return {
         links: [
           {
-            title: "Kontakt",
-            location: "/#contact-form",
-            label: "Kontakt"
-          },
-          {
             title: "Prywatność",
             location: "/privacy-policy",
             label: "Prywatność"
-          },
-          {
-            title: "Status",
-            location: "http://status.webo.agency",
-            label: "Status"
           }
         ]
       }
-    }
+    },
+    methods: {
+      setFocus() {
+        var textbox = document.getElementById("email");
+        textbox.focus();
+        textbox.scrollIntoView();
+        // this.$store.commit('contact/focus', true );
+      },
+    },
   }
 </script>
 

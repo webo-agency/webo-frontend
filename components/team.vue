@@ -56,7 +56,7 @@
       <div class="row">
         <a
           href="#"
-          class="team--more no-decoration"
+          class="team--more"
         >Contact us →</a>
       </div>
     </div>

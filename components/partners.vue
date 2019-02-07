@@ -126,5 +126,6 @@
         height: 95px;
         width: 100%;
         max-height: 100%;
+      padding: 0 30px;
     }
 </style>

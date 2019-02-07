@@ -3,28 +3,28 @@
     :is="mainTag"
     :id="mainId"
     :class="mainClass"
-    class="banner px-35"
+    class="banner px-2 px-xs-35"
   >
     <div class="container">
       <div class="row">
-        <div class="banner--wrapper col-12 col-hg-7">
-          <h1 class="banner--title decoration">
+        <div class="banner--wrapper col-12 col-hg-7 mx-auto my-6 d-flex flex-column text-center text-xs-left align-items-center align-items-xs-left ml-hg-0 mr-hg-auto justify-content-hg-center">
+          <h1 class="banner--title decoration text-center text-hg-left m-0 ml-hg-0 mr-hg-auto">
             {{ title }}
           </h1>
-          <p class="banner--paragraph">
+          <p class="banner--paragraph text-center text-hg-left mb-3 mx-0 ml-hg-0 mr-hg-auto">
             {{ description }}
           </p>
           <button
-            class="banner--button btn btn-secondary"
+            class="btn btn-secondary ml-hg-0 mr-hg-auto"
             @click="setFocus"
           >
             {{ button }}
           </button>
         </div>
-        <div class="col-5 d-none d-hg-flex">
+        <div class="col-5 d-none d-hg-flex align-items-center">
           <img
             src="~/assets/planeta.png"
-            class="img-fluid m-auto banner--image"
+            class="img-fluid mr-0 ml-auto banner--image"
           >
         </div>
       </div>
@@ -77,8 +77,10 @@
     },
     methods: {
       setFocus() {
-        window.location = "/#contact-form";
-        this.$store.commit('contact/focus', true );
+        var textbox = document.getElementById("email");
+        textbox.focus();
+        textbox.scrollIntoView();
+        // this.$store.commit('contact/focus', true );
       },
     },
   }
@@ -94,17 +96,6 @@
   }
 
   .banner--wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    margin-bottom: 15px;
-    /*padding-left: 5px;*/
-    /*padding-right: 5px;*/
-    max-width: 600px;
-    margin-top: 15px;
-
     &:before {
       content: '';
       position: absolute;
@@ -116,27 +107,9 @@
       border-radius: 10px;
     }
 
-    @media (min-width: 191px) {
-      padding-bottom: 15px;
-      /*padding-left: 15px;*/
-      /*padding-right: 15px;*/
-      /*margin-top: calc(25px + 5vh);*/
-      /*margin-bottom: calc(25px + 5vh);*/
-    }
-
-    @media (min-width: 320px) {
-      /*padding-left: 30px;*/
-      /*padding-right: 30px;*/
-      padding-top: 30px;
-    }
-
-    @media (min-width: 360px) {
-      /*margin-top: calc(50px + 5vh);*/
-      /*margin-bottom: calc(50px + 5vh);*/
-    }
 
     @media(min-width: 1024px) {
-      padding: 75px 0;
+      max-width: 600px;
     }
   }
 
@@ -183,10 +156,5 @@
       margin-bottom: 53px;
       font-size: 22px;
     }
-  }
-
-  .banner--button {
-    margin-left: 0;
-    margin-right: auto;
   }
 </style>

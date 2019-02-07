@@ -126,7 +126,8 @@ $spacers: (
   3: $spacer,
   35: 35px,
   4: ($spacer * 1.5),
-  5: ($spacer * 3)
+  5: ($spacer * 3),
+  6: 60px
 );
 //
 //// This variable affects the `.h-*` and `.w-*` classes.
@@ -1001,14 +1002,14 @@ a:hover{
   color: $secondary;
   text-decoration: none;
 
-  &:first-letter{
-    border-bottom-color: $secondary;
-  }
+  //&:first-letter{
+  //  border-bottom-color: $secondary;
+  //}
 }
 
-a.no-decoration:first-letter{
-  border-bottom-width: 0;
-}
+//a.no-decoration:first-letter{
+//  border-bottom-width: 0;
+//}
 
 p{
   font-size: 12px;
@@ -1038,6 +1039,47 @@ h1{
     font-size: 50px;
   }
 }
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+p, .p,
+label, .label{
+  @media (max-width: 359px) {
+    word-break: break-all;
+    text-overflow: ellipsis;
+  }
+}
+
+::placeholder{
+  text-overflow:ellipsis;
+}
+
+[placeholder]{
+  text-overflow:ellipsis;
+}
+
+::-moz-placeholder {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+}
+:-moz-placeholder { /* Firefox 18- */
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+:-ms-input-placeholder {
+  text-overflow: ellipsis;
+  overflow: hidden;
+} // Internet Explorer 10+
+::-webkit-input-placeholder  {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+} // Safari and Chrome
 
 input[type=checkbox]{
   border: 2px solid map-get($theme-colors, "secondary");
