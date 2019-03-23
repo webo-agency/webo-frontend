@@ -80,7 +80,7 @@
       const el = document.querySelector("#img");
       elBody.addEventListener("mousemove", (e) => {
         if(e.offsetX !== 0 && e.offsetY !== 0){
-          el.style.objectPosition = `-${e.offsetX / 15}px -${e.offsetY / 15}px`;
+          el.style.objectPosition = `-${Math.abs(e.offsetX) / 15}px -${Math.abs(e.offsetY) / 15}px`;
         }
       });
 
