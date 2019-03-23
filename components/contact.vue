@@ -34,7 +34,7 @@
                 <input
                   type="checkbox"
                   name="agreement"
-                > Wyrazam zgodę na przetwarzanie moich danych osobowych podanych w powyzszym formularzu przez Fundacje Akademickie Inkubatory Przedsiębiorczości z siedzibą w Warszawie. Wiem, ze w kazdej chwili będę mogl odwolac zgode.
+                > Wyrażam zgodę na przetwarzanie moich danych osobowych przez firmę webo Maciej Zawadzki z siedzibą w Gliwicach. Wiem, że w każdej chwili będę mógł odwołac zgodę.
               </label>
             </div>
           </div>
@@ -46,13 +46,13 @@
                 type="submit"
                 class="contact--form-button btn btn-secondary"
               >
-                Send greeting
+                Wyślij wiadomość
               </button>
             </div>
           </div>
           <div class="row mt-2 d-none">
             <div class="col">
-              <a href="#">Send message →</a>
+              <a href="#">Wyślij wiadomość →</a>
             </div>
           </div>
         </div>
