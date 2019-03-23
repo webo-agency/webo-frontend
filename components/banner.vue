@@ -79,7 +79,9 @@
       const elBody = document.querySelector('body');
       const el = document.querySelector("#img");
       elBody.addEventListener("mousemove", (e) => {
-        el.style.objectPosition = `-${e.offsetX}px -${e.offsetY}px`;
+        if(e.offsetX !== 0 && e.offsetY !== 0){
+          el.style.objectPosition = `-${e.offsetX / 15}px -${e.offsetY / 15}px`;
+        }
       });
 
 
