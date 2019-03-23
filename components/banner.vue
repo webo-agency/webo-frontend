@@ -11,7 +11,7 @@
           <h1 class="banner--title decoration text-center text-hg-left m-0 ml-hg-0 mr-hg-auto">
             {{ title }}
           </h1>
-          <p class="banner--paragraph text-center text-hg-left mb-3 mx-0 ml-hg-0 mr-hg-auto">
+          <p class="banner--paragraph text-center text-hg-left mb-5 mx-0 ml-hg-0 mr-hg-auto">
             {{ description }}
           </p>
           <button
@@ -61,7 +61,7 @@
         return 'Streaming innowacji';//Streaming innovation /this.$store.state.banner.title
       },
       description () {
-        return 'Jesteśmy młodym zespołem ludzi których łączy pasja i zaangażowanie. Dostarczamy kompleksowe rozwiązania interaktywne od kreacji przez wdrożenie po wsparcie.';//We are a team of young people who are connected with passion and commitment. We provide comprehensive interactive solutions from creation through implementation to support //this.$store.state.banner.description
+        return 'Jesteśmy młodym zespołem ludzi których łączy pasja wraz z zaangażowaniem. Dostarczamy kompleksowe rozwiązania interaktywne od kreacji przez wdrożenie po wsparcie.';//We are a team of young people who are connected with passion and commitment. We provide comprehensive interactive solutions from creation through implementation to support //this.$store.state.banner.description
       },
       button () {
         return 'Rozpocznij projekt';//this.$store.state.banner.button
@@ -124,7 +124,7 @@
     margin-left: 0;
     margin-right: auto;
     word-break: break-word;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
 
     @media (min-width: 280px) {
       word-break: normal;
@@ -155,6 +155,7 @@
     @media(min-width: 992px) {
       margin-bottom: 53px;
       font-size: 22px;
+      max-width: 665px;
     }
   }
 </style>
