@@ -23,6 +23,7 @@
         </div>
         <div class="col-5 d-none d-hg-flex align-items-center">
           <img
+            id="img"
             src="~/assets/planeta.png"
             class="img-fluid mr-0 ml-auto banner--image"
           >
@@ -74,6 +75,14 @@
           'title': 'O nas'
         }
       );
+
+      const elBody = document.querySelector('body');
+      const el = document.querySelector("#img");
+      elBody.addEventListener("mousemove", (e) => {
+        el.style.backgroundPositionX = -e.offsetX + "px";
+        el.style.backgroundPositionY = -e.offsetY + "px";
+      });
+      
     },
     methods: {
       setFocus() {
