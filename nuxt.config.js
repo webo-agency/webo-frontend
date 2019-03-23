@@ -23,7 +23,7 @@ module.exports = {
       { rel: "icon", type: "image/png", sizes: "192x192", href: "/android-chrome-192x192.png" },
       { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
       { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin-ext' },
     ],
     script: [
       { type: 'text/javascript', charset: 'utf-8', src: '/chat.js'}
