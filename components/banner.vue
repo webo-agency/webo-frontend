@@ -137,7 +137,7 @@
 
     @media(min-width: 992px) {
       font-size: 63px;
-      line-height: normal;
+      line-height: 1.1;
     }
   }
 
