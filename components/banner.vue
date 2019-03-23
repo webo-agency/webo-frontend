@@ -79,10 +79,10 @@
       const elBody = document.querySelector('body');
       const el = document.querySelector("#img");
       elBody.addEventListener("mousemove", (e) => {
-        el.style.backgroundPositionX = -e.offsetX + "px";
-        el.style.backgroundPositionY = -e.offsetY + "px";
+        el.style.objectPosition = `-${e.offsetX}px -${e.offsetY}px`;
       });
-      
+
+
     },
     methods: {
       setFocus() {
