@@ -109,7 +109,7 @@
 
 
     @media(min-width: 1024px) {
-      max-width: 600px;
+      /*max-width: 600px;*/
     }
   }
 
