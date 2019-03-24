@@ -141,8 +141,8 @@
         var update = function(event) {
           mouse.updatePosition(event);
           updateTransformStyle(
-            (mouse.y / inner.offsetHeight / 2).toFixed(2),
-            (mouse.x / inner.offsetWidth / 2).toFixed(2)
+            (mouse.y / inner.offsetHeight / 2 * 10).toFixed(2),
+            (mouse.x / inner.offsetWidth / 2 * 10).toFixed(2)
           );
         };
 
