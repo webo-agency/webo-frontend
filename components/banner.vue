@@ -85,7 +85,6 @@
       // });
 
 
-      (function() {
         // Init
         var container = document.getElementById(this.mainId),
           inner = document.getElementById("img");
@@ -161,7 +160,6 @@
         container.onmouseenter = onMouseEnterHandler;
         container.onmouseleave = onMouseLeaveHandler;
         container.onmousemove = onMouseMoveHandler;
-      })();
 
     },
     methods: {
