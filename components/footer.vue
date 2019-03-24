@@ -320,6 +320,11 @@
     @media (min-width: 800px) {
       margin-bottom: 15px;
     }
+
+    @media (min-width: 1200px) {
+      min-width: 500px;
+      justify-content: flex-start;
+    }
   }
 
   .menu--element{
@@ -382,6 +387,11 @@
       order: 2;
       /*margin-left: 20px;*/
       /*margin-right: 20px;*/
+    }
+
+    @media(min-width: 1200px){
+      min-width: 500px;
+      text-align: right;
     }
   }
 
