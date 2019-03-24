@@ -88,7 +88,7 @@
   }
 
   .title{
-    margin-top: 40vh;
+    margin-top: 25vh;
   }
 </style>
 
