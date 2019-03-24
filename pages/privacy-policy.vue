@@ -93,5 +93,15 @@
 </style>
 
 <style lang="scss">
+  .page h2{
+    margin-bottom: 25px;
+  }
 
+  .page li{
+    margin-bottom: 5px;
+  }
+
+  .page ol ol{
+    list-style: square;
+  }
 </style>
