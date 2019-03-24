@@ -94,11 +94,15 @@
 
 <style lang="scss">
   .page h2{
-    margin-bottom: 25px;
+    margin-bottom: 15px;
   }
 
   .page li{
     margin-bottom: 5px;
+  }
+
+  .page ol{
+    margin-bottom: 25px;
   }
 
   .page ol ol{
