@@ -84,11 +84,7 @@
 <style lang="scss" scoped>
   .page {
     width: 100%;
-    margin: auto;
-  }
-
-  .title{
-    margin-top: 25vh;
+    margin: 25vh auto;
   }
 </style>
 
