@@ -247,4 +247,8 @@
       max-width: 665px;
     }
   }
+
+  #img{
+    transition: transform 0.5s;
+  }
 </style>
