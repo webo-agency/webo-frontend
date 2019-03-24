@@ -71,6 +71,7 @@
           class="links list-inline justify-content-between align-items-stretch py-1 py-xs-0"
           :offset="80"
           :offset-height="80"
+          :itemchanged="onItemChanged"
         >
           <nuxt-link
             v-for="(section, index) in sections"
@@ -148,6 +149,9 @@
         }.bind(this), 500);
         this.isGoingUp = (window.scrollY > this.scrollPosition);
         this.scrollPosition = window.scrollY;
+      },
+      onItemChanged() {
+        this.$data.menuVisible = false;
       }
     }
   }
