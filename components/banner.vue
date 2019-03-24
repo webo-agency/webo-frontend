@@ -24,7 +24,7 @@
         <div class="col-5 d-none d-hg-flex align-items-center">
           <img
             id="img"
-            src="~/assets/planeta.png"
+            src="~/assets/planeta-big.png"
             class="img-fluid mr-0 ml-auto banner--image"
           >
         </div>
