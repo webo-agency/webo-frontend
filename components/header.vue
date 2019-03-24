@@ -229,7 +229,7 @@
 
   .logo {
     transition: width 0.3s 0s, height 0.3s 0s;
-    width: 100%;
+    width: auto;
     transform: scale(0.5);
 
     @media (min-width: 65px){
