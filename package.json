@@ -36,6 +36,7 @@
   },
   "scripts": {
     "dev": "nuxt",
+    "dev-debug": "node --inspect node_modules/.bin/nuxt",
     "build": "nuxt build",
     "analyze": "nuxt build --analyze",
     "start": "nuxt build && nuxt start",
