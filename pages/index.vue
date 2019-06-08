@@ -1,41 +1,47 @@
 <template>
   <div class="page index">
-    <cBanner
+    <sectionBanner
       main-tag="section"
       main-class="section"
       main-id="banner"
     />
-    <!--<cAdvantages-->
-      <!--main-tag="section"-->
-      <!--main-class="section"-->
-      <!--main-id="advantages"-->
-    <!--/>-->
-    <!--<cWork-->
-      <!--main-tag="section"-->
-      <!--main-class="sectio"-->
-      <!--main-id="work"-->
-    <!--/>-->
-    <!--<cTeam-->
-      <!--main-tag="section"-->
-      <!--main-class="section"-->
-      <!--main-id="team"-->
-    <!--/>-->
-    <!--<cTechnologies-->
-      <!--main-tag="section"-->
-      <!--main-class="section"-->
-      <!--main-id="technologies"-->
-    <!--/>-->
-    <!--<cPortfolio-->
-      <!--main-tag="section"-->
-      <!--main-class="section"-->
-      <!--main-id="portfolio"-->
-    <!--/>-->
-    <!--<cPartners-->
-      <!--main-tag="section"-->
-      <!--main-class="section"-->
-      <!--main-id="partners"-->
-    <!--/>-->
-    <cContact
+    <sectionAdvantages
+      :disabled="true"
+      main-tag="section"
+      main-class="section"
+      main-id="advantages"
+    />
+    <sectionWork
+      :disabled="true"
+      main-tag="section"
+      main-class="section"
+      main-id="work"
+    />
+    <sectionTeam
+      :disabled="true"
+      main-tag="section"
+      main-class="section"
+      main-id="team"
+    />
+    <sectionTechnologies
+      :disabled="true"
+      main-tag="section"
+      main-class="section"
+      main-id="technologies"
+    />
+    <sectionPortfolio
+      :disabled="true"
+      main-tag="section"
+      main-class="section"
+      main-id="portfolio"
+    />
+    <sectionPartners
+      :disabled="true"
+      main-tag="section"
+      main-class="section"
+      main-id="partners"
+    />
+    <sectionContact
       main-tag="section"
       main-class="section"
       main-id="contact"
@@ -44,21 +50,31 @@
 </template>
 
 <script>
-  import cBanner from '~/components/banner.vue';
-  // import cAdvantages from '~/components/advantages.vue';
-  // import cWork from '~/components/work.vue';
-  // import cTeam from '~/components/team.vue';
-  // import cTechnologies from "../components/technologies";
-  // import cPortfolio from '~/components/portfolio.vue';
-  // import cPartners from '~/components/partners.vue';
-  import cContact from '~/components/contact.vue';
+  import sectionBanner from '~/components/banner.vue';
+  import sectionAdvantages from '~/components/advantages.vue';
+  import sectionWork from '~/components/work.vue';
+  import sectionTeam from '~/components/team.vue';
+  import sectionTechnologies from "../components/technologies";
+  import sectionPortfolio from '~/components/portfolio.vue';
+  import sectionPartners from '~/components/partners.vue';
+  import sectionContact from '~/components/contact.vue';
 
   export default {
+    components: {
+      sectionBanner,
+      sectionAdvantages,
+      sectionWork,
+      sectionTeam,
+      sectionTechnologies,
+      sectionPortfolio,
+      sectionPartners,
+      sectionContact
+    },
     async fetch ({ store }) {
-      let document = await store.$prismic.api.getSingle('banner', {
-        lang : store.app.i18n.locales.find(x => x.code === store.state.i18n.locale).iso
-      });
-      store.commit('banner/load', document.data );
+      // let document = await store.$prismic.api.getSingle('banner', {
+      //   lang : store.app.i18n.locales.find(x => x.code === store.state.i18n.locale).iso
+      // });
+      // store.commit('banner/load', document.data );
     },
     head() {
       return {
@@ -71,17 +87,8 @@
         ]
       }
     },
-    components: {
-      cBanner,
-      // cAdvantages,
-      // cWork,
-      // cTeam,
-      // cTechnologies,
-      // cPortfolio,
-      // cPartners,
-      cContact
-    },
     mounted() {
+
     }
   }
 </script>
@@ -94,6 +101,10 @@
 
   .section {
     position: relative;
+
+    &[disabled]{
+      display: none!important;
+    }
   }
 </style>
 

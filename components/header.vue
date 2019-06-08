@@ -49,11 +49,14 @@
         :class="{'is-menu-empty': sections.length < 1}"
         class="menu d-flex justify-content-between align-items-center m-sm-auto m-hg-0 px-0 pr-xs-0 pl-xs-3"
       >
-        <svgMeteorEnd
+
+        <img
+          svg-inline
           :class="{'is-menu-empty': sections.length < 1}"
           class="icon-start ml-0 mr-1"
           width="24px"
           height="16px"
+          src="~/assets/meteor-end.svg"
         />
 
         <button
@@ -84,11 +87,13 @@
           </nuxt-link>
         </scrollactive>
 
-        <svgMeteorStart
+        <img
+          svg-inline
           :class="{'is-menu-empty': sections.length < 1}"
           class="icon-end mr-0 ml-1"
           width="18px"
           height="18px"
+          src="~/assets/meteor-start.svg"
         />
       </div>
     </div>
@@ -96,15 +101,8 @@
 </template>
 
 <script>
-  import svgMeteorStart from './../assets/meteor-start.svg?inline';
-  import svgMeteorEnd from './../assets/meteor-end.svg?inline';
-
   export default {
-    name: 'CHeader',
-    components: {
-      svgMeteorStart,
-      svgMeteorEnd
-    },
+    name: 'Header',
     props: {
       'mainTag': {
         type: String,

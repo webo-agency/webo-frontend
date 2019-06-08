@@ -245,7 +245,7 @@
 </template>
 <script>
   export default {
-    name: 'CFooter',
+    name: 'Footer',
     props: {
       'mainTag': {
         type: String,

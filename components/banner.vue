@@ -34,7 +34,7 @@
 </template>
 <script>
   export default {
-    name: 'CBanner',
+    name: 'Banner',
     props: {
       'mainTag': {
         type: String,

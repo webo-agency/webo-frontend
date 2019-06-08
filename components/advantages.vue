@@ -59,8 +59,13 @@
 
 <script>
   export default {
-    name: 'CAdvantages',
+    name: 'Advantages',
     props: {
+      'disable': {
+        type: Boolean,
+        default: false,
+        required: false
+      },
       'mainTag': {
         type: String,
         default: '',
@@ -75,6 +80,12 @@
         type: String,
         default: '',
         required: false
+      }
+    },
+    mounted() {
+      // debugger
+      if(this.$props.disabled){
+        this.mainClass = this.mainClass + ' d-none';
       }
     }
   }

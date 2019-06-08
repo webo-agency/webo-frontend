@@ -57,18 +57,6 @@ module.exports = {
       }
     },
     {
-      src: 'prismic-nuxt',
-      options: {
-        endpoint: 'https://webo.cdn.prismic.io/api/v2',
-        linkResolver: function () {
-          return '/preview'
-        },
-        htmlSerializer: function () {
-          // Optional HTML Serializer
-        }
-      }
-    },
-    {
       src: 'nuxt-i18n',
       options: {
         baseUrl: process.env.BASE_URL,
@@ -198,7 +186,7 @@ module.exports = {
     /*
     ** Run ESLINT on save
     */
-    extend (config, { isDev }) {
+    extend(config, { isDev, isClient }) {
       // if (isDev) {
       //   config.module.rules.push({
       //     enforce: "pre",
@@ -208,26 +196,19 @@ module.exports = {
       //   });
       // }
 
-      config.module.rules.forEach((rule) => {
-        if (rule.test.toString() === '/\\.(png|jpe?g|gif|svg|webp)$/') {
-            rule.oneOf = [
-            {
-              loader: 'vue-svg-loader',
-              resourceQuery: /\?inline/i,
-              options: {
-                svgo: {
-                  plugins: [
-                    { removeDoctype: true },
-                    { removeComments: true },
-                    { prefixIds: true },
-                  ],
-                },
-              },
-            }
-          ].concat(rule.use);
-          delete rule.use;
+      const vueRule = config.module.rules.find(rule => rule.test.test(".vue"));
+      vueRule.use = [
+        {
+          loader: vueRule.loader,
+          options: vueRule.options
+        },
+        {
+          loader: "vue-svg-inline-loader",
+          options: { /* ... */ }
         }
-      });
+      ];
+      delete vueRule.loader;
+      delete vueRule.options;
     }
   },
   /*

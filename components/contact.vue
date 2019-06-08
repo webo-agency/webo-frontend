@@ -64,7 +64,7 @@
   import $ from 'jquery';
 
   export default {
-    name: 'CContact',
+    name: 'Contact',
     props: {
       'mainTag': {
         type: String,
