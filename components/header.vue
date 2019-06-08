@@ -180,7 +180,7 @@
 
     &:not(.is-top){
       @media (min-width: 320px) {
-        border-bottom: 1px solid #e9e9e9;
+        box-shadow: 0 0 10px #e9e9e9;
       }
     }
 
