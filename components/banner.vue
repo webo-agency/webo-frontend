@@ -69,12 +69,14 @@
       }
     },
     mounted() {
-      this.$root.$emit(
-        'section', {
-          'id': this.mainId,
-          'title': 'O nas'
-        }
-      );
+      if(!this.$attrs.disabled) {
+        this.$root.$emit(
+          'section', {
+            'id': this.mainId,
+            'title': 'O nas'
+          }
+        );
+      }
 
       // const elBody = document.querySelector('body');
       // const el = document.querySelector("#img");

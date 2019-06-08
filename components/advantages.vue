@@ -83,10 +83,6 @@
       }
     },
     mounted() {
-      // debugger
-      if(this.$props.disabled){
-        this.mainClass = this.mainClass + ' d-none';
-      }
     }
   }
 </script>

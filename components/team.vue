@@ -83,12 +83,14 @@
       }
     },
     mounted() {
-      this.$root.$emit(
-        'section', {
-          'id': this.mainId,
-          'title': 'Meet Us'
-        }
-      );
+      if(!this.$attrs.disabled) {
+        this.$root.$emit(
+          'section', {
+            'id': this.mainId,
+            'title': 'Meet Us'
+          }
+        );
+      }
     }
   }
 </script>

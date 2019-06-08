@@ -109,12 +109,14 @@
       );
     },
     mounted() {
-      this.$root.$emit(
-        'section', {
-          'id': this.mainId,
-          'title': 'SAY Hello!'
-        }
-      );
+      if(!this.$attrs.disabled) {
+        this.$root.$emit(
+          'section', {
+            'id': this.mainId,
+            'title': 'SAY Hello!'
+          }
+        );
+      }
 
       $("#contact-form").submit(function (e) {
         e.preventDefault();

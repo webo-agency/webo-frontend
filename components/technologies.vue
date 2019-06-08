@@ -127,12 +127,14 @@
     mounted: function () {
       this.slideChangeEvent();
 
-      this.$root.$emit(
-        'section', {
-          'id': this.mainId,
-          'title': 'Technologie'
-        }
-      );
+      if(!this.$attrs.disabled) {
+        this.$root.$emit(
+          'section', {
+            'id': this.mainId,
+            'title': 'Technologie'
+          }
+        );
+      }
     },
     methods: {
       slideChangeEvent() {
