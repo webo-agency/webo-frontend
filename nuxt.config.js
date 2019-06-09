@@ -323,6 +323,16 @@ module.exports = {
         });
       }
 
+      config.module.rules.push({
+        enforce: "post",
+        test: /\.(js)$/,
+        loader: "string-replace-loader",
+        options: {
+          search: '-- >0;',
+          replace: '-->0;',
+        }
+      });
+
       // if (isDev) {
       //   config.devtool = isClient ? "eval-source-map" : "inline-source-map";
       // }
