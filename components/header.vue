@@ -50,7 +50,7 @@
         class="menu d-flex justify-content-between align-items-center m-sm-auto m-hg-0 px-0 pr-xs-0 pl-xs-3"
       >
         <img
-          svg-inline
+          data-svg-inline
           :class="{ 'is-menu-empty': sections.length < 1 }"
           class="icon-start ml-0 mr-1"
           width="24px"
@@ -81,13 +81,14 @@
             :class="{ 'is-top': !isTop }"
             class="link scrollactive-item"
             :to="`/#${section.id}`"
+            @click.native="routeUpdate()"
           >
             {{ section.title }}
           </nuxt-link>
         </scrollactive>
 
         <img
-          svg-inline
+          data-svg-inline
           :class="{ 'is-menu-empty': sections.length < 1 }"
           class="icon-end mr-0 ml-1"
           width="18px"
@@ -123,6 +124,13 @@ export default {
       scrollPosition: 0
     };
   },
+  watch: {
+    '$route' (to, from) {
+      if(to.path !== from.path){
+        this.sections = [];
+      }
+    }
+  },
   mounted() {
     window.addEventListener("scroll", this.onScroll, { passive: true });
 
@@ -150,9 +158,12 @@ export default {
       this.isGoingUp = window.scrollY > this.scrollPosition;
       this.scrollPosition = window.scrollY;
     },
+    routeUpdate(){
+        this.$root.$emit("contactFooterFocus");
+    },
     onItemChanged() {
       this.$data.menuVisible = false;
-    }
+    },
   }
 };
 </script>

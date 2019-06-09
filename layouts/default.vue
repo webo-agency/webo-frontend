@@ -1,14 +1,16 @@
 <template>
   <div class="body">
     <cHeader
-main-class="top" main-tag="header"
-/>
+      main-class="top"
+      main-tag="header"
+    />
     <main class="main">
       <nuxt />
     </main>
     <cFooter
-main-class="bottom" main-tag="footer"
-/>
+      main-class="bottom"
+      main-tag="footer"
+    />
   </div>
 </template>
 

@@ -17,20 +17,23 @@
         Error
       </div>
       <p
-v-if="statusCode === 404" class="description"
->
+        v-if="statusCode === 404"
+        class="description"
+      >
         <nuxt-link
-class="error-link" to="/"
->
+          class="error-link"
+          to="/"
+        >
           Homepage
         </nuxt-link>
       </p>
 
       <div class="logo">
         <a
-href="https://nuxtjs.org" target="_blank"
-rel="noopener"
->
+          href="https://nuxtjs.org"
+          target="_blank"
+          rel="noopener"
+        >
           {{ message }}
         </a>
       </div>

@@ -95,7 +95,7 @@ export default {
   watch: {
     inputFocused: function(val) {
       if (val) {
-        this.$refs.email.$el.focus();
+       this.setFocus();
       }
     }
   },
@@ -113,7 +113,17 @@ export default {
       }
     );
   },
-  mounted() {
+  mounted() { 
+    let _this = this;     
+           
+    this.$root.$on("contactFooterFocus", function() {
+      _this.setFocus();
+    });
+
+    if(this.$route.hash == '#contact'){
+      this.setFocus();
+    }
+
     if (!this.$attrs.disabled) {
       this.$root.$emit("section", {
         id: this.mainId,
@@ -148,7 +158,12 @@ export default {
         alert("Niepoprawny adres email!");
       }
     });
-  }
+  }, 
+  methods: {
+    setFocus() {
+       this.$refs.email.focus();
+    }
+  },
 };
 </script>
 

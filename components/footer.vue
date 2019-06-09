@@ -10,9 +10,8 @@
       <ul class="menu list-unstyled row">
         <li class="col-auto menu--element">
           <a
-            href="/#privacy-policy"
+            href="/#contact"
             class="link"
-            @click.self.prevent="setFocus()"
           >
             Kontakt
           </a>

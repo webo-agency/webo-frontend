@@ -221,9 +221,9 @@ module.exports = {
         });
       }
 
-      if (isDev) {
-        config.devtool = isClient ? "eval-source-map" : "inline-source-map";
-      }
+      // if (isDev) {
+      //   config.devtool = isClient ? "eval-source-map" : "inline-source-map";
+      // }
 
       const vueRule = config.module.rules.find(rule => rule.test.test(".vue"));
       vueRule.use = [
