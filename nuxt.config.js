@@ -83,6 +83,7 @@ module.exports = {
       src: "bootstrap-vue/nuxt",
       options: {
         css: false,
+        bootstrapVueCSS: false,
         bootstrapVue: {
           componentPlugins: [
             // 'LayoutPlugin',
