@@ -9,17 +9,55 @@
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
+## Images
 [[headers]]
   for = "/static/*.css"
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
-  for = "/static/img/*.*"
+  for = "/static/img/*.gif"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800"
+[[headers]]
+  for = "/static/img/*.png"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800"
+[[headers]]
+  for = "/static/img/*.jpg"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800"
+[[headers]]
+  for = "/static/img/*.jpeg"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800"
+[[headers]]
+  for = "/static/img/*.svg"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800"
+[[headers]]
+  for = "/static/img/*.webp"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
 
+## Fonts
 [[headers]]
-  for = "/static/fonts/*.*"
+  for = "/static/fonts/*.woff"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800"
+[[headers]]
+  for = "/static/fonts/*.woff2"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800"
+[[headers]]
+  for = "/static/fonts/*.eot"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800"
+[[headers]]
+  for = "/static/fonts/*.ttf"
+  [headers.values]
+    Cache-Control = "public, s-max-age=604800"
+[[headers]]
+  for = "/static/fonts/*.otf"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
