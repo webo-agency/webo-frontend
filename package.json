@@ -17,6 +17,7 @@
     }
   ],
   "dependencies": {
+    "@bazzite/nuxt-netlify": "^0.1.0",
     "@bugsnag/js": "^5.2.0",
     "@bugsnag/plugin-vue": "^5.2.0",
     "@nuxtjs/pwa": "^2.4.0",
