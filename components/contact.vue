@@ -66,7 +66,7 @@
   </component>
 </template>
 <script>
-// import $ from "jquery";
+import $ from "jquery";
 
 export default {
   name: "Contact",
@@ -141,33 +141,33 @@ export default {
       });
     }
 
-    // $("#contact-form").submit(function(e) {
-    //   e.preventDefault();
+    $("#contact-form").submit(function(e) {
+      e.preventDefault();
 
-    //   let $form = $(this);
+      let $form = $(this);
 
-    //   if ($form.find("#email").val()) {
-    //     $.ajax({
-    //       url:
-    //         "https://docs.google.com/forms/d/12AM41enntn2RGXt2hpFJr1EhTLigmnL3XoA-T8ev_dE/formResponse",
-    //       data: {
-    //         emailAddress: $form.find("#email").val()
-    //       },
-    //       type: "POST",
-    //       dataType: "xml",
-    //       statusCode: {
-    //         0: function() {
-    //           alert("Dziękujemy za zgłoszenie!");
-    //         },
-    //         200: function() {
-    //           alert("Dziękujemy za zgłoszenie!");
-    //         }
-    //       }
-    //     });
-    //   } else {
-    //     alert("Niepoprawny adres email!");
-    //   }
-    // });
+      if ($form.find("#email").val()) {
+        $.ajax({
+          url:
+            "https://docs.google.com/forms/d/12AM41enntn2RGXt2hpFJr1EhTLigmnL3XoA-T8ev_dE/formResponse",
+          data: {
+            emailAddress: $form.find("#email").val()
+          },
+          type: "POST",
+          dataType: "xml",
+          statusCode: {
+            0: function() {
+              alert("Dziękujemy za zgłoszenie!");
+            },
+            200: function() {
+              alert("Dziękujemy za zgłoszenie!");
+            }
+          }
+        });
+      } else {
+        alert("Niepoprawny adres email!");
+      }
+    });
   }, 
   methods: {
     setFocus() {
