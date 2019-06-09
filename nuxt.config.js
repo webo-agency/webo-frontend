@@ -82,7 +82,23 @@ module.exports = {
     {
       src: "bootstrap-vue/nuxt",
       options: {
-        css: false
+        css: false,
+        bootstrapVue: {
+          componentPlugins: [
+            // 'LayoutPlugin',
+            // 'FormPlugin',
+            // 'FormCheckboxPlugin',
+            // 'FormInputPlugin',
+            // 'FormRadioPlugin',
+            // 'ToastPlugin',
+            // 'ModalPlugin'
+          ],
+          directivePlugins: [
+            // 'VBPopoverPlugin', 
+            // 'VBTooltipPlugin', 
+            // 'VBScrollspyPlugin'
+          ]
+        }
       }
     },
     {
