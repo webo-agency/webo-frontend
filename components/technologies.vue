@@ -29,31 +29,36 @@
                   <div class="swiper-slide">
                     <img
                       src="~/assets/logo/css.svg"
-                      height="190"
+                      width="33px"
+                      height="46px"
                     >
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="~/assets/logo/html5.svg"
-                      height="188"
+                      width="33px"
+                      height="46px"
                     >
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="~/assets/logo/java.svg"
-                      height="213"
+                      width="29px"
+                      height="54px"
                     >
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="~/assets/logo/nginx.svg"
-                      height="168"
+                      width="36px"
+                      height="42px"
                     >
                   </div>
                   <div class="swiper-slide">
                     <img
                       src="~/assets/logo/php.svg"
-                      height="138"
+                      width="65px"
+                      height="35px"
                     >
                   </div>
                 </div>

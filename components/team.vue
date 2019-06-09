@@ -24,7 +24,11 @@
             class="team--person"
           >
             <h2 class="team--name">Patryk Padus</h2>
-            <img src="~/assets/person.svg">
+            <img
+              src="~/assets/person.svg" 
+              width="55px"
+              height="55px"
+            >
           </a>
         </div>
         <div class="col-auto">
@@ -33,7 +37,11 @@
             class="team--person"
           >
             <h2 class="team--name">Aneta Węglińska</h2>
-            <img src="~/assets/person.svg">
+            <img
+              src="~/assets/person.svg" 
+              width="55px"
+              height="55px"
+            >
           </a>
         </div>
         <div class="col-auto">
@@ -42,7 +50,11 @@
             class="team--person"
           >
             <h2 class="team--name">Izabela Rucińska</h2>
-            <img src="~/assets/person.svg">
+            <img
+              src="~/assets/person.svg" 
+              width="55px"
+              height="55px"
+            >
           </a>
         </div>
         <div class="col-auto">
@@ -51,7 +63,11 @@
             class="team--person"
           >
             <h2 class="team--name">Aneta Węglińska</h2>
-            <img src="~/assets/person.svg">
+            <img
+              src="~/assets/person.svg" 
+              width="55px"
+              height="55px"
+            >
           </a>
         </div>
       </div>

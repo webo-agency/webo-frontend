@@ -25,24 +25,24 @@
             <div class="swiper-slide">
               <img
                 src="~/assets/logo/zadarma.svg"
-                width="88"
-                height="26"
+                width="88px"
+                height="26px"
                 class="partners--img"
               >
             </div>
             <div class="swiper-slide">
               <img
                 src="~/assets/logo/smartmage.svg"
-                width="86"
-                height="26"
+                width="86px"
+                height="26px"
                 class="partners--img"
               >
             </div>
             <div class="swiper-slide">
               <img
                 src="~/assets/logo/inkubatory.svg"
-                width="104"
-                height="26"
+                width="104px"
+                height="26[x"
                 class="partners--img"
               >
             </div>

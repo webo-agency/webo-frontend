@@ -31,6 +31,8 @@
           <img
             id="img"
             src="~/assets/planeta-big.png"
+            width="700px"
+            height="652px"
             class="img-fluid mr-0 ml-auto banner--image"
           >
         </div>

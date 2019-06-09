@@ -32,10 +32,14 @@
                 <img
                   src="~/assets/branding-normal.svg"
                   class="img-fluid work--image"
+                  width="100px"
+                  height="100px"
                 >
                 <img
                   src="~/assets/branding-hover.svg"
                   class="img-fluid work--image is-hover"
+                  width="100px"
+                  height="100px"
                 >
                 <p class="work--info">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,
@@ -46,10 +50,14 @@
                 <img
                   src="~/assets/programming-normal.svg"
                   class="img-fluid work--image"
+                  width="100px"
+                  height="100px"
                 >
                 <img
                   src="~/assets/programming-hover.svg"
                   class="img-fluid work--image is-hover"
+                  width="100px"
+                  height="100px"
                 >
                 <p class="work--info">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,
@@ -60,10 +68,14 @@
                 <img
                   src="~/assets/support-normal.svg"
                   class="img-fluid work--image"
+                  width="100px"
+                  height="100px"
                 >
                 <img
                   src="~/assets/support-hover.svg"
                   class="img-fluid work--image is-hover"
+                  width="100px"
+                  height="100px"
                 >
                 <p class="work--info">
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad,

@@ -20,48 +20,64 @@
         <div class="col-12 col-sm-6 col-lg-3">
           <img
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            width="1px"
+            height="1px"
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            width="1px"
+            height="1px"
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            width="1px"
+            height="1px"
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            width="1px"
+            height="1px"
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            width="1px"
+            height="1px"
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            width="1px"
+            height="1px"
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            width="1px"
+            height="1px"
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
             src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+            width="1px"
+            height="1px"
             class="img-fluid"
           >
         </div>
