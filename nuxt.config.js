@@ -1,6 +1,4 @@
 process.noDeprecation = true;
-var StringReplacePlugin = require("string-replace-webpack-plugin");
-
 module.exports = {
   env: {
     baseUrl: process.env.URL || "http://localhost:3000",
@@ -306,10 +304,6 @@ module.exports = {
   build: {
     extractCSS: true,
     publicPath: "/static/",
-    plugins: [
-      // an instance of the plugin must be present
-      new StringReplacePlugin()
-    ],
     /*
      ** Run ESLINT on save
      */
@@ -328,20 +322,6 @@ module.exports = {
           exclude: /(node_modules)/
         });
       }
-
-      config.module.rules.push({
-        enforce: "post",
-        test: /\.js$/,
-        loader: StringReplacePlugin.replace({
-          replacements: [
-              {
-                  pattern: /-- >0;/g,
-                  replacement: function (/*_match, _p1, _offset, _string*/) {
-                      return "-->0;";
-                  }
-              }
-          ]})
-      });
 
       // if (isDev) {
       //   config.devtool = isClient ? "eval-source-map" : "inline-source-map";
