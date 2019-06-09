@@ -50,11 +50,7 @@ module.exports = {
         sizes: "16x16",
         href: "/favicon-16x16.png"
       },
-      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin-ext"
-      }
+      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" }
     ],
     // script: [{ type: "text/javascript", charset: "utf-8", src: "/chat.min.js" }]
   },
