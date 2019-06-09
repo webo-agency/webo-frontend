@@ -115,7 +115,7 @@ export default {
   },
   mounted() { 
     let _this = this;     
-           
+
     this.$root.$on("contactFooterFocus", function() {
       _this.setFocus();
     });

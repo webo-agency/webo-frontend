@@ -12,6 +12,7 @@
           <a
             href="/#contact"
             class="link"
+            @click.self.prevent="focusContact()"
           >
             Kontakt
           </a>
@@ -373,11 +374,8 @@ export default {
     };
   },
   methods: {
-    setFocus() {
-      var textbox = document.getElementById("email");
-      textbox.focus();
-      textbox.scrollIntoView();
-      // this.$store.commit('contact/focus', true );
+    focusContact(){
+      this.$root.$emit('contactFooterFocus');
     }
   }
 };
