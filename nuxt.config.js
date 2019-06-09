@@ -218,7 +218,7 @@ module.exports = {
         'Cache-Control: public, max-age=604800'
       ],
       '/favicon.ico': [
-        'Cache-Control: public, max-age=86400'
+        'Cache-Control: public, max-age=604800'
       ]
     }
   },
