@@ -3,32 +3,23 @@
   to = "https://www.webo.agency/:splat"
   status = 301
 
+# Cache Control
 [[headers]]
-  for = "/static/*.js" # js files should be set this way
+  for = "/static/*.js"
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
-  for = "/static/*.css" # css files too
+  for = "/static/*.css"
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
-  for = "/static/**/*.png"
+  for = "/static/img/*"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
 
 [[headers]]
-  for = "/static/**/*.jpg"
-  [headers.values]
-    Cache-Control = "public, s-max-age=604800"
-
-[[headers]]
-  for = "/static/**/*.gif"
-  [headers.values]
-    Cache-Control = "public, s-max-age=604800"
-
-[[headers]]
-  for = "/static/**/*.webp"
+  for = "/static/fonts/*"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
