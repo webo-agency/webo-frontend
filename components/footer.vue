@@ -335,14 +335,14 @@
           class="link"
           href="#"
         >hello@webo.agency</a>
-        <span class="link text-primary d-none d-md-block mx-sm-3">;)</span>
+        <span class="link text-primary d-none d-md-block mx-sm-3">(-_-)</span>
         <a
           class="link"
           href="#"
         >+48 22 39 06 234</a>
       </div>
       <div class="note">
-        webo © {{ new Date().getFullYear() }}
+        webo ♥ {{ new Date().getFullYear() }}
       </div>
     </div>
   </component>
@@ -369,6 +369,11 @@ export default {
           title: "Prywatność",
           location: "/privacy-policy",
           label: "Prywatność"
+        },
+        {
+          title: "Licencje",
+          location: "/license",
+          label: "Licencje"
         }
       ]
     };
