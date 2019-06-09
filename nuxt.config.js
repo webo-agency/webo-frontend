@@ -240,7 +240,22 @@ module.exports = {
       ];
       delete vueRule.loader;
       delete vueRule.options;
-    }
+    },
+    html :{
+      minify: {
+        collapseWhitespace: true,
+        conservativeCollapse: true,
+        collapseBooleanAttributes: true,
+        decodeEntities: true,
+        minifyCSS: true,
+        minifyJS: true,
+        processConditionalComments: true,
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        trimCustomFragments: true,
+        useShortDoctype: true
+      }
+    },
   },
   /*
    ** Render loop
