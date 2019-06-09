@@ -28,6 +28,7 @@
     "npm": "^6.9.0",
     "nuxt": "^2.8.1",
     "nuxt-i18n": "^5.12.4",
+    "nuxt-netlify-http2-server-push": "^0.1.2",
     "nuxt-sass-resources-loader": "^2.0.4",
     "vue": "^2.6.10",
     "vue-awesome-swiper": "^3.1.3",
