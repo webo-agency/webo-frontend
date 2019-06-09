@@ -4,31 +4,31 @@
   status = 301
 
 [[headers]]
-  for = "/assets/*.js" # js files should be set this way
+  for = "/static/*.js" # js files should be set this way
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
-  for = "/assets/*.css" # css files too
+  for = "/static/*.css" # css files too
   [headers.values]
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
-  for = "/assets/*.png"
+  for = "/static/*.png"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
 
 [[headers]]
-  for = "/assets/*.jpg"
+  for = "/static/*.jpg"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
 
 [[headers]]
-  for = "/assets/*.gif"
+  for = "/static/*.gif"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
 
 [[headers]]
-  for = "/assets/*.webp"
+  for = "/static/*.webp"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"

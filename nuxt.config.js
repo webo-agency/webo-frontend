@@ -53,11 +53,10 @@ module.exports = {
       { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" },
       {
         rel: "stylesheet",
-        href:
-          "https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin-ext"
+        href: "https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin-ext"
       }
     ],
-    script: [{ type: "text/javascript", charset: "utf-8", src: "/chat.min.js" }]
+    //script: [{ type: "text/javascript", charset: "utf-8", src: "/chat.min.js" }]
   },
   /*
    ** Modules
@@ -207,11 +206,11 @@ module.exports = {
    */
   build: {
     extractCSS: true,
-    publicPath: "/assets/",
+    publicPath: "/static/",
     /*
      ** Run ESLINT on save
      */
-    extend(config, { isDev, isClient }) {
+    extend(config, { isDev /*, isClient */}) {
       if (isDev) {
         config.module.rules.push({
           enforce: "pre",
