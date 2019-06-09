@@ -173,7 +173,7 @@ export default {
   position: relative;
   display: none;
   align-items: center;
-  transition: top 0.3s;
+  transition: top 0.3s, box-shadow 0.3s;
 
   @media (min-width: 50px) {
     display: flex;
