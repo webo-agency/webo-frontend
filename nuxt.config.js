@@ -253,7 +253,8 @@ module.exports = {
         removeEmptyAttributes: true,
         removeRedundantAttributes: true,
         trimCustomFragments: true,
-        useShortDoctype: true
+        useShortDoctype: true,
+        removeComments: true
       }
     },
   },
