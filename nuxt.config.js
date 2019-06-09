@@ -51,8 +51,7 @@ module.exports = {
         href: "/favicon-16x16.png"
       },
       { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" }
-    ],
-    script: [{ type: "text/javascript", charset: "utf-8", src: "/chat.min.js", async: true }]
+    ]
   },
   /*
    ** Modules
