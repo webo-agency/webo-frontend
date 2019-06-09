@@ -12,7 +12,7 @@
           <a
             href="/#contact"
             class="link"
-            @click.self.prevent="focusContact()"
+            @click.self.prevent="focusContact"
           >
             Kontakt
           </a>
@@ -374,8 +374,11 @@ export default {
     };
   },
   methods: {
-    focusContact(){
-      this.$root.$emit('contactFooterFocus');
+    focusContact(event){
+       if( this.$route.path !== '/'){
+         window.location = event.target.href;
+       }
+      this.$root.$emit('contactFooterFocus');      
     }
   }
 };

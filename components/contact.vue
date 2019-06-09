@@ -108,6 +108,7 @@ export default {
       // Run this callback
       function(newVal) {
         if (newVal) {
+          debugger; //eslint-disable-line
           this.inputFocused(this.$store.contact.inputFocus);
         }
       }
@@ -115,9 +116,18 @@ export default {
   },
   mounted() { 
     let _this = this;     
+    
+    if( this.$route != '/'){
+     if(typeof this.$refs.email !== 'undefined'){
+        this.setFocus();
+      }
+    }
 
     this.$root.$on("contactFooterFocus", function() {
-      _this.setFocus();
+      //From footer clicked on main page
+      if (typeof _this.$refs.email !== 'undefined') {
+        _this.setFocus();
+      }
     });
 
     if(this.$route.hash == '#contact'){
