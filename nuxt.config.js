@@ -56,7 +56,7 @@ module.exports = {
         href: "https://fonts.googleapis.com/css?family=Montserrat:400,700&amp;subset=latin-ext"
       }
     ],
-    script: [{ type: "text/javascript", charset: "utf-8", src: "/chat.min.js" }]
+    // script: [{ type: "text/javascript", charset: "utf-8", src: "/chat.min.js" }]
   },
   /*
    ** Modules
