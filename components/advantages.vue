@@ -13,36 +13,42 @@
               <img
                 class="img-fluid advantages--img"
                 src="~/assets/tarcza-normal.svg"
-                height="89"
+                width="24px"
+                height="29px"
               >
               <img
                 class="img-fluid advantages--img is-hover"
                 src="~/assets/tarcza-hover.svg"
-                height="89"
+                width="24px"
+                height="29px"
               >
             </span>
             <span class="col h-100 d-flex align-center">
               <img
                 class="img-fluid advantages--img"
                 src="~/assets/sla-normal.svg"
-                height="89"
+                width="28px"
+                height="29px"
               >
               <img
                 class="img-fluid advantages--img is-hover"
                 src="~/assets/sla-hover.svg"
-                height="89"
+                width="28px"
+                height="29px"
               >
             </span>
             <span class="col h-100 d-flex align-center">
               <img
                 class="img-fluid advantages--img"
                 src="~/assets/innowacja-normal.svg"
-                height="89"
+                width="29x"
+                height="28px"
               >
               <img
                 class="img-fluid advantages--img is-hover"
                 src="~/assets/innowacja-hover.svg"
-                height="89"
+                width="29x"
+                height="28px"
               >
             </span>
           </div>
