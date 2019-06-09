@@ -19,49 +19,49 @@
       <div class="row d-none">
         <div class="col-12 col-sm-6 col-lg-3">
           <img
-            src="https://placekitten.com/g/480/300"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
-            src="https://placekitten.com/g/480/300"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
-            src="https://placekitten.com/g/480/300"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
-            src="https://placekitten.com/g/480/300"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
-            src="https://placekitten.com/g/480/300"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
-            src="https://placekitten.com/g/480/300"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
-            src="https://placekitten.com/g/480/300"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
             class="img-fluid"
           >
         </div>
         <div class="col-12 col-sm-6 col-lg-3">
           <img
-            src="https://placekitten.com/g/480/300"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
             class="img-fluid"
           >
         </div>
