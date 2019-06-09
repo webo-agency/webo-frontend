@@ -5,8 +5,15 @@
         Licencje
       </h1>
 
-      <h2>Używamy następujących licencji</h2>
+      <h2>Używamy następujących licencji:</h2>
       <ol>
+        <li>
+          Pliki JS -> <a 
+            ref="noreferrer nofollow"
+            href="/static/LICENSE"
+            target="_blank"
+          >LICENCJE</a>
+        </li>
         <li>
           /*!
           * Bootstrap v4.1.3 (https://getbootstrap.com/)

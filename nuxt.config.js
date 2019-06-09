@@ -336,6 +336,23 @@ module.exports = {
         removeComments: true
       }
     },
+    terser: {
+      parallel: true,
+      cache: false,
+      sourceMap: false,
+      extractComments: {
+        filename: 'LICENSES',
+        banner: () => {
+          return false;
+        },
+      },
+      terserOptions: {
+        output: {
+          comments: /^\**!|@preserve|@license|@cc_on/,
+          
+        }
+      }
+    }
   },
   /*
    ** Render loop
