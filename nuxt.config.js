@@ -52,7 +52,7 @@ module.exports = {
       },
       { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" }
     ],
-    // script: [{ type: "text/javascript", charset: "utf-8", src: "/chat.min.js" }]
+    script: [{ type: "text/javascript", charset: "utf-8", src: "/chat.min.js", async: true }]
   },
   /*
    ** Modules
