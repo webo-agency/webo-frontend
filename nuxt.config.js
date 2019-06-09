@@ -138,6 +138,14 @@ module.exports = {
       },
     },
     {
+      src: 'nuxt-webfontloader',
+      options: {
+        google: {
+          families: ['Montserrat:400,700:latin,latin-ext'] //Loads Lato font with weights 400 and 700
+        }
+      }
+    },
+    {
       src: "@bazzite/nuxt-netlify",
       options: {
         mergeSecurityHeaders: true,
