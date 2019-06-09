@@ -365,9 +365,10 @@ module.exports = {
         },
       },
       terserOptions: {
+        mangle: true,
+        compress: true,
         output: {
           comments: /^\**!|@preserve|@license|@cc_on/,
-          
         }
       }
     }
