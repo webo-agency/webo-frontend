@@ -244,7 +244,7 @@ module.exports = {
     html :{
       minify: {
         collapseWhitespace: true,
-        conservativeCollapse: true,
+        conservativeCollapse: false,
         collapseBooleanAttributes: true,
         decodeEntities: true,
         minifyCSS: true,
