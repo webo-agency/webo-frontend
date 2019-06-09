@@ -36,7 +36,7 @@
   },
   "scripts": {
     "dev": "nuxt",
-    "dev-debug": "node --inspect node_modules/.bin/nuxt",
+    "dev-debug": "cross-env NODE_ENV=debug node --inspect-brk node_modules/.bin/nuxt",
     "build": "nuxt build",
     "analyze": "nuxt build --analyze",
     "start": "nuxt build && nuxt start",
@@ -55,6 +55,7 @@
     "@kazupon/vue-i18n-loader": "^0.3.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
+    "cross-env": "^5.2.0",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-loader": "^2.1.2",
@@ -65,11 +66,15 @@
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^5.2.2",
     "node-sass": "^4.12.0",
+    "puppeteer": "^1.17.0",
     "sass-loader": "^7.1.0",
     "vue-i18n-extensions": "^0.2.1",
     "vue-svg-inline-loader": "^1.2.15",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.33.0",
     "webpack-dev-server": "^3.7.1"
-  }
+  },
+  "browserslist": [
+    "> 5%"
+  ]
 }

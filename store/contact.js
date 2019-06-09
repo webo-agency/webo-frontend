@@ -1,13 +1,13 @@
 export const state = () => ({
-  inputFocus: false,
+  inputFocus: false
 });
 
 export const getters = {};
 
 export const mutations = {
-  focus(state, data){
+  focus(state, data) {
     state.inputFocus = data;
-  },
+  }
 };
 
 export const actions = {};

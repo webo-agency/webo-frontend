@@ -7,7 +7,7 @@ export const state = () => ({
 export const getters = {};
 
 export const mutations = {
-  load(state, data){
+  load(state, data) {
     // debugger;
     let elFirst = data.title.shift();
     state.title = elFirst.text;
@@ -17,19 +17,19 @@ export const mutations = {
 
     state.button = data.button;
   },
-  loadTitle(state, data){
+  loadTitle(state, data) {
     state.title = data;
   },
-  loadDescription(state, data){
+  loadDescription(state, data) {
     state.description = data;
   },
-  loadButton(state, data){
+  loadButton(state, data) {
     state.button = data;
   }
 };
 
 export const actions = {
-  load(state, data){
+  load(state, data) {
     // debugger;
     let elFirst = data.title.shift();
     state.title = elFirst.text;
@@ -38,5 +38,5 @@ export const actions = {
     state.description = elFirst.text;
 
     state.button = data.button;
-  },
+  }
 };
