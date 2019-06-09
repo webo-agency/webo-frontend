@@ -289,6 +289,8 @@ module.exports = {
     extend(config, { isDev , isClient }) {
       if (isClient && process.env.NODE_ENV == 'development') {
         config.devtool = '#source-map';
+      } else {
+        config.devtool = false;
       }
 
       if (isDev) {
