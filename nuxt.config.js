@@ -290,7 +290,7 @@ module.exports = {
       if (isClient && process.env.NODE_ENV == 'development') {
         config.devtool = '#source-map';
       } else {
-        config.devtool = false;
+        config.devtool = 'hidden-source-map';
       }
 
       if (isDev) {
