@@ -14,21 +14,21 @@
     Cache-Control = "public, max-age=604800"
 
 [[headers]]
-  for = "/static/*.png"
+  for = "/static/**/*.png"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
 
 [[headers]]
-  for = "/static/*.jpg"
+  for = "/static/**/*.jpg"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
 
 [[headers]]
-  for = "/static/*.gif"
+  for = "/static/**/*.gif"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
 
 [[headers]]
-  for = "/static/*.webp"
+  for = "/static/**/*.webp"
   [headers.values]
     Cache-Control = "public, s-max-age=604800"
