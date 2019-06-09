@@ -287,7 +287,7 @@ module.exports = {
      ** Run ESLINT on save
      */
     extend(config, { isDev , isClient }) {
-      if (isClient) {
+      if (isClient && process.env.NODE_ENV == 'development') {
         config.devtool = '#source-map';
       }
 

@@ -18,16 +18,13 @@
         "outputCapture": "std",
         "restart": true,
         "osx": {
-          "program": "${workspaceFolder}/node_modules/.bin/npm",
-          "args": ["run-script", "dev"]
+          "program": "${workspaceFolder}/node_modules/.bin/nuxt",
         },
         "linux": {
-          "program": "${workspaceFolder}/node_modules/.bin/npm",
-          "args": ["run-script", "dev"]
+          "program": "${workspaceFolder}/node_modules/.bin/nuxt",
         },
         "windows": {
-          "program": "${workspaceFolder}/node_modules/bin/npm.cmd",
-          "args": ["run-script", "dev"]
+          "program": "${workspaceFolder}/node_modules/bin/npm.nuxt",
         },
         "cwd": "${workspaceRoot}",
         "sourceMaps": true,
