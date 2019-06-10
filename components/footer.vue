@@ -372,7 +372,7 @@ export default {
         },
         {
           title: "Licencje",
-          location: "/license",
+          location: "/rights-and-licenses",
           label: "Licencje"
         }
       ]

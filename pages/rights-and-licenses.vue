@@ -10,7 +10,7 @@
         <li>
           Pliki JS -> <a 
             ref="noreferrer nofollow"
-            href="/static/LICENSE"
+            href="/static/LICENSES"
             target="_blank"
           >LICENCJE</a>
         </li>
