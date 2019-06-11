@@ -24,7 +24,7 @@ module.exports = async function module(moduleOptions) {
 const generateHeaderFile = (context, resources) => {
   const generateDir = path.resolve(context.options.generate.dir);
   const headersFile = `${generateDir}/_headers`;
-  let content = '/\n';
+  let content = '/pl\n';
   resources.forEach(resource => {
     const files = glob.sync(`${generateDir}/${resource.path}`);
     files.forEach(file => {
@@ -37,6 +37,12 @@ const generateHeaderFile = (context, resources) => {
       content += '\n';
     });
   });
+
+  content += '\n';
+  content += '/static/*';
+  content += '\n';
+  content += `  Link: `;
+
   fs.appendFile(headersFile, content, err => {
     if (err) {
       logger.error(err);
