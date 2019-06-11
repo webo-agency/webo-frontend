@@ -24,7 +24,7 @@ module.exports = async function module(moduleOptions) {
 const generateHeaderFile = (context, resources) => {
   const generateDir = path.resolve(context.options.generate.dir);
   const headersFile = `${generateDir}/_headers`;
-  let content = '/*.html\n';
+  let content = '/\n';
   resources.forEach(resource => {
     const files = glob.sync(`${generateDir}/${resource.path}`);
     files.forEach(file => {
