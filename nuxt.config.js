@@ -68,10 +68,16 @@ module.exports = {
     {
       src: "@nuxtjs/pwa",
       options: {
+        workbox: {
+          publicPath: '/static/',
+        },
+        manifest: {
+          publicPath: "/static/",
+        },
         iconSrc: "~/assets/symbol.png",
         icon: {
           sizes: [512, 192, 380]
-        }
+        },
       }
     },
     {
