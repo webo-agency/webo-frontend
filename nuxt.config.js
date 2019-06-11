@@ -152,20 +152,20 @@ module.exports = {
         mergeSecurityHeaders: true,
       }
     },
-    // {
-    //   src: 'nuxt-netlify-http2-server-push',
-    //   options: {
-    //     resources: [
-    //       { path: '/static/*.js', as: 'script' },
-    //       { path: '/static/*.css', as: 'style' },
-    //       { path: 'images/img/*.gif', as: 'image' },
-    //       { path: 'images/img/*.png', as: 'image' },
-    //       { path: 'fonts/*.woff', as: 'font', type: 'font/woff', crossorigin: 'anonymous' },
-    //       { path: 'fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-    //
-    //     ]
-    //   }
-    // }
+    {
+      src: 'nuxt-netlify-http2-server-push',
+      options: {
+        resources: [
+          { path: '/static/*.js', as: 'script' },
+          { path: '/static/*.css', as: 'style' },
+          { path: 'images/img/*.gif', as: 'image' },
+          { path: 'images/img/*.png', as: 'image' },
+          { path: 'fonts/*.woff', as: 'font', type: 'font/woff', crossorigin: 'anonymous' },
+          { path: 'fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+
+        ]
+      }
+    }
   ],
   netlify: { 
     mergeSecurityHeaders: true,
