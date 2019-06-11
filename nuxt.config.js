@@ -68,12 +68,12 @@ module.exports = {
     {
       src: "@nuxtjs/pwa",
       options: {
-        workbox: {
-          publicPath: '/static/',
-        },
-        manifest: {
-          publicPath: "/static/",
-        },
+        // workbox: {
+        //   publicPath: '/static/',
+        // },
+        // manifest: {
+        //   publicPath: "/static/",
+        // },
         iconSrc: "~/assets/symbol.png",
         icon: {
           sizes: [512, 192, 380]
@@ -149,7 +149,7 @@ module.exports = {
     {
       src: "@bazzite/nuxt-netlify",
       options: {
-        mergeSecurityHeaders: true,
+        mergeSecurityHeaders: false,
       }
     },
     {
@@ -168,7 +168,7 @@ module.exports = {
     }
   ],
   netlify: { 
-    mergeSecurityHeaders: true,
+    mergeSecurityHeaders: false,
     headers: {
       '/static/*': [
         'Cache-Control: public, max-age=604800'
