@@ -38,10 +38,14 @@ const generateHeaderFile = (context, resources) => {
     });
   });
 
-  content += '\n';
-  content += '/static/*';
-  content += '\n';
-  content += `  Link: []`;
+  const files = glob.sync(`${generateDir}/**/!(*.html|*.htm)`);
+  files.forEach(file => {
+    const url = file.replace(generateDir.replace(/\\/g, '/'), '');
+    content += `${url}`;
+    content += '\n';
+    content += `  Link: `;
+    content += '\n';
+  });
 
   fs.appendFile(headersFile, content, err => {
     if (err) {
