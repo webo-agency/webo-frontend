@@ -39,7 +39,7 @@
   ],
   "license": "MIT",
   "main": "module.js",
-  "name": "noptimize-spaces",
+  "name": "optimize-spaces",
   "publishConfig": {
     "access": "public"
   },
