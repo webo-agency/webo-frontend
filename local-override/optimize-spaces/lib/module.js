@@ -27,7 +27,7 @@ const _optimizeSpaces = (context) => {
         return false;
       }
 
-      var result = data.replace('-- >','-->');
+      var result = data.replace(/-- >/g,'-->');
       fs.writeFile(file, result, 'utf8', function(err) {
           if (err) {
             logger.error('Spaces not optimized');
