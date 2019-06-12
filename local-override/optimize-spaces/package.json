@@ -30,6 +30,9 @@
     "testEnvironment": "node",
     "collectCoverage": true
   },
+  "files": [
+    "lib"
+  ],
   "keywords": [
     "nuxtjs",
     "nuxt",
@@ -38,7 +41,7 @@
     "http2-server-push"
   ],
   "license": "MIT",
-  "main": "module.js",
+  "main": "lib/module.js",
   "name": "optimize-spaces",
   "publishConfig": {
     "access": "public"
