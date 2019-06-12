@@ -25,6 +25,7 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap-vue": "^2.0.0-rc.22",
     "jquery": "^3.4.1",
+    "optimize-spaces": "file:local-override/optimize-spaces",
     "npm": "^6.9.0",
     "nuxt": "^2.8.1",
     "nuxt-i18n": "^5.12.4",

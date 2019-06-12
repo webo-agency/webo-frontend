@@ -162,9 +162,12 @@ module.exports = {
           { path: 'images/img/*.png', as: 'image' },
           { path: 'fonts/*.woff', as: 'font', type: 'font/woff', crossorigin: 'anonymous' },
           { path: 'fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
-
         ]
       }
+    },
+    {
+      src: 'optimize-spaces',
+      options: {}
     }
   ],
   netlify: { 
