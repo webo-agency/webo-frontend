@@ -26,9 +26,6 @@
   "eslintIgnore": [
     "lib/templates/*.*"
   ],
-  "files": [
-    "lib"
-  ],
   "jest": {
     "testEnvironment": "node",
     "collectCoverage": true
@@ -41,7 +38,7 @@
     "http2-server-push"
   ],
   "license": "MIT",
-  "main": "lib/module.js",
+  "main": "module.js",
   "name": "noptimize-spaces",
   "publishConfig": {
     "access": "public"
