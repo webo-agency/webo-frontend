@@ -2,3 +2,10 @@
   from = "https://webo.design/*"
   to = "https://www.webo.agency/:splat"
   status = 301
+
+
+[[headers]]
+  for = "/workbox.*"
+
+  [headers.values]
+    Link = "<>"

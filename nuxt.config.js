@@ -142,7 +142,7 @@ module.exports = {
       src: 'nuxt-webfontloader',
       options: {
         google: {
-          families: ['Montserrat:400,700:latin,latin-ext'] //Loads Lato font with weights 400 and 700
+          families: ['Montserrat:400,700:latin,latin-ext&display=swap'] //Loads Lato font with weights 400 and 700
         }
       }
     },
