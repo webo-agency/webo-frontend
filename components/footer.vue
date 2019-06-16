@@ -335,14 +335,14 @@
           class="link"
           href="#"
         >hello@webo.agency</a>
-        <span class="link text-primary d-none d-md-block mx-sm-3">(-_-)</span>
+        <span class="link text-primary d-none d-md-block mx-sm-3">_(^.^)_</span>
         <a
           class="link"
           href="#"
         >+48 22 39 06 234</a>
       </div>
       <div class="note">
-        webo ♥ {{ new Date().getFullYear() }}
+        Copyright 2018 ~ {{ new Date().getFullYear() }} webo
       </div>
     </div>
   </component>
