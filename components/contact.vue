@@ -178,8 +178,8 @@ export default {
     },
     onSubmit(event) {
         event.preventDefault();
-
-        let GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLScmdjdsGBh3HHIMsk88T0Lxfs_DcUwp0xdnTaiqTBBbue8AKQ/viewform";
+//https://docs.google.com/forms/d/12AM41enntn2RGXt2hpFJr1EhTLigmnL3XoA-T8ev_dE/formResponse
+        let GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLScmdjdsGBh3HHIMsk88T0Lxfs_DcUwp0xdnTaiqTBBbue8AKQ/formResponse";
         let emailFieldName = "emailAddress";
         const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
 
