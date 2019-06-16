@@ -187,7 +187,10 @@ export default {
           postData,
           {
             method: 'POST',
-            headers: {'Content-Type': 'text/xml'}
+            headers: {
+              'Accept': 'application/xml, text/xml, */*; q=0.01',
+              'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+            }
           }
         )
         .then((Response) => {
