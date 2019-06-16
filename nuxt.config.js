@@ -191,9 +191,6 @@ module.exports = {
   netlify: { 
     mergeSecurityHeaders: true,
     headers: {
-      '/*': [
-        'Access-Control-Allow-Origin: "*"'
-      ],
       '/static/*': [
         'Cache-Control: public, max-age=604800'
       ],

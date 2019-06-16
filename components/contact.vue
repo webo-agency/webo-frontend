@@ -178,12 +178,19 @@ export default {
     },
     onSubmit(event) {
         event.preventDefault();
-        var payload = {email: this.email};
         
-        debugger; // eslint-disable-line no-debugger
+        // debugger; // eslint-disable-line no-debugger
         // send get request
 
-        this.$axios.$post(this.$refs['contact-form'].action, payload)
+        this.$axios.$post(
+          this.$refs['contact-form'].action, 
+          {
+            email: this.email,
+            method: 'POST',
+            mode: 'no-cors',
+            withCredentials: true,
+          }
+        )
         .then((Response) => {
            debugger;// eslint-disable-line no-debugger
           alert(Response);
