@@ -178,17 +178,16 @@ export default {
     },
     onSubmit(event) {
         event.preventDefault();
-        
+        let postData = {emailAddress: this.email};
         // debugger; // eslint-disable-line no-debugger
         // send get request
 
         this.$axios.$post(
+          this.$refs['contact-form'].action, 
+          postData,
           {
-            data: {
-              emailAddress: this.email,
-            },
             method: 'POST',
-            url: this.$refs['contact-form'].action,
+            headers: {'Content-Type': 'text/xml'}
           }
         )
         .then((Response) => {
