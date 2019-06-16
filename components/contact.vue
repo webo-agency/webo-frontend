@@ -190,7 +190,7 @@ export default {
         // send get request
 
         this.$axios.$post(
-          CORS_PROXY + GOOGLE_FORM_ACTION_URL, formData
+          GOOGLE_FORM_ACTION_URL, formData
         ).then(() => {
           debugger; // eslint-disable-line no-debugger
         }).catch(() => {
