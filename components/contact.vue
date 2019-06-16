@@ -178,28 +178,43 @@ export default {
     },
     onSubmit(event) {
         event.preventDefault();
-        let postData = {emailAddress: this.email};
+
+        let GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/d/e/1FAIpQLScmdjdsGBh3HHIMsk88T0Lxfs_DcUwp0xdnTaiqTBBbue8AKQ/viewform";
+        let emailFieldName = "emailAddress";
+        const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/'
+
+        const formData = new FormData();
+        formData.append(emailFieldName, this.email);
+
         // debugger; // eslint-disable-line no-debugger
         // send get request
 
         this.$axios.$post(
-          this.$refs['contact-form'].action, 
-          postData,
-          {
-            method: 'POST',
-            headers: {
-              'Accept': 'application/xml, text/xml, */*; q=0.01',
-              'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
-            }
-          }
-        )
-        .then((Response) => {
-           debugger;// eslint-disable-line no-debugger
-          alert(Response);
+          CORS_PROXY + GOOGLE_FORM_ACTION_URL, formData
+        ).then(() => {
+          debugger; // eslint-disable-line no-debugger
+        }).catch(() => {
+          debugger; // eslint-disable-line no-debugger
         })
-        .catch((err) => {
-          this.errors.push(err)
-        });
+
+        // this.$axios.$post(
+        //   this.$refs['contact-form'].action, 
+        //   postData,
+        //   {
+        //     method: 'POST',
+        //     headers: {
+        //       'Accept': 'application/xml, text/xml, */*; q=0.01',
+        //       'Content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+        //     }
+        //   }
+        // )
+        // .then((Response) => {
+        //    debugger;// eslint-disable-line no-debugger
+        //   alert(Response);
+        // })
+        // .catch((err) => {
+        //   this.errors.push(err)
+        // });
     }
   },
 };
