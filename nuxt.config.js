@@ -20,7 +20,11 @@ module.exports = {
       { name: "robots", content: "INDEX,FOLLOW" }
     ],
     link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "icon",
+        type: "image/x-icon",
+        href: "/favicon.ico"
+      },
       {
         rel: "apple-touch-icon",
         sizes: "180x180",
@@ -50,7 +54,16 @@ module.exports = {
         sizes: "16x16",
         href: "/favicon-16x16.png"
       },
-      { rel: "mask-icon", href: "/safari-pinned-tab.svg", color: "#262626" }
+      {
+        rel: "mask-icon",
+        href: "/safari-pinned-tab.svg",
+        color: "#262626"
+      },
+      {
+        rel: "preconnect",
+        href: "https://fonts.gstatic.com",
+        crossorigin: true
+      }
     ]
   },
   /*
@@ -156,12 +169,13 @@ module.exports = {
       src: 'nuxt-netlify-http2-server-push',
       options: {
         resources: [
-          { path: '/static/*.js', as: 'script' },
-          { path: '/static/*.css', as: 'style' },
-          { path: 'images/img/*.gif', as: 'image' },
-          { path: 'images/img/*.png', as: 'image' },
-          { path: 'fonts/*.woff', as: 'font', type: 'font/woff', crossorigin: 'anonymous' },
-          { path: 'fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
+          { path: 'favicon.ico', as: 'image' },
+          { path: 'static/*.js', as: 'script' },
+          { path: 'static/*.css', as: 'style' },
+          { path: 'static/images/img/*.gif', as: 'image' },
+          { path: 'static/images/img/*.png', as: 'image' },
+          { path: 'static/fonts/*.woff', as: 'font', type: 'font/woff', crossorigin: 'anonymous' },
+          { path: 'static/fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
         ]
       }
     },
