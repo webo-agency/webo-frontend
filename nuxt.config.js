@@ -79,6 +79,10 @@ module.exports = {
       }
     },
     {
+      src: "@nuxtjs/axios",
+      options: {}
+    },
+    {
       src: "@nuxtjs/pwa",
       options: {
         // workbox: {
@@ -152,10 +156,10 @@ module.exports = {
       },
     },
     {
-      src: 'nuxt-webfontloader',
+      src: "nuxt-webfontloader",
       options: {
         google: {
-          families: ['Montserrat:400,700:latin,latin-ext&display=swap'] //Loads Lato font with weights 400 and 700
+          families: ['Montserrat:400,700:latin,latin-ext&display=swap']
         }
       }
     },
@@ -166,7 +170,7 @@ module.exports = {
       }
     },
     {
-      src: 'nuxt-netlify-http2-server-push',
+      src: "nuxt-netlify-http2-server-push",
       options: {
         resources: [
           { path: 'favicon.ico', as: 'image' },
