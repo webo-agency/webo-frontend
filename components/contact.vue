@@ -183,12 +183,12 @@ export default {
         // send get request
 
         this.$axios.$post(
-          this.$refs['contact-form'].action, 
           {
-            email: this.email,
+            data: {
+              emailAddress: this.email,
+            },
             method: 'POST',
-            mode: 'no-cors',
-            withCredentials: true,
+            url: this.$refs['contact-form'].action,
           }
         )
         .then((Response) => {
