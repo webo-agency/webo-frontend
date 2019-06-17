@@ -333,16 +333,18 @@
       <div class="shortcut">
         <a
           class="link"
-          href="#"
-        >hello@webo.agency</a>
+          :href="'mailto:'+email"
+        >
+          {{ email }}
+        </a>
         <span class="link text-primary d-none d-md-block mx-sm-3">_(^.^)_</span>
         <a
           class="link"
-          href="#"
-        >+48 22 39 06 234</a>
+          :href="'tel:'+telephone"
+        >{{ telephoneFormat(telephone) }}</a>
       </div>
       <div class="note">
-        Copyright 2018 ~ {{ new Date().getFullYear() }} webo
+        {{ copyright }}
       </div>
     </div>
   </component>
@@ -375,10 +377,23 @@ export default {
           location: "/rights-and-licenses",
           label: "Licencje"
         }
-      ]
+      ],
+      telephone: "+48223906234",
+      email: "hello@webo.agency",
+      copyright: `Copyright 2018 ~ ${ new Date().getFullYear() } webo`
     };
   },
   methods: {
+    telephoneFormat(number){
+      let numberArray = Array.from(number);
+
+      numberArray.splice( 3, 0, " ");
+      numberArray.splice( 6, 0, " ");
+      numberArray.splice( 10, 0, " ");
+      numberArray.splice( 13, 0, " ");
+
+      return numberArray.join('');
+    },
     focusContact(event){
        if( this.$route.path !== '/'){
          window.location = event.target.href;
