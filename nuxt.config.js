@@ -167,6 +167,59 @@ module.exports = {
       src: "@bazzite/nuxt-netlify",
       options: {
         mergeSecurityHeaders: true,
+        headers: {
+          '/static/*': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/*.css': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/*.js': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/img/*': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/img/*.gif': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/img/*.png': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/img/*.jpg': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/img/*.jpeg': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/img/*.svg': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/fonts/*': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/fonts/*.webp': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/fonts/*.woff': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/fonts/*.woff2': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/fonts/*.eot': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/fonts/*.ttf': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/static/fonts/*.otf': [
+            'Cache-Control: public, max-age=31557600'
+          ],
+          '/favicon.ico': [
+            'Cache-Control: public, max-age=604800'
+          ]
+        }
       }
     },
     {
@@ -177,7 +230,6 @@ module.exports = {
           { path: 'static/*.js', as: 'script' },
           { path: 'static/*.css', as: 'style' },
           { path: 'static/images/img/*.gif', as: 'image' },
-          { path: 'static/images/img/*.png', as: 'image' },
           { path: 'static/fonts/*.woff', as: 'font', type: 'font/woff', crossorigin: 'anonymous' },
           { path: 'static/fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
         ]
@@ -188,62 +240,6 @@ module.exports = {
       options: {}
     }
   ],
-  netlify: { 
-    mergeSecurityHeaders: true,
-    headers: {
-      '/static/*': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/*.css': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/*.js': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/img/*': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/img/*.gif': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/img/*.png': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/img/*.jpg': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/img/*.jpeg': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/img/*.svg': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/fonts/*': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/fonts/*.webp': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/fonts/*.woff': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/fonts/*.woff2': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/fonts/*.eot': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/fonts/*.ttf': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/static/fonts/*.otf': [
-        'Cache-Control: public, max-age=31557600'
-      ],
-      '/favicon.ico': [
-        'Cache-Control: public, max-age=604800'
-      ]
-    }
-  },
   /*
    ** Plugins - scripts on all pages
    */
