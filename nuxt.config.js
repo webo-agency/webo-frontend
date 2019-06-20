@@ -19,9 +19,6 @@ module.exports = {
       { name: "theme-color", content: "#ffffff" },
       { name: "robots", content: "INDEX,FOLLOW" },
     ],
-    script: [
-      { src: '/chat.min.js', body: true, defer: true, async: true},
-    ],
     link: [
       {
         rel: "icon",
@@ -256,7 +253,8 @@ module.exports = {
    */
   plugins: [
     { src: "~/plugins/scrollactive.js", ssr: true },
-    { src: "~/plugins/swiper.js", ssr: false }
+    { src: "~/plugins/swiper.js", ssr: false },
+    { src: "~/plugins/chat.js", ssr: false }
   ],
   css: [
     "swiper/dist/css/swiper.css", 
