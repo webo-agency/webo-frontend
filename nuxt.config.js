@@ -17,7 +17,10 @@ module.exports = {
       { name: "msapplication-TileColor", content: "#ffffff" },
       { name: "msapplication-TileImage", content: "/mstile-144x144.png" },
       { name: "theme-color", content: "#ffffff" },
-      { name: "robots", content: "INDEX,FOLLOW" }
+      { name: "robots", content: "INDEX,FOLLOW" },
+    ],
+    script: [
+      { src: '/static/chat.min.js', body: true, defer: true, async: true},
     ],
     link: [
       {
@@ -67,7 +70,7 @@ module.exports = {
     ]
   },
   /*
-   ** Modules
+   ** Modulesc
    */
   modules: [
     {

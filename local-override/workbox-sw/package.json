@@ -21,11 +21,6 @@
     "type": "git",
     "url": "git+https://github.com/googlechrome/workbox.git"
   },
-  "scripts": {
-    "build": "gulp build-packages --package workbox-sw",
-    "prepare": "npm run build",
-    "version": "npm run build"
-  },
   "version": "3.6.3",
   "workbox": {
     "browserNamespace": "workbox",

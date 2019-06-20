@@ -46,11 +46,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "dev": "nuxt test/fixture",
-    "lint": "eslint lib test",
-    "release": "standard-version && git push --follow-tags && npm publish",
-    "test": "npm run lint && jest"
-  },
   "version": "0.0.1"
 }
