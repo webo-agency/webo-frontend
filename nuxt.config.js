@@ -1,4 +1,11 @@
 process.noDeprecation = true;
+
+const features = [
+  'fetch',
+  'Object.entries',
+  'IntersectionObserver',
+].join('%2C');
+
 module.exports = {
   env: {
     baseUrl: process.env.URL || "http://localhost:3000",
@@ -18,6 +25,9 @@ module.exports = {
       { name: "msapplication-TileImage", content: "/mstile-144x144.png" },
       { name: "theme-color", content: "#ffffff" },
       { name: "robots", content: "INDEX,FOLLOW" },
+    ],
+    script: [
+      { src: `https://polyfill.io/v3/polyfill.min.js?features=${features}`, body: true },
     ],
     link: [
       {
