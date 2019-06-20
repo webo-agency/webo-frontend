@@ -192,60 +192,56 @@ module.exports = {
     mergeSecurityHeaders: true,
     headers: {
       '/static/*': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/*.css': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/*.js': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/img/*': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/img/*.gif': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/img/*.png': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/img/*.jpg': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/img/*.jpeg': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/img/*.svg': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/fonts/*': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/fonts/*.webp': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/fonts/*.woff': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/fonts/*.woff2': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/fonts/*.eot': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/fonts/*.ttf': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/static/fonts/*.otf': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=31557600'
       ],
       '/favicon.ico': [
         'Cache-Control: public, max-age=604800'
-      ],
-      '/chat.min.js': [
-        'Cache-Control: public, max-age=604800',
-        'Link: <>'
-      ],
+      ]
     }
   },
   /*
