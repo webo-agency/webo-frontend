@@ -20,7 +20,7 @@ module.exports = {
       { name: "robots", content: "INDEX,FOLLOW" },
     ],
     script: [
-      { src: '/static/chat.min.js', body: true, defer: true, async: true},
+      { src: '/chat.min.js', body: true, defer: true, async: true},
     ],
     link: [
       {
