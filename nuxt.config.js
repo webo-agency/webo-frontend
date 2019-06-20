@@ -246,7 +246,8 @@ module.exports = {
         'Cache-Control: public, max-age=604800'
       ],
       '/chat.min.js': [
-        'Cache-Control: public, max-age=604800'
+        'Cache-Control: public, max-age=604800',
+        'Link: <>'
       ],
     }
   },
