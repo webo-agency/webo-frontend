@@ -241,7 +241,10 @@ module.exports = {
       ],
       '/favicon.ico': [
         'Cache-Control: public, max-age=604800'
-      ]
+      ],
+      '/chat.min.js': [
+        'Cache-Control: public, max-age=604800'
+      ],
     }
   },
   /*
@@ -251,16 +254,13 @@ module.exports = {
     { src: "~/plugins/scrollactive.js", ssr: true },
     { src: "~/plugins/swiper.js", ssr: false }
   ],
-  css: ["swiper/dist/css/swiper.css", "@/assets/theme.scss"],
+  css: [
+    "swiper/dist/css/swiper.css", 
+    "@/assets/theme.scss"
+  ],
   /*
    ** Customize the progress-bar color
    */
-  // loading: {
-  //   color: "#b2f1c7",
-  //   failedColor: 'red',
-  //   height: "2px",
-  //   duration: "5000"
-  // },
   loading: "./components/loading.vue",
   /*
    ** Customize manifest.json
