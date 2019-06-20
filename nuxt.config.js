@@ -4,6 +4,12 @@ const features = [
   'fetch',
   'Object.entries',
   'IntersectionObserver',
+  '%7Ehtml5-elements',
+  'requestAnimationFrame',
+  'matchMedia',
+  'HTMLPictureElement',
+  'HTMLDocument',
+  'JSON',
 ].join('%2C');
 
 module.exports = {
@@ -27,7 +33,7 @@ module.exports = {
       { name: "robots", content: "INDEX,FOLLOW" },
     ],
     script: [
-      { src: `https://polyfill.io/v3/polyfill.min.js?features=${features}`, body: true },
+      { src: `https://polyfill.io/v3/polyfill.min.js?features=${features}&flags=gated`, body: true },
     ],
     link: [
       {
@@ -428,6 +434,8 @@ module.exports = {
   generate: {
     dir: "public",
     fallback: "404.html",
-    routes: ["/", "/pl", "/en", "/pl/privacy-policy", "/en/privacy-policy"]
+    routes: [
+      "/"
+    ]
   }
 };
