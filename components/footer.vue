@@ -10,15 +10,15 @@
       <ul class="menu list-unstyled row">
         <li class="col-auto menu--element">
           <a
-            href="/#contact"
+            :href="contactLink.location"
             class="link"
             @click.self.prevent="focusContact"
           >
-            Kontakt
+            {{ contactLink.title }}
           </a>
         </li>
         <li
-          v-for="link in links"
+          v-for="link in internalLinks"
           :key="link.id"
           class="col-auto menu--element"
         >
@@ -31,16 +31,16 @@
         </li>
         <li class="col-auto menu--element">
           <a
-            href="http://status.webo.agency"
+            :href="statusLink.location"
             class="link"
           >
-            Status
+            {{ statusLink.title }}
           </a>
         </li>
       </ul>
 
       <address class="address">
-        ul. Elsnera 1/7, 44-100 Gliwice
+        {{ address }}
       </address>
 
       <ul class="social list-unstyled row">
@@ -64,11 +64,11 @@
               <path
                 fill="none"
                 d="M-212.18-1325.52h460.8v1952h-460.8z"
-              />
+              ></path>
               <path
                 fill="#c5d92d"
                 d="M3.258 3.611h-.953v3.398H.892V3.611H.22v-1.2h.672v-.777c0-.555.264-1.425 1.425-1.425l1.046.004v1.165h-.759c-.124 0-.299.062-.299.327v.707H3.38l-.122 1.199z"
-              />
+              ></path>
             </svg>
           </a>
         </li>
@@ -337,7 +337,9 @@
         >
           {{ email }}
         </a>
-        <span class="link text-primary d-none d-md-block mx-sm-3">_(^.^)_</span>
+        <span class="link text-primary d-none d-md-block mx-sm-3">
+          {{ emoji }}
+        </span>
         <a
           class="link"
           :href="'tel:'+telephone"
@@ -366,7 +368,15 @@ export default {
   },
   data: function() {
     return {
-      links: [
+      contactLink: {
+        title: 'Kontakt',
+        location: '/#contact'
+      },
+      statusLink: {
+        title: 'Status',
+        location: 'http://status.webo.agency'
+      },
+      internalLinks: [
         {
           title: "Prywatność",
           location: "/privacy-policy",
@@ -380,7 +390,9 @@ export default {
       ],
       telephone: "+48223906234",
       email: "hello@webo.agency",
-      copyright: `Copyright 2018 ~ ${ new Date().getFullYear() } webo`
+      address: "ul. Elsnera 1/7, 44-100 Gliwice",
+      emoji: '_(^.^)_',
+      copyright: `Copyright © ${ new Date().getFullYear() < 2020 ? '2019' : '2019 ~ ' + new Date().getFullYear() } webo`
     };
   },
   methods: {
