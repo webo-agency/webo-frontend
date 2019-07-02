@@ -99,6 +99,17 @@ module.exports = {
       options: {}
     },
     {
+      src: "nuxt-compress",
+      options: {
+        gzip: {
+          cache: true
+        },
+        brotli: {
+          threshold: 10240
+        }
+      }
+    },
+    {
       src: "@nuxtjs/pwa",
       options: {
         // workbox: {
@@ -418,6 +429,7 @@ module.exports = {
    ** Render loop
    */
   render: {
+    compressor: true,
     http2: {
       push: true,
       gzip: 9
