@@ -70,7 +70,7 @@ export default {
       return "Streaming innowacji"; //Streaming innovation /this.$store.state.banner.title
     },
     description() {
-      return "Jesteśmy młodym zespołem ludzi których łączy pasja wraz z zaangażowaniem. Dostarczamy kompleksowe rozwiązania interaktywne od kreacji przez wdrożenie po wsparcie."; //We are a team of young people who are connected with passion and commitment. We provide comprehensive interactive solutions from creation through implementation to support //this.$store.state.banner.description
+      return "Jesteśmy młodym zespołem ludzi (Opole - Gliwice) których łączy pasja wraz z zaangażowaniem. Dostarczamy kompleksowe rozwiązania interaktywne od kreacji przez wdrożenie po wsparcie."; //We are a team of young people who are connected with passion and commitment. We provide comprehensive interactive solutions from creation through implementation to support //this.$store.state.banner.description
     },
     button() {
       return "Rozpocznij projekt"; //this.$store.state.banner.button
