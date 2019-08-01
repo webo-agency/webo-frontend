@@ -99,6 +99,12 @@ module.exports = {
       options: {}
     },
     {
+      src: '@nuxtjs/google-tag-manager', 
+      options: {
+        id: 'GTM-MVPZXZ9'
+      }
+    },
+    {
       src: "nuxt-compress",
       options: {
         gzip: {
