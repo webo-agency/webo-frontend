@@ -34,6 +34,7 @@
             width="700px"
             height="652px"
             class="img-fluid mr-0 ml-auto banner--image"
+            :alt="altPlanet"
           >
         </div>
       </div>
@@ -74,6 +75,9 @@ export default {
     },
     button() {
       return "Rozpocznij projekt"; //this.$store.state.banner.button
+    },
+    altPlanet() {
+      return "Symbol planety"
     }
   },
   mounted() {

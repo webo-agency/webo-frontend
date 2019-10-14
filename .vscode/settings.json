@@ -1,6 +1,3 @@
 {
-    "atlascode.jira.workingSite": {
-        "baseUrlSuffix": "atlassian.net"
-    },
     "debug.node.autoAttach": "on"
 }

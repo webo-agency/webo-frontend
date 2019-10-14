@@ -5,42 +5,6 @@
       main-class="section"
       main-id="banner"
     />
-    <sectionAdvantages
-      :disabled="true"
-      main-tag="section"
-      main-class="section"
-      main-id="advantages"
-    />
-    <sectionWork
-      :disabled="true"
-      main-tag="section"
-      main-class="section"
-      main-id="work"
-    />
-    <sectionTeam
-      :disabled="true"
-      main-tag="section"
-      main-class="section"
-      main-id="team"
-    />
-    <sectionTechnologies
-      :disabled="true"
-      main-tag="section"
-      main-class="section"
-      main-id="technologies"
-    />
-    <sectionPortfolio
-      :disabled="true"
-      main-tag="section"
-      main-class="section"
-      main-id="portfolio"
-    />
-    <sectionPartners
-      :disabled="true"
-      main-tag="section"
-      main-class="section"
-      main-id="partners"
-    />
     <sectionContact
       main-tag="section"
       main-class="section"
@@ -51,23 +15,11 @@
 
 <script>
 import sectionBanner from "~/components/banner.vue";
-import sectionAdvantages from "~/components/advantages.vue";
-import sectionWork from "~/components/work.vue";
-import sectionTeam from "~/components/team.vue";
-import sectionTechnologies from "../components/technologies";
-import sectionPortfolio from "~/components/portfolio.vue";
-import sectionPartners from "~/components/partners.vue";
 import sectionContact from "~/components/contact.vue";
 
 export default {
   components: {
     sectionBanner,
-    sectionAdvantages,
-    sectionWork,
-    sectionTeam,
-    sectionTechnologies,
-    sectionPortfolio,
-    sectionPartners,
     sectionContact
   },
   async fetch(/* {  store  } */) {

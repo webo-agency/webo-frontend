@@ -111,7 +111,7 @@ export default {
       // Run this callback
       function(newVal) {
         if (newVal) {
-          debugger; //eslint-disable-line
+          //debugger; //eslint-disable-line
           this.inputFocused(this.$store.contact.inputFocus);
         }
       }
@@ -192,9 +192,9 @@ export default {
         this.$axios.$post(
           CORS_PROXY + GOOGLE_FORM_ACTION_URL, formData
         ).then(() => {
-          debugger; // eslint-disable-line no-debugger
+          //debugger; // eslint-disable-line no-debugger
         }).catch(() => {
-          debugger; // eslint-disable-line no-debugger
+          //debugger; // eslint-disable-line no-debugger
         })
 
         // this.$axios.$post(
