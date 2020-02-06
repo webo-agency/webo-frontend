@@ -3,7 +3,7 @@ name: Development workflow
 on:
   push:
     branches:
-      - dev
+      - main
 
 jobs:
   deploy:
@@ -17,8 +17,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
+
+      - name: Install dependency
         run: npm install
-        run: npm run build --if-present
+
+      - name: Generate website
+        run: npm run deploy --if-present
 
       - name: Deploy to netlify
         uses: netlify/actions/cli@master
