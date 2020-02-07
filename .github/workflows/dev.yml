@@ -3,7 +3,7 @@ name: Development workflow
 on:
   push:
     branches:
-      - main
+      - test
 
 jobs:
   deploy:
@@ -30,5 +30,5 @@ jobs:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
         with:
-          args: deploy --dir=public --prod
+          args: deploy --dir=public
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
