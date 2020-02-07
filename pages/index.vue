@@ -1,15 +1,6 @@
 <template>
   <div class="page index">
-    <sectionBanner
-      main-tag="section"
-      main-class="section"
-      main-id="banner"
-    />
-    <sectionContact
-      main-tag="section"
-      main-class="section"
-      main-id="contact"
-    />
+      TEST
   </div>
 </template>
 
