@@ -91,11 +91,11 @@
 </template>
 <script>
 export default {
-  name: "CWork",
+  name: "SectionCompany",
   props: {
     mainTag: {
       type: String,
-      default: "",
+      default: "div",
       required: false
     },
     mainClass: {
@@ -105,8 +105,16 @@ export default {
     },
     mainId: {
       type: String,
-      default: "",
+      default: "company",
       required: false
+    }
+  },
+  mounted() {
+    if (!this.$attrs.disabled) {
+      this.$root.$emit("section", {
+        id: this.mainId,
+        title: "Webo"
+      });
     }
   }
 };

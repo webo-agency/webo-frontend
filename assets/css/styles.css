@@ -1,0 +1,36 @@
+html,
+body{
+    /* @apply text-primary; */
+}
+
+.text-overflow{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+[data-aos-easing][data-aos-easing] [data-aos][data-aos]:not(.aos-animate){
+    transition-duration: 0s;
+}
+
+.img-animation {
+    transition: all 0.3s;
+}
+
+.img-animation:hover {
+    transform: scale(1.1);
+}
+
+.button-primary{
+    @apply block;
+    @apply bg-main;
+    @apply text-black;
+    @apply py-1;
+    @apply px-4;
+    @apply px-4;
+    @apply font-bold;
+}
+
+.button-primary:hover{
+    @apply text-darkText;
+}

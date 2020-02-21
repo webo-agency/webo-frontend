@@ -75,7 +75,7 @@ export default {
   props: {
     mainTag: {
       type: String,
-      default: "",
+      default: "div",
       required: false
     },
     mainClass: {
@@ -85,7 +85,7 @@ export default {
     },
     mainId: {
       type: String,
-      default: "",
+      default: "contact",
       required: false
     }
   },
@@ -118,6 +118,13 @@ export default {
     );
   },
   mounted() { 
+    if (!this.$attrs.disabled) {
+      this.$root.$emit("section", {
+        id: this.mainId,
+        title: "Kontakt"
+      });
+    }
+
     let _this = this;     
     
     if( this.$route != '/'){

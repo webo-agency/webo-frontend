@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col">
           <h1 class="portfolio--title decoration">
-            Portfolio
+            Projects
           </h1>
           <p>
             Nasze portfolio znajdziesz na Behance
@@ -87,11 +87,11 @@
 </template>
 <script>
 export default {
-  name: "CPortfolio",
+  name: "SectionProjects",
   props: {
     mainTag: {
       type: String,
-      default: "",
+      default: "div",
       required: false
     },
     mainClass: {
@@ -101,7 +101,7 @@ export default {
     },
     mainId: {
       type: String,
-      default: "",
+      default: "projects",
       required: false
     }
   },
@@ -109,7 +109,7 @@ export default {
     if (!this.$attrs.disabled) {
       this.$root.$emit("section", {
         id: this.mainId,
-        title: "Portfolio"
+        title: "Projekty"
       });
     }
   }

@@ -77,7 +77,7 @@
 
 <script>
 export default {
-  name: "CTechnologies",
+  name: "SectionReviews",
   props: {
     mainTag: {
       type: String,
@@ -86,12 +86,12 @@ export default {
     },
     mainClass: {
       type: String,
-      default: "",
+      default: "div",
       required: false
     },
     mainId: {
       type: String,
-      default: "",
+      default: "reviews",
       required: false
     }
   },
@@ -100,7 +100,7 @@ export default {
       technologyDescription: "",
       technologyArray: ["CSS", "HTML5", "java", "Nginx", "PHP"],
       swiperOption: {
-        slidesPerView: 5,
+        slidesPerView: 'auto',
         centeredSlides: true,
         loop: true,
         loopAdditionalSlides: 5,
@@ -127,19 +127,12 @@ export default {
     };
   },
   mounted: function() {
-    this.slideChangeEvent();
-
-    if (!this.$attrs.disabled) {
-      this.$root.$emit("section", {
-        id: this.mainId,
-        title: "Technologie"
-      });
-    }
+    // this.slideChangeEvent();
   },
   methods: {
     slideChangeEvent() {
       this.technologyDescription = this.technologyArray[
-        this.technologyCarousel.realIndex
+        this.swiperOption.realIndex
       ];
     }
   }

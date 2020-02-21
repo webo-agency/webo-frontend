@@ -55,11 +55,11 @@
 </template>
 <script>
 export default {
-  name: "CPartners",
+  name: "SectionPartners",
   props: {
     mainTag: {
       type: String,
-      default: "",
+      default: "div",
       required: false
     },
     mainClass: {
@@ -69,7 +69,7 @@ export default {
     },
     mainId: {
       type: String,
-      default: "",
+      default: "partners",
       required: false
     }
   },
@@ -82,10 +82,8 @@ export default {
         centeredSlides: true,
         loop: true,
         loopAdditionalSlides: 3,
-        allowTouchMove: false,
         breakpoints: {
           768: {
-            allowTouchMove: true,
             centeredSlides: false,
             slidesPerView: 2
           },
@@ -99,12 +97,6 @@ export default {
     };
   },
   mounted() {
-    if (!this.$attrs.disabled) {
-      this.$root.$emit("section", {
-        id: this.mainId,
-        title: "Partnerzy"
-      });
-    }
   },
   methods: {
     slideChange() {

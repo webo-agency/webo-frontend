@@ -1,16 +1,16 @@
 process.noDeprecation = true;
 
-const features = [
-  'fetch',
-  'Object.entries',
-  'IntersectionObserver',
-  '%7Ehtml5-elements',
-  'requestAnimationFrame',
-  'matchMedia',
-  'HTMLPictureElement',
-  'HTMLDocument',
-  'JSON',
-].join('%2C');
+// const features = [
+//   'fetch',
+//   'Object.entries',
+//   'IntersectionObserver',
+//   '%7Ehtml5-elements',
+//   'requestAnimationFrame',
+//   'matchMedia',
+//   'HTMLPictureElement',
+//   'HTMLDocument',
+//   'JSON',
+// ].join('%2C');
 
 module.exports = {
   env: {
@@ -33,7 +33,7 @@ module.exports = {
       { name: "robots", content: "INDEX,FOLLOW" },
     ],
     script: [
-      { src: `https://polyfill.io/v3/polyfill.min.js?features=${features}&flags=gated`, body: true },
+      // { src: `https://polyfill.io/v3/polyfill.min.js?features=${features}&flags=gated`, body: true, async: true, defer: true  },
     ],
     link: [
       {
@@ -128,29 +128,6 @@ module.exports = {
         icon: {
           sizes: [512, 192, 380]
         },
-      }
-    },
-    {
-      src: "bootstrap-vue/nuxt",
-      options: {
-        css: false,
-        bootstrapVueCSS: false,
-        bootstrapVue: {
-          componentPlugins: [
-            // 'LayoutPlugin',
-            // 'FormPlugin',
-            // 'FormCheckboxPlugin',
-            // 'FormInputPlugin',
-            // 'FormRadioPlugin',
-            // 'ToastPlugin',
-            // 'ModalPlugin'
-          ],
-          directivePlugins: [
-            // 'VBPopoverPlugin', 
-            // 'VBTooltipPlugin', 
-            // 'VBScrollspyPlugin'
-          ]
-        }
       }
     },
     {
@@ -271,6 +248,20 @@ module.exports = {
     {
       src: 'optimize-spaces',
       options: {}
+    },
+    {
+      src: '@nuxtjs/tailwindcss',
+      options: {}
+    },
+    { 
+      src: '@nuxtjs/markdownit',
+      options:  {
+        preset: 'default',
+        linkify: true,
+        breaks: true,
+        injected: true,
+        html: true
+      }
     }
   ],
   /*
@@ -282,8 +273,9 @@ module.exports = {
     { src: "~/plugins/chat.js", ssr: false }
   ],
   css: [
-    "swiper/dist/css/swiper.css", 
-    "@/assets/theme.scss"
+    'swiper/dist/css/swiper.css',
+    '~/assets/css/styles.css',
+    '~/assets/css/custom.css'
   ],
   /*
    ** Customize the progress-bar color
@@ -349,7 +341,8 @@ module.exports = {
    * ServiceWorker
    */
   workbox: {
-    globPatterns: ["**/*.{js,css,html,png}"]
+    globPatterns: ["**/*.{js,css,html,png}"],
+    dev: false
   },
   /*
    ** Build configuration
