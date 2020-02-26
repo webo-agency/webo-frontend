@@ -6,22 +6,22 @@
   >
     <div class="container flex flex-row flex-wrap">
       <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col mt-8">
-        <div class="w-full lg:w-1/2">
+        <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
             Usługi
           </h2>
 
           <ul class="flex flex-row flex-wrap font-medium list-dash mb-10 break-all xs:break-normal text-xs xs:text-base">
-            <li class="w-full xs:w-1/2">
+            <li class="w-full xs:w-1/2 lg:w-1/3">
               <a href="">Audyt www</a>
             </li>
-            <li class="w-full xs:w-1/2">
+            <li class="w-full xs:w-1/2 lg:w-2/3">
               <a href="">Projektowanie</a>
             </li>
-            <li class="w-full xs:w-1/2">
+            <li class="w-full xs:w-1/2 lg:w-1/3">
               <a href="">Wdrożenia</a>
             </li>
-            <li class="w-full xs:w-1/2">
+            <li class="w-full xs:w-1/2 lg:w-2/3">
               <a href="">Wsparcie</a>
             </li>
           </ul>
@@ -55,7 +55,7 @@
         </div>
       </div>
 
-      <div class="w-full xs:w-1/3 lg:order-1 flex flex-col mt-8 mb-6 text-xs xs:text-base">
+      <div class="w-full w-full sm:w-1/3 lg:order-1 flex flex-col mt-8 mb-6 text-xs xs:text-base">
         <div class="mb-8">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
             Gliwice

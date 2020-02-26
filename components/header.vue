@@ -124,7 +124,7 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("scroll", this.onScroll, { passive: true });
+    // window.addEventListener("scroll", this.onScroll, { passive: true });
 
     this.$root.$on("section", data => {
       if (!(data.id in this.sections)) {
@@ -134,8 +134,8 @@ export default {
   },
   beforeDestroy: function() {
     this.sections = [];
-    clearTimeout(this.timeout);
-    window.removeEventListener("scroll", this.onScroll, { passive: true });
+    // clearTimeout(this.timeout);
+    // window.removeEventListener("scroll", this.onScroll, { passive: true });
   },
   methods: {
     showMenu: function() {
