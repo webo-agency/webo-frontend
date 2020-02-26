@@ -16,7 +16,7 @@
       >
         <svg
           :class="{ 'is-menu-empty': sections.length < 1 }"
-          class="logo"
+          class="logo max-w-120"
           viewbox="0 0 167 50"
           xmlns="http://www.w3.org/2000/svg"
           fill-rule="evenodd"
@@ -134,6 +134,7 @@ export default {
   },
   beforeDestroy: function() {
     this.sections = [];
+    clearTimeout(this.timeout);
     window.removeEventListener("scroll", this.onScroll, { passive: true });
   },
   methods: {
@@ -141,7 +142,8 @@ export default {
       this.$data.menuVisible = !this.$data.menuVisible;
     },
     onScroll() {
-      window.setTimeout(
+      clearTimeout(this.timeout);
+      this.timeout = window.setTimeout(
         function() {
           this.isTop = !(window.scrollY > 0);
         }.bind(this),

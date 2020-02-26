@@ -6,14 +6,14 @@
   >
     <h2
       :class="subtitleClass"
-      class="md-2 text-base md:text-sm lg:text-xl"
+      class="mb-2 xs:mb-1 text-xs xs:text-base md:text-sm lg:text-xl"
     >
       <em>{{ number != null ? number : '-' }}/ </em>
       <span v-html="subtitle" />
     </h2>
     <h1
       :class="titleClass"
-      class="em-custom leading-none font-bold text-5xl md:text-5xl lg:text-7xl"
+      class="em-custom leading-none font-bold text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-7xl"
       v-html="title"
     />
   </component>

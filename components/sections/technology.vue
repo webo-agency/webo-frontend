@@ -36,57 +36,62 @@
 </template>
 
 <script>
-export default {
-  name: "SectionTechnology",
-  props: {
-    mainTag: {
-      type: String,
-      default: "div",
-      required: false
+  import HeaderTitles from "~/components/parts/header-titles.vue";
+  
+  export default {
+    name: "SectionTechnology",
+    components: {
+      HeaderTitles
     },
-    mainClass: {
-      type: String,
-      default: "",
-      required: false
-    },
-    mainId: {
-      type: String,
-      default: "technology",
-      required: false
-    }
-  },
-  data() {
-    return {
-      swiperOption: {
-        autoplay: 2000,
-        slidesPerView: 3,
-        slidesPerGroup: 1,
-        centeredSlides: true,
-        loop: true,
-        loopAdditionalSlides: 3,
-        breakpoints: {
-          768: {
-            centeredSlides: false,
-            slidesPerView: 2
-          },
-          400: {
-            centeredSlides: true,
-            slidesPerView: 1
-          }
-        },
-        pagination: false //{el: '.swiper-pagination', clickable: true}
+    props: {
+      mainTag: {
+        type: String,
+        default: "div",
+        required: false
+      },
+      mainClass: {
+        type: String,
+        default: "",
+        required: false
+      },
+      mainId: {
+        type: String,
+        default: "technology",
+        required: false
       }
-    };
-  },
-  mounted: function() {
-    if (!this.$attrs.disabled) {
-      this.$root.$emit("section", {
-        id: this.mainId,
-        title: "Technologie"
-      });
-    }
-  },
-};
+    },
+    data() {
+      return {
+        swiperOption: {
+          autoplay: 2000,
+          slidesPerView: 3,
+          slidesPerGroup: 1,
+          centeredSlides: true,
+          loop: true,
+          loopAdditionalSlides: 3,
+          breakpoints: {
+            768: {
+              centeredSlides: false,
+              slidesPerView: 2
+            },
+            400: {
+              centeredSlides: true,
+              slidesPerView: 1
+            }
+          },
+          pagination: false //{el: '.swiper-pagination', clickable: true}
+        }
+      };
+    },
+    mounted: function() {
+      if (!this.$attrs.disabled) {
+        this.$root.$emit("section", {
+          id: this.mainId,
+          title: "Technologie"
+        });
+      }
+    },
+  };
 </script>
 
 <style lang="scss">

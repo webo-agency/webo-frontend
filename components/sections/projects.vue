@@ -86,34 +86,38 @@
   </component>
 </template>
 <script>
-export default {
-  name: "SectionProjects",
-  props: {
-    mainTag: {
-      type: String,
-      default: "div",
-      required: false
+  import HeaderTitles from "~/components/parts/header-titles.vue";
+  export default {
+    name: "SectionProjects",
+      components: {
+        HeaderTitles
+      },
+    props: {
+      mainTag: {
+        type: String,
+        default: "div",
+        required: false
+      },
+      mainClass: {
+        type: String,
+        default: "",
+        required: false
+      },
+      mainId: {
+        type: String,
+        default: "projects",
+        required: false
+      }
     },
-    mainClass: {
-      type: String,
-      default: "",
-      required: false
-    },
-    mainId: {
-      type: String,
-      default: "projects",
-      required: false
+    mounted() {
+      if (!this.$attrs.disabled) {
+        this.$root.$emit("section", {
+          id: this.mainId,
+          title: "Projekty"
+        });
+      }
     }
-  },
-  mounted() {
-    if (!this.$attrs.disabled) {
-      this.$root.$emit("section", {
-        id: this.mainId,
-        title: "Projekty"
-      });
-    }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>

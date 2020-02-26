@@ -1,34 +1,42 @@
 <template>
-  <div class="page index">
-    <sectionBanner 
+  <div class="w-full m-auto">
+    <sectionBanner
+      class="relative"
       dark
     />
     <!-- <sectionServices
+      class="relative"
       number="1" 
       main-tag="section"
     />
     <sectionTechnology
+      class="relative"
       number="2" 
       main-tag="section"
       dark
     />
     <sectionCompany
+      class="relative"
       number="3" 
       main-tag="section"
     />
     <sectionProjects
+      class="relative"
       number="4" 
       main-tag="section"
       grey
     />
     <sectionReviews
+      class="relative"
       main-tag="section"
     />
     <sectionPartners
+      class="relative"
       main-tag="section"
       grey
     />
-    <sectionContact 
+    <sectionContact
+      class="relative"
       dark
     /> -->
   </div>
@@ -75,20 +83,3 @@
     mounted() {  /*  */ }
   };
 </script>
-
-<style lang="scss" scoped>
-.page {
-  width: 100%;
-  margin: auto;
-}
-
-.section {
-  position: relative;
-
-  &[disabled] {
-    display: none !important;
-  }
-}
-</style>
-
-<style lang="scss"></style>

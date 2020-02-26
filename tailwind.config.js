@@ -15,8 +15,16 @@ module.exports = {
       'display': ['Montserrat', 'sans-serif'],
       'body': ['Montserrat', 'sans-serif'],
     },
+    screens: {
+      xs:  '320px',
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
     extend: {
       fontSize: {
+        'micro': '10px',
         '7xl': '5rem',
       },
       spacing: {
@@ -42,14 +50,24 @@ module.exports = {
       },
       minHeight: {
         '500': '500px',
-        '870': '870px'
+        '700': '700px'
       },
       maxHeight: {
         '500': '500px',
-        '870': '870px'
+        '700': '700px'
+      },
+      minWidth: {
+        'container': '100px',
+      },
+      maxWidth: {
+        '120': '120px',
       },
       flex: {
         '0-auto': '0 0 auto',
+      },
+      listStyleType: {
+        none: 'none',
+        dash: '-'
       },
       colors: {
         main: 'rgb(0, 224, 180)',
@@ -70,5 +88,34 @@ module.exports = {
         pink: false,
       }
     },
-  }
+  },
+  corePlugins: {
+    container: false
+  },
+  plugins: [
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          'width': '100%',
+          'max-width': '100%',
+          'margin-left': 'auto',
+          'margin-right': 'auto',
+          'padding-left': '1rem',
+          'padding-right': '1rem',
+          '@screen sm': {
+            maxWidth: '640px',
+          },
+          '@screen md': {
+            maxWidth: '768px',
+          },
+          '@screen lg': {
+            maxWidth: '1024px',
+          },
+          '@screen xl': {
+            maxWidth: '1280px',
+          },
+        }
+      })
+    }
+  ]
 }

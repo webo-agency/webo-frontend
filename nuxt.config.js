@@ -18,14 +18,14 @@ module.exports = {
     stage: process.env.CONTEXT || "developer"
   },
   head: {
-    title: "webo.agency",
+    title: "webo - Digital partners",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         hid: "description",
         name: "description",
-        content: "We are webo - agency opened on people"
+        content: "Digital freaks in creating web and design"
       },
       { name: "msapplication-TileColor", content: "#ffffff" },
       { name: "msapplication-TileImage", content: "/mstile-144x144.png" },
@@ -101,7 +101,9 @@ module.exports = {
     {
       src: '@nuxtjs/google-tag-manager', 
       options: {
-        id: 'GTM-MVPZXZ9'
+        id: 'GTM-MVPZXZ9',
+        dev: false,
+        autoInit: false,
       }
     },
     {
@@ -169,7 +171,7 @@ module.exports = {
       src: "nuxt-webfontloader",
       options: {
         google: {
-          families: ['Montserrat:400,700:latin,latin-ext&display=swap']
+          families: ['Montserrat:400,500,700:latin,latin-ext&display=swap']
         }
       }
     },
@@ -274,8 +276,7 @@ module.exports = {
   ],
   css: [
     'swiper/dist/css/swiper.css',
-    '~/assets/css/styles.css',
-    '~/assets/css/custom.css'
+    '~/assets/css/styles.css'
   ],
   /*
    ** Customize the progress-bar color
@@ -349,13 +350,14 @@ module.exports = {
    */
   build: {
     extractCSS: true,
+    cssSourceMap: false,
     publicPath: "/static/",
     /*
      ** Run ESLINT on save
      */
     extend(config, { isDev , isClient }) {
       if (isClient && process.env.NODE_ENV == 'development') {
-        config.devtool = '#source-map';
+        config.devtool = 'source-map';
       } else {
         config.devtool = 'hidden-source-map';
       }
@@ -404,6 +406,10 @@ module.exports = {
         useShortDoctype: true,
         removeComments: true
       }
+    },
+    postcss: {
+      'postcss-nested': {},
+      'postcss-responsive-type': {}
     },
     terser: {
       parallel: true,

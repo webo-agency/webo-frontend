@@ -3,23 +3,23 @@
     :is="mainTag"
     :id="mainId"
     :class="mainClass"
-    class="min-h-500 lg:min-h-870 max-h-870 flex flex-row h-full bg-backgroundDark text-white"
+    class="min-h-500 lg:min-h-700 max-h-700 flex flex-row h-full bg-backgroundDark text-white"
   >
     <div class="container flex flex-row justify-between m-auto">
       <div
-        class="text-left"
+        class="flex flex-col items-start text-left"
       >
         <HeaderTitles 
           :subtitle="$md.renderInline(sectionTitle)"
           :title="$md.renderInline(title)"
           class="mb-8"
         />
-        <button
+        <a
           class="button-primary"
-          @click="setFocus"
+          href="tel:+48223906234"
         >
           {{ button }}
-        </button>
+        </a>
       </div>
       <div 
         class="hidden md:block"
