@@ -9,9 +9,13 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "plugin:vue/recommended"
+    "plugin:vue/recommended",
+    "plugin:tailwind/recommended"
   ],
   plugins: [
     "vue"
-  ]
+  ],
+  rules: {
+    "vue/no-v-html": "off"
+  }
 };

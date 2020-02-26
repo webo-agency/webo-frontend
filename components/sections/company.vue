@@ -90,26 +90,39 @@
   </component>
 </template>
 <script>
-export default {
-  name: "CWork",
-  props: {
-    mainTag: {
-      type: String,
-      default: "",
-      required: false
+  import HeaderTitles from "~/components/parts/header-titles.vue";
+  
+  export default {
+    name: "SectionCompany",
+    components: {
+      HeaderTitles
     },
-    mainClass: {
-      type: String,
-      default: "",
-      required: false
+    props: {
+      mainTag: {
+        type: String,
+        default: "div",
+        required: false
+      },
+      mainClass: {
+        type: String,
+        default: "",
+        required: false
+      },
+      mainId: {
+        type: String,
+        default: "company",
+        required: false
+      }
     },
-    mainId: {
-      type: String,
-      default: "",
-      required: false
+    mounted() {
+      if (!this.$attrs.disabled) {
+        this.$root.$emit("section", {
+          id: this.mainId,
+          title: "Webo"
+        });
+      }
     }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>

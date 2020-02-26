@@ -9,7 +9,7 @@
       <div class="row">
         <div class="col">
           <h1 class="portfolio--title decoration">
-            Portfolio
+            Projects
           </h1>
           <p>
             Nasze portfolio znajdziesz na Behance
@@ -86,34 +86,38 @@
   </component>
 </template>
 <script>
-export default {
-  name: "CPortfolio",
-  props: {
-    mainTag: {
-      type: String,
-      default: "",
-      required: false
+  import HeaderTitles from "~/components/parts/header-titles.vue";
+  export default {
+    name: "SectionProjects",
+      components: {
+        HeaderTitles
+      },
+    props: {
+      mainTag: {
+        type: String,
+        default: "div",
+        required: false
+      },
+      mainClass: {
+        type: String,
+        default: "",
+        required: false
+      },
+      mainId: {
+        type: String,
+        default: "projects",
+        required: false
+      }
     },
-    mainClass: {
-      type: String,
-      default: "",
-      required: false
-    },
-    mainId: {
-      type: String,
-      default: "",
-      required: false
+    mounted() {
+      if (!this.$attrs.disabled) {
+        this.$root.$emit("section", {
+          id: this.mainId,
+          title: "Projekty"
+        });
+      }
     }
-  },
-  mounted() {
-    if (!this.$attrs.disabled) {
-      this.$root.$emit("section", {
-        id: this.mainId,
-        title: "Portfolio"
-      });
-    }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>

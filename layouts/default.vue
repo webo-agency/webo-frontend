@@ -1,83 +1,32 @@
 <template>
-  <div class="body">
+  <div class="flex flex-col min-h-screen bg-backgroundDark min-w-container">
     <cHeader
-      main-class="top"
+      main-class="flex-0-auto"
       main-tag="header"
+      dark-theme
     />
-    <main class="main">
+    <main class="flex flex-row relative flex-initial bg-white break-all xs:break-normal">
       <nuxt />
     </main>
     <cFooter
-      main-class="bottom"
+      main-class="flex-0-auto bg-white mt-auto bg-backgroundDark"
       main-tag="footer"
     />
   </div>
 </template>
 
 <script>
-import cHeader from "~/components/header.vue";
-import cFooter from "~/components/footer.vue";
+  import cHeader from "~/components/header.vue";
+  import cFooter from "~/components/footer.vue";
 
-export default {
-  head: {},
-  components: {
-    cHeader,
-    cFooter
-  },
-  data() {
-    return {
-      document: true
-    };
-  },
-  async asyncData({ params }) {
-    let { data } = await params.app.$prismic.api.getSingle("banner");
-    return { document: data };
-  },
-  mounted() {
-    // this.$bugsnag.notify(new Error('Test'), { severity: 'info' });
-  }
-};
+  export default {
+    head: {},
+    components: {
+      cHeader,
+      cFooter
+    },
+    mounted() {
+      // this.$bugsnag.notify(new Error('Test'), { severity: 'info' });
+    }
+  };
 </script>
-
-<style lang="scss" scoped>
-.body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.top,
-.bottom {
-  flex: 0 0 auto;
-}
-
-.main {
-  display: flex;
-  position: relative;
-  flex-direction: row;
-  flex: 1 1 auto;
-}
-</style>
-<style lang="scss">
-.rocketchat-widget {
-  position: sticky !important;
-  width: 100%;
-  height: 350px;
-  bottom: 0px;
-  right: 0px;
-  z-index: 100 !important;
-  left: 0px;
-  overflow: hidden;
-
-  @media (min-width: 191px) {
-    position: fixed !important;
-    width: 100%;
-    height: 350px;
-    bottom: 0px;
-    right: 0px;
-    z-index: 12345;
-    left: 0px;
-    overflow: hidden;
-  }
-}
-</style>

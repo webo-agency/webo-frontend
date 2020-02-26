@@ -1,17 +1,22 @@
 <template>
   <component
     :is="mainTag"
-    :class="{ mainClass, 'is-top': isTop, 'is-scroll-down': isGoingUp }"
-    class="header bg-white px-2 px-xs-35 mainClass"
+    :class="{
+      'is-top': isTop, 
+      'is-scroll-down': isGoingUp,
+      'is-dark' : darkTheme,
+      [mainClass]: true
+    }"
+    class="header px-xs-35"
   >
-    <div class="container d-flex flex-row flex-wrap justify-content-between">
+    <div class="container flex flex-row flex-wrap justify-between">
       <nuxt-link
-        class="homepage py-2 px-xs-0 py-xs-2 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink-1 nuxt-link-exact-active nuxt-link-active"
+        class="homepage py-2 px-xs-0 py-xs-2 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink"
         to="/"
       >
         <svg
           :class="{ 'is-menu-empty': sections.length < 1 }"
-          class="logo"
+          class="logo max-w-120"
           viewbox="0 0 167 50"
           xmlns="http://www.w3.org/2000/svg"
           fill-rule="evenodd"
@@ -24,22 +29,22 @@
           <title>webo</title>
           <path
             class="letter"
-            fill="#16ab86"
+            fill="#ffffff"
             d="M28.127 50h-1.322v-3.364c3.987-.173 7.171-3.466 7.177-7.51V13.198h3.34l.005 27.602c0 5.078-4.121 9.201-9.2 9.201zM3.347 13.197v25.93c.005 4.043 3.189 7.336 7.174 7.51L9.201 50C4.122 50 0 45.877 0 40.8l.006-27.603h3.34zM18.663 50H9.201l1.32-3.364h4.798l-.002-11.695h3.34l.007 15.06z"
           />
           <path
             class="letter"
-            fill="#16ab86"
+            fill="#ffffff"
             d="M80.296 49.993L52.692 50c-5.077 0-9.199-4.123-9.199-9.2V22.397c0-5.079 4.122-9.2 9.2-9.2h18.402c5.078 0 9.2 4.121 9.2 9.2v15.886H55.203v-3.343H76.95v-10.87a7.531 7.531 0 0 0-7.528-7.528H54.367a7.53 7.53 0 0 0-7.528 7.528v15.056a7.53 7.53 0 0 0 7.528 7.526h25.929v3.34z"
           />
           <path
             class="letter"
-            fill="#16ab86"
+            fill="#ffffff"
             d="M98.17 13.203l15.893-.007c5.078 0 9.2 4.123 9.2 9.2v18.402c0 5.08-4.122 9.2-9.2 9.2H95.66c-5.077 0-9.2-4.12-9.2-9.2V0h3.345v39.125a7.531 7.531 0 0 0 7.528 7.528h15.056a7.53 7.53 0 0 0 7.528-7.528V24.07a7.53 7.53 0 0 0-7.528-7.527H98.17v-3.34z"
           />
           <path
             class="letter symbol"
-            fill="#16ab86"
+            fill="#ffffff"
             d="M162.885 50h-5.02v-8.365h8.365v5.018c0 1.847-1.5 3.347-3.345 3.347zm-8.365-3.347v3.34L138.627 50c-5.078 0-9.2-4.123-9.2-9.2V22.397c0-5.079 4.122-9.2 9.2-9.2h18.403c5.077 0 9.2 4.121 9.2 9.2v15.886h-3.345V24.071a7.531 7.531 0 0 0-7.528-7.528h-15.056a7.53 7.53 0 0 0-7.528 7.528v15.056a7.53 7.53 0 0 0 7.528 7.526h14.219z"
           />
         </svg>
@@ -47,20 +52,11 @@
 
       <div
         :class="{ 'is-menu-empty': sections.length < 1 }"
-        class="menu d-flex justify-content-between align-items-center m-sm-auto m-hg-0 px-0 pr-xs-0 pl-xs-3"
+        class="menu flex justify-between items-center m-sm-auto m-hg-0 px-0 pr-xs-0 pl-xs-3"
       >
-        <img
-          data-svg-inline
-          :class="{ 'is-menu-empty': sections.length < 1 }"
-          class="icon-start ml-0 mr-1"
-          width="24px"
-          height="16px"
-          src="~/assets/meteor-end.svg"
-        >
-
         <button
           v-if="sections.length > 0"
-          class="button d-hg-none px-1"
+          class="button lg:hidden px-1"
           @click="showMenu"
           @touch="showMenu"
         >
@@ -70,7 +66,7 @@
         <scrollactive
           v-if="sections.length > 0"
           :class="{ 'is-active': menuVisible, 'is-top': !isTop }"
-          class="links list-inline justify-content-between align-items-stretch py-1 py-xs-0"
+          class="links list-inline justify-between align-items-stretch py-1 py-xs-0"
           :offset="80"
           :offset-height="80"
           :itemchanged="onItemChanged"
@@ -86,15 +82,6 @@
             {{ section.title }}
           </nuxt-link>
         </scrollactive>
-
-        <img
-          data-svg-inline
-          :class="{ 'is-menu-empty': sections.length < 1 }"
-          class="icon-end mr-0 ml-1"
-          width="18px"
-          height="18px"
-          src="~/assets/meteor-start.svg"
-        >
       </div>
     </div>
   </component>
@@ -112,6 +99,11 @@ export default {
     mainClass: {
       type: String,
       default: "",
+      required: false
+    },
+    darkTheme: {
+      type: Boolean,
+      default: false,
       required: false
     }
   },
@@ -142,6 +134,7 @@ export default {
   },
   beforeDestroy: function() {
     this.sections = [];
+    clearTimeout(this.timeout);
     window.removeEventListener("scroll", this.onScroll, { passive: true });
   },
   methods: {
@@ -149,7 +142,8 @@ export default {
       this.$data.menuVisible = !this.$data.menuVisible;
     },
     onScroll() {
-      window.setTimeout(
+      clearTimeout(this.timeout);
+      this.timeout = window.setTimeout(
         function() {
           this.isTop = !(window.scrollY > 0);
         }.bind(this),
@@ -193,7 +187,7 @@ export default {
 
   &:not(.is-top) {
     @media (min-width: 320px) {
-      box-shadow: 0 0 10px #e9e9e9;
+      box-shadow: 0 0 10px #000000;
     }
   }
 
@@ -211,6 +205,12 @@ export default {
   to {
     transform: translate(0, -100%);
   }
+}
+
+.is-dark,
+.is-dark .links {
+  background-color: theme('colors.backgroundDark');
+  color: theme('colors.white');
 }
 
 .homepage {
@@ -544,6 +544,16 @@ export default {
       padding: 0 18px;
       margin: auto;
     }
+  }
+
+  &.is-active{
+    text-decoration: underline;
+    color: theme('colors.main');
+  }
+
+  &:hover,
+  &:hover.is-active{
+   color: theme('colors.main');
   }
 }
 </style>
