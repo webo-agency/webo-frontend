@@ -32,15 +32,13 @@ jobs:
         with:
           args: deploy --dir=public
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
-        outputs:
-          netlifyStatus: # id of the output
-            description: 'Status of netlify build'
+        id: netlifyStatus
 
       - name: Discord notification
         uses: Ilshidur/action-discord@master
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: 'The project {{ netlifyStatus }} has been deployed.'
+          args: '{{ steps.netlifyStatus }}'
 
           
