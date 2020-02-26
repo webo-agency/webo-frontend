@@ -26,7 +26,7 @@ jobs:
 
       - name: Deploy to netlify
         id: netlify-deploy
-        uses: netlify-action/actions/cli@master
+        uses: Triloworld/netlify-action/cli@master
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
