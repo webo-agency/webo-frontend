@@ -26,7 +26,7 @@ jobs:
 
       - name: Deploy to netlify
         id: netlify-deploy
-        uses: netlify/actions/cli@11e2baad7da3743008d6f4a561582f9332e5dba8
+        uses: netlify/actions/cli@40541f11d0a771f885cf7260172491d7b280b4a2
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -35,7 +35,7 @@ jobs:
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
         
       - name: Discord notification
-        uses: Ilshidur/action-discord@master
+        uses: Ilshidur/action-discord@0.0.2
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
