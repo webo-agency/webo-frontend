@@ -25,7 +25,7 @@ jobs:
         run: npm run deploy --if-present
 
       - name: Deploy to netlify
-        id: netlifyDeploy
+        id: netlify-deploy
         uses: netlify/actions/cli@11e2baad7da3743008d6f4a561582f9332e5dba8
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -34,12 +34,11 @@ jobs:
           args: deploy --dir=public
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
         
-
       - name: Discord notification
         uses: Ilshidur/action-discord@master
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: '${{ steps.netlifyDeploy }}'
+          args: '${{ toJSON(steps.netlify-deploy) }}'
 
           
