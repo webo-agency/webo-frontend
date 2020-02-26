@@ -33,9 +33,6 @@ jobs:
         with:
           args: deploy --dir=public
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
-        outputs:
-          netlifyDeployStatus: # id of the output
-            description: 'Status of Netlify build process'
         
 
       - name: Discord notification
@@ -43,6 +40,6 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: '${{ steps.netlifyDeploy.outpouts.netlifyDeployStatus }}'
+          args: '${{ steps.netlifyDeploy }}'
 
           
