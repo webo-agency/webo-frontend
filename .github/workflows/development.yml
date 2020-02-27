@@ -39,6 +39,6 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: 'INFO: ${{ steps.netlify.outputs.NETLIFY_PREVIEW_URL }} ${{ steps.netlify.outputs.NETLIFY_DEPLOY_URL }}'
+          args: 'INFO: ${{ toJson(steps.netlify) }}'
 
           
