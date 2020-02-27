@@ -27,6 +27,7 @@ jobs:
       - name: Deploy to netlify
         id: netlify-deploy
         uses: Triloworld/netlify-action/cli@deploy-output-patch
+        run: echo ::set-env name=NETLIFY_OUTPUT::$(entrypoint.sh)
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
@@ -39,6 +40,6 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: '${{ toJSON(steps.netlify-deploy) }}'
+          args: '${{ env.NETLIFY_OUTPUT ) }}'
 
           
