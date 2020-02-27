@@ -26,7 +26,7 @@ jobs:
 
       - name: Deploy to netlify
         id: netlify
-        uses: Triloworld/netlify-action/cli@deploy-output-patch
+        uses: Triloworld/action/cli@feature-1
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
