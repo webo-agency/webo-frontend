@@ -32,3 +32,10 @@ jobs:
         with:
           args: deploy --dir=public --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+
+      - name: Discord notification
+        uses: Ilshidur/action-discord@0.0.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        with:
+          args: 'Public'
