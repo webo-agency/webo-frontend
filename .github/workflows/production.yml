@@ -35,7 +35,7 @@ jobs:
 
       - name: Deploy to netlify
         id: netlify
-        uses: Triloworld/action/cli@feature-1
+        uses: Triloworld/action/cli@e1ecbc750f5114222fedb25fb8c4f0d4e18c8b7a
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
