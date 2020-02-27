@@ -24,11 +24,14 @@ jobs:
       - name: Generate website
         run: npm run deploy --if-present
 
-      - name: Discord notification
-        uses: Ilshidur/action-discord@master
+      - name: Discord notification - success preview
+        uses: Ilshidur/action-discord@0.0.2
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        if: success()
         with:
-          args: 'The project {{ netlifyStatus }} has been deployed.'
+          args: 'Generated sucess'
 
-          
+
+
+                 
