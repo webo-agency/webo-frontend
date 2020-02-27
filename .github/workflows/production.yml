@@ -32,3 +32,43 @@ jobs:
         with:
           args: deploy --dir=public --prod
           secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+
+      - name: Deploy to netlify
+        id: netlify
+        uses: Triloworld/action/cli@feature-1
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        with:
+          args: deploy --dir=public --prod
+          secrets: '["NETLIFY_AUTH_TOKEN", "NETLIFY_SITE_ID"]'
+
+      - name: Discord notification - failure
+        uses: Ilshidur/action-discord@0.0.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        if: failure()
+        with:
+          args: 'Error on deploy:\n 
+                 Draft URL: ${{ steps.netlify.outputs.OUTPUT }}'
+
+      - name: Discord notification - success live
+        uses: Ilshidur/action-discord@0.0.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        if: steps.netlify.outputs.NETLIFY_LIVE_URL != ''
+        with:
+          args: 'Live deploy:\n 
+                 Draft URL: ${{ steps.netlify.outputs.NETLIFY_URL }} \n 
+                 Logs URL: ${{ steps.netlify.outputs.NETLIFY_LOGS_URL }} \n
+                 Live URL: ${{ steps.netlify.outputs.NETLIFY_LIVE_URL }}'
+
+      - name: Discord notification - success preview
+        uses: Ilshidur/action-discord@0.0.2
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        if: steps.netlify.outputs.NETLIFY_LIVE_URL == ''
+        with:
+          args: 'Preview deploy:\n 
+                 Draft URL: ${{ steps.netlify.outputs.NETLIFY_URL }} \n 
+                 Logs URL: ${{ steps.netlify.outputs.NETLIFY_LOGS_URL }}'
