@@ -25,7 +25,7 @@ jobs:
         run: npm run deploy --if-present
 
       - name: Deploy to netlify
-        id: netlify-deploy
+        id: netlify
         uses: Triloworld/netlify-action/cli@deploy-output-patch
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -39,4 +39,4 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         with:
-          args: 'INFO: ${{ env.NETLIFY_OUTPUT }}'
+          args: 'INFO: ${{ steps.netlify.outputs.NETLIFY_PREVIEW_URL }} ${{ steps.netlify.outputs.NETLIFY_DEPLOY_URL }}'
