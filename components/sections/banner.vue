@@ -2,10 +2,10 @@
   <component
     :is="mainTag"
     :id="mainId"
-    :class="mainClass"
-    class="min-h-500 lg:min-h-700 max-h-700 flex flex-row h-full bg-backgroundDark text-white"
+    :class="mainClassComputed"
+    class="max-h-700 flex flex-row relative"
   >
-    <div class="container flex flex-row justify-between m-auto">
+    <div class="container flex flex-row justify-between mt-7vh mb-20vh">
       <div
         class="flex flex-col items-start text-left"
       >
@@ -14,12 +14,7 @@
           :title="$md.renderInline(title)"
           class="mb-8"
         />
-        <a
-          class="button-primary"
-          href="tel:+48223906234"
-        >
-          {{ button }}
-        </a>
+        <buttonContact />
       </div>
       <div 
         class="hidden md:block"
@@ -60,11 +55,13 @@
 </template>
 <script>
   import HeaderTitles from "~/components/parts/header-titles.vue";
+  import ButtonContact from "~/components/parts/button-contact.vue";
 
   export default {
     name: "Banner",
     components: {
-      HeaderTitles
+      HeaderTitles,
+      ButtonContact
     },
     props: {
       mainTag: {
@@ -81,6 +78,11 @@
         type: String,
         default: "banner",
         required: false
+      },
+      dark: {
+        type: Boolean,
+        default: false,
+        required: false
       }
     },
     data() {
@@ -89,6 +91,13 @@
       };
     },
     computed: {
+      mainClassComputed: function(){
+        if(this.dark){
+          return this.mainClass + ' bg-backgroundDark text-white';
+        } else {
+          return this.mainClass
+        }
+      },
       sectionTitle() {
         return "Welcome in webo"; //Streaming innovation /this.$store.state.banner.title
       },

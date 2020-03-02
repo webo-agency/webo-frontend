@@ -6,14 +6,14 @@
   >
     <h2
       :class="subtitleClass"
-      class="mb-2 xs:mb-1 text-xs xs:text-base md:text-sm lg:text-xl"
+      class="mb-2 xs:mb-1"
     >
-      <em>{{ number != null ? number : '-' }}/ </em>
+      <em class="text-main mr-1">{{ number != null ? number : '-' }}/ </em>
       <span v-html="subtitle" />
     </h2>
     <h1
       :class="titleClass"
-      class="em-custom leading-none font-bold text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-7xl"
+      class="em-custom leading-tight font-bold"
       v-html="title"
     />
   </component>
@@ -40,7 +40,7 @@ export default {
     },
     titleClass: {
       type: String,
-      default: "",
+      default: "text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-7xl",
       required: false
     },
     subtitle: {
@@ -50,7 +50,7 @@ export default {
     },
     subtitleClass: {
       type: String,
-      default: "",
+      default: "text-xs xs:text-base md:text-sm lg:text-xl",
       required: false
     },
     number: {

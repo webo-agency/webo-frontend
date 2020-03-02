@@ -34,11 +34,11 @@
       class="relative"
       main-tag="section"
       grey
-    />
+    /> -->
     <sectionContact
       class="relative"
       dark
-    /> -->
+    />
   </div>
 </template>
 
@@ -50,7 +50,7 @@
   // import sectionProjects from "~/components/sections/projects.vue";
   // import sectionReviews from "~/components/sections/reviews.vue";
   // import sectionPartners from "~/components/sections/partners.vue";
-  // import sectionContact from "~/components/sections/contact.vue";
+  import sectionContact from "~/components/sections/call-to-action.vue";
 
   export default {
     components: {
@@ -61,7 +61,7 @@
       // sectionProjects,
       // sectionReviews,
       // sectionPartners
-      // sectionContact
+      sectionContact
     },
     async fetch(/* {  store  } */) {
       // let document = await store.$prismic.api.getSingle('banner', {

@@ -48,6 +48,10 @@ module.exports = {
         '56': '14rem',
         '64': '16rem',
       },
+      margin: {
+        '7vh': '7vh',
+        '20vh': '20vh'
+      },
       minHeight: {
         '500': '500px',
         '700': '700px'

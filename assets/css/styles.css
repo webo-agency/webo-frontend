@@ -21,25 +21,6 @@ body{
     transform: scale(1.1);
 }
 
-.button-primary{
-    @apply block;
-    @apply bg-main;
-    @apply text-black;
-    @apply py-1;
-    @apply px-4;
-    @apply px-4;
-    @apply font-medium;
-    @apply text-micro;
-
-    @media(min-width: theme('screens.xs')) {
-        @apply text-base;
-    }
-}
-
-.button-primary:hover{
-    @apply text-darkText;
-}
-
 *[disabled] {
     display: none !important;
 }
