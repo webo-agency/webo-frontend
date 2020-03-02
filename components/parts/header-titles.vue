@@ -50,7 +50,7 @@ export default {
     },
     subtitleClass: {
       type: String,
-      default: "text-xs xs:text-base md:text-sm lg:text-xl",
+      default: "text-xs xs:text-base md:text-sm lg:text-base",
       required: false
     },
     number: {
