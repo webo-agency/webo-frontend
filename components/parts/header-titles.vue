@@ -13,7 +13,7 @@
     </h2>
     <h1
       :class="titleClass"
-      class="em-custom leading-tight font-bold"
+      class="em-custom font-bold"
       v-html="title"
     />
   </component>
@@ -40,7 +40,7 @@ export default {
     },
     titleClass: {
       type: String,
-      default: "text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-7xl",
+      default: "leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-7xl",
       required: false
     },
     subtitle: {

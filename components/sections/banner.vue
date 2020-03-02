@@ -5,7 +5,7 @@
     :class="mainClassComputed"
     class="max-h-700 flex flex-row relative"
   >
-    <div class="container flex flex-row justify-between mt-7vh mb-20vh">
+    <div class="container flex flex-row justify-between mt-5vh mb-20vh pt-10">
       <div
         class="flex flex-col items-start text-left"
       >

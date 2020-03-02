@@ -4,7 +4,7 @@
     :id="mainId"
     :class="mainClass"
     href="+48223906234"
-    class="block bg-main text-black py-1 px-4 font-medium text-micro hover:text-darkText xs:text-base"
+    class="button-primary block py-1 px-8"
   >
     <span>
       Rozpocznij projekt
@@ -22,7 +22,7 @@
       },
       mainClass: {
         type: String,
-        default: "button-primary",
+        default: "bg-main text-black font-medium text-micro hover:text-darkText xs:text-base lg:text-xl",
         required: false
       },
       mainId: {

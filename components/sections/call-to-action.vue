@@ -9,7 +9,7 @@
       <HeaderTitles 
         :subtitle="$md.renderInline('Zainteresowany?')"
         :title="$md.renderInline('Porozmawiajmy <br/>o Twoim <em>projekcie</em>')"
-        title-class="text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-3xl"
+        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-3xl"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
