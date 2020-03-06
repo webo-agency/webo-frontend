@@ -8,12 +8,15 @@
       :class="subtitleClass"
       class="mb-2 xs:mb-1"
     >
-      <em class="text-main mr-1">{{ number != null ? number : '-' }}/ </em>
+      <em
+        v-if="numberHeader !== false"
+        class="text-main not-italic font-bold"
+      >{{ typeof numberHeader === 'boolean' ? '-' : (numberHeader > 9 ? numberHeader : '0' + numberHeader ) }}/ </em>
       <span v-html="subtitle" />
     </h2>
     <h1
       :class="titleClass"
-      class="em-custom font-bold"
+      class="em-custom font-extrabold"
       v-html="title"
     />
   </component>
@@ -21,7 +24,7 @@
 
 <script>
 export default {
-  name: "HeaderTitles",
+  name: "SectionHeader",
   props: {
     mainTag: {
       type: String,
@@ -53,9 +56,9 @@ export default {
       default: "text-xs xs:text-base md:text-sm lg:text-base",
       required: false
     },
-    number: {
-      type: Number,
-      default: null,
+    numberHeader: {
+      type: [ Boolean, Number ],
+      default: false,
       required: false
     }
   }

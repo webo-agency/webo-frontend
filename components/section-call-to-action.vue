@@ -3,9 +3,9 @@
     :is="mainTag"
     :id="mainId"
     :class="mainClassComputed"
-    class=""
+    class="flex flex-col"
   >
-    <div class="container flex flex-row flex-wrap items-end align-top">
+    <div class="container flex flex-row flex-wrap items-end align-top mt-10">
       <HeaderTitles 
         :subtitle="$md.renderInline('Zainteresowany?')"
         :title="$md.renderInline('Porozmawiajmy <br/>o Twoim <em>projekcie</em>')"
@@ -20,11 +20,11 @@
   </component>
 </template>
 <script>
-  import HeaderTitles from "~/components/parts/header-titles.vue";
-  import ButtonContact from "~/components/parts/button-contact.vue";
+  import HeaderTitles from "~/components/header-titles.vue";
+  import ButtonContact from "~/components/button-contact.vue";
 
   export default {
-    name: "Contact",
+    name: "SectionCallToAction",
     components: {
       HeaderTitles,
       ButtonContact

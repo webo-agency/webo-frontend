@@ -7,7 +7,7 @@
       'is-dark' : darkTheme,
       [mainClass]: true
     }"
-    class="header px-xs-35"
+    class="header px-xs-35 z-40"
   >
     <div class="container flex flex-row flex-wrap justify-between">
       <nuxt-link
@@ -177,7 +177,6 @@ export default {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 1020;
   }
 
   @media (min-width: 1024px) {

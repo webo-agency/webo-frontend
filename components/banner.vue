@@ -2,19 +2,13 @@
   <component
     :is="mainTag"
     :id="mainId"
-    :class="mainClassComputed"
-    class="max-h-700 flex flex-row relative"
+    class="max-h-700 flex flex-row"
   >
-    <div class="container flex flex-row justify-between mt-5vh mb-20vh pt-10">
+    <div class="w-full flex flex-row justify-between">
       <div
         class="flex flex-col items-start text-left"
       >
-        <HeaderTitles 
-          :subtitle="$md.renderInline(sectionTitle)"
-          :title="$md.renderInline(title)"
-          class="mb-8"
-        />
-        <buttonContact />
+        <slot />
       </div>
       <div 
         class="hidden md:block"
@@ -54,15 +48,8 @@
   </component>
 </template>
 <script>
-  import HeaderTitles from "~/components/parts/header-titles.vue";
-  import ButtonContact from "~/components/parts/button-contact.vue";
-
   export default {
     name: "Banner",
-    components: {
-      HeaderTitles,
-      ButtonContact
-    },
     props: {
       mainTag: {
         type: String,
@@ -89,30 +76,6 @@
       return {
         // document: "TEST"
       };
-    },
-    computed: {
-      mainClassComputed: function(){
-        if(this.dark){
-          return this.mainClass + ' bg-backgroundDark text-white';
-        } else {
-          return this.mainClass
-        }
-      },
-      sectionTitle() {
-        return "Welcome in webo"; //Streaming innovation /this.$store.state.banner.title
-      },
-      title() {
-        return `Web
-        development
-        and design
-        <em>partner</em>`; //"Jesteśmy młodym zespołem ludzi (Opole - Gliwice) których łączy pasja wraz z zaangażowaniem. Dostarczamy kompleksowe rozwiązania interaktywne od kreacji przez wdrożenie po wsparcie."; //We are a team of young people who are connected with passion and commitment. We provide comprehensive interactive solutions from creation through implementation to support //this.$store.state.banner.description
-      },
-      button() {
-        return "Rozpocznij projekt"; //this.$store.state.banner.button
-      },
-      altPlanet() {
-        return "Symbol planety"
-      }
     },
     methods: {
       setFocus() {
