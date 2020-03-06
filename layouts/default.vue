@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col min-h-screen bg-backgroundDark min-w-container">
+  <div class="flex flex-col min-h-screen min-w-container">
     <cHeader
       main-class="flex-0-auto"
       main-tag="header"

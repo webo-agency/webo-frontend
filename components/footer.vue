@@ -2,26 +2,26 @@
   <component
     :is="mainTag"
     :class="mainClass"
-    class="footer text-white"
+    class="footer text-white pt-2 xs:pt-8"
   >
     <div class="container flex flex-row flex-wrap">
-      <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col mt-8">
+      <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col">
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
             Usługi
           </h2>
 
-          <ul class="flex flex-row flex-wrap font-medium list-dash mb-10 break-all xs:break-normal text-xs xs:text-base">
-            <li class="w-full xs:w-1/2 lg:w-1/3">
+          <ul class="flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
+            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
               <a href="">Audyt www</a>
             </li>
-            <li class="w-full xs:w-1/2 lg:w-2/3">
+            <li class="w-full xs:w-1/2 lg:w-2/3 mb-2 xs:mb-1 md:mb-0">
               <a href="">Projektowanie</a>
             </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3">
+            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
               <a href="">Wdrożenia</a>
             </li>
-            <li class="w-full xs:w-1/2 lg:w-2/3">
+            <li class="w-full xs:w-1/2 lg:w-2/3 mb-2 xs:mb-1 md:mb-0">
               <a href="">Wsparcie</a>
             </li>
           </ul>
@@ -31,20 +31,20 @@
             Webo
           </h2>
 
-          <ul class="flex flex-row flex-wrap font-medium list-dash mb-10 break-all xs:break-normal text-xs xs:text-base">
-            <li class="w-full xs:w-1/2 lg:w-1/3">
+          <ul class="flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
+            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
               <a href="">Projekty</a>
             </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3">
+            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
               <a href="">Ciasteczka</a>
             </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3">
+            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
               <a href="/privacy-policy">Polityka prywatności</a>
             </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3">
+            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
               <a href="/rights-and-licenses">Licencje</a>
             </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3">
+            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
               <a
                 href="http://status.webo.agency"
                 target="_blank"
@@ -55,7 +55,7 @@
         </div>
       </div>
 
-      <div class="w-full w-full sm:w-1/3 lg:order-1 flex flex-col mt-8 mb-6 text-xs xs:text-base">
+      <div class="w-full w-full sm:w-1/3 lg:order-1 flex flex-col mt-0 xs:mt-8 mb-2 xs:mb-6 text-xs xs:text-base">
         <div class="mb-8">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
             Gliwice

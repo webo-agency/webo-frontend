@@ -101,7 +101,7 @@
     <section-wrapper
       main-tag="div"
       class="bg-backgroundDark text-white"
-      container-class="mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
+      container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
     >
       <section-header
         number-header
@@ -112,7 +112,7 @@
         class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
       />
       <buttonContact 
-        class="mb-8 lg:mb-0 mt-auto md:ml-auto lg:ml-0"
+        class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
       />
     </section-wrapper>
   </div>
