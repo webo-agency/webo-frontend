@@ -9,9 +9,9 @@
       class="mb-2 xs:mb-1"
     >
       <em
-        v-if="numberHeader !== false"
+        v-if="positionHeader"
         class="text-main not-italic font-bold"
-      >{{ typeof numberHeader === 'boolean' ? '-' : (numberHeader > 9 ? numberHeader : '0' + numberHeader ) }}/ </em>
+      >{{ !numberHeader && positionHeader ? '-' : (numberHeader > 9 ? numberHeader : '0' + numberHeader ) }}/ </em>
       <span v-html="subtitle" />
     </h2>
     <h1
@@ -56,11 +56,16 @@ export default {
       default: "text-xs xs:text-base md:text-sm lg:text-base",
       required: false
     },
-    numberHeader: {
-      type: [ Boolean, Number ],
+    positionHeader: {
+      type: Boolean,
       default: false,
       required: false
-    }
+    },
+    numberHeader: {
+      type: Number,
+      default: 0,
+      required: false
+    },
   }
 }; 
 </script>

@@ -4,7 +4,8 @@ const API_URL = process.env.API_URL;
 
 export const actions = {
     // nuxtServerInit is called by Nuxt.js before server-rendering every page
-    async nuxtServerInit({app, dispatch, commit}, {req}) { // eslint-disable-line
+    async nuxtServerInit({dispatch, commit}, {req}) { // eslint-disable-line
+      // console.log(app);  // eslint-disable-line
         return axios.all([
             axios.get(API_URL.concat('/acf/v3/options/options')),
             axios.get(API_URL.concat('/menus/v1/menus')),

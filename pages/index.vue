@@ -9,12 +9,16 @@
         class="relative mb-10"
       >
         <section-header
-          number-header
-          :subtitle="$md.renderInline('Welcome in webo')"
-          :title="$md.renderInline(`Web<br/>development<br/>and design<br/><em>partner</em>`)"
+          :position-header="api.acf.title_position"
+          :number-header="api.acf.title_number ? 1 : 0"  
+          :subtitle="$md.renderInline(api.acf.title)"
+          :title="$md.renderInline(api.acf.slider[0].header)"
           class="mb-8"
         />
-        <buttonContact />
+        <buttonContact 
+          :text="api.acf.slider[0].button.title"
+          :link="api.acf.slider[0].button.link"
+        />
         <arrowNextSection 
           main-class="z-30 hidden xl:block"
           arrow-color="#FFFFFF"
@@ -25,6 +29,7 @@
       main-tag="section"
     >
       <section-header 
+        :position-header="true"
         :number-header="1"
         :subtitle="$md.renderInline('Usługi')"
         :title="$md.renderInline('W czym możemy <br/>Ci <em>pomóc?</em>')"
@@ -43,6 +48,7 @@
       class="bg-backgroundDark text-white"
     >
       <section-header 
+        :position-header="true"
         :number-header="2"
         :subtitle="$md.renderInline('Technologie')"
         :title="$md.renderInline('Wybierzmy najlepsze <br/>rozwiązanie dla Twojego <br/><em>projektu</em>')"
@@ -59,6 +65,7 @@
       main-tag="section"
     >
       <section-header 
+        :position-header="true"
         :number-header="3"
         :subtitle="$md.renderInline('Webo')"
         :title="$md.renderInline('Dlaczego <em>my?</em>')"
@@ -77,6 +84,7 @@
       class="bg-backgroundLight"
     >
       <section-header 
+        :position-header="true"
         :number-header="4"
         :subtitle="$md.renderInline('Projekty')"
         :title="$md.renderInline('Co <em>zmalowaliśmy?</em>')"
@@ -105,7 +113,8 @@
       container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
     >
       <section-header
-        number-header
+        :position-header="true"
+        :number-header="0"
         :subtitle="$md.renderInline('Zainteresowany?')"
         :title="$md.renderInline('Porozmawiajmy <br/>o Twoim <em>projekcie</em>')"
         title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-3xl"
@@ -114,6 +123,8 @@
       />
       <buttonContact 
         class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
+        :text="api.acf.slider[0].button.title"
+        :link="api.acf.slider[0].button.link"
       />
     </section-wrapper>
   </div>
@@ -229,6 +240,19 @@
           }
         ]
       }
+    },
+    async asyncData ({ app }) {
+      // console.log(app.$wp); // eslint-disable-line
+      // let data = await app.$wp.frontPage();
+      // console.log(data);  // eslint-disable-line
+      // axios.get(env.API_URL.concat('/acf/v3/options/options')).then((response) => {
+      //   console.log(response.data);  // eslint-disable-line
+      // })
+      
+      // // data.id
+
+      return { api: await app.$wp.frontPage() }
+
     },
     head() {
       return {

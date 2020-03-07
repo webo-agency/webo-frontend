@@ -3,11 +3,11 @@
     :is="mainTag"
     :id="mainId"
     :class="mainClass"
-    href="+48223906234"
+    :href="link"
     class="button-primary block py-1 px-8"
   >
     <span>
-      Rozpocznij projekt
+      {{ text }}
     </span>
   </component>
 </template>
@@ -28,6 +28,16 @@
       mainId: {
         type: String,
         default: "contact",
+        required: false
+      },
+      text: {
+        type: String,
+        default: "",
+        required: false
+      },
+      link: {
+        type: String,
+        default: "",
         required: false
       }
     },
