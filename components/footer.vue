@@ -11,11 +11,11 @@
             {{ $store.state.menu.submenu["uslugi"].name }}
           </h2>
 
-          <ul class="flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
+          <ul class="w-full lg:w-1/2 flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
             <li 
               v-for="(item, index) in submenuServices"
               :key="index"
-              class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0"
+              class="w-full xs:w-1/2 mb-2 xs:mb-1 md:mb-0"
             >
               <a 
                 :href="item.url"
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <div class="w-full w-full sm:w-1/3 lg:order-1 flex flex-col mt-0 xs:mt-8 mb-2 xs:mb-6 text-xs xs:text-base">
+      <div class="w-full w-full sm:w-1/3 lg:order-1 flex flex-col mt-0 xs:mt-8 lg:mt-0 mb-2 xs:mb-6 text-xs xs:text-base">
         <div class="mb-8">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
             {{ $store.state.general.data.adress.city }}
