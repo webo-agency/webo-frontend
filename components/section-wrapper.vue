@@ -1,7 +1,7 @@
 <template>
   <component
     :is="mainTag"
-    :class="{'min-h-mobile-screen' : heightAuto}"
+    :class="{'min-h-mobile-screen' : !heightAuto}"
     v-bind="$attrs"
   >
     <div 
@@ -52,7 +52,12 @@
         type: String,
         default: "flex-col mt-10 mb-10 lg:mt-15vh lg:mb-15vh",
         required: false
-      }
+      },
+      heightAuto: {
+        type: Boolean,
+        default: false,
+        required: false
+      },
     },
     mounted() {
       if (!this.$attrs.disabled && !this.$attrs.id) {
