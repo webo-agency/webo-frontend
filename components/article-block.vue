@@ -7,13 +7,14 @@
     <div
       class="md:w-2/3"
       :class="{
-        'bg-backgroundDark text-white rounded-md p-3' : !list.length && paragraph == ''
+        'bg-backgroundDark text-white rounded-md p-5' : dark
       }"
     >
       <h1
-        class="font-bold mb-4 text-base md:text-2xl"
+        class="mb-4 text-base leading-tight"
         :class="{
-          'xs:ml-6' : list.length
+          'xs:ml-6 md:text-2xl font-bold' : !dark,
+          'md:text-3xl em-custom font-semibold' : dark
         }"
         v-html="$md.renderInline(header)"
       />
@@ -86,10 +87,18 @@ export default {
       default: "#",
       required: false
     },
+    dark: {
+      type: Boolean,
+      default: false,
+      required: false
+    },
   }
 }; 
 </script>
 
 <style scoped>
-
+  .em-custom >>> em{
+    @apply not-italic;
+    @apply text-main;
+  }
 </style>

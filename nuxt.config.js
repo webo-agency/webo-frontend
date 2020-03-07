@@ -15,7 +15,8 @@ process.noDeprecation = true;
 module.exports = {
   env: {
     baseUrl: process.env.URL || "http://localhost:3000",
-    stage: process.env.CONTEXT || "developer"
+    stage: process.env.CONTEXT || "developer",
+    API_URL: "https://api.webo.agency/json"
   },
   head: {
     title: "webo - Digital partners",

@@ -49,7 +49,7 @@
     "workbox-sw": "file:local-override/workbox-sw"
   },
   "scripts": {
-    "dev": "nuxt",
+    "dev": "cross-env API_URL=https://api.webo.agency/json nuxt",
     "dev-debug": "cross-env NODE_ENV=debug node --inspect-brk node_modules/.bin/nuxt",
     "build": "nuxt build",
     "analyze": "nuxt build --analyze",

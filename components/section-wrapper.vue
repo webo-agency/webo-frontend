@@ -49,7 +49,7 @@
       },
       containerClass: {
         type: String,
-        default: "flex-col mt-10 mb-10 lg:mt-20vh lg:mb-20vh",
+        default: "flex-col mt-10 mb-10 lg:mt-15vh lg:mb-15vh",
         required: false
       }
     },

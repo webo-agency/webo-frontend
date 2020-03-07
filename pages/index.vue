@@ -1,11 +1,12 @@
 <template>
   <div class="flex flex-col w-full m-auto">
     <section-wrapper
-      tag="div"
+      main-tag="div"
       class="bg-backgroundDark text-white"
+      container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
       <banner
-        class="relative"
+        class="relative mb-10"
       >
         <section-header
           number-header
@@ -29,7 +30,7 @@
         :title="$md.renderInline('W czym możemy <br/>Ci <em>pomóc?</em>')"
         class="mb-8"
       />
-      <p class="mb-10 w-full md:w-1/2 lg:w-1/3">
+      <p class="mb-5 w-full md:w-1/2 lg:w-1/3">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure blanditiis mollitia unde ex harum eaque, autem, tempora amet, beatae totam possimus molestias adipisci? Autem veniam consectetur amet magnam veritatis!
       </p>
       <articleList
@@ -197,6 +198,7 @@
             list: [],
             linkTitle: "Napisz do nas",
             link: "#",
+            dark: true
           }
         ],
         companyList: [
@@ -227,12 +229,6 @@
           }
         ]
       }
-    },
-    async fetch(/* {  store  } */) {
-      // let document = await store.$prismic.api.getSingle('banner', {
-      //   lang : store.app.i18n.locales.find(x => x.code === store.state.i18n.locale).iso
-      // });
-      // store.commit('banner/load', document.data );
     },
     head() {
       return {

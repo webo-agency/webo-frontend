@@ -1,7 +1,7 @@
 <template>
   <button
     :class="mainClass"
-    class="absolute top-auto bottom-0 left-0 right-auto mb-5 ml-5 custom-position"
+    class="custom-position"
   >
     <svg
       viewBox="0 0 14 26"
@@ -31,7 +31,7 @@ export default {
     },
     arrowClass: {
       type: String,
-      default: "absolute",
+      default: "",
       required: false
     },
     arrowColor: {
@@ -45,8 +45,10 @@ export default {
 
 <style scoped>
   .custom-position{
-    left: 50%;
-    margin-left: -720px;
-    bottom: 100px;
+    margin-left: -60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    height: auto;
+    width: auto;
   }
 </style>

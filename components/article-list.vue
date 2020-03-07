@@ -14,7 +14,8 @@
         :list="item.list"
         :link-title="item.linkTitle"
         :link="item.link"
-        main-class="flex-initial w-full xs:w-1/2 lg:w-1/3 mb-8 xs:px-2 md:px-0"
+        :dark="item.dark"
+        main-class="flex-initial w-full xs:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
       />
     </div>
   </component>
