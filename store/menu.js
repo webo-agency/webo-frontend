@@ -1,14 +1,23 @@
 export const state = () => ({
-    data: {}
+    mainmenu: {},
+    submenu: {}
 });
 
 export const mutations = {
-    save(state, data) {
+    saveMenu(state, data) {
         // console.log(data); // eslint-disable-line
-        state.data = data;
+        state.mainmenu = data;
+    },
+    saveSubmenu(state, data) {
+        state.submenu[data.slug] = data;
     }
 };
-  
-// export const getters = {};
-// export const actions = {};
-  
+
+export const actions = {
+    mainInit (context, data) {
+        context.commit('saveMenu', data);
+    },
+    submenuInit (context, data) {
+        context.commit('saveSubmenu', data);
+    }
+}

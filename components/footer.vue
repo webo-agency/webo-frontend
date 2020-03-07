@@ -8,48 +8,43 @@
       <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col">
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            Usługi
+            {{ $store.state.menu.submenu["uslugi"].name }}
           </h2>
 
           <ul class="flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
-            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
-              <a href="">Audyt www</a>
-            </li>
-            <li class="w-full xs:w-1/2 lg:w-2/3 mb-2 xs:mb-1 md:mb-0">
-              <a href="">Projektowanie</a>
-            </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
-              <a href="">Wdrożenia</a>
-            </li>
-            <li class="w-full xs:w-1/2 lg:w-2/3 mb-2 xs:mb-1 md:mb-0">
-              <a href="">Wsparcie</a>
+            <li 
+              v-for="(item, index) in submenuServices"
+              :key="index"
+              class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0"
+            >
+              <a 
+                :href="item.url"
+                :target="!item.url.includes('www.webo.agency') ? '_blank' : ''"
+                :rel="!item.url.includes('www.webo.agency') ? 'noopener noreferrer' : ''"
+              >
+                {{ item.title }}
+              </a>
             </li>
           </ul>
         </div>
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            Webo
+            {{ $store.state.menu.submenu["webo"].name }}
           </h2>
 
           <ul class="flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
-            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
-              <a href="">Projekty</a>
-            </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
-              <a href="">Ciasteczka</a>
-            </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
-              <a href="/privacy-policy">Polityka prywatności</a>
-            </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
-              <a href="/rights-and-licenses">Licencje</a>
-            </li>
-            <li class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0">
-              <a
-                href="http://status.webo.agency"
-                target="_blank"
-                rel="noopener noreferrer"
-              >Status</a>
+            <li 
+              v-for="(item, index) in submenuWebo"
+              :key="index"
+              class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0"
+            >
+              <a 
+                :href="item.url"
+                :target="!item.url.includes('www.webo.agency') ? '_blank' : ''"
+                :rel="!item.url.includes('www.webo.agency') ? 'noopener noreferrer' : ''"
+              >
+                {{ item.title }}
+              </a>
             </li>
           </ul>
         </div>
@@ -83,12 +78,22 @@
 
 
         <ul class="flex flex-wrap">
-          <li class="fb flex-initial mr-2 mb-4">
-            <a
-              class="link"
-              href="https://www.facebook.com/meet.webo"
+          <li 
+            v-for="(item, index) in submenuSocialMedia"
+            :key="index"
+            class="flex-initial mr-2 mb-4"
+            :class="item.icon.value"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <a 
+              :href="item.url"
+              :target="!item.url.includes('www.webo.agency') ? '_blank' : ''"
+              :rel="!item.url.includes('www.webo.agency') ? 'noopener noreferrer' : ''"
+              :title="item.title"
             >
               <svg
+                v-if="item.icon.value === 'fb'"
                 width="30"
                 height="30"
                 viewBox="0 0 4 7"
@@ -108,14 +113,9 @@
                   d="M3.258 3.611h-.953v3.398H.892V3.611H.22v-1.2h.672v-.777c0-.555.264-1.425 1.425-1.425l1.046.004v1.165h-.759c-.124 0-.299.062-.299.327v.707H3.38l-.122 1.199z"
                 />
               </svg>
-            </a>
-          </li>
-          <li class="in flex-initial mr-4 mb-4">
-            <a
-              class="link"
-              href="https://www.instagram.com/weboagency/"
-            >
+
               <svg
+                v-if="item.icon.value === 'in'"
                 width="30"
                 height="30"
                 viewBox="0 0 7 7"
@@ -125,6 +125,7 @@
                 stroke-linejoin="round"
                 stroke-miterlimit="1"
                 xml:space="preserve"
+                class="mr-2"
               >
                 <path
                   fill="none"
@@ -136,14 +137,9 @@
                   fill-rule="nonzero"
                 />
               </svg>
-            </a>
-          </li>
-          <li class="ld flex-initial mb-4">
-            <a
-              class="link"
-              href="https://www.linkedin.com/company/26269988/admin/"
-            >
+
               <svg
+                v-if="item.icon.value === 'li'"
                 width="30"
                 height="30"
                 viewBox="0 0 24 24"
@@ -153,6 +149,7 @@
                 stroke-linejoin="round"
                 stroke-miterlimit="1.414"
                 xml:space="preserve"
+                class="mr-2"
               >
                 <path 
                   d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" 
@@ -173,6 +170,8 @@
   </component>
 </template>
 <script>
+import orderBy from 'lodash/orderBy';
+
 export default {
   name: "Footer",
   props: {
@@ -192,6 +191,20 @@ export default {
       emoji: '_(^.^)_',
       copyrightDate: `© ${ new Date().getFullYear() < 2020 ? '2019' : '2019 ~ ' + new Date().getFullYear() }`
     };
+  },
+  computed: {
+    submenuServices: function(){
+      //menu_order
+      return orderBy(this.$store.state.menu.submenu["uslugi"].items, ['menu_order'], ['asc', 'desc'])
+    },
+    submenuWebo: function(){
+      //menu_order
+      return orderBy(this.$store.state.menu.submenu["webo"].items, ['menu_order'], ['asc', 'desc'])
+    },
+    submenuSocialMedia: function(){
+      //menu_order
+      return orderBy(this.$store.state.menu.submenu["social-media"].items, ['menu_order'], ['asc', 'desc'])
+    }
   },
   methods: {
     telephoneFormat(number){

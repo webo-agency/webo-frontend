@@ -16,7 +16,7 @@ module.exports = {
   env: {
     baseUrl: process.env.URL || "http://localhost:3000",
     stage: process.env.CONTEXT || "developer",
-    API_URL: "https://api.webo.agency/json"
+    API_URL: process.env.API_URL || "https://api.webo.agency/json"
   },
   head: {
     title: "webo - Digital partners",
@@ -265,6 +265,13 @@ module.exports = {
         injected: true,
         html: true
       }
+    },
+    {
+      src: 'wp-nuxt', 
+      options:  {
+        endpoint: process.env.API_URL,
+        extensions: true // For additional functions of wpapi-extensions
+      },
     }
   ],
   /*

@@ -8,4 +8,8 @@ export const mutations = {
     }
 };
 
-  
+export const actions = {
+    init (context, data) {
+        context.commit('save', data);
+    }
+}
