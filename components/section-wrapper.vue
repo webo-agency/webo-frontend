@@ -1,7 +1,7 @@
 <template>
   <component
     :is="mainTag"
-    class="min-w-mobile-screen"
+    class="min-h-mobile-screen"
     v-bind="$attrs"
   >
     <div 

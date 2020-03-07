@@ -57,15 +57,15 @@ module.exports = {
       },
       minHeight: {
         '500': '500px',
-        '700': '700px'
+        '700': '700px',
+        'mobile-screen': '640px'
       },
       maxHeight: {
         '500': '500px',
         '700': '700px'
       },
       minWidth: {
-        'container': '100px',
-        'mobile-screen': '640px'
+        'container': '100px'
       },
       maxWidth: {
         '120': '120px',
