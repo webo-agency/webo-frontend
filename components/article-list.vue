@@ -15,7 +15,7 @@
         :link-title="item.linkTitle"
         :link="item.link"
         :dark="item.dark"
-        main-class="flex-initial w-full xs:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
+        main-class="flex-initial w-full sm:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
       />
     </div>
   </component>

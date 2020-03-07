@@ -16,8 +16,8 @@ module.exports = {
       'body': ['Montserrat', 'sans-serif'],
     },
     screens: {
-      xs:  '320px',
-      sm: '640px',
+      xs: '320px',
+      sm: '600px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
@@ -62,6 +62,7 @@ module.exports = {
       },
       minWidth: {
         'container': '100px',
+        'mobile-screen': '640px'
       },
       maxWidth: {
         '120': '120px',
