@@ -23,6 +23,8 @@ jobs:
 
       - name: Generate website
         run: npm run deploy --if-present
+        env:
+          API_URL: ${{ secrets.API_URL }}
 
       - name: Deploy to netlify
         id: netlify
