@@ -11,7 +11,7 @@
             {{ $store.state.menu.submenu["uslugi"].name }}
           </h2>
 
-          <ul class="w-full lg:w-1/2 flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
+          <ul class="w-full lg:w-2/3 flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
             <li 
               v-for="(item, index) in submenuServices"
               :key="index"
