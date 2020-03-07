@@ -49,7 +49,7 @@
 </template>
 <script>
   export default {
-    name: "Banner",
+    name: "Carousel",
     props: {
       mainTag: {
         type: String,

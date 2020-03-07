@@ -5,7 +5,7 @@
       class="bg-backgroundDark text-white"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
-      <banner
+      <carousel
         class="relative mb-10"
       >
         <section-header
@@ -19,7 +19,7 @@
           main-class="z-30 hidden xl:block"
           arrow-color="#FFFFFF"
         />
-      </banner>
+      </carousel>
     </section-wrapper>
     <section-wrapper
       main-tag="section"
@@ -124,7 +124,7 @@
   import sectionHeader from "~/components/section-header.vue";
   import arrowNextSection from "~/components/arrow-next-section.vue";
   import buttonContact from "~/components/button-contact.vue";
-  import banner from "~/components/banner.vue";
+  import carousel from "~/components/carousel.vue";
   import articleList from "~/components/article-list.vue";
 
   export default {
@@ -133,7 +133,7 @@
       sectionHeader,
       arrowNextSection,
       buttonContact,
-      banner,
+      carousel,
       articleList
     },
     data(){
