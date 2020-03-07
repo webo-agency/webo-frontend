@@ -43,7 +43,7 @@ export default {
     },
     titleClass: {
       type: String,
-      default: "leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-7xl",
+      default: "leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-medium-header",
       required: false
     },
     subtitle: {

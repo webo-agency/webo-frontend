@@ -13,6 +13,7 @@
           :number-header="api.acf.title_number ? 1 : 0"  
           :subtitle="$md.renderInline(api.acf.title)"
           :title="$md.renderInline(api.acf.slider[0].header)"
+          title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
         />
         <buttonContact 
@@ -52,7 +53,7 @@
         :number-header="2"
         :subtitle="$md.renderInline('Technologie')"
         :title="$md.renderInline('Wybierzmy najlepsze <br/>rozwiązanie dla Twojego <br/><em>projektu</em>')"
-        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-4xl"
+        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-2/3 mb-8 lg:pr-10"
       />
@@ -88,7 +89,7 @@
         :number-header="4"
         :subtitle="$md.renderInline('Projekty')"
         :title="$md.renderInline('Co <em>zmalowaliśmy?</em>')"
-        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-3xl"
+        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
@@ -117,7 +118,7 @@
         :number-header="0"
         :subtitle="$md.renderInline('Zainteresowany?')"
         :title="$md.renderInline('Porozmawiajmy <br/>o Twoim <em>projekcie</em>')"
-        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-3xl"
+        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
       />

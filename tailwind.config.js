@@ -26,6 +26,9 @@ module.exports = {
       fontSize: {
         'micro': '10px',
         '7xl': '5rem',
+        'big-header': '100px',
+        'medium-header': '80px',
+        'small-header': '35px'
       },
       spacing: {
         px: '1px',
