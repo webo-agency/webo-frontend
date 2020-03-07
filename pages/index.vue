@@ -9,9 +9,9 @@
         class="relative mb-10"
       >
         <section-header
-          :position-header="api.acf.title_position"
-          :number-header="api.acf.title_number ? 1 : 0"  
-          :subtitle="$md.renderInline(api.acf.title)"
+          :position-header="api.acf.section.title_position"
+          :number-header="api.acf.section.title_number ? 1 : 0"  
+          :subtitle="$md.renderInline(api.acf.section.title)"
           :title="$md.renderInline(api.acf.slider[0].header)"
           title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
@@ -112,6 +112,7 @@
       main-tag="div"
       class="bg-backgroundDark text-white"
       container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
+      height-auto
     >
       <section-header
         :position-header="true"
