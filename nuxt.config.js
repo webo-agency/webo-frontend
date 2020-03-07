@@ -274,6 +274,9 @@ module.exports = {
       },
     }
   ],
+  wp: {
+    sitemap: false
+  },
   /*
    ** Plugins - scripts on all pages
    */
