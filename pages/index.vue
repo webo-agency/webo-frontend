@@ -2,23 +2,23 @@
   <div class="flex flex-col w-full m-auto">
     <section-wrapper
       main-tag="div"
-      class="bg-backgroundDark text-white"
+      class="bg-backgroundDark text-white flex flex-col justify-center"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
       <carousel
         class="relative mb-10"
       >
         <section-header
-          :position-header="api.acf.section.title_position"
-          :number-header="api.acf.section.title_number ? 1 : 0"  
-          :subtitle="$md.renderInline(api.acf.section.title)"
-          :title="$md.renderInline(api.acf.slider[0].header)"
+          :position-header="api.acf.baner_settings.title_position"
+          :number-header="api.acf.baner_settings.title_number ? 1 : 0"  
+          :subtitle="$md.renderInline(api.acf.baner_settings.title)"
+          :title="$md.renderInline(api.acf.baner_carousel[0].header)"
           title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
         />
         <buttonContact 
-          :text="api.acf.slider[0].button.title"
-          :link="api.acf.slider[0].button.link"
+          :text="api.acf.baner_carousel[0].button.title"
+          :link="api.acf.baner_carousel[0].button.hyperlink"
         />
         <arrowNextSection 
           main-class="z-30 hidden xl:block"
@@ -30,15 +30,16 @@
       main-tag="section"
     >
       <section-header 
-        :position-header="true"
-        :number-header="1"
-        :subtitle="$md.renderInline('Usługi')"
-        :title="$md.renderInline('W czym możemy <br/>Ci <em>pomóc?</em>')"
+        :position-header="api.acf.services_settings.title_position"
+        :number-header="api.acf.services_settings.title_number ? 1 : 0"
+        :subtitle="$md.renderInline(api.acf.services_settings.title)"
+        :title="$md.renderInline(api.acf.services_settings.header)"
         class="mb-8"
       />
-      <p class="mb-5 w-full md:w-1/2 lg:w-1/3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure blanditiis mollitia unde ex harum eaque, autem, tempora amet, beatae totam possimus molestias adipisci? Autem veniam consectetur amet magnam veritatis!
-      </p>
+      <p 
+        class="mb-5 w-full md:w-1/2 lg:w-1/3"
+        v-html="api.acf.services_settings.description"
+      />
       <articleList
         :articles="serviceList"
       />
@@ -49,32 +50,34 @@
       class="bg-backgroundDark text-white"
     >
       <section-header 
-        :position-header="true"
-        :number-header="2"
-        :subtitle="$md.renderInline('Technologie')"
-        :title="$md.renderInline('Wybierzmy najlepsze <br/>rozwiązanie dla Twojego <br/><em>projektu</em>')"
+        :position-header="api.acf.technology_settings.title_position"
+        :number-header="api.acf.technology_settings.title_number ? 2 : 0"
+        :subtitle="$md.renderInline(api.acf.technology_settings.title)"
+        :title="$md.renderInline(api.acf.technology_settings.header)"
         title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-2/3 mb-8 lg:pr-10"
       />
-      <p class="mb-10 w-full md:w-1/2 lg:w-1/3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure blanditiis mollitia unde ex harum eaque, autem, tempora amet, beatae totam possimus molestias adipisci? Autem veniam consectetur amet magnam veritatis!
-      </p>
+      <p 
+        class="mb-10 w-full md:w-1/2 lg:w-1/3"
+        v-html="api.acf.technology_settings.description"
+      />
     </section-wrapper>
 
     <section-wrapper
       main-tag="section"
     >
       <section-header 
-        :position-header="true"
-        :number-header="3"
-        :subtitle="$md.renderInline('Webo')"
-        :title="$md.renderInline('Dlaczego <em>my?</em>')"
+        :position-header="api.acf.company_settings.title_position"
+        :number-header="api.acf.company_settings.title_number ? 3 : 0"
+        :subtitle="$md.renderInline(api.acf.company_settings.title)"
+        :title="$md.renderInline(api.acf.company_settings.header)"
         class="w-full md:w-2/3 mb-8 lg:pr-10"
       />
-      <p class="mb-10 w-full md:w-1/2 lg:w-1/3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure blanditiis mollitia unde ex harum eaque, autem, tempora amet, beatae totam possimus molestias adipisci? Autem veniam consectetur amet magnam veritatis!
-      </p>
+      <p 
+        class="mb-10 w-full md:w-1/2 lg:w-1/3"
+        v-html="api.acf.company_settings.description"
+      />
       <articleList
         :articles="companyList"
       />
@@ -85,17 +88,18 @@
       class="bg-backgroundLight"
     >
       <section-header 
-        :position-header="true"
-        :number-header="4"
-        :subtitle="$md.renderInline('Projekty')"
-        :title="$md.renderInline('Co <em>zmalowaliśmy?</em>')"
+        :position-header="api.acf.projects_settings.title_position"
+        :number-header="api.acf.projects_settings.title_number ? 3 : 0"
+        :subtitle="$md.renderInline(api.acf.projects_settings.title)"
+        :title="$md.renderInline(api.acf.projects_settings.header)"
         title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
-      <p class="mb-10 w-full md:w-1/2 lg:w-1/3">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et iure blanditiis mollitia unde ex harum eaque, autem, tempora amet, beatae totam possimus molestias adipisci? Autem veniam consectetur amet magnam veritatis!
-      </p>
+      <p 
+        class="mb-10 w-full md:w-1/2 lg:w-1/3"
+        v-html="api.acf.projects_settings.description"
+      />
     </section-wrapper>
 
     <section-wrapper
@@ -125,8 +129,8 @@
       />
       <buttonContact 
         class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
-        :text="api.acf.slider[0].button.title"
-        :link="api.acf.slider[0].button.link"
+        :text="api.acf.baner_carousel[0].button.title"
+        :link="api.acf.baner_carousel[0].button.link"
       />
     </section-wrapper>
   </div>
@@ -245,15 +249,20 @@
     },
     async asyncData ({ app }) {
       // console.log(app.$wp); // eslint-disable-line
-      // let data = await app.$wp.frontPage();
-      // console.log(data);  // eslint-disable-line
+      let data = await app.$wp.frontPage();
+      console.log(data.acf);  // eslint-disable-line
+      // let data2 = await app.$wp.pages().id(data.acf.promoted[0]);
+      // console.log(data2); // eslint-disable-line
       // axios.get(env.API_URL.concat('/acf/v3/options/options')).then((response) => {
       //   console.log(response.data);  // eslint-disable-line
       // })
       
       // // data.id
 
-      return { api: await app.$wp.frontPage() }
+      return { 
+        api: data,
+        // promoted: data2
+      }
 
     },
     head() {
