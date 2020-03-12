@@ -42,7 +42,7 @@
         </li>
       </ul>
       <a
-        v-if="link != ''"
+        v-if="link != '' || link != ''"
         class="text-main font-medium"
         :href="link"
         :class="{
