@@ -42,6 +42,7 @@
       />
       <articleList
         :articles="api.acf.services_promoted"
+        :more="api.acf.services_promoted_single.homepage"
       />
     </section-wrapper>
 
@@ -192,14 +193,13 @@
       //     await app.$wp.pages().id(data.acf.category_technology_promoted[4])
       // ];
 
-      // console.log(data.acf.services_promoted);  // eslint-disable-line
+      console.log(data.acf);  // eslint-disable-line
       // console.log(data2); // eslint-disable-line
       // axios.get(env.API_URL.concat('/acf/v3/options/options')).then((response) => {
       //   console.log(response.data);  // eslint-disable-line
       // })
       
       // // data.id
-
       return { 
         api: data,
         // promoted: data2

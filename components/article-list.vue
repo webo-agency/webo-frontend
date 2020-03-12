@@ -11,6 +11,11 @@
         :article="item"
         main-class="flex-initial w-full sm:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
       />
+      <article-block
+        :article="more"
+        main-class="flex-initial w-full sm:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
+        dark
+      />
     </div>
   </component>
 </template>
@@ -51,6 +56,11 @@
       articles: {
         type: Array,
         default: function(){ return []; },
+        required: true
+      },
+      more: {
+        type: Object,
+        default: function(){ return {}; },
         required: true
       }
     },

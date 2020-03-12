@@ -39,3 +39,7 @@ body{
         @apply ml-2;
     }
 }
+
+br + br {
+    display: none;
+}

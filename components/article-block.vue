@@ -100,7 +100,7 @@ export default {
       return this.article.icon
     },
     icon: function(){
-      console.log(this.article.icon); // eslint-disable-line
+      // console.log(this.article.icon); // eslint-disable-line
       switch (this.article.icon) {
         case 'a':
           return 'window-search.svg'
