@@ -29,7 +29,7 @@
           :key="index"
           class="text-xs md:text-base"
         >
-          {{ item }}
+          {{ typeof item != 'string' ? item.entry : item }}
         </li>
       </ul>
       <a

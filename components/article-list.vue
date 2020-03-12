@@ -6,14 +6,14 @@
   >
     <div class="w-full flex flex-col xs:flex-row flex-wrap">
       <article-block
-        v-for="(item, index) in articles"
+        v-for="(item, index) in articleListInject"
         :key="index"
         :icon="item.icon"
-        :header="$md.renderInline(item.header)"
-        :paragraph="$md.renderInline(item.paragraph)"
-        :list="item.list"
-        :link-title="item.linkTitle"
-        :link="item.link"
+        :header="item.title ? $md.renderInline(item.title) : ''"
+        :paragraph="item.description ? $md.renderInline(item.description) : ''"
+        :list="item.list ? item.list : 0"
+        :link-title="typeof item.link != 'undefined' ? item.link.title : item.linkTitle"
+        :link="typeof item.link != 'undefined' ? item.link.hyperlink : item.link"
         :dark="item.dark"
         main-class="flex-initial w-full sm:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
       />
@@ -58,6 +58,25 @@
         type: Array,
         default: function(){ return []; },
         required: true
+      }
+    },
+    computed: {
+      articleListInject: function(){
+        let articles = [];
+        
+         if(typeof this.articles[0] != 'undefined' && typeof this.articles[0].type != 'undefined'){
+           for (let article of this.articles) {
+             if(!article.acf.homepage.title){
+               article.acf.homepage.title = article.title.rendered;
+             }
+            // console.log(article.acf.homepage);  // eslint-disable-line
+            articles.push(article.acf.homepage);
+           }
+         } else {
+             return this.articles
+         }
+          
+        return articles
       }
     },
     mounted() {

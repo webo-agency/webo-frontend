@@ -41,7 +41,7 @@
         v-html="api.acf.services_settings.description"
       />
       <articleList
-        :articles="serviceList"
+        :articles="api.acf.services_promoted"
       />
     </section-wrapper>
 
@@ -79,7 +79,7 @@
         v-html="api.acf.company_settings.description"
       />
       <articleList
-        :articles="companyList"
+        :articles="api.acf.company_promoted"
       />
     </section-wrapper>
 
@@ -250,8 +250,43 @@
     async asyncData ({ app }) {
       // console.log(app.$wp); // eslint-disable-line
       let data = await app.$wp.frontPage();
-      console.log(data.acf);  // eslint-disable-line
-      // let data2 = await app.$wp.pages().id(data.acf.promoted[0]);
+      
+      data.acf.services_promoted = [
+          await app.$wp.pages().id(data.acf.services_promoted[0]),
+          await app.$wp.pages().id(data.acf.services_promoted[1]),
+          await app.$wp.pages().id(data.acf.services_promoted[2]),
+          await app.$wp.pages().id(data.acf.services_promoted[3])
+      ];
+
+      data.acf.company_promoted = [
+          await app.$wp.pages().id(data.acf.company_promoted[0]),
+          await app.$wp.pages().id(data.acf.company_promoted[1]),
+          await app.$wp.pages().id(data.acf.company_promoted[2]),
+          await app.$wp.pages().id(data.acf.company_promoted[3]),
+          await app.$wp.pages().id(data.acf.company_promoted[4])
+      ];
+
+      // data.acf.technology_promoted = [
+      //     await app.$wp.pages().id(data.acf.technology_promoted[0]),
+      //     await app.$wp.pages().id(data.acf.technology_promoted[1]),
+      //     await app.$wp.pages().id(data.acf.technology_promoted[2]),
+      //     await app.$wp.pages().id(data.acf.technology_promoted[3]),
+      //     await app.$wp.pages().id(data.acf.technology_promoted[4])
+      // ];
+
+      // data.acf.reviews_promoted = [
+      //     await app.$wp.pages().id(data.acf.reviews_promoted),
+      // ];
+
+      // data.acf.category_technology_promoted = [
+      //     await app.$wp.pages().id(data.acf.category_technology_promoted[0]),
+      //     await app.$wp.pages().id(data.acf.category_technology_promoted[1]),
+      //     await app.$wp.pages().id(data.acf.category_technology_promoted[2]),
+      //     await app.$wp.pages().id(data.acf.category_technology_promoted[3]),
+      //     await app.$wp.pages().id(data.acf.category_technology_promoted[4])
+      // ];
+
+      // console.log(data.acf.services_promoted);  // eslint-disable-line
       // console.log(data2); // eslint-disable-line
       // axios.get(env.API_URL.concat('/acf/v3/options/options')).then((response) => {
       //   console.log(response.data);  // eslint-disable-line
