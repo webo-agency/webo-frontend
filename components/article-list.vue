@@ -62,7 +62,7 @@
       more: {
         type: Object,
         default: function(){ return {}; },
-        required: true
+        required: false
       }
     },
     computed: {
@@ -71,9 +71,6 @@
         
          if(typeof this.articles[0] != 'undefined' && typeof this.articles[0].type != 'undefined'){
            for (let article of this.articles) {
-             if(!article.acf.homepage.title){
-               article.acf.homepage.title = article.title.rendered;
-             }
             // console.log(article.acf.homepage);  // eslint-disable-line
             articles.push(article.acf.homepage);
            }
