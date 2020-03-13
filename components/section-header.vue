@@ -12,12 +12,12 @@
         v-if="positionHeader"
         class="text-main not-italic font-bold"
       >{{ !numberHeader && positionHeader ? '-' : (numberHeader > 9 ? numberHeader : '0' + numberHeader ) }}/ </em>
-      <span v-html="subtitle" />
+      <span v-html="subtitleFormatted" />
     </h2>
     <h1
       :class="titleClass"
       class="em-custom font-extrabold"
-      v-html="title"
+      v-html="titleFormatted"
     />
   </component>
 </template>
@@ -66,7 +66,15 @@ export default {
       default: 0,
       required: false
     },
-  }
+  },
+  computed: {
+    titleFormatted () {
+      return this.title ? this.$md.renderInline(this.title) : ''
+    },
+    subtitleFormatted () {
+      return this.subtitle ? this.$md.renderInline(this.subtitle) : ''
+    }
+  },
 }; 
 </script>
 

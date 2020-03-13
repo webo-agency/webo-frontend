@@ -13,7 +13,7 @@
       />
       <article-block
         v-if="JSON.stringify(more) != '{}'"
-        :article="more"
+        :article="moreInject"
         main-class="flex-initial w-full sm:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
         dark
       />
@@ -79,6 +79,9 @@
          }
           
         return articles
+      },
+      moreInject: function(){
+        return this.more
       }
     },
     mounted() {

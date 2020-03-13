@@ -1,6 +1,7 @@
 <template>
   <component
     :is="mainTag"
+    :id="mainId"
     :class="{'min-h-mobile-screen' : !heightAuto}"
     v-bind="$attrs"
   >
@@ -23,17 +24,17 @@
         default: "section",
         required: false
       },
-      id: {
+      mainId: {
+        type: String,
+        default: "",
+        required: false
+      },
+      mainTitle: {
         type: String,
         default: "",
         required: false
       },
       link: {
-        type: String,
-        default: "",
-        required: false
-      },
-      title: {
         type: String,
         default: "",
         required: false
@@ -60,12 +61,18 @@
       },
     },
     mounted() {
-      if (!this.$attrs.disabled && !this.$attrs.id) {
+      if (!this.$attrs.disabled && this.mainId != '' && this.mainTitle != '') {
         this.$root.$emit("section", {
           id: this.mainId,
           title: this.mainTitle
         });
       }
+    },
+    beforeDestroy(){
+      // this.$root.$emit("removeSection", {
+      //   id: this.mainId,
+      //   title: this.mainTitle
+      // });
     }
   };
 </script>

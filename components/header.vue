@@ -127,7 +127,7 @@ export default {
     // window.addEventListener("scroll", this.onScroll, { passive: true });
 
     this.$root.$on("section", data => {
-      if (!(data.id in this.sections)) {
+      if (!(data.id in this.sections) && data.id != '') {
         this.sections.push(data);
       }
     });

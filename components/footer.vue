@@ -67,12 +67,12 @@
         </div>
 
         <p class="mb-5 leading-tight">
-          {{ $store.state.general.data.footer.description }}
+          {{ $store.state.general.data.call_to_action_footer.description }}
           <a 
             class="block text-main text-overflow" 
-            :href="$store.state.general.data.footer.link.link"
+            :href="$store.state.general.data.call_to_action_footer.link.link"
           >
-            {{ $store.state.general.data.footer.link.title }}
+            {{ $store.state.general.data.call_to_action_footer.link.title }}
           </a>
         </p>
 

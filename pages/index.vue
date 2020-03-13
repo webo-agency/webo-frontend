@@ -2,6 +2,8 @@
   <div class="flex flex-col w-full m-auto">
     <section-wrapper
       main-tag="div"
+      :main-id="api.acf.baner_settings.is_linkable"
+      :main-title="api.acf.baner_settings.title"
       class="bg-backgroundDark text-white flex flex-col justify-center"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
@@ -11,8 +13,8 @@
         <section-header
           :position-header="api.acf.baner_settings.title_position"
           :number-header="api.acf.baner_settings.title_number ? 1 : 0"  
-          :subtitle="$md.renderInline(api.acf.baner_settings.title)"
-          :title="$md.renderInline(api.acf.baner_carousel[0].header)"
+          :subtitle="api.acf.baner_settings.title"
+          :title="api.acf.baner_carousel[0].header"
           title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
         />
@@ -28,15 +30,18 @@
     </section-wrapper>
     <section-wrapper
       main-tag="section"
+      :main-id="api.acf.services_settings.is_linkable"
+      :main-title="api.acf.services_settings.title"
     >
       <section-header 
         :position-header="api.acf.services_settings.title_position"
         :number-header="api.acf.services_settings.title_number ? 1 : 0"
-        :subtitle="$md.renderInline(api.acf.services_settings.title)"
-        :title="$md.renderInline(api.acf.services_settings.header)"
+        :subtitle="api.acf.services_settings.title"
+        :title="api.acf.services_settings.header"
         class="mb-8"
       />
       <p 
+        v-if="api.acf.services_settings.description"
         class="mb-5 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.services_settings.description"
       />
@@ -48,18 +53,21 @@
 
     <section-wrapper
       main-tag="section"
+      :main-id="api.acf.technology_settings.is_linkable"
+      :main-title="api.acf.technology_settings.title"
       class="bg-backgroundDark text-white"
     >
       <section-header 
         :position-header="api.acf.technology_settings.title_position"
         :number-header="api.acf.technology_settings.title_number ? 2 : 0"
-        :subtitle="$md.renderInline(api.acf.technology_settings.title)"
-        :title="$md.renderInline(api.acf.technology_settings.header)"
+        :subtitle="api.acf.technology_settings.title"
+        :title="api.acf.technology_settings.header"
         title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-2/3 mb-8 lg:pr-10"
       />
       <p 
+        v-if="api.acf.technology_settings.description"
         class="mb-10 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.technology_settings.description"
       />
@@ -67,15 +75,18 @@
 
     <section-wrapper
       main-tag="section"
+      :main-id="api.acf.company_settings.is_linkable"
+      :main-title="api.acf.company_settings.title"
     >
       <section-header 
         :position-header="api.acf.company_settings.title_position"
         :number-header="api.acf.company_settings.title_number ? 3 : 0"
-        :subtitle="$md.renderInline(api.acf.company_settings.title)"
-        :title="$md.renderInline(api.acf.company_settings.header)"
+        :subtitle="api.acf.company_settings.title"
+        :title="api.acf.company_settings.header"
         class="w-full md:w-2/3 mb-8 lg:pr-10"
       />
-      <p 
+      <p
+        v-if="api.acf.company_settings.description"
         class="mb-10 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.company_settings.description"
       />
@@ -86,18 +97,21 @@
 
     <section-wrapper
       main-tag="div"
+      :main-id="api.acf.projects_settings.is_linkable"
+      :main-title="api.acf.projects_settings.title"
       class="bg-backgroundLight"
     >
       <section-header 
         :position-header="api.acf.projects_settings.title_position"
         :number-header="api.acf.projects_settings.title_number ? 3 : 0"
-        :subtitle="$md.renderInline(api.acf.projects_settings.title)"
-        :title="$md.renderInline(api.acf.projects_settings.header)"
+        :subtitle="api.acf.projects_settings.title"
+        :title="api.acf.projects_settings.header"
         title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
       <p 
+        v-if="api.acf.projects_settings.description"
         class="mb-10 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.projects_settings.description"
       />
@@ -105,16 +119,22 @@
 
     <section-wrapper
       main-tag="div"
+      :main-id="api.acf.reviews_settings.is_linkable"
+      :main-title="api.acf.reviews_settings.title"
       class="bg-backgroundLight"
     >
       <section-header 
-        :title="$md.renderInline('Mówią <br/>o <em>nas</em>')"
+        :title="api.acf.reviews_settings.header"
+        :subtitle="api.acf.reviews_settings.title"
+        :position-header="api.acf.reviews_settings.title_position"
+        :number-header="api.acf.reviews_settings.title_number ? 4 : 0"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
     </section-wrapper>
 
     <section-wrapper
       main-tag="div"
+      :main-title="api.acf.contact_section.title"
       class="bg-backgroundDark text-white"
       container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
       height-auto
@@ -122,16 +142,16 @@
       <section-header
         :position-header="true"
         :number-header="0"
-        :subtitle="$md.renderInline('Zainteresowany?')"
-        :title="$md.renderInline('Porozmawiajmy <br/>o Twoim <em>projekcie</em>')"
+        :subtitle="api.acf.contact_section.title"
+        :title="api.acf.contact_section.text"
         title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
       />
       <buttonContact 
         class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
-        :text="api.acf.baner_carousel[0].button.title"
-        :link="api.acf.baner_carousel[0].button.link"
+        :text="api.acf.contact_section.button.title"
+        :link="api.acf.contact_section.button.hyperlink"
       />
     </section-wrapper>
   </div>
@@ -154,8 +174,13 @@
       carousel,
       articleList
     },
-    async asyncData ({ app }) {
-      // console.log(app.$wp); // eslint-disable-line
+    computed: {
+      contactData () {
+        return this.$store.state.general.data
+      }
+    },
+    async asyncData ({ app, store }) {
+      
       let data = await app.$wp.frontPage();
       
       data.acf.services_promoted = [
@@ -173,6 +198,7 @@
           await app.$wp.pages().id(data.acf.company_promoted[4])
       ];
 
+      data.acf.contact_section = store.state.general.data.call_to_action_section;
       // data.acf.technology_promoted = [
       //     await app.$wp.pages().id(data.acf.technology_promoted[0]),
       //     await app.$wp.pages().id(data.acf.technology_promoted[1]),
@@ -194,7 +220,7 @@
       // ];
 
       // console.log(data.acf);  // eslint-disable-line
-      // console.log(data2); // eslint-disable-line
+      // console.log(store.general); // eslint-disable-line
       // axios.get(env.API_URL.concat('/acf/v3/options/options')).then((response) => {
       //   console.log(response.data);  // eslint-disable-line
       // })
