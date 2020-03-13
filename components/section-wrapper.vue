@@ -2,6 +2,7 @@
   <component
     :is="mainTag"
     :id="mainId"
+    class="relative"
     :class="{'min-h-mobile-screen' : !heightAuto}"
     v-bind="$attrs"
   >

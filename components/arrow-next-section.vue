@@ -2,6 +2,9 @@
   <button
     :class="mainClass"
     class="custom-position"
+    @click="$root.$emit('next-section', {
+      id: sectionLink
+    })"
   >
     <svg
       viewBox="0 0 14 26"
@@ -37,6 +40,11 @@ export default {
     arrowColor: {
       type: String,
       default: "#FFFFFF",
+      required: false
+    },
+    sectionLink: {
+      type: String,
+      default: "",
       required: false
     },
   }

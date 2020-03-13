@@ -22,7 +22,7 @@ export default {
       canSuccess: true,
       duration: 5000,
       height: '2px',
-      color: '#b2f1c7',
+      color: '#00e0b4',
       failedColor: 'red'
     }
   },

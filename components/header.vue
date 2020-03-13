@@ -69,19 +69,30 @@
           class="links list-inline justify-between align-items-stretch py-1 py-xs-0"
           :offset="80"
           :offset-height="80"
-          :itemchanged="onItemChanged"
         >
           <nuxt-link
             v-for="(section, index) in sections"
-            :key="`fruit-${index}`"
+            :key="index"
+            :ref="`#${section.id}`"
             :class="{ 'is-top': !isTop }"
             class="link scrollactive-item"
             :to="`/#${section.id}`"
-            @click.native="routeUpdate()"
           >
             {{ section.title }}
           </nuxt-link>
         </scrollactive>
+
+        <a
+          v-if="$store.state.general.data.call_to_action_header"
+          :href="$store.state.general.data.call_to_action_header.button.hyperlink"
+          class="button-primary block py-1 px-8 bg-main text-black font-medium text-micro hover:text-darkText xs:text-base lg:text-xl"
+        >
+          <span 
+            class="xs:hidden sm:flex"
+          >
+            {{ $store.state.general.data.call_to_action_header.button.title }}
+          </span>
+        </a>
       </div>
     </div>
   </component>
@@ -125,6 +136,11 @@ export default {
   },
   mounted() {
     // window.addEventListener("scroll", this.onScroll, { passive: true });
+    this.$root.$on("next-section", data => {
+      if (!(data.id in this.sections) && data.id != '') {
+        this.$refs[`#${data.id}`][0].$el.click();
+      }
+    });
 
     this.$root.$on("section", data => {
       if (!(data.id in this.sections) && data.id != '') {
@@ -151,9 +167,6 @@ export default {
       );
       this.isGoingUp = window.scrollY > this.scrollPosition;
       this.scrollPosition = window.scrollY;
-    },
-    routeUpdate(){
-        this.$root.$emit("contactFooterFocus");
     },
     onItemChanged() {
       this.$data.menuVisible = false;

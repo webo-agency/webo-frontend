@@ -25,6 +25,7 @@
         <arrowNextSection 
           main-class="z-30 hidden xl:block"
           arrow-color="#FFFFFF"
+          section-link="uslugi"
         />
       </carousel>
     </section-wrapper>
