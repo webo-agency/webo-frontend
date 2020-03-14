@@ -68,7 +68,8 @@
           :class="{ 'is-active': menuVisible, 'is-top': !isTop }"
           class="links list-inline justify-between align-items-stretch py-1 py-xs-0"
           :offset="80"
-          :offset-height="80"
+          always-track="true"
+          duration="600"
         >
           <nuxt-link
             v-for="(section, index) in sections"
@@ -80,6 +81,10 @@
           >
             {{ section.title }}
           </nuxt-link>
+          <nuxt-link
+            class="link scrollactive-item"
+            :to="`/#x`"
+          />
         </scrollactive>
 
         <a
