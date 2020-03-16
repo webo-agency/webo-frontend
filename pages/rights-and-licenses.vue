@@ -43,14 +43,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .page {
   width: 100%;
   margin: 25vh auto;
 }
 </style>
 
-<style lang="scss">
+<style>
 .page h2 {
   margin-bottom: 15px;
 }
