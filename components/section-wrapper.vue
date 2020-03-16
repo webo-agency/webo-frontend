@@ -2,8 +2,7 @@
   <component
     :is="mainTag"
     :id="mainId"
-    class="relative"
-    :class="{'min-h-mobile-screen' : !heightAuto}"
+    :class="{'min-h-mobile-screen' : !heightAuto, 'relative': true}"
     v-bind="$attrs"
   >
     <div 
@@ -52,7 +51,7 @@
       },
       containerClass: {
         type: String,
-        default: "flex-col mt-10 mb-10 lg:mt-15vh lg:mb-15vh",
+        default: "container flex flex-col mt-10 mb-10 lg:mt-15vh lg:mb-15vh",
         required: false
       },
       heightAuto: {

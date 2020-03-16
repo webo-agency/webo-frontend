@@ -47,23 +47,13 @@ jobs:
           args: 'Error on deploy:\n 
                  Draft URL: ${{ steps.netlify.outputs.OUTPUT }}'
 
-      - name: Discord notification - success live
+      - name: Discord notification - success
         uses: Ilshidur/action-discord@0.0.2
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        if: steps.netlify.outputs.NETLIFY_LIVE_URL != ''
-        with:
-          args: 'Live deploy:\n 
-                 Draft URL: ${{ steps.netlify.outputs.NETLIFY_URL }} \n 
-                 Logs URL: ${{ steps.netlify.outputs.NETLIFY_LOGS_URL }} \n
-                 Live URL: ${{ steps.netlify.outputs.NETLIFY_LIVE_URL }}'
-
-      - name: Discord notification - success preview
-        uses: Ilshidur/action-discord@0.0.2
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-        if: steps.netlify.outputs.NETLIFY_LIVE_URL == ''
+        if: success()
         with:
           args: 'Preview deploy:\n 
                  Draft URL: ${{ steps.netlify.outputs.NETLIFY_URL }} \n 
-                 Logs URL: ${{ steps.netlify.outputs.NETLIFY_LOGS_URL }}'
+                 Logs URL: ${{ steps.netlify.outputs.NETLIFY_LOGS_URL }} \n
+                 Live URL: ${{ steps.netlify.outputs.NETLIFY_LIVE_URL }}'

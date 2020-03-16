@@ -29,6 +29,7 @@
         />
       </carousel>
     </section-wrapper>
+
     <section-wrapper
       main-tag="section"
       :main-id="api.acf.services_settings.is_linkable"
@@ -49,6 +50,25 @@
       <articleList
         :articles="api.acf.services_promoted"
         :more="api.acf.services_promoted_single.homepage"
+      />
+    </section-wrapper>
+
+    <section-wrapper
+      main-tag="div"
+      :class="{
+        'flex': true,
+        'flex-col': true,
+        'overflow-hidden': true,
+        'bg-backgroundDark': api.acf.visualisation_background_color == 'black',
+        'bg-white': api.acf.visualisation_background_color == 'white',
+        'py-10': true
+      }"
+      container-class="relative flex-auto"
+      :style="gradientBackground"
+    >
+      <div
+        class="parallax-background rounded-lg"
+        :style="parallaxBackground"
       />
     </section-wrapper>
 
@@ -178,6 +198,16 @@
     computed: {
       contactData () {
         return this.$store.state.general.data
+      },
+      gradientBackground(){
+        return {
+          "background": `linear-gradient(to bottom, ${this.api.acf.visualisation_background_color} 50%, ${this.api.acf.visualisation_second_background_color} 50%);`
+        }
+      },
+      parallaxBackground() {
+        return {
+          "background-image": `url(${this.api.acf.visualisation_image.url})`
+        };
       }
     },
     async asyncData ({ app, store }) {
@@ -247,3 +277,16 @@
     mounted() {  /*  */ }
   };
 </script>
+
+<style scoped>
+  .parallax-background{
+      position: absolute;
+      left: 15px;
+      top: 0;
+      bottom: 0;
+      width: 100vw;
+      max-width: none;
+      background-size: cover;
+      background-attachment: fixed;
+  }
+</style>

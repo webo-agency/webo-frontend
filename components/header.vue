@@ -68,8 +68,8 @@
           :class="{ 'is-active': menuVisible, 'is-top': !isTop }"
           class="links list-inline justify-between align-items-stretch py-1 py-xs-0"
           :offset="80"
-          always-track="true"
-          duration="600"
+          :always-track="true"
+          :duration="600"
         >
           <nuxt-link
             v-for="(section, index) in sections"

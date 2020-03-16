@@ -1,9 +1,8 @@
 {
   "name": "webo",
-  "description": "Company webo - website",
+  "description": "Company website",
   "license": "MIT",
   "private": true,
-  "author": "webo",
   "contributors": [
     {
       "name": "Patryk Padus",
@@ -37,7 +36,6 @@
     "nuxt-i18n": "^6.5.0",
     "nuxt-netlify-http2-server-push": "^0.1.3",
     "nuxt-polyfill": "^1.0.3",
-    "nuxt-sass-resources-loader": "^2.0.4",
     "nuxt-webfontloader": "^1.1.0",
     "optimize-spaces": "file:local-override/optimize-spaces",
     "postcss-nested": "^4.2.1",
@@ -83,9 +81,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-tailwind": "^0.2.0",
     "eslint-plugin-vue": "^5.2.3",
-    "node-sass": "^4.13.1",
     "puppeteer": "^1.20.0",
-    "sass-loader": "^7.3.1",
     "vue-i18n-extensions": "^0.2.1",
     "vue-svg-inline-loader": "^1.4.5",
     "vue-template-compiler": "^2.6.11",

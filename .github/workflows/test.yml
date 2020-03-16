@@ -1,4 +1,4 @@
-name: Development workflow
+name: Test workflow
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
       - name: Generate website
         run: npm run deploy --if-present
 
-      - name: Discord notification - success preview
+      - name: Discord notification - success
         uses: Ilshidur/action-discord@0.0.2
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
