@@ -61,10 +61,12 @@
         'overflow-hidden': true,
         'bg-backgroundDark': api.acf.visualisation_background_color == 'black',
         'bg-white': api.acf.visualisation_background_color == 'white',
-        'py-10': true
+        'py-10': true,
+        'xs:min-h-240 md:min-h-500 lg:min-h-mobile-screen': true
       }"
       container-class="relative flex-auto"
       :style="gradientBackground"
+      height-auto
     >
       <div
         class="parallax-background rounded-lg"
@@ -139,6 +141,7 @@
     </section-wrapper>
 
     <section-wrapper
+      :main-disabled="true"
       main-tag="div"
       :main-id="api.acf.reviews_settings.is_linkable"
       :main-title="api.acf.reviews_settings.title"
@@ -288,5 +291,6 @@
       max-width: none;
       background-size: cover;
       background-attachment: fixed;
+      background-repeat: no-repeat;
   }
 </style>

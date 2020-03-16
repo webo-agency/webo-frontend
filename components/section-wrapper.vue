@@ -2,6 +2,7 @@
   <component
     :is="mainTag"
     :id="mainId"
+    :disabled="mainDisabled"
     :class="{'min-h-mobile-screen' : !heightAuto, 'relative': true}"
     v-bind="$attrs"
   >
@@ -55,6 +56,11 @@
         required: false
       },
       heightAuto: {
+        type: Boolean,
+        default: false,
+        required: false
+      },
+      mainDisabled: {
         type: Boolean,
         default: false,
         required: false

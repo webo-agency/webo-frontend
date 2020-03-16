@@ -56,6 +56,7 @@ module.exports = {
         '20vh': '20vh'
       },
       minHeight: {
+        '240': '240px',
         '500': '500px',
         '700': '700px',
         'mobile-screen': '640px'
