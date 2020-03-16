@@ -283,7 +283,6 @@ module.exports = {
   plugins: [
     { src: "~/plugins/scrollactive.js", ssr: true },
     { src: "~/plugins/swiper.js", ssr: false },
-    { src: "~/plugins/chat.js", ssr: false }
   ],
   css: [
     'swiper/dist/css/swiper.css',
