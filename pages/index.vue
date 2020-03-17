@@ -138,6 +138,9 @@
         class="mb-10 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.projects_settings.description"
       />
+      <c-slider
+        :slides="api.acf.projects_carousel_list"
+      />
     </section-wrapper>
 
     <section-wrapper
@@ -188,6 +191,7 @@
   import buttonContact from "~/components/button-contact.vue";
   import carousel from "~/components/carousel.vue";
   import articleList from "~/components/article-list.vue";
+  import cSlider from "~/components/slider.vue";
 
   export default {
     components: {
@@ -196,7 +200,8 @@
       arrowNextSection,
       buttonContact,
       carousel,
-      articleList
+      articleList,
+      cSlider
     },
     computed: {
       contactData () {
@@ -252,6 +257,13 @@
       //     await app.$wp.pages().id(data.acf.category_technology_promoted[3]),
       //     await app.$wp.pages().id(data.acf.category_technology_promoted[4])
       // ];
+
+      data.acf.projects_carousel_list = [];
+      for(let i = 0; i < data.acf.projects_carousel.length; i++){
+        data.acf.projects_carousel_list.push(await app.$wp.posts().id(data.acf.projects_carousel[i]));
+      }
+
+      //
 
       // console.log(data.acf);  // eslint-disable-line
       // console.log(store.general); // eslint-disable-line
