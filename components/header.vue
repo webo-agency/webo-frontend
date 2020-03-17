@@ -93,7 +93,7 @@
           class="button-primary block py-1 px-8 bg-main text-black font-medium text-micro hover:text-darkText xs:text-base lg:text-xl"
         >
           <span 
-            class="xs:hidden sm:flex"
+            class="hidden xs:flex"
           >
             {{ $store.state.general.data.call_to_action_header.button.title }}
           </span>
