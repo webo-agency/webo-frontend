@@ -138,7 +138,7 @@
         class="mb-10 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.projects_settings.description"
       />
-      <c-slider
+      <c-project-slider
         :slides="api.acf.projects_carousel_list"
       />
     </section-wrapper>
@@ -156,6 +156,17 @@
         :position-header="api.acf.reviews_settings.title_position"
         :number-header="api.acf.reviews_settings.title_number ? 4 : 0"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
+      />
+    </section-wrapper>
+
+    <section-wrapper
+      main-tag="div"
+      class="bg-backgroundLight"
+      container-class="mt-10 mb-10"
+      height-auto
+    >
+      <c-logo-slider
+        :slides="api.acf.brands_slajder_list"
       />
     </section-wrapper>
 
@@ -191,7 +202,8 @@
   import buttonContact from "~/components/button-contact.vue";
   import carousel from "~/components/carousel.vue";
   import articleList from "~/components/article-list.vue";
-  import cSlider from "~/components/slider.vue";
+  import cLogoSlider from "~/components/logo-slider.vue";
+  import cProjectSlider from "~/components/project-slider.vue";
 
   export default {
     components: {
@@ -201,7 +213,8 @@
       buttonContact,
       carousel,
       articleList,
-      cSlider
+      cLogoSlider,
+      cProjectSlider
     },
     computed: {
       contactData () {
@@ -260,7 +273,25 @@
 
       data.acf.projects_carousel_list = [];
       for(let i = 0; i < data.acf.projects_carousel.length; i++){
-        data.acf.projects_carousel_list.push(await app.$wp.posts().id(data.acf.projects_carousel[i]));
+        let entry = await app.$wp.posts().id(data.acf.projects_carousel[i]);
+        
+        data.acf.projects_carousel_list.push({
+          id: entry.id,
+          url: entry.acf.project_promoted_screensave.url,
+          alt: entry.acf.project_promoted_screensave.alt,
+          title: entry.acf.project_promoted_title
+        });
+      }
+
+      data.acf.brands_slajder_list = [];
+      for(let i = 0; i < data.acf.brands_slajder.length; i++){
+        let entry = await app.$wp.posts().id(data.acf.brands_slajder[i]);
+        
+        data.acf.brands_slajder_list.push({
+          id: entry.id,
+          url: entry.acf.mark_logo.url,
+          alt: entry.acf.mark_logo.alt
+        });
       }
 
       //

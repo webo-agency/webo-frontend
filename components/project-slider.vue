@@ -15,14 +15,14 @@
         >
           <div class="flex-auto">
             <img
-              :src="entry.acf.project_promoted_screensave.url"
-              :alt="entry.acf.project_promoted_screensave.alt"
+              :src="entry.url"
+              :alt="entry.alt"
               class="mb-2"
             >
             <h2
               class="font-bold text-xl"
             >
-              {{ entry.acf.project_promoted_title }}
+              {{ entry.title }}
             </h2>
           </div>
         </div>
