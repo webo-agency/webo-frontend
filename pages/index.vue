@@ -121,6 +121,7 @@
         />
         <articleList
           :articles="api.acf.company_promoted"
+          :more="api.acf.company_promoted_single.homepage"
         />
       </div>
     </section-wrapper>

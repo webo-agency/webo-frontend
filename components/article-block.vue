@@ -21,8 +21,8 @@
       <h1
         class="mb-4 text-base leading-tight"
         :class="{
-          'md:text-2xl font-bold' : !dark,
-          'md:text-3xl em-custom font-semibold' : dark,
+          'md:text-2xl font-medium' : !dark,
+          'md:text-3xl em-custom font-bold' : dark,
           'xs:ml-6': list.length
         }"
         v-html="$md.renderInline(header)"
