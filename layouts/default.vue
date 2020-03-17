@@ -5,7 +5,7 @@
       main-tag="header"
       dark-theme
     />
-    <main class="flex flex-row relative flex-initial bg-white break-all xs:break-normal">
+    <main class="flex flex-row relative flex-auto bg-white break-all xs:break-normal">
       <nuxt />
     </main>
     <cFooter

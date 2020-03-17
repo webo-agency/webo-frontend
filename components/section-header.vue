@@ -2,7 +2,6 @@
   <component
     :is="mainTag"
     :class="mainClass"
-    class=""
   >
     <h2
       :class="subtitleClass"

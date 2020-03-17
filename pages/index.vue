@@ -106,16 +106,23 @@
         :number-header="api.acf.company_settings.title_number ? 3 : 0"
         :subtitle="api.acf.company_settings.title"
         :title="api.acf.company_settings.header"
-        class="w-full md:w-2/3 mb-8 lg:pr-10"
+        class="w-full md:w-2/3 mb-8 lg:pr-10 md:pl-10"
       />
-      <p
-        v-if="api.acf.company_settings.description"
-        class="mb-10 w-full md:w-1/2 lg:w-1/3"
-        v-html="api.acf.company_settings.description"
-      />
-      <articleList
-        :articles="api.acf.company_promoted"
-      />
+      <div class="relative md:pl-10">
+        <img
+          :src="api.acf.company_graphic.url"
+          :alt="api.acf.company_graphic.alt"
+          class="absolute rounded-lg img-list-left"
+        >
+        <p
+          v-if="api.acf.company_settings.description"
+          class="mb-10 w-full md:w-1/2 lg:w-1/3"
+          v-html="api.acf.company_settings.description"
+        />
+        <articleList
+          :articles="api.acf.company_promoted"
+        />
+      </div>
     </section-wrapper>
 
     <section-wrapper
@@ -144,6 +151,17 @@
     </section-wrapper>
 
     <section-wrapper
+      main-tag="div"
+      class="bg-backgroundLight"
+      container-class="mt-10 mb-10"
+      height-auto
+    >
+      <c-logo-slider
+        :slides="api.acf.brands_slajder_list"
+      />
+    </section-wrapper>
+
+    <section-wrapper
       :main-disabled="true"
       main-tag="div"
       :main-id="api.acf.reviews_settings.is_linkable"
@@ -156,17 +174,6 @@
         :position-header="api.acf.reviews_settings.title_position"
         :number-header="api.acf.reviews_settings.title_number ? 4 : 0"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
-      />
-    </section-wrapper>
-
-    <section-wrapper
-      main-tag="div"
-      class="bg-backgroundLight"
-      container-class="mt-10 mb-10"
-      height-auto
-    >
-      <c-logo-slider
-        :slides="api.acf.brands_slajder_list"
       />
     </section-wrapper>
 
@@ -326,14 +333,30 @@
 
 <style scoped>
   .parallax-background{
-      position: absolute;
-      left: 15px;
-      top: 0;
-      bottom: 0;
-      width: 100vw;
-      max-width: none;
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    max-width: none;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .img-list-left{
+    width: 30vw;
+    height: 100%;
+    object-fit: cover;
+    object-position: -45vw;
+    left: -15px;
+    transform: translate(-100%, 0);
+    z-index: 1;
+  }
+
+  @screen lg {
+      .img-list-left{
+        height: 127%;
+      }
   }
 </style>
