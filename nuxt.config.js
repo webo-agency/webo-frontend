@@ -1,4 +1,20 @@
 process.noDeprecation = true;
+import axios from 'axios';
+
+const definedLocales = [
+  {
+    "code": "en",
+    "iso": "en-GB",
+    "name": "English"
+  },
+  {
+    "code": "pl",
+    "iso": "pl-PL",
+    "name": "Polski"
+  }
+];
+const definedStategyLocale = "prefix_and_default";
+const definedDefaultLocale = definedLocales[0]
 
 // const features = [
 //   'fetch',
@@ -11,11 +27,12 @@ process.noDeprecation = true;
 //   'HTMLDocument',
 //   'JSON',
 // ].join('%2C');
+const API = process.env.API_URL || "https://api.webo.agency/json";
 
 module.exports = {
   env: {
     stage: process.env.CONTEXT || "developer",
-    API_URL: process.env.API_URL || "https://api.webo.agency/json"
+    API_URL: API
   },
   head: {
     title: "webo - Digital partners",
@@ -135,23 +152,14 @@ module.exports = {
     {
       src: "nuxt-i18n",
       options: {
-        strategy: "prefix_and_default",
-        defaultLocale: "pl",
+        strategy: definedStategyLocale,
+        defaultLocale: definedDefaultLocale,
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: "language",
-          fallbackLocale: "pl"
+          fallbackLocale: "en"
         },
-        locales: [
-          {
-            code: "en",
-            iso: "en-GB"
-          },
-          {
-            code: "pl",
-            iso: "pl_PL"
-          }
-        ],
+        locales: definedLocales.reverse(),
         vueI18n: {
           fallbackLocale: "en",
           messages: {
@@ -266,7 +274,7 @@ module.exports = {
     {
       src: 'wp-nuxt', 
       options:  {
-        endpoint: process.env.API_URL,
+        endpoint: API,
         extensions: true // For additional functions of wpapi-extensions
       },
     }
@@ -458,8 +466,42 @@ module.exports = {
   generate: {
     dir: "public",
     fallback: "404.html",
-    routes: [
-      "/"
-    ]
+    routes () {
+      let _calls = [];
+
+      _calls.push(axios.get(API.concat('/wp/v2/pages/')));
+      _calls.push(axios.get(API.concat('/wp/v2/posts/')));
+
+      definedLocales.forEach(function(locale){
+        _calls.push(axios.get(API.concat('/wp/v2/pages/?lang=').concat(locale.code), locale))
+        _calls.push(axios.get(API.concat('/wp/v2/posts/?lang=').concat(locale.code), locale))
+      });
+      
+      return axios.all(_calls)
+      .then(axios.spread((...res) => {
+        let _routeArray = [];
+
+        res.map(singleResponse => {
+
+          console.log(singleResponse); // eslint-disable-line
+
+          singleResponse.data.forEach((page) => {
+            if(typeof singleResponse.config.code != 'undefined'){
+              _routeArray.push({
+                route: `/${singleResponse.config.code}/${page.slug}`,
+                payload: page
+              })
+            } else if(definedStategyLocale == 'prefix_except_default'){
+              _routeArray.push({
+                route: `/${page.slug}`,
+                payload: page
+              })
+            }
+          })
+        })
+
+        return _routeArray;
+      }))
+    }
   }
 };
