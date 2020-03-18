@@ -230,7 +230,7 @@
       },
       gradientBackground(){
         return {
-          "background": `linear-gradient(to bottom, ${this.api.acf.visualisation_background_color} 50%, ${this.api.acf.visualisation_second_background_color} 50%);`
+          "background-image": `linear-gradient(to bottom, ${this.api.acf.visualisation_background_color} 50%, ${this.api.acf.visualisation_second_background_color} 50%)`
         }
       },
       parallaxBackground() {
