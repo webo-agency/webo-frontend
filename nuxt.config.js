@@ -14,7 +14,6 @@ process.noDeprecation = true;
 
 module.exports = {
   env: {
-    baseUrl: process.env.URL || "http://localhost:3000",
     stage: process.env.CONTEXT || "developer",
     API_URL: process.env.API_URL || "https://api.webo.agency/json"
   },
@@ -121,6 +120,7 @@ module.exports = {
     {
       src: "@nuxtjs/pwa",
       options: {
+        workbox: false,
         // workbox: {
         //   publicPath: '/static/',
         // },
@@ -136,14 +136,13 @@ module.exports = {
     {
       src: "nuxt-i18n",
       options: {
-        baseUrl: process.env.BASE_URL,
         strategy: "prefix_and_default",
-        rootRedirect: null, //ERROR on production
-        defaultLocale: "en",
+        defaultLocale: "pl",
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: "language",
-          fallbackLocale: "en"
+          alwaysRedirect: true,
+          fallbackLocale: "pl"
         },
         locales: [
           {
@@ -152,17 +151,17 @@ module.exports = {
           },
           {
             code: "pl",
-            iso: "pl"
+            iso: "pl_PL"
           }
         ],
         vueI18n: {
           fallbackLocale: "en",
           messages: {
             en: {
-              welcome: "Welcome"
+              welcome: "webo"
             },
             pl: {
-              welcome: "Witaj"
+              welcome: "webo"
             }
           }
         }
