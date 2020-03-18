@@ -140,7 +140,6 @@ module.exports = {
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: "language",
-          alwaysRedirect: true,
           fallbackLocale: "pl"
         },
         locales: [
