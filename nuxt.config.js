@@ -120,7 +120,6 @@ module.exports = {
     {
       src: "@nuxtjs/pwa",
       options: {
-        workbox: false,
         // workbox: {
         //   publicPath: '/static/',
         // },
