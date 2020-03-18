@@ -69,7 +69,7 @@
       height-auto
     >
       <div
-        class="parallax-background rounded-lg"
+        class="parallax-background absolute top-0 bottom-0 w-screen max-w-none bg-cover bg-no-repeat bg-fixed rounded-lg"
         :style="parallaxBackground"
       />
     </section-wrapper>
@@ -106,13 +106,13 @@
         :number-header="api.acf.company_settings.title_number ? 3 : 0"
         :subtitle="api.acf.company_settings.title"
         :title="api.acf.company_settings.header"
-        class="w-full md:w-2/3 mb-8 lg:pr-10 md:pl-10"
+        class="w-full md:w-2/3 mb-8 lg:pr-10 md:pl-20"
       />
-      <div class="relative md:pl-10">
+      <div class="relative md:pl-20">
         <img
           :src="api.acf.company_graphic.url"
           :alt="api.acf.company_graphic.alt"
-          class="absolute rounded-lg img-list-left"
+          class="absolute h-full rounded-lg z-10 object-cover img-list-left"
         >
         <p
           v-if="api.acf.company_settings.description"
@@ -152,22 +152,11 @@
     </section-wrapper>
 
     <section-wrapper
-      main-tag="div"
-      class="bg-backgroundLight"
-      container-class="mt-10 mb-10"
-      height-auto
-    >
-      <c-logo-slider
-        :slides="api.acf.brands_slajder_list"
-      />
-    </section-wrapper>
-
-    <section-wrapper
       :main-disabled="true"
       main-tag="div"
       :main-id="api.acf.reviews_settings.is_linkable"
       :main-title="api.acf.reviews_settings.title"
-      class="bg-backgroundLight"
+      class="bg-white"
     >
       <section-header 
         :title="api.acf.reviews_settings.header"
@@ -175,6 +164,17 @@
         :position-header="api.acf.reviews_settings.title_position"
         :number-header="api.acf.reviews_settings.title_number ? 4 : 0"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
+      />
+    </section-wrapper>
+
+    <section-wrapper
+      main-tag="div"
+      class="bg-backgroundLight"
+      container-class="mt-10 mb-10"
+      height-auto
+    >
+      <c-logo-slider
+        :slides="api.acf.brands_slajder_list"
       />
     </section-wrapper>
 
@@ -334,25 +334,16 @@
 
 <style scoped>
   .parallax-background{
-    position: absolute;
     left: 15px;
-    top: 0;
-    bottom: 0;
-    width: 100vw;
-    max-width: none;
-    background-size: cover;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    filter: brightness(0.5);
   }
 
   .img-list-left{
     width: 30vw;
-    height: 100%;
-    object-fit: cover;
     object-position: -45vw;
     left: -15px;
     transform: translate(-100%, 0);
-    z-index: 1;
+    filter: brightness(0.2);
   }
 
   @screen lg {
