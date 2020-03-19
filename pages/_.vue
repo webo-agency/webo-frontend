@@ -2,7 +2,6 @@
   <div
     class="flex flex-col w-full"
   >
-    {{ api }}
     <v-header-page
       :title="api.acf.page_title"
       :image="api.acf.page_image"

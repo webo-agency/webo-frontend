@@ -195,15 +195,18 @@ export default {
   computed: {
     submenuServices: function(){
       //menu_order
-      return orderBy(this.$store.state.menu.submenu["uslugi"].items, ['menu_order'], ['asc', 'desc'])
+      return [];
+      // return orderBy(this.$store.state.menu.submenu["uslugi"].items, ['menu_order'], ['asc', 'desc'])
     },
     submenuWebo: function(){
       //menu_order
-      return orderBy(this.$store.state.menu.submenu["webo"].items, ['menu_order'], ['asc', 'desc'])
+      return [];
+      // return orderBy(this.$store.state.menu.submenu["webo"].items, ['menu_order'], ['asc', 'desc'])
     },
     submenuSocialMedia: function(){
       //menu_order
-      return orderBy(this.$store.state.menu.submenu["social-media"].items, ['menu_order'], ['asc', 'desc'])
+      return [];
+      // return orderBy(this.$store.state.menu.submenu["social-media"].items, ['menu_order'], ['asc', 'desc'])
     }
   },
   methods: {
