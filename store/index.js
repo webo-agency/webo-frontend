@@ -1,7 +1,4 @@
 import axios from 'axios';
-const API_URL = process.env.API_URL.concat(process.env.API_AFFIX);
-
-// export const state = {}
 
 export const mutations = {}
 export const actions = {
@@ -10,13 +7,13 @@ export const actions = {
     await dispatch('dataInit');
   },
   dataInit({ dispatch }) {
-
+    console.log(process.env.API_URL.concat(process.env.API_AFFIX).concat('/acf/v3/options/options').concat('?lang=pl')); // eslint-disable-line
     return axios.all([
-      axios.get(API_URL.concat('/acf/v3/options/options').concat('?lang=pl')),
-      axios.get(API_URL.concat('/menus/v1/menus').concat('?lang=pl')),
-      axios.get(API_URL.concat('/menus/v1/menus/').concat('social-media').concat('?lang=pl')),
-      axios.get(API_URL.concat('/menus/v1/menus/').concat('uslugi').concat('?lang=pl')),
-      axios.get(API_URL.concat('/menus/v1/menus/').concat('webo').concat('?lang=pl'))
+      axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/acf/v3/options/options').concat('?lang=pl')),
+      axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus').concat('?lang=pl')),
+      axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus/').concat('social-media').concat('?lang=pl')),
+      axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus/').concat('uslugi').concat('?lang=pl')),
+      axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus/').concat('webo').concat('?lang=pl'))
     ])
     .then(axios.spread((resOptions, resMenu, resSubMenu1, resSubMenu2, resSubMenu3) => {
       dispatch('general/init', resOptions.data.acf);

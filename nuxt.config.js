@@ -1,4 +1,5 @@
 import axios from 'axios';
+require('dotenv').config();
 process.noDeprecation = true;
 
 const definedLocales = [
@@ -26,12 +27,14 @@ const definedDefaultLocale = definedLocales[0]
 //   'HTMLDocument',
 //   'JSON',
 // ].join('%2C');
+const API_URL = process.env.API_URL;
+const API_AFFIX = process.env.API_AFFIX;
 
 module.exports = {
   env: {
     CONTEXT: process.env.CONTEXT,
-    API_URL: process.env.API_URL,
-    API_AFFIX: process.env.API_AFFIX
+    API_URL: API_URL,
+    API_AFFIX: API_AFFIX
   },
   head: {
     title: "webo - Digital partners",
@@ -482,7 +485,7 @@ module.exports = {
     fallback: "404.html",
     routes () {
       let _calls = [];
-
+      
       //@TODO: [BEOK-1] Per page loop. As another module can be usefull
       definedLocales.forEach(function(locale){
         _calls.push(axios.get(`${process.env.API_URL}${process.env.API_AFFIX}/wp/v2/pages/?per_page=100&lang=${locale.code}`, locale))
@@ -496,7 +499,7 @@ module.exports = {
         res.map(singleResponse => {
           singleResponse.data.forEach((page) => {
              _routeArray.push({
-              route: `${page.link.replace(process.env.API_URL,"")}`, //SLUG FIX - No translation at the moment avaible from WP Multilanguage
+              route: `${page.link.replace(process.env.API_URL,"").replace(/\/$/, "")}`, //SLUG FIX - No translation at the moment available from WP Multilanguage
               name: `${page.slug}___${singleResponse.config.code}`,
               payload: page,
             })
