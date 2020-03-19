@@ -12,6 +12,7 @@ export const actions = {
     await context.dispatch('dataInit', context);
   },
   dataInit(context) {
+    
     return axios.all([
       axios.get(API_URL.concat('/acf/v3/options/options').concat('?lang=pl')),
       axios.get(API_URL.concat('/menus/v1/menus').concat('?lang=pl')),

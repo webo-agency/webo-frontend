@@ -468,10 +468,10 @@ module.exports = {
     fallback: "404.html",
     routes () {
       let _calls = [];
-
+      //@TODO: [BEOK-1] Per page loop. As another module can be usefull
       definedLocales.forEach(function(locale){
-        _calls.push(axios.get(API.concat('/wp/v2/pages/?lang=').concat(locale.code), locale))
-        _calls.push(axios.get(API.concat('/wp/v2/posts/?lang=').concat(locale.code), locale))
+        _calls.push(axios.get(API.concat('/wp/v2/pages/?per_page=100&lang=').concat(locale.code), locale))
+        _calls.push(axios.get(API.concat('/wp/v2/posts/?per_page=100&lang=').concat(locale.code), locale))
       });
       
       return axios.all(_calls)
