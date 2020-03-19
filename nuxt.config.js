@@ -480,6 +480,7 @@ module.exports = {
 
         res.map(singleResponse => {
           singleResponse.data.forEach((page) => {
+            
              _routeArray.push({
                route: `/${singleResponse.config.code}/${page.slug}`,
                name: `${page.slug}___${singleResponse.config.code}`,
