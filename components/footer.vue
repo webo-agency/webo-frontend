@@ -29,7 +29,7 @@
         </div>
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            {{ $store.state.menu.submenu["webo"].name }}
+            <!-- {{ $store.state.menu.submenu["webo"].name }} -->
           </h2>
 
           <ul class="flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
