@@ -53,27 +53,27 @@
       <div class="w-full w-full sm:w-1/3 lg:order-1 flex flex-col mt-0 xs:mt-8 lg:mt-0 mb-2 xs:mb-6 text-xs xs:text-base">
         <div class="mb-8">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            {{ $store.state.general.data.adress.city }}
+            <!-- {{ $store.state.general.data.adress.city }} -->
           </h2>
 
           <address class="address leading-loose not-italic">
-            {{ $store.state.general.data.adress.street }}<br>
-            {{ $store.state.general.data.adress.zip_code }} {{ $store.state.general.data.adress.city }}
+            <!-- {{ $store.state.general.data.adress.street }}<br> -->
+            <!-- {{ $store.state.general.data.adress.zip_code }} {{ $store.state.general.data.adress.city }} -->
           </address>
 
-          <a :href="$store.state.general.data.telephone.link">
-            {{ $store.state.general.data.telephone.title }}
-          </a>
+          <!-- <a :href="$store.state.general.data.telephone.link"> -->
+            <!-- {{ $store.state.general.data.telephone.title }} -->
+          <!-- </a> -->
         </div>
 
         <p class="mb-5 leading-tight">
-          {{ $store.state.general.data.call_to_action_footer.description }}
-          <a 
+          <!-- {{ $store.state.general.data.call_to_action_footer.description }} -->
+          <!-- <a 
             class="block text-main text-overflow" 
             :href="$store.state.general.data.call_to_action_footer.link.link"
           >
             {{ $store.state.general.data.call_to_action_footer.link.title }}
-          </a>
+          </a> -->
         </p>
 
 
@@ -164,14 +164,12 @@
 
     <div class="w-full lg:w-5/12 ml-auto bg-main text-black font-medium lg:pl-4 text-micro xs:text-xs">
       <div class="container">
-        {{ copyrightDate }} {{ $store.state.general.data.company_short }}. <br class="block xs:hidden">{{ $store.state.general.data.copyright }}
+        <!-- {{ copyrightDate }} {{ $store.state.general.data.company_short }}. <br class="block xs:hidden">{{ $store.state.general.data.copyright }} -->
       </div>
     </div>
   </component>
 </template>
 <script>
-import orderBy from 'lodash/orderBy';
-
 export default {
   name: "Footer",
   props: {
@@ -195,18 +193,13 @@ export default {
   computed: {
     submenuServices: function(){
       //menu_order
-      return [];
-      // return orderBy(this.$store.state.menu.submenu["uslugi"].items, ['menu_order'], ['asc', 'desc'])
+      return this.$store.getters.submenuServices;
     },
     submenuWebo: function(){
-      //menu_order
-      return [];
-      // return orderBy(this.$store.state.menu.submenu["webo"].items, ['menu_order'], ['asc', 'desc'])
+      return this.$store.getters.submenuWebo;
     },
     submenuSocialMedia: function(){
-      //menu_order
-      return [];
-      // return orderBy(this.$store.state.menu.submenu["social-media"].items, ['menu_order'], ['asc', 'desc'])
+      return this.$store.getters.submenuSocialMedia;
     }
   },
   methods: {

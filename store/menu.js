@@ -1,3 +1,5 @@
+import orderBy from 'lodash/orderBy';
+
 export const state = () => ({
     mainmenu: {},
     submenu: {}
@@ -20,4 +22,19 @@ export const actions = {
     submenuInit (context, data) {
         context.commit('saveSubmenu', data);
     }
+}
+
+export const getters = {
+    submenuServices: function(state){
+        //menu_order
+        return orderBy(state.submenu["uslugi"].items, ['menu_order'], ['asc', 'desc'])
+      },
+      submenuWebo: function(state){
+        //menu_order
+        return orderBy(state.submenu["webo"].items, ['menu_order'], ['asc', 'desc'])
+      },
+      submenuSocialMedia: function(state){
+        //menu_order
+        return orderBy(state.submenu["social-media"].items, ['menu_order'], ['asc', 'desc'])
+      }
 }
