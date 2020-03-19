@@ -189,9 +189,6 @@ export default {
     };
   },
   computed: {
-    includeRoot: function(item){
-      return item.url.includes('www.webo.agency')
-    },
     submenuServices: function(){
       return this.$store.getters['menu/submenuServices'];
     },
@@ -203,6 +200,9 @@ export default {
     }
   },
   methods: {
+    includeRoot: function(item){
+      return item.url.includes('www.webo.agency')
+    },
     telephoneFormat(number){
       let numberArray = Array.from(number);
 
