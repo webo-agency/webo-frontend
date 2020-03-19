@@ -27,13 +27,13 @@
           api: payload 
         }
       } else {
-        let data = await app.$wp.posts().slug(params.page);
+        let data = await app.$wp.posts().slug(params.pages);
         if(data != ''){
           return { 
             api: data[0],
           }
         } else {
-          data = await app.$wp.pages().slug(params.page);
+          data = await app.$wp.pages().slug(params.pages);
         }
       
         return { 

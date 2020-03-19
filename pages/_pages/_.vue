@@ -27,13 +27,18 @@
           api: payload 
         }
       } else {
-        let data = await app.$wp.posts().slug(params.page);
+        // // pages: 'en', pathMatch: 'demo'
+        // console.log(params); // eslint-disable-line  
+        // let xdata = await app.$wp.pages().slug(params.pathMatch).param('lang', params.pages);
+        // console.log(JSON.stringify(xdata)); // eslint-disable-line  
+
+        let data = await app.$wp.posts().slug(params.pathMatch).param('lang', params.pages);
         if(data != ''){
           return { 
             api: data[0],
           }
         } else {
-          data = await app.$wp.pages().slug(params.page);
+          data = await app.$wp.pages().slug(params.pathMatch).param('lang', params.pages);
         }
       
         return { 

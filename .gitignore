@@ -1,3 +1,7 @@
+
+# Env locale
+.env
+
 # dependencies
 node_modules
 

@@ -1,5 +1,6 @@
-process.noDeprecation = true;
 import axios from 'axios';
+require('dotenv').config();
+process.noDeprecation = true;
 
 const definedLocales = [
   {
@@ -26,12 +27,12 @@ const definedDefaultLocale = definedLocales[0]
 //   'HTMLDocument',
 //   'JSON',
 // ].join('%2C');
-const API = process.env.API_URL || "https://api.webo.agency/json";
 
 module.exports = {
   env: {
-    stage: process.env.CONTEXT || "developer",
-    API_URL: API
+    CONTEXT: process.env.CONTEXT,
+    API_URL: process.env.API_URL,
+    API_AFFIX: process.env.API_AFFIX
   },
   head: {
     title: "webo - Digital partners",
@@ -112,7 +113,7 @@ module.exports = {
     },
     {
       src: "@nuxtjs/axios",
-      options: {}
+      // options: {}
     },
     {
       src: '@nuxtjs/google-tag-manager', 
@@ -274,8 +275,17 @@ module.exports = {
     {
       src: 'wp-nuxt', 
       options:  {
-        endpoint: API,
+        endpoint: `${process.env.API_URL}${process.env.API_AFFIX}`,
         extensions: true // For additional functions of wpapi-extensions
+      },
+    },
+    {
+      src: '@nuxtjs/dotenv', 
+      options:  { 
+        only: [
+          'API_URL',
+          'CONTEXT'
+        ]
       },
     }
   ],
@@ -377,6 +387,10 @@ module.exports = {
         config.devtool = 'hidden-source-map';
       }
 
+      config.node = {
+        fs: "empty"
+      };
+
       if (isDev) {
         config.module.rules.push({
           enforce: "pre",
@@ -468,10 +482,11 @@ module.exports = {
     fallback: "404.html",
     routes () {
       let _calls = [];
+
       //@TODO: [BEOK-1] Per page loop. As another module can be usefull
       definedLocales.forEach(function(locale){
-        _calls.push(axios.get(API.concat('/wp/v2/pages/?per_page=100&lang=').concat(locale.code), locale))
-        _calls.push(axios.get(API.concat('/wp/v2/posts/?per_page=100&lang=').concat(locale.code), locale))
+        _calls.push(axios.get(`${process.env.API_URL}${process.env.API_AFFIX}/wp/v2/pages/?per_page=100&lang=${locale.code}`, locale))
+        _calls.push(axios.get(`${process.env.API_URL}${process.env.API_AFFIX}/wp/v2/posts/?per_page=100&lang=${locale.code}`, locale))
       });
       
       return axios.all(_calls)
@@ -480,20 +495,14 @@ module.exports = {
 
         res.map(singleResponse => {
           singleResponse.data.forEach((page) => {
-            
              _routeArray.push({
-               route: `/${singleResponse.config.code}/${page.slug}`,
-               name: `${page.slug}___${singleResponse.config.code}`,
-               payload: page,
-             })
-             _routeArray.push({
-              route: `/${page.slug}`,
+              route: `${page.link.replace(process.env.API_URL,"")}`, //SLUG FIX - No translation at the moment avaible from WP Multilanguage
               name: `${page.slug}___${singleResponse.config.code}`,
               payload: page,
             })
           });
         })
-
+ 
 // console.log(_routeArray); // eslint-disable-line
         return _routeArray;
       }))
