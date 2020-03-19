@@ -284,6 +284,7 @@ module.exports = {
       options:  { 
         only: [
           'API_URL',
+          'API_AFFIX',
           'CONTEXT'
         ]
       },
