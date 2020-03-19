@@ -19,8 +19,8 @@
             >
               <a 
                 :href="item.url"
-                :target="!includeRoot ? '_blank' : ''"
-                :rel="!includeRoot ? 'noopener noreferrer' : ''"
+                :target="!includeRoot(item) ? '_blank' : ''"
+                :rel="!includeRoot(item) ? 'noopener noreferrer' : ''"
               >
                 {{ item.title }}
               </a>
@@ -40,8 +40,8 @@
             >
               <a 
                 :href="item.url"
-                :target="!includeRoot ? '_blank' : ''"
-                :rel="!includeRoot ? 'noopener noreferrer' : ''"
+                :target="!includeRoot(item) ? '_blank' : ''"
+                :rel="!includeRoot(item) ? 'noopener noreferrer' : ''"
               >
                 {{ item.title }}
               </a>
@@ -86,8 +86,8 @@
           >
             <a 
               :href="item.url"
-              :target="!includeRoot ? '_blank' : ''"
-              :rel="!includeRoot ? 'noopener noreferrer' : ''"
+              :target="!includeRoot(item) ? '_blank' : ''"
+              :rel="!includeRoot(item) ? 'noopener noreferrer' : ''"
               :title="item.title"
             >
               <svg
