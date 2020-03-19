@@ -8,7 +8,7 @@
       <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col">
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            {{ $store.state.menu.submenu["uslugi"].name }}
+            {{ /* $store.state.menu.submenu["uslugi"].name */ }}
           </h2>
 
           <ul class="w-full lg:w-2/3 flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
