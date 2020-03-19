@@ -22,11 +22,11 @@
       vContentPage
     },
     async asyncData ({ app , params, payload }) {
-      if (payload) 
+      if (payload) {
         return { 
           api: payload 
         }
-      else {
+      } else {
         let data = await app.$wp.posts().slug(params.page);
         if(data != ''){
           return { 
