@@ -9,7 +9,7 @@ export const actions = {
     // nuxtServerInit is called by Nuxt.js before server-rendering every page
   async nuxtServerInit(context) { // eslint-disable-line
     // console.log(context);  // eslint-disable-line
-    return await context.dispatch('dataInit', context);
+    await context.dispatch('dataInit', context);
   },
   dataInit(context) {
     return axios.all([
