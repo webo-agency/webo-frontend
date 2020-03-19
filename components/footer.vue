@@ -8,7 +8,7 @@
       <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col">
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            {{ $store.state.menu.submenu["uslugi"].name }}
+            {{ $store.state.menu.submenu.uslugi.name }}
           </h2>
 
           <ul class="w-full lg:w-2/3 flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
@@ -19,8 +19,8 @@
             >
               <a 
                 :href="item.url"
-                :target="!item.url.includes('www.webo.agency') ? '_blank' : ''"
-                :rel="!item.url.includes('www.webo.agency') ? 'noopener noreferrer' : ''"
+                :target="!includeRoot ? '_blank' : ''"
+                :rel="!includeRoot ? 'noopener noreferrer' : ''"
               >
                 {{ item.title }}
               </a>
@@ -29,7 +29,7 @@
         </div>
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            {{ $store.state.menu.submenu["webo"].name }}
+            {{ $store.state.menu.submenu.webo.name }}
           </h2>
 
           <ul class="flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
@@ -40,8 +40,8 @@
             >
               <a 
                 :href="item.url"
-                :target="!item.url.includes('www.webo.agency') ? '_blank' : ''"
-                :rel="!item.url.includes('www.webo.agency') ? 'noopener noreferrer' : ''"
+                :target="!includeRoot ? '_blank' : ''"
+                :rel="!includeRoot ? 'noopener noreferrer' : ''"
               >
                 {{ item.title }}
               </a>
@@ -83,13 +83,11 @@
             :key="index"
             class="flex-initial mr-2 mb-4"
             :class="item.icon.value"
-            rel="noopener noreferrer"
-            target="_blank"
           >
             <a 
               :href="item.url"
-              :target="!item.url.includes('www.webo.agency') ? '_blank' : ''"
-              :rel="!item.url.includes('www.webo.agency') ? 'noopener noreferrer' : ''"
+              :target="!includeRoot ? '_blank' : ''"
+              :rel="!includeRoot ? 'noopener noreferrer' : ''"
               :title="item.title"
             >
               <svg
@@ -191,6 +189,9 @@ export default {
     };
   },
   computed: {
+    includeRoot: function(item){
+      return item.url.includes('www.webo.agency')
+    },
     submenuServices: function(){
       return this.$store.getters['menu/submenuServices'];
     },
