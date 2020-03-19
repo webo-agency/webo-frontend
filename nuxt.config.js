@@ -1,5 +1,4 @@
 import axios from 'axios';
-require('dotenv').config();
 process.noDeprecation = true;
 
 const definedLocales = [
