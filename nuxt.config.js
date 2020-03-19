@@ -13,7 +13,6 @@ const definedLocales = [
     "name": "Polski"
   }
 ];
-const definedStategyLocale = "prefix_and_default";
 const definedDefaultLocale = definedLocales[0]
 
 // const features = [
@@ -152,8 +151,9 @@ module.exports = {
     {
       src: "nuxt-i18n",
       options: {
-        strategy: definedStategyLocale,
+        strategy: "no_prefix",
         defaultLocale: definedDefaultLocale,
+        rootRedirect: null,//`/${definedDefaultLocale}`,
         detectBrowserLanguage: {
           useCookie: true,
           cookieKey: "language",
@@ -163,7 +163,7 @@ module.exports = {
         vueI18n: {
           fallbackLocale: "en",
           messages: {
-            en: {
+            en: { 
               welcome: "webo"
             },
             pl: {
@@ -469,9 +469,6 @@ module.exports = {
     routes () {
       let _calls = [];
 
-      _calls.push(axios.get(API.concat('/wp/v2/pages/')));
-      _calls.push(axios.get(API.concat('/wp/v2/posts/')));
-
       definedLocales.forEach(function(locale){
         _calls.push(axios.get(API.concat('/wp/v2/pages/?lang=').concat(locale.code), locale))
         _calls.push(axios.get(API.concat('/wp/v2/posts/?lang=').concat(locale.code), locale))
@@ -482,24 +479,21 @@ module.exports = {
         let _routeArray = [];
 
         res.map(singleResponse => {
-
-          console.log(singleResponse); // eslint-disable-line
-
           singleResponse.data.forEach((page) => {
-            if(typeof singleResponse.config.code != 'undefined'){
-              _routeArray.push({
-                route: `/${singleResponse.config.code}/${page.slug}`,
-                payload: page
-              })
-            } else if(definedStategyLocale == 'prefix_except_default'){
-              _routeArray.push({
-                route: `/${page.slug}`,
-                payload: page
-              })
-            }
-          })
+             _routeArray.push({
+               route: `/${singleResponse.config.code}/${page.slug}`,
+               name: `${page.slug}___${singleResponse.config.code}`,
+               payload: page,
+             })
+             _routeArray.push({
+              route: `/${page.slug}`,
+              name: `${page.slug}___${singleResponse.config.code}`,
+              payload: page,
+            })
+          });
         })
 
+// console.log(_routeArray); // eslint-disable-line
         return _routeArray;
       }))
     }

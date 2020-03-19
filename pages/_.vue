@@ -21,18 +21,24 @@
       vHeaderPage,
       vContentPage
     },
-    async asyncData ({ app , params }) {
-      let data = await app.$wp.posts().slug(params.page);
-      if(data != ''){
+    async asyncData ({ app , params, payload }) {
+      if (payload) 
+        return { 
+          api: payload 
+        }
+      else {
+        let data = await app.$wp.posts().slug(params.page);
+        if(data != ''){
+          return { 
+            api: data[0],
+          }
+        } else {
+          data = await app.$wp.pages().slug(params.page);
+        }
+      
         return { 
           api: data[0],
         }
-      } else {
-        data = await app.$wp.pages().slug(params.page);
-      }
-    
-      return { 
-        api: data[0],
       }
     },
   };
