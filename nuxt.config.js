@@ -506,7 +506,6 @@ module.exports = {
           });
         })
  
-// console.log(_routeArray); // eslint-disable-line
         return _routeArray;
       }))
     }
