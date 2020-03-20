@@ -13,7 +13,7 @@
 </template>
 <script>
   export default {
-    name: "ButtonContact",
+    name: "ContactButton",
     props: {
       mainTag: {
         type: String,
@@ -27,7 +27,7 @@
       },
       mainId: {
         type: String,
-        default: "contact",
+        default: "",
         required: false
       },
       text: {

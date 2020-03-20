@@ -19,7 +19,7 @@
           title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
         />
-        <c-button-contact 
+        <c-contact-button
           :text="api.acf.baner_carousel[0].button.title"
           :link="api.acf.baner_carousel[0].button.hyperlink"
         />
@@ -215,7 +215,7 @@
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
       />
-      <c-button-contact 
+      <c-contact-button
         class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
         :text="api.acf.contact_section.button.title"
         :link="api.acf.contact_section.button.hyperlink"
@@ -228,7 +228,7 @@
   import cSectionWrapper from "~/components/section-wrapper.vue";
   import cSectionHeader from "~/components/section-header.vue";
   import cArrowBlock from "~/components/arrow-block.vue";
-  import cButtonContact from "~/components/button-contact.vue";
+  import cContactButton from "~/components/contact-button.vue";
   import cCarousel from "~/components/carousel.vue";
   import cArticleList from "~/components/article-list.vue";
   import cLogoList from "~/components/logo-list.vue";
@@ -241,7 +241,7 @@
       cSectionWrapper,
       cSectionHeader,
       cArrowBlock,
-      cButtonContact,
+      cContactButton,
       cCarousel,
       cArticleList,
       cLogoList,
