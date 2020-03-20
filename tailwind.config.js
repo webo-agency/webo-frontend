@@ -24,7 +24,8 @@ module.exports = {
     },
     extend: {
       height: {
-        'header': '300px'
+        'header': '300px',
+        'logo': '60px'
       },
       fontSize: {
         'micro': '10px',

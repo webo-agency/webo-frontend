@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col w-full m-auto">
     <c-section-wrapper
+      v-if="api != ''"
       main-tag="div"
       :main-id="api.acf.baner_settings.is_linkable"
       :main-title="api.acf.baner_settings.title"
@@ -31,6 +32,7 @@
     </c-section-wrapper>
 
     <c-section-wrapper
+      v-if="api != ''"
       main-tag="section"
       :main-id="api.acf.services_settings.is_linkable"
       :main-title="api.acf.services_settings.title"
@@ -54,6 +56,7 @@
     </c-section-wrapper>
 
     <c-section-wrapper
+      v-if="api != ''"
       main-tag="div"
       :class="{
         'flex': true,
@@ -75,36 +78,43 @@
     </c-section-wrapper>
 
     <c-section-wrapper
+      v-if="api != ''"
       main-tag="section"
       :main-id="api.acf.technology_settings.is_linkable"
       :main-title="api.acf.technology_settings.title"
       class="bg-backgroundDark text-white"
     >
-      <c-section-header 
-        :position-header="api.acf.technology_settings.title_position"
-        :number-header="api.acf.technology_settings.title_number ? 2 : 0"
-        :subtitle="api.acf.technology_settings.title"
-        :title="api.acf.technology_settings.header"
-        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
-        subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
-        class="w-full md:w-2/3 mb-8 lg:pr-10"
-      />
-      <!-- <ul class="flex">
-        <li>
-          <img 
-            src="x"
-            alt=""
-          >
-        </li>
-      </ul> -->
-      <p 
-        v-if="api.acf.technology_settings.description"
-        class="mb-10 w-full md:w-1/2 lg:w-1/3"
-        v-html="api.acf.technology_settings.description"
-      />
+      <div class="flex flex-row flex-auto">
+        <div class="flex flex-col flex-auto w-1/5">
+          <c-section-header 
+            :position-header="api.acf.technology_settings.title_position"
+            :number-header="api.acf.technology_settings.title_number ? 2 : 0"
+            :subtitle="api.acf.technology_settings.title"
+            :title="api.acf.technology_settings.header"
+            title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
+            subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
+            class="mb-8 lg:pr-10"
+          />
+          <c-logo-list 
+            class="w-4/5"
+            :list="api.acf.technology_promoted"
+          />
+          <p
+            v-if="api.acf.technology_settings.description"
+            class="mb-10 w-full md:w-4/5"
+            v-html="api.acf.technology_settings.description"
+          />
+        </div>
+        <div class="flex flex-col flex-auto">
+          <c-technology-block
+            :technology-array="api.acf.category_technology_promoted"
+          />
+        </div>
+      </div>
     </c-section-wrapper>
 
     <c-section-wrapper
+      v-if="api != ''"
       main-tag="section"
       :main-id="api.acf.company_settings.is_linkable"
       :main-title="api.acf.company_settings.title"
@@ -135,6 +145,7 @@
     </c-section-wrapper>
 
     <c-section-wrapper
+      v-if="api != ''"
       main-tag="div"
       :main-id="api.acf.projects_settings.is_linkable"
       :main-title="api.acf.projects_settings.title"
@@ -160,6 +171,7 @@
     </c-section-wrapper>
 
     <c-section-wrapper
+      v-if="api != ''"
       :main-disabled="true"
       main-tag="div"
       :main-id="api.acf.reviews_settings.is_linkable"
@@ -187,6 +199,7 @@
     </c-section-wrapper>
 
     <c-section-wrapper
+      v-if="api != ''"
       main-tag="div"
       :main-title="api.acf.contact_section.title"
       class="bg-backgroundDark text-white"
@@ -218,9 +231,11 @@
   import cButtonContact from "~/components/button-contact.vue";
   import cCarousel from "~/components/carousel.vue";
   import cArticleList from "~/components/article-list.vue";
+  import cLogoList from "~/components/logo-list.vue";
   import cLogoSlider from "~/components/logo-slider.vue";
   import cProjectSlider from "~/components/project-slider.vue";
-
+  import cTechnologyBlock from "~/components/technology-block.vue";
+  
   export default {
     components: {
       cSectionWrapper,
@@ -229,8 +244,10 @@
       cButtonContact,
       cCarousel,
       cArticleList,
+      cLogoList,
       cLogoSlider,
-      cProjectSlider
+      cTechnologyBlock,
+      cProjectSlider,
     },
     computed: {
       contactData () {
@@ -249,52 +266,54 @@
     },
     async asyncData ({ app, store }) {
       
-      let data = await app.$wp.frontPage();
-      
-      data.acf.services_promoted = [
-          await app.$wp.pages().id(data.acf.services_promoted[0]),
-          await app.$wp.pages().id(data.acf.services_promoted[1]),
-          await app.$wp.pages().id(data.acf.services_promoted[2]),
-          await app.$wp.pages().id(data.acf.services_promoted[3])
-      ];
+      let data = await app.$wp.frontPage(20);
+      let pages = await app.$wp.pages().perPage(20);
+      let technology = await app.$wp.technology().perPage(20);
 
-      data.acf.company_promoted = [
-          await app.$wp.pages().id(data.acf.company_promoted[0]),
-          await app.$wp.pages().id(data.acf.company_promoted[1]),
-          await app.$wp.pages().id(data.acf.company_promoted[2]),
-          await app.$wp.pages().id(data.acf.company_promoted[3]),
-          await app.$wp.pages().id(data.acf.company_promoted[4])
-      ];
-
-      data.acf.contact_section = store.state.general.data.call_to_action_section;
+      data.acf.services_promoted = pages.filter((page) => data.acf.services_promoted.indexOf(page.id) > -1);
+  
+      data.acf.company_promoted = pages.filter((page) => data.acf.company_promoted.indexOf(page.id) > -1);
     
-      let technology_list = await app.$wp.technology().include(data.acf.category_technology_promoted);
-      data.acf.category_technology_promoted = technology_list
+      data.acf.technology_promoted = [];
+      data.acf.technology_promoted_list.forEach((promoted) => {
+        technology.forEach((entry_list) => {
+          if(entry_list.id == promoted.term_id){
+            data.acf.technology_promoted.push(entry_list)
+          }
+        });
+      });
 
-      // data.acf.category_technology_promoted.forEach(async function(id){
-      //   let entry = await app.$wp.technology().id(id);
-      //   data.acf.category_technology_promoted[id] = entry;
-      // });
-      // console.log(data.acf.category_technology_promoted); // eslint-disable-line
+      data.acf.category_technology_promoted = [];
+      data.acf.category_technology_promoted_list.forEach((promoted) => {
+        technology.forEach((entry_list) => {
+          if(entry_list.id == promoted.term_id){
+            data.acf.category_technology_promoted.push(entry_list);
+          }
+        });
+      });
 
+      let _childs_category_technology_promoted = [];
+      for (let promoted_technology of data.acf.category_technology_promoted) {
+        promoted_technology.childs = [];
+        
+        technology.forEach((technology) => {
+          if(promoted_technology.id == technology.parent){
+            promoted_technology.childs.push(technology);
+          } 
+        });
 
-      
+        _childs_category_technology_promoted.push(promoted_technology);
+      }
+      data.acf.category_technology_promoted = _childs_category_technology_promoted;
 
       // data.acf.reviews_promoted = [
       //     await app.$wp.pages().id(data.acf.reviews_promoted),
       // ];
 
-      // data.acf.category_technology_promoted = [
-      //     await app.$wp.pages().id(data.acf.category_technology_promoted[0]),
-      //     await app.$wp.pages().id(data.acf.category_technology_promoted[1]),
-      //     await app.$wp.pages().id(data.acf.category_technology_promoted[2]),
-      //     await app.$wp.pages().id(data.acf.category_technology_promoted[3]),
-      //     await app.$wp.pages().id(data.acf.category_technology_promoted[4])
-      // ];
-
+      let projects_carousel_list = await app.$wp.posts().include(data.acf.projects_carousel);
       data.acf.projects_carousel_list = [];
       for(let i = 0; i < data.acf.projects_carousel.length; i++){
-        let entry = await app.$wp.posts().id(data.acf.projects_carousel[i]);
+        let entry = projects_carousel_list[i];
         
         data.acf.projects_carousel_list.push({
           id: entry.id,
@@ -304,9 +323,10 @@
         });
       }
 
+      let brands_slajder_list = await app.$wp.posts().include(data.acf.brands_slajder);
       data.acf.brands_slajder_list = [];
       for(let i = 0; i < data.acf.brands_slajder.length; i++){
-        let entry = await app.$wp.posts().id(data.acf.brands_slajder[i]);
+        let entry = brands_slajder_list[i];
         
         data.acf.brands_slajder_list.push({
           id: entry.id,
@@ -315,9 +335,7 @@
         });
       }
 
-      //
 
-      // console.log(data.acf);  // eslint-disable-line
       // console.log(store.general); // eslint-disable-line
       // axios.get(env.API_URL.concat('/acf/v3/options/options')).then((response) => {
       //   console.log(response.data);  // eslint-disable-line
@@ -325,11 +343,13 @@
       
       // console.log(data.acf); // eslint-disable-line
       // // data.id
+
+      data.acf.contact_section = store.state.general.data.call_to_action_section;
+      
       return { 
         api: data,
         // promoted: data2
       }
-
     },
     head() {
       return {
