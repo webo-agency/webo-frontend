@@ -7,7 +7,6 @@ export const actions = {
     await dispatch('dataInit');
   },
   dataInit({ dispatch }) {
-    console.log(process.env.API_URL.concat(process.env.API_AFFIX).concat('/acf/v3/options/options').concat('?lang=pl')); // eslint-disable-line
     return axios.all([
       axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/acf/v3/options/options').concat('?lang=pl')),
       axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus').concat('?lang=pl')),

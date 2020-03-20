@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "ArrowNextSection",
+  name: "ArrowBlock",
   props: {
     mainClass: {
       type: String,

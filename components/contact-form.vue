@@ -73,7 +73,7 @@
 // import $ from "jquery";
 
   export default {
-    name: "Contact",
+    name: "ContactForm",
     components: {
       // HeaderTitles
     },

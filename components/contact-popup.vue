@@ -3,14 +3,13 @@
     :is="mainTag"
     :id="mainId"
     :class="mainClass"
-    class="work"
   >
-    Usługi
+    ContactPopup
   </component>
 </template>
 <script>
 export default {
-  name: "SectionServices",
+  name: "ContactPopup",
   props: {
     mainTag: {
       type: String,
@@ -28,13 +27,6 @@ export default {
       required: false
     }
   },
-  mounted() {
-    if (!this.$attrs.disabled) {
-      this.$root.$emit("section", {
-        id: this.mainId,
-        title: "Usługi"
-      });
-    }
-  }
+  mounted() {}
 };
 </script>

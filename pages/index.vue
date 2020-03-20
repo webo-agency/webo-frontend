@@ -1,16 +1,16 @@
 <template>
   <div class="flex flex-col w-full m-auto">
-    <section-wrapper
+    <c-section-wrapper
       main-tag="div"
       :main-id="api.acf.baner_settings.is_linkable"
       :main-title="api.acf.baner_settings.title"
       class="bg-backgroundDark text-white flex flex-col justify-center"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
-      <carousel
+      <c-carousel
         class="relative mb-10"
       >
-        <section-header
+        <c-section-header
           :position-header="api.acf.baner_settings.title_position"
           :number-header="api.acf.baner_settings.title_number ? 1 : 0"  
           :subtitle="api.acf.baner_settings.title"
@@ -18,24 +18,24 @@
           title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
         />
-        <buttonContact 
+        <c-button-contact 
           :text="api.acf.baner_carousel[0].button.title"
           :link="api.acf.baner_carousel[0].button.hyperlink"
         />
-        <arrowNextSection 
+        <c-arrow-block
           main-class="z-30 hidden xl:block"
           arrow-color="#FFFFFF"
           section-link="uslugi"
         />
-      </carousel>
-    </section-wrapper>
+      </c-carousel>
+    </c-section-wrapper>
 
-    <section-wrapper
+    <c-section-wrapper
       main-tag="section"
       :main-id="api.acf.services_settings.is_linkable"
       :main-title="api.acf.services_settings.title"
     >
-      <section-header 
+      <c-section-header 
         :position-header="api.acf.services_settings.title_position"
         :number-header="api.acf.services_settings.title_number ? 1 : 0"
         :subtitle="api.acf.services_settings.title"
@@ -47,13 +47,13 @@
         class="mb-5 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.services_settings.description"
       />
-      <articleList
+      <c-article-list
         :articles="api.acf.services_promoted"
         :more="api.acf.services_promoted_single.homepage"
       />
-    </section-wrapper>
+    </c-section-wrapper>
 
-    <section-wrapper
+    <c-section-wrapper
       main-tag="div"
       :class="{
         'flex': true,
@@ -72,15 +72,15 @@
         class="parallax-background absolute top-0 bottom-0 w-screen max-w-none bg-cover bg-no-repeat bg-fixed rounded-lg"
         :style="parallaxBackground"
       />
-    </section-wrapper>
+    </c-section-wrapper>
 
-    <section-wrapper
+    <c-section-wrapper
       main-tag="section"
       :main-id="api.acf.technology_settings.is_linkable"
       :main-title="api.acf.technology_settings.title"
       class="bg-backgroundDark text-white"
     >
-      <section-header 
+      <c-section-header 
         :position-header="api.acf.technology_settings.title_position"
         :number-header="api.acf.technology_settings.title_number ? 2 : 0"
         :subtitle="api.acf.technology_settings.title"
@@ -89,19 +89,27 @@
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-2/3 mb-8 lg:pr-10"
       />
+      <!-- <ul class="flex">
+        <li>
+          <img 
+            src="x"
+            alt=""
+          >
+        </li>
+      </ul> -->
       <p 
         v-if="api.acf.technology_settings.description"
         class="mb-10 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.technology_settings.description"
       />
-    </section-wrapper>
+    </c-section-wrapper>
 
-    <section-wrapper
+    <c-section-wrapper
       main-tag="section"
       :main-id="api.acf.company_settings.is_linkable"
       :main-title="api.acf.company_settings.title"
     >
-      <section-header 
+      <c-section-header 
         :position-header="api.acf.company_settings.title_position"
         :number-header="api.acf.company_settings.title_number ? 3 : 0"
         :subtitle="api.acf.company_settings.title"
@@ -119,20 +127,20 @@
           class="mb-10 w-full md:w-1/2 lg:w-1/3"
           v-html="api.acf.company_settings.description"
         />
-        <articleList
+        <c-article-list
           :articles="api.acf.company_promoted"
           :more="api.acf.company_promoted_single.homepage"
         />
       </div>
-    </section-wrapper>
+    </c-section-wrapper>
 
-    <section-wrapper
+    <c-section-wrapper
       main-tag="div"
       :main-id="api.acf.projects_settings.is_linkable"
       :main-title="api.acf.projects_settings.title"
       class="bg-backgroundLight"
     >
-      <section-header 
+      <c-section-header 
         :position-header="api.acf.projects_settings.title_position"
         :number-header="api.acf.projects_settings.title_number ? 3 : 0"
         :subtitle="api.acf.projects_settings.title"
@@ -149,25 +157,25 @@
       <c-project-slider
         :slides="api.acf.projects_carousel_list"
       />
-    </section-wrapper>
+    </c-section-wrapper>
 
-    <section-wrapper
+    <c-section-wrapper
       :main-disabled="true"
       main-tag="div"
       :main-id="api.acf.reviews_settings.is_linkable"
       :main-title="api.acf.reviews_settings.title"
       class="bg-white"
     >
-      <section-header 
+      <c-section-header 
         :title="api.acf.reviews_settings.header"
         :subtitle="api.acf.reviews_settings.title"
         :position-header="api.acf.reviews_settings.title_position"
         :number-header="api.acf.reviews_settings.title_number ? 4 : 0"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
-    </section-wrapper>
+    </c-section-wrapper>
 
-    <section-wrapper
+    <c-section-wrapper
       main-tag="div"
       class="bg-backgroundLight"
       container-class="mt-10 mb-10"
@@ -176,16 +184,16 @@
       <c-logo-slider
         :slides="api.acf.brands_slajder_list"
       />
-    </section-wrapper>
+    </c-section-wrapper>
 
-    <section-wrapper
+    <c-section-wrapper
       main-tag="div"
       :main-title="api.acf.contact_section.title"
       class="bg-backgroundDark text-white"
       container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
       height-auto
     >
-      <section-header
+      <c-section-header
         :position-header="true"
         :number-header="0"
         :subtitle="api.acf.contact_section.title"
@@ -194,33 +202,33 @@
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
       />
-      <buttonContact 
+      <c-button-contact 
         class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
         :text="api.acf.contact_section.button.title"
         :link="api.acf.contact_section.button.hyperlink"
       />
-    </section-wrapper>
+    </c-section-wrapper>
   </div>
 </template>
 
 <script>
-  import sectionWrapper from "~/components/section-wrapper.vue";
-  import sectionHeader from "~/components/section-header.vue";
-  import arrowNextSection from "~/components/arrow-next-section.vue";
-  import buttonContact from "~/components/button-contact.vue";
-  import carousel from "~/components/carousel.vue";
-  import articleList from "~/components/article-list.vue";
+  import cSectionWrapper from "~/components/section-wrapper.vue";
+  import cSectionHeader from "~/components/section-header.vue";
+  import cArrowBlock from "~/components/arrow-block.vue";
+  import cButtonContact from "~/components/button-contact.vue";
+  import cCarousel from "~/components/carousel.vue";
+  import cArticleList from "~/components/article-list.vue";
   import cLogoSlider from "~/components/logo-slider.vue";
   import cProjectSlider from "~/components/project-slider.vue";
 
   export default {
     components: {
-      sectionWrapper,
-      sectionHeader,
-      arrowNextSection,
-      buttonContact,
-      carousel,
-      articleList,
+      cSectionWrapper,
+      cSectionHeader,
+      cArrowBlock,
+      cButtonContact,
+      cCarousel,
+      cArticleList,
       cLogoSlider,
       cProjectSlider
     },
@@ -259,13 +267,18 @@
       ];
 
       data.acf.contact_section = store.state.general.data.call_to_action_section;
-      // data.acf.technology_promoted = [
-      //     await app.$wp.pages().id(data.acf.technology_promoted[0]),
-      //     await app.$wp.pages().id(data.acf.technology_promoted[1]),
-      //     await app.$wp.pages().id(data.acf.technology_promoted[2]),
-      //     await app.$wp.pages().id(data.acf.technology_promoted[3]),
-      //     await app.$wp.pages().id(data.acf.technology_promoted[4])
-      // ];
+    
+      let technology_list = await app.$wp.technology().include(data.acf.category_technology_promoted);
+      data.acf.category_technology_promoted = technology_list
+
+      // data.acf.category_technology_promoted.forEach(async function(id){
+      //   let entry = await app.$wp.technology().id(id);
+      //   data.acf.category_technology_promoted[id] = entry;
+      // });
+      // console.log(data.acf.category_technology_promoted); // eslint-disable-line
+
+
+      
 
       // data.acf.reviews_promoted = [
       //     await app.$wp.pages().id(data.acf.reviews_promoted),
@@ -310,6 +323,7 @@
       //   console.log(response.data);  // eslint-disable-line
       // })
       
+      // console.log(data.acf); // eslint-disable-line
       // // data.id
       return { 
         api: data,

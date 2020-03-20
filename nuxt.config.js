@@ -36,6 +36,7 @@ module.exports = {
     API_URL: API_URL,
     API_AFFIX: API_AFFIX
   },
+  globalName: 'webo',
   head: {
     title: "webo - Digital partners",
     meta: [
@@ -301,6 +302,7 @@ module.exports = {
   plugins: [
     { src: "~/plugins/scrollactive.js", ssr: true },
     { src: "~/plugins/swiper.js", ssr: false },
+    { src: "~/plugins/wpapi-extend.js", ssr: true}
   ],
   css: [
     'swiper/dist/css/swiper.css',
