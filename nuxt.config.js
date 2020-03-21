@@ -279,14 +279,13 @@ module.exports = {
       src: 'wp-nuxt', 
       options:  {
         endpoint: `${process.env.API_URL}${process.env.API_AFFIX}`,
-        discover: true,
-        // customRoutes: [
-        //   {
-        //     extension: 'wp/v2',
-        //     route: 'technology',
-        //     name: 'technology'
-        //   }
-        // ],
+        customRoutes: [
+          {
+            extension: 'wp/v2',
+            route: 'technology',
+            name: 'technology'
+          }
+        ],
         extensions: true // For additional functions of wpapi-extensions
       },
     },
