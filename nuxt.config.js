@@ -258,10 +258,6 @@ module.exports = {
       }
     },
     {
-      src: 'optimize-spaces',
-      options: {}
-    },
-    {
       src: '@nuxtjs/tailwindcss',
       options: {}
     },
