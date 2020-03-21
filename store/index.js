@@ -4,7 +4,6 @@ export const mutations = {}
 export const actions = {
     // nuxtServerInit is called by Nuxt.js before server-rendering every page
   async nuxtServerInit({ dispatch }) { // eslint-disable-line
-    console.log(x); // eslint-disable-line
     await dispatch('dataInit');
   },
   dataInit({ dispatch }) {
