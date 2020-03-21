@@ -5,14 +5,15 @@
   >
     <ul class="bg-backgroundDark rounded-lg rounded-r-none md:pt-12 md:px-5 lg:px-12 flex flex-wrap">
       <li 
-        v-for="technology in technologyArray"
+        v-for="technology in computedTechnologyArray"
         :key="technology.id"
         class="flex-initial w-full sm:w-1/2 md:w-full lg:w-1/2 flex flex-col pr-5 mb-10"
-      >
+      > 
         <h2 
+          v-if="typeof technology.acf.color != 'undefined'"
           class="font-medium mb-3"
           :class="{
-            [`text-${technology.acf.color}`]: technology.acf.color
+            [`text-${technology.acf.color}`]: typeof technology.acf.color != 'undefined'
           }"
         >
           {{ technology.name }}
@@ -23,13 +24,15 @@
         <ul class="flex flex-row flex-wrap">
           <li
             v-for="technologyChild in technology.childs"
-            :key="technologyChild.id"
+            :key="technologyChild[0].id"
             class="flex-initial mr-5 mb-2"
             :class="{
               [`text-${technology.acf.color}`]: technology.acf.color
             }"
           >
-            {{ technologyChild.name }}
+            <span>
+              {{ technologyChild[0].name }}
+            </span>
           </li>
         </ul>
       </li>
@@ -56,5 +59,11 @@ export default {
       required: false
     }
   },
+  computed: {
+    computedTechnologyArray: function(){
+      console.log(this.technologyArray); // eslint-disable-line
+      return this.technologyArray;
+    }
+  }
 };
 </script>

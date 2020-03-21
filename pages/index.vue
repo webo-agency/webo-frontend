@@ -284,22 +284,23 @@
       data.acf.category_technology_promoted_list.forEach((promoted) => {
         technology.forEach((entry_list) => {
           if(entry_list.id == promoted.term_id){
+            entry_list.childs = [];
             data.acf.category_technology_promoted.push(entry_list);
           }
         });
       });
 
       let _childs_category_technology_promoted = [];
-      for (let promoted_technology of data.acf.category_technology_promoted) {
-        promoted_technology.childs = [];
+      for (let cat_promoted_technology of data.acf.category_technology_promoted) {
+        // promoted_technology.childs = [];
         
         technology.forEach((technology) => {
-          if(promoted_technology.id == technology.parent){
-            promoted_technology.childs.push(technology);
+          if(cat_promoted_technology.id == technology.parent){
+            cat_promoted_technology.childs.push([technology]);
           } 
         });
 
-        _childs_category_technology_promoted.push(promoted_technology);
+        _childs_category_technology_promoted.push(cat_promoted_technology);
       }
       data.acf.category_technology_promoted = _childs_category_technology_promoted;
 
