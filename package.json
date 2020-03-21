@@ -49,7 +49,7 @@
     "vue2-animate": "^2.1.3",
     "workbox-sw": "file:local-override/workbox-sw",
     "wp-nuxt": "yashha/wp-nuxt#pull/109/head",
-    "wpapi-extensions": "^1.0.7"
+    "wpapi-extensions": "file:local-override/wpapi-extensions"
   },
   "scripts": {
     "dev": "nuxt",

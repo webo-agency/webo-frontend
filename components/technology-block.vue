@@ -5,7 +5,7 @@
   >
     <ul class="bg-backgroundDark rounded-lg rounded-r-none md:pt-12 md:px-5 lg:px-12 flex flex-wrap">
       <li 
-        v-for="technology in computedTechnologyArray"
+        v-for="technology in technologyArray"
         :key="technology.id"
         class="flex-initial w-full sm:w-1/2 md:w-full lg:w-1/2 flex flex-col pr-5 mb-10"
       > 
@@ -59,11 +59,5 @@ export default {
       required: false
     }
   },
-  computed: {
-    computedTechnologyArray: function(){
-      console.log(this.technologyArray); // eslint-disable-line
-      return this.technologyArray;
-    }
-  }
 };
 </script>
