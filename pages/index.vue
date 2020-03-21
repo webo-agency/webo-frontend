@@ -5,7 +5,7 @@
       main-tag="div"
       :main-id="api.acf.baner_settings.is_linkable"
       :main-title="api.acf.baner_settings.title"
-      class="bg-backgroundDark text-white flex flex-col justify-center"
+      class="bg-backgroundDark text-lightText flex flex-col justify-center"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
       <c-carousel
@@ -62,8 +62,8 @@
         'flex': true,
         'flex-col': true,
         'overflow-hidden': true,
-        'bg-backgroundDark': api.acf.visualisation_background_color == 'black',
-        'bg-white': api.acf.visualisation_background_color == 'white',
+        'bg-backgroundDark text-lightText': api.acf.visualisation_background_color == 'black',
+        'bg-white text-darkText': api.acf.visualisation_background_color == 'white',
         'py-10': true,
         'xs:min-h-240 md:min-h-500 lg:min-h-mobile-screen': true
       }"
@@ -82,7 +82,7 @@
       main-tag="section"
       :main-id="api.acf.technology_settings.is_linkable"
       :main-title="api.acf.technology_settings.title"
-      class="bg-backgroundDark text-white overflow-hidden bar-bottom"
+      class="bg-backgroundDark text-lightText overflow-hidden bar-bottom"
     >
       <div class="relative flex-auto flex flex-col flex-auto w-1/2">
         <c-section-header 
@@ -200,7 +200,7 @@
       v-if="api != ''"
       main-tag="div"
       :main-title="api.acf.contact_section.title"
-      class="bg-backgroundDark text-white"
+      class="bg-backgroundDark text-lightText"
       container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
       height-auto
     >
