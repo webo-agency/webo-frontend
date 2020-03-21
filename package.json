@@ -48,7 +48,8 @@
     "vue-scrollactive": "^0.8.0",
     "vue2-animate": "^2.1.3",
     "workbox-sw": "file:local-override/workbox-sw",
-    "wp-nuxt": "^1.0.24"
+    "wp-nuxt": "yashha/wp-nuxt#pull/109/head",
+    "wpapi-extensions": "^1.0.7"
   },
   "scripts": {
     "dev": "nuxt",

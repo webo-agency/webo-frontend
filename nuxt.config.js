@@ -279,6 +279,14 @@ module.exports = {
       src: 'wp-nuxt', 
       options:  {
         endpoint: `${process.env.API_URL}${process.env.API_AFFIX}`,
+        discover: true,
+        // customRoutes: [
+        //   {
+        //     extension: 'wp/v2',
+        //     route: 'technology',
+        //     name: 'technology'
+        //   }
+        // ],
         extensions: true // For additional functions of wpapi-extensions
       },
     },
@@ -302,7 +310,7 @@ module.exports = {
   plugins: [
     { src: "~/plugins/scrollactive.js", ssr: true },
     { src: "~/plugins/swiper.js", ssr: false },
-    { src: "~/plugins/wpapi-extend.js", ssr: true}
+    // { src: "~/plugins/wpapi-extend.js", ssr: true}
   ],
   css: [
     'swiper/dist/css/swiper.css',
