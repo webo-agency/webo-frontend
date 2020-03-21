@@ -3,11 +3,11 @@
     :is="mainTag"
     :class="mainClass"
   >
-    <ul class="bg-black rounded-lg rounded-r-none pt-12 px-12 flex flex-wrap">
+    <ul class="bg-backgroundDark rounded-lg rounded-r-none md:pt-12 md:px-5 lg:px-12 flex flex-wrap">
       <li 
         v-for="technology in technologyArray"
         :key="technology.id"
-        class="flex-initial w-1/2 flex flex-col pr-5 mb-10"
+        class="flex-initial w-full sm:w-1/2 md:w-full lg:w-1/2 flex flex-col pr-5 mb-10"
       >
         <h2 
           class="font-medium mb-3"
@@ -20,7 +20,7 @@
         <p class="mb-5">
           {{ technology.description }}
         </p>
-        <ul class="flex flex-row">
+        <ul class="flex flex-row flex-wrap">
           <li
             v-for="technologyChild in technology.childs"
             :key="technologyChild.id"
@@ -47,7 +47,7 @@ export default {
     },
     mainClass: {
       type: String,
-      default: "border border-main rounded-lg border-r-0 rounded-r-none p-4 pr-0",
+      default: "md:border border-main rounded-lg md:border-r-0 rounded-r-none md:p-4 md:pr-0",
       required: false
     },
     technologyArray: {

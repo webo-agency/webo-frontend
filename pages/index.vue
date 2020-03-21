@@ -84,7 +84,7 @@
       :main-title="api.acf.technology_settings.title"
       class="bg-backgroundDark text-lightText overflow-hidden bar-bottom"
     >
-      <div class="relative flex-auto flex flex-col flex-auto w-1/2">
+      <div class="relative flex-auto flex flex-col flex-auto w-full md:w-1/2">
         <c-section-header 
           :position-header="api.acf.technology_settings.title_position"
           :number-header="api.acf.technology_settings.title_number ? 2 : 0"
@@ -104,8 +104,7 @@
           v-html="api.acf.technology_settings.description"
         />
         <c-technology-block
-          class="absolute top-0"
-          style="top: 190px;width: 50vw;left: 100%;"
+          class="md:absolute top-0 md:w-half-screen box-position"
           :technology-array="api.acf.category_technology_promoted"
         />
       </div>
@@ -390,5 +389,17 @@
     height: 101px;
     width: 100%;
     display: block;
+  }
+
+  .box-position{
+    bottom: -100px;
+    top: auto;
+    left: 100%;
+  }
+
+  @screen lg {
+    .box-position{
+        bottom: -250px;
+    }
   }
 </style>

@@ -27,6 +27,9 @@ module.exports = {
         'header': '300px',
         'logo': '60px'
       },
+      width: {
+        'half-screen': '50vw'
+      },
       fontSize: {
         'micro': '10px',
         '7xl': '5rem',
