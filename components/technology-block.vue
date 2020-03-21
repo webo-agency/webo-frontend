@@ -3,17 +3,31 @@
     :is="mainTag"
     :class="mainClass"
   >
-    <ul class="flex flex-wrap">
+    <ul class="bg-black rounded-lg rounded-r-none pt-12 px-12 flex flex-wrap">
       <li 
         v-for="technology in technologyArray"
         :key="technology.id"
-        class="flex-initial px-1 mr-6 mb-6"
+        class="flex-initial w-1/2 flex flex-col pr-5 mb-10"
       >
-        {{ technology.name }}
-        <ul>
+        <h2 
+          class="font-medium mb-3"
+          :class="{
+            [`text-${technology.acf.color}`]: technology.acf.color
+          }"
+        >
+          {{ technology.name }}
+        </h2>
+        <p class="mb-5">
+          {{ technology.description }}
+        </p>
+        <ul class="flex flex-row">
           <li
             v-for="technologyChild in technology.childs"
             :key="technologyChild.id"
+            class="flex-initial mr-5 mb-2"
+            :class="{
+              [`text-${technology.acf.color}`]: technology.acf.color
+            }"
           >
             {{ technologyChild.name }}
           </li>
@@ -33,7 +47,7 @@ export default {
     },
     mainClass: {
       type: String,
-      default: "",
+      default: "border border-main rounded-lg border-r-0 rounded-r-none p-4 pr-0",
       required: false
     },
     technologyArray: {

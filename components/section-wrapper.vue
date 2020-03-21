@@ -52,7 +52,7 @@
       },
       containerClass: {
         type: String,
-        default: "container flex flex-col mt-10 mb-10 lg:mt-15vh lg:mb-15vh",
+        default: "container flex flex-col mt-10 mb-10 lg:mt-section-lg lg:mb-section-lg",
         required: false
       },
       heightAuto: {

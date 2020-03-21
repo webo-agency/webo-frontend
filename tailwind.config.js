@@ -59,7 +59,8 @@ module.exports = {
         '5vh': '5vh',
         '10vh': '10vh',
         '15vh': '15vh',
-        '20vh': '20vh'
+        '20vh': '20vh',
+        'section-lg': '150px'
       },
       minHeight: {
         '240': '240px',

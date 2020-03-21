@@ -82,34 +82,32 @@
       main-tag="section"
       :main-id="api.acf.technology_settings.is_linkable"
       :main-title="api.acf.technology_settings.title"
-      class="bg-backgroundDark text-white"
+      class="bg-backgroundDark text-white overflow-hidden bar-bottom"
     >
-      <div class="flex flex-row flex-auto">
-        <div class="flex flex-col flex-auto w-1/5">
-          <c-section-header 
-            :position-header="api.acf.technology_settings.title_position"
-            :number-header="api.acf.technology_settings.title_number ? 2 : 0"
-            :subtitle="api.acf.technology_settings.title"
-            :title="api.acf.technology_settings.header"
-            title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
-            subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
-            class="mb-8 lg:pr-10"
-          />
-          <c-logo-list 
-            class="w-4/5"
-            :list="api.acf.technology_promoted"
-          />
-          <p
-            v-if="api.acf.technology_settings.description"
-            class="mb-10 w-full md:w-4/5"
-            v-html="api.acf.technology_settings.description"
-          />
-        </div>
-        <div class="flex flex-col flex-auto">
-          <c-technology-block
-            :technology-array="api.acf.category_technology_promoted"
-          />
-        </div>
+      <div class="relative flex-auto flex flex-col flex-auto w-1/2">
+        <c-section-header 
+          :position-header="api.acf.technology_settings.title_position"
+          :number-header="api.acf.technology_settings.title_number ? 2 : 0"
+          :subtitle="api.acf.technology_settings.title"
+          :title="api.acf.technology_settings.header"
+          title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
+          subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
+          class="mb-8 lg:pr-10"
+        />
+        <c-logo-list 
+          class="w-4/5"
+          :list="api.acf.technology_promoted"
+        />
+        <p
+          v-if="api.acf.technology_settings.description"
+          class="mb-10 w-full md:w-4/5"
+          v-html="api.acf.technology_settings.description"
+        />
+        <c-technology-block
+          class="absolute top-0"
+          style="top: 190px;width: 50vw;left: 100%;"
+          :technology-array="api.acf.category_technology_promoted"
+        />
       </div>
     </c-section-wrapper>
 
@@ -384,5 +382,13 @@
       .img-list-left{
         height: 127%;
       }
+  }
+
+  .bar-bottom:after{
+    content: '';
+    background: #fff;
+    height: 101px;
+    width: 100%;
+    display: block;
   }
 </style>
