@@ -95,7 +95,7 @@
           class="mb-8 lg:pr-10"
         />
         <c-logo-list 
-          class="w-4/5"
+          class="w-full md:w-4/5"
           :list="api.acf.technology_promoted"
         />
         <p
