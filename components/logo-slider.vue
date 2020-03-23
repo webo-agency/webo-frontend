@@ -4,18 +4,20 @@
     v-swiper:slider="sliderOptions"
     :class="mainClass"
   >
-    <div class="swiper-wrapper">
-      <div
-        v-for="entry in slides"
-        :key="entry.id"
-        class="swiper-slide w-auto"
-      >
-        <div class="flex-auto flex flex-col items-center mx-5">
-          <img
-            :src="entry.url"
-            :alt="entry.alt"
-            class="h-16 object-contain"
-          >
+    <div class="w-full">
+      <div class="swiper-wrapper">
+        <div
+          v-for="entry in slides"
+          :key="entry.id"
+          class="swiper-slide w-auto"
+        >
+          <div class="flex-auto flex flex-col items-center mx-5">
+            <img
+              :src="entry.url"
+              :alt="entry.alt"
+              class="h-16 object-contain"
+            >
+          </div>
         </div>
       </div>
     </div>
@@ -33,7 +35,7 @@
       },
       mainClass: {
         type: String,
-        default: "container",
+        default: "container flex flex-col",
         required: false
       },
       slides: {
