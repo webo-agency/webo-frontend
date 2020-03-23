@@ -1,7 +1,7 @@
 <template xmlns:v-swiper="http://www.w3.org/1999/xhtml">
   <component
     :is="mainTag"
-    v-swiper:mySwiper="swiperOption"
+    v-swiper:slider="sliderOptions"
     :class="mainClass"
   >
     <div class="swiper-wrapper">
@@ -33,7 +33,7 @@
       },
       mainClass: {
         type: String,
-        default: "",
+        default: "container",
         required: false
       },
       slides: {
@@ -44,7 +44,7 @@
     },
     data() {
       return {
-        swiperOption: {
+        sliderOptions: {
           autoplay: 2000,
           slidesPerView: 5,
           loop: true,
