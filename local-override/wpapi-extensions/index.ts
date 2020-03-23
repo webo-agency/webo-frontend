@@ -6,7 +6,7 @@ import WPApi from "wpapi";
 function checkWpApi(wp: WPApi) {
   if (!wp && typeof wp.registerRoute !== "function") {
     // eslint-disable-next-line no-console
-    console.log("Please provide a wpapi instance.");
+    return false;
   }
 }
 

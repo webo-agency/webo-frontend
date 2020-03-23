@@ -1,47 +1,23 @@
 {
-  "_args": [
-    [
-      "wpapi-extensions@1.0.7",
-      "/Volumes/Dane/Repozytoria/webo"
-    ]
-  ],
-  "_from": "wpapi-extensions@1.0.7",
-  "_id": "wpapi-extensions@1.0.7",
-  "_inBundle": false,
-  "_integrity": "sha512-QEgy/gsVML4SZCc+Af+i/yz9UKHZ2npCZZV3xkKnkmMv0x0Op2OK7w1L2CCIbdLU+59ctOqJnkqnbxWiLND/uA==",
-  "_location": "/wpapi-extensions",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "wpapi-extensions@1.0.7",
-    "name": "wpapi-extensions",
-    "escapedName": "wpapi-extensions",
-    "rawSpec": "1.0.7",
-    "saveSpec": null,
-    "fetchSpec": "1.0.7"
-  },
-  "_requiredBy": [
-    "/",
-    "/wp-nuxt"
-  ],
-  "_resolved": "https://registry.npmjs.org/wpapi-extensions/-/wpapi-extensions-1.0.7.tgz",
-  "_spec": "1.0.7",
-  "_where": "/Volumes/Dane/Repozytoria/webo",
   "description": "[![npm (scoped with tag)](https://img.shields.io/npm/v/wpapi-extensions.svg?style=flat-square)](https://www.npmjs.com/package/wp-nuxt) [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](http://opensource.org/licenses/MIT)",
   "devDependencies": {
     "@types/wpapi": "^1.1.0",
     "babel-preset-vue-app": "^2.0.0",
-    "parcel-bundler": "^1.12.3",
-    "standard-version": "^7.0.0",
-    "typescript": "^3.6.3"
+    "parcel": "2.0.0-alpha.3.1",
+    "standard-version": "^7.1.0",
+    "typescript": "^3.8.3"
   },
   "license": "MIT",
   "main": "index.js",
   "name": "wpapi-extensions",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yashha/wpapi-extensions.git"
+  },
   "scripts": {
     "build": "NODE_ENV=production parcel build index.ts",
     "release": "standard-version && git push --follow-tags && yarn publish"
   },
-  "version": "1.0.7"
+  "version": "1.0.7",
+  "dependencies": {}
 }
