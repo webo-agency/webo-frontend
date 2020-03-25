@@ -395,17 +395,20 @@ module.exports = {
      ** Run ESLINT on save
      */
     extend(config, { isDev , isClient }) {
-      if (isClient && process.env.NODE_ENV == 'development') {
-        config.devtool = 'source-map';
+      if (isClient && isDev) {
+        config.devtool = 'inline-source-map';
       } else {
-        config.devtool = 'hidden-source-map';
+        config.devtool = false;
       }
 
       config.node = {
         fs: "empty"
       };
 
-      // config.resolve.alias["wpapi-extensions"] = path.resolve(__dirname, 'local-override/wpapi-extensions');
+      if (isClient & !isDev) {
+        config.optimization.performance.hints = false
+        config.optimization.splitChunks.maxSize = 250000
+      }
 
       if (isDev) {
         config.module.rules.push({
