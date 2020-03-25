@@ -5,7 +5,7 @@
   >
     <ul class="bg-backgroundDark rounded-lg rounded-r-none md:pt-12 md:px-5 lg:px-12 flex flex-wrap">
       <li 
-        v-for="technology in technologyArray"
+        v-for="technology in technologyArrayFiltered"
         :key="technology.id"
         class="flex-initial w-full sm:w-1/2 md:w-full lg:w-1/2 flex flex-col pr-5 mb-10"
       > 
@@ -24,14 +24,14 @@
         <ul class="flex flex-row flex-wrap">
           <li
             v-for="technologyChild in technology.childs"
-            :key="technologyChild[0].id"
+            :key="technologyChild.id"
             class="flex-initial mr-5 mb-2"
             :class="{
               [`text-${technology.acf.color}`]: technology.acf.color
             }"
           >
             <span>
-              {{ technologyChild[0].name }}
+              {{ technologyChild.name }}
             </span>
           </li>
         </ul>
@@ -59,5 +59,16 @@ export default {
       required: false
     }
   },
+  computed: {
+    technologyArrayFiltered() {
+      // console.log(this.technologyArray); // eslint-disable-line
+      if(this.technologyArray != ''){
+        return this.technologyArray;
+      } else {
+        return []
+      }
+      
+    }
+  }
 };
 </script>

@@ -1,4 +1,6 @@
 import axios from 'axios';
+import path from 'path';
+
 require('dotenv').config();
 process.noDeprecation = true;
 
@@ -403,6 +405,8 @@ module.exports = {
       config.node = {
         fs: "empty"
       };
+
+      // config.resolve.alias["wpapi-extensions"] = path.resolve(__dirname, 'local-override/wpapi-extensions');
 
       if (isDev) {
         config.module.rules.push({

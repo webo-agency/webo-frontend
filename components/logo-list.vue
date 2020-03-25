@@ -8,10 +8,10 @@
         v-for="entry in listFiltered"
         :key="entry.id"
         class="flex-initial px-1 mr-6 mb-6"
-      >
+      > 
         <img
-          :src="entry.acf.logo.url"
-          :alt="entry.acf.logo.alt"
+          :src="entry[0].acf.logo.url"
+          :alt="entry[0].acf.logo.alt"
           class="h-logo"
         >
       </li>
@@ -40,8 +40,10 @@ export default {
   },
   computed: {
       listFiltered() {
-        // console.log(this.list); // eslint-disable-line
-        return this.list.filter(entry => entry.logo != false);
+        let _tmpList = this.list.filter(function(entry) {
+          return entry[0].logo != false
+        });
+        return _tmpList;
       }
   }
 };

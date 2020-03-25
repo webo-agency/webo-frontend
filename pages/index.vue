@@ -275,7 +275,7 @@
       data.acf.technology_promoted_list.forEach((promoted) => {
         technology.forEach((entry_list) => {
           if(entry_list.id == promoted.term_id){
-            data.acf.technology_promoted.push(entry_list)
+            data.acf.technology_promoted.push([entry_list])
           }
         });
       });
@@ -283,8 +283,8 @@
       data.acf.category_technology_promoted = [];
       data.acf.category_technology_promoted_list.forEach((promoted) => {
         technology.forEach((entry_list) => {
+          entry_list.childs = [];
           if(entry_list.id == promoted.term_id){
-            entry_list.childs = [];
             data.acf.category_technology_promoted.push(entry_list);
           }
         });
@@ -296,7 +296,7 @@
         
         technology.forEach((technology) => {
           if(cat_promoted_technology.id == technology.parent){
-            cat_promoted_technology.childs.push([technology]);
+            cat_promoted_technology.childs.push(technology);
           } 
         });
 

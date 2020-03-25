@@ -1,5 +1,5 @@
 {
-  "plugins": ["@babel/plugin-transform-runtime", "transform-object-rest-spread", "stage-2"],
+  "plugins": ["@babel/plugin-transform-runtime", "transform-object-rest-spread"],
   "presets": [
     [
       "vue-app",
