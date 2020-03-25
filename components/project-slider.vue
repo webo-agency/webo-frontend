@@ -5,7 +5,7 @@
     :class="mainClass"
   >
     <div
-      v-swiper:mySwiper="swiperOption"
+      v-swiper:projects="projectsOption"
     >
       <div class="swiper-wrapper">
         <div
@@ -59,7 +59,7 @@
     },
     data() {
       return {
-        swiperOption: {
+        projectsOption: {
           autoplay: 2000,
           slidesPerView: 'auto',
           spaceBetween: 50,

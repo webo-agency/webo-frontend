@@ -1,10 +1,12 @@
 <template xmlns:v-swiper="http://www.w3.org/1999/xhtml">
   <component
     :is="mainTag"
-    v-swiper:slider="sliderOptions"
     :class="mainClass"
   >
-    <div class="w-full">
+    <div 
+      v-swiper:slider="sliderOptions"
+      class="w-full"
+    >
       <div class="swiper-wrapper">
         <div
           v-for="entry in slides"
