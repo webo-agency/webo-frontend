@@ -405,7 +405,7 @@ module.exports = {
         fs: "empty"
       };
 
-      if (isClient & !isDev) {
+      if (isClient && !isDev) {
         config.optimization.performance.hints = false
         config.optimization.splitChunks.maxSize = 250000
       }
