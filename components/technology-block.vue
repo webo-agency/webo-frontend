@@ -21,7 +21,7 @@
         <p class="mb-5">
           {{ technology.description }}
         </p>
-        <!-- <ul class="flex flex-row flex-wrap">
+        <ul class="flex flex-row flex-wrap">
           <li
             v-for="technologyChild in technology.childs"
             :key="technologyChild.id"
@@ -34,7 +34,7 @@
               {{ technologyChild.name }}
             </span>
           </li>
-        </ul> -->
+        </ul>
       </li>
     </ul>
   </component>
