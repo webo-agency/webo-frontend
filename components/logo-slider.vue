@@ -5,7 +5,7 @@
   >
     <div 
       v-swiper:slider="sliderOptions"
-      class="w-full"
+      class="w-full overflow-hidden"
     >
       <div class="swiper-wrapper">
         <div

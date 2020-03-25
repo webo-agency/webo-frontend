@@ -21,7 +21,7 @@
         <p class="mb-5">
           {{ technology.description }}
         </p>
-        <ul class="flex flex-row flex-wrap">
+        <!-- <ul class="flex flex-row flex-wrap">
           <li
             v-for="technologyChild in technology.childs"
             :key="technologyChild.id"
@@ -34,7 +34,7 @@
               {{ technologyChild.name }}
             </span>
           </li>
-        </ul>
+        </ul> -->
       </li>
     </ul>
   </component>
@@ -62,8 +62,8 @@ export default {
   computed: {
     technologyArrayFiltered() {
       // console.log(this.technologyArray); // eslint-disable-line
-      if(this.technologyArray != ''){
-        return this.technologyArray;
+      if(this.technologyArray.length){
+        return this.technologyArray[0];
       } else {
         return []
       }

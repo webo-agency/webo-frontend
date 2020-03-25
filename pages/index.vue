@@ -105,7 +105,7 @@
         />
         <c-technology-block
           class="md:absolute top-0 md:w-half-screen box-position"
-          :technology-array="api.acf.category_technology_promoted"
+          :technology-array="[api.acf.category_technology_promoted]"
         />
       </div>
     </c-section-wrapper>
@@ -283,7 +283,6 @@
       data.acf.category_technology_promoted = [];
       data.acf.category_technology_promoted_list.forEach((promoted) => {
         technology.forEach((entry_list) => {
-          entry_list.childs = [];
           if(entry_list.id == promoted.term_id){
             data.acf.category_technology_promoted.push(entry_list);
           }
@@ -292,7 +291,7 @@
 
       let _childs_category_technology_promoted = [];
       for (let cat_promoted_technology of data.acf.category_technology_promoted) {
-        // promoted_technology.childs = [];
+        cat_promoted_technology.childs = [];
         
         technology.forEach((technology) => {
           if(cat_promoted_technology.id == technology.parent){
