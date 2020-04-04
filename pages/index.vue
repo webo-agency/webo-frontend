@@ -319,6 +319,7 @@
           title: entry.acf.project_promoted_title
         });
       }
+      data.acf.projects_carousel_list.reverse();
 
       let brands_slajder_list = await app.$wp.posts().include(data.acf.brands_slajder);
       data.acf.brands_slajder_list = [];
@@ -331,6 +332,7 @@
           alt: entry.acf.mark_logo.alt
         });
       }
+      data.acf.brands_slajder_list.reverse();
 
 
       // console.log(store.general); // eslint-disable-line
