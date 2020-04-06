@@ -4,6 +4,7 @@
     :class="mainClass"
   >
     <div 
+      v-if="slides.length > 0"
       v-swiper:slider="sliderOptions"
       class="w-full overflow-hidden"
     >
@@ -37,7 +38,7 @@
       },
       mainClass: {
         type: String,
-        default: "container flex flex-col",
+        default: "container relative overflow-hidden flex flex-col",
         required: false
       },
       slides: {

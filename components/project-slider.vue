@@ -17,7 +17,7 @@
             <img
               :src="entry.url"
               :alt="entry.alt"
-              class="mb-2"
+              class="mb-2 w-full"
             >
             <h2
               class="font-bold text-xl"
@@ -43,7 +43,7 @@
       },
       mainClass: {
         type: String,
-        default: "",
+        default: "relative overflow-hidden",
         required: false
       },
       mainId: {
