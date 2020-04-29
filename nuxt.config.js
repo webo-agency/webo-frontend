@@ -501,6 +501,7 @@ module.exports = {
     routes () {
       let _calls = [];
       
+      _calls.push(axios.get(`${process.env.API_URL}${process.env.API_AFFIX}`));
       //@TODO: [BEOK-1] Per page loop. As another module can be usefull
       definedLocales.forEach(function(locale){
         _calls.push(axios.get(`${process.env.API_URL}${process.env.API_AFFIX}/wp/v2/pages/?per_page=100&lang=${locale.code}`, locale))
@@ -511,10 +512,13 @@ module.exports = {
       .then(axios.spread((...res) => {
         let _routeArray = [];
 
+        let rootRequest = res[0];
+        delete res[0];
+
         res.map(singleResponse => {
           singleResponse.data.forEach((page) => {
              _routeArray.push({
-              route: `${page.link.replace(process.env.API_URL,"").replace(/\/$/, "")}`, //SLUG FIX - No translation at the moment available from WP Multilanguage
+              route: `${page.link.replace(rootRequest.data.home,"").replace(/\/$/, "")}`, //SLUG FIX - No translation at the moment available from WP Multilanguage
               name: `${page.slug}___${singleResponse.config.code}`,
               payload: page,
             })
