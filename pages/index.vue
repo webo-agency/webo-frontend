@@ -194,38 +194,14 @@
         :slides="api.acf.brands_slajder_list"
       />
     </c-section-wrapper>
-
-    <c-section-wrapper
-      v-if="api != ''"
-      main-tag="div"
-      :main-title="api.acf.contact_section.title"
-      class="bg-backgroundDark text-lightText"
-      container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
-      height-auto
-    >
-      <c-section-header
-        :position-header="true"
-        :number-header="0"
-        :subtitle="api.acf.contact_section.title"
-        :title="api.acf.contact_section.text"
-        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
-        subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
-        class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
-      />
-      <c-contact-button
-        class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
-        :text="api.acf.contact_section.button.title"
-        :link="api.acf.contact_section.button.hyperlink"
-      />
-    </c-section-wrapper>
   </div>
 </template>
 
 <script>
   import cSectionWrapper from "~/components/section-wrapper.vue";
   import cSectionHeader from "~/components/section-header.vue";
-  import cArrowBlock from "~/components/arrow-block.vue";
   import cContactButton from "~/components/contact-button.vue";
+  import cArrowBlock from "~/components/arrow-block.vue";
   import cCarousel from "~/components/carousel.vue";
   import cArticleList from "~/components/article-list.vue";
   import cLogoList from "~/components/logo-list.vue";

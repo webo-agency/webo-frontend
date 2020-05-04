@@ -4,6 +4,30 @@
     :class="mainClass"
     class="footer text-white pt-2 xs:pt-8"
   >
+    <c-section-wrapper
+      v-if="$store.state.general.data != ''"
+      main-tag="div"
+      :main-title="$store.state.general.data.call_to_action_section.title"
+      class="bg-backgroundDark text-lightText"
+      container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
+      height-auto
+    >
+      <c-section-header
+        :position-header="true"
+        :number-header="0"
+        :subtitle="$store.state.general.data.call_to_action_section.title"
+        :title="$store.state.general.data.call_to_action_section.text"
+        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
+        subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
+        class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
+      />
+      <c-contact-button
+        class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
+        :text="$store.state.general.data.call_to_action_section.button.title"
+        :link="$store.state.general.data.call_to_action_section.button.hyperlink"
+      />
+    </c-section-wrapper>
+
     <div class="container flex flex-row flex-wrap">
       <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col">
         <div class="w-full lg:w-4/5">
@@ -168,57 +192,66 @@
   </component>
 </template>
 <script>
-export default {
-  name: "Footer",
-  props: {
-    mainTag: {
-      type: String,
-      default: "",
-      required: false
-    },
-    mainClass: {
-      type: String,
-      default: "",
-      required: false
-    }
-  },
-  data: function() {
-    return {
-      emoji: '_(^.^)_',
-      copyrightDate: `© ${ new Date().getFullYear() < 2020 ? '2019' : '2019 ~ ' + new Date().getFullYear() }`
-    };
-  },
-  computed: {
-    submenuServices: function(){
-      return this.$store.getters['menu/submenuServices'];
-    },
-    submenuWebo: function(){
-      return this.$store.getters['menu/submenuWebo'];
-    },
-    submenuSocialMedia: function(){
-      return this.$store.getters['menu/submenuSocialMedia'];
-    }
-  },
-  methods: {
-    includeRoot: function(item){
-      return item.url.includes('www.webo.agency')
-    },
-    telephoneFormat(number){
-      let numberArray = Array.from(number);
+  import cSectionWrapper from "~/components/section-wrapper.vue";
+  import cSectionHeader from "~/components/section-header.vue";
+  import cContactButton from "~/components/contact-button.vue";
 
-      numberArray.splice( 3, 0, " ");
-      numberArray.splice( 6, 0, " ");
-      numberArray.splice( 10, 0, " ");
-      numberArray.splice( 13, 0, " ");
-
-      return numberArray.join('');
+  export default {
+    name: "Footer",
+    components: {
+      cSectionWrapper,
+      cSectionHeader,
+      cContactButton,
     },
-    focusContact(event){
-       if( this.$route.path !== '/'){
-         window.location = event.target.href;
-       }
-      this.$root.$emit('contactFooterFocus');      
+    props: {
+      mainTag: {
+        type: String,
+        default: "",
+        required: false
+      },
+      mainClass: {
+        type: String,
+        default: "",
+        required: false
+      }
+    },
+    data: function() {
+      return {
+        emoji: '_(^.^)_',
+        copyrightDate: `© ${ new Date().getFullYear() < 2020 ? '2019' : '2019 ~ ' + new Date().getFullYear() }`
+      };
+    },
+    computed: {
+      submenuServices: function(){
+        return this.$store.getters['menu/submenuServices'];
+      },
+      submenuWebo: function(){
+        return this.$store.getters['menu/submenuWebo'];
+      },
+      submenuSocialMedia: function(){
+        return this.$store.getters['menu/submenuSocialMedia'];
+      }
+    },
+    methods: {
+      includeRoot: function(item){
+        return item.url.includes('www.webo.agency')
+      },
+      telephoneFormat(number){
+        let numberArray = Array.from(number);
+
+        numberArray.splice( 3, 0, " ");
+        numberArray.splice( 6, 0, " ");
+        numberArray.splice( 10, 0, " ");
+        numberArray.splice( 13, 0, " ");
+
+        return numberArray.join('');
+      },
+      focusContact(event){
+        if( this.$route.path !== '/'){
+          window.location = event.target.href;
+        }
+        this.$root.$emit('contactFooterFocus');      
+      }
     }
-  }
-};
+  };
 </script>
