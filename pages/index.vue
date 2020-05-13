@@ -214,7 +214,7 @@
       cSectionWrapper,
       cSectionHeader,
       cArrowBlock,
-      cContactButton,
+      "c-contact-button": cContactButton,
       cCarousel,
       cArticleList,
       cLogoList,
