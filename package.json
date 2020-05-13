@@ -52,11 +52,10 @@
     "wpapi-extensions": "^1.0.10"
   },
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt build && nuxt",
     "dev-debug": "cross-env NODE_ENV=debug node --inspect-brk node_modules/.bin/nuxt",
     "build": "nuxt build",
     "analyze": "nuxt build --analyze",
-    "start": "nuxt build && nuxt start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint-fix": "eslint --ext .js,.vue --ignore-path .gitignore . --fix",
     "precommit": "npm run lint",
