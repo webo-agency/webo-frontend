@@ -1,5 +1,4 @@
 import axios from 'axios';
-import path from 'path';
 
 require('dotenv').config();
 process.noDeprecation = true;
@@ -104,6 +103,7 @@ module.exports = {
       }
     ]
   },
+  modern: !process.env.NODE_ENV !== 'production' && 'client',
   /*
    ** Modulesc
    */

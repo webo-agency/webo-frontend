@@ -13,13 +13,10 @@
 </template>
 
 <script>
-  import vHeaderPage from "~/components/header-page.vue";
-  import vContentPage from "~/components/content-page.vue";
-
   export default {
     components: {
-      vHeaderPage,
-      vContentPage
+      'v-header-page': () => import("~/components/header-page.vue"),
+      'v-content-page': () => import("~/components/content-page.vue"),
     },
     async asyncData ({ app , params, payload }) {
       if (payload) {

@@ -197,30 +197,19 @@
   </div>
 </template>
 
-<script>
-  import cSectionWrapper from "~/components/section-wrapper.vue";
-  import cSectionHeader from "~/components/section-header.vue";
-  import cContactButton from "~/components/contact-button.vue";
-  import cArrowBlock from "~/components/arrow-block.vue";
-  import cCarousel from "~/components/carousel.vue";
-  import cArticleList from "~/components/article-list.vue";
-  import cLogoList from "~/components/logo-list.vue";
-  import cLogoSlider from "~/components/logo-slider.vue";
-  import cProjectSlider from "~/components/project-slider.vue";
-  import cTechnologyBlock from "~/components/technology-block.vue";
-  
+<script>  
   export default {
     components: {
-      cSectionWrapper,
-      cSectionHeader,
-      cArrowBlock,
-      cContactButton,
-      cCarousel,
-      cArticleList,
-      cLogoList,
-      cLogoSlider,
-      cTechnologyBlock,
-      cProjectSlider,
+      'c-section-wrapper': () => import("~/components/section-wrapper.vue"),
+      'c-section-header': () => import("~/components/section-header.vue"),
+      'c-arrow-block': () => import("~/components/arrow-block.vue"),
+      'c-contact-button': () => import("~/components/contact-button.vue"),
+      'c-carousel': () => import("~/components/carousel.vue"),
+      'c-article-list': () => import("~/components/article-list.vue"),
+      'c-logo-list': () => import("~/components/logo-list.vue"),
+      'c-logo-slider': () => import("~/components/logo-slider.vue"),
+      'c-technology-block': () => import("~/components/contact-button.vue"),
+      'c-project-slider': () => import("~/components/technology-block.vue"),
     },
     computed: {
       contactData () {
