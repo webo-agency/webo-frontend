@@ -208,8 +208,8 @@
       'c-article-list': () => import("~/components/article-list.vue"),
       'c-logo-list': () => import("~/components/logo-list.vue"),
       'c-logo-slider': () => import("~/components/logo-slider.vue"),
-      'c-technology-block': () => import("~/components/contact-button.vue"),
-      'c-project-slider': () => import("~/components/technology-block.vue"),
+      'c-technology-block': () => import("~/components/technology-block.vue"),
+      'c-project-slider': () => import("~/components/project-slider.vue"),
     },
     computed: {
       contactData () {
