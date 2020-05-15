@@ -52,6 +52,7 @@
       <c-article-list
         :articles="api.acf.services_promoted"
         :more="api.acf.services_promoted_single.homepage"
+        :cta-type="darkCTA"
       />
     </c-section-wrapper>
 
@@ -137,6 +138,7 @@
         <c-article-list
           :articles="api.acf.company_promoted"
           :more="api.acf.company_promoted_single.homepage"
+          :cta-type="lightCTA"
         />
       </div>
     </c-section-wrapper>
@@ -210,6 +212,12 @@
       'c-logo-slider': () => import("~/components/logo-slider.vue"),
       'c-technology-block': () => import("~/components/technology-block.vue"),
       'c-project-slider': () => import("~/components/project-slider.vue"),
+    },
+    data() {
+      return {
+        darkCTA: 'dark',
+        lightCTA: 'light'
+      };
     },
     computed: {
       contactData () {
