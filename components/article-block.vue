@@ -166,7 +166,7 @@ export default {
     transform: rotate(-90deg);
     position: absolute;
     right: -35px;
-    top: -1px;
+    top: 0;
     width: 11px;
   }
 </style>
