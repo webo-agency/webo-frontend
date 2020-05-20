@@ -52,6 +52,12 @@
       <c-article-list
         :articles="api.acf.services_promoted"
         :more="api.acf.services_promoted_single.homepage"
+        class="z-10"
+      />
+      <img
+        src="~assets/slice2.svg"
+        alt="shape"
+        class="background-shape-2"
       />
     </c-section-wrapper>
 
@@ -84,6 +90,11 @@
       :main-title="api.acf.technology_settings.title"
       class="bg-backgroundDark text-lightText overflow-hidden bar-bottom"
     >
+      <img
+        src="~assets/slice4.svg"
+        alt="shape"
+        class="background-shape-1"
+      />
       <div class="relative flex-auto flex flex-col flex-auto w-full md:w-1/2">
         <c-section-header 
           :position-header="api.acf.technology_settings.title_position"
@@ -146,7 +157,7 @@
       main-tag="div"
       :main-id="api.acf.projects_settings.is_linkable"
       :main-title="api.acf.projects_settings.title"
-      class="bg-backgroundLight"
+      class="bg-backgroundLight overflow-hidden"
     >
       <c-section-header 
         :position-header="api.acf.projects_settings.title_position"
@@ -162,8 +173,14 @@
         class="mb-10 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.projects_settings.description"
       />
+      <img
+        src="~assets/slice1.svg"
+        alt="shape"
+        class="background-shape-3"
+      />
       <c-project-slider
         :slides="api.acf.projects_carousel_list"
+        class="z-10"
       />
     </c-section-wrapper>
 
@@ -330,7 +347,7 @@
   };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .parallax-background{
     left: 15px;
     filter: brightness(0.5);
@@ -344,7 +361,7 @@
     filter: brightness(0.2);
   }
 
-  @screen lg {
+  @media (min-width: 1024px) {
       .img-list-left{
         height: 127%;
       }
@@ -364,9 +381,46 @@
     left: 100%;
   }
 
-  @screen lg {
+  @media (min-width: 1024px) {
     .box-position{
         bottom: -250px;
+    }
+  }
+
+  .background-shape-1 {
+    position: absolute;
+    width: 404px;
+    transform: translate(-450px, 50%);
+    top: -23%;
+    
+    @media (min-width: 1920px) {
+      transform: translate(-500px, 50%);
+    }
+  }
+
+  .background-shape-2 {
+    position: absolute;
+    left: 0;
+    top: 43%;
+    transform: translateY(-11%);
+    z-index: 0;
+    
+    @media (min-width: 1920px) {
+      top: 50%;
+    }
+  }
+
+  .background-shape-3 {
+    position: absolute;
+    right: 0;
+    transform: translate(50%, -50%);
+    top: 50%;
+    z-index: 0;
+    width: 502px;
+    
+    @media (min-width: 768px) {
+      top: 0;
+      transform: translate(-6%, 58%);
     }
   }
 </style>

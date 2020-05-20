@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 502 444" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-miterlimit:1.5;">
+    <g id="Artboard1" transform="matrix(1.00491,0,0,1.00498,0,0)">
+        <rect x="0" y="0" width="499" height="441" style="fill:none;"/>
+        <clipPath id="_clip1">
+            <rect x="0" y="0" width="499" height="441"/>
+        </clipPath>
+        <g clip-path="url(#_clip1)">
+            <g transform="matrix(0.995116,0,0,1.54117,-1383.76,-5568.09)">
+                <g id="SG-1920px" serif:id="SG 1920px">
+                    <rect x="0" y="0" width="1920" height="5000" style="fill:none;"/>
+                    <g transform="matrix(1,0,0,1.03108,0,135.585)">
+                        <g transform="matrix(-0.706106,0.0995016,0.246964,0.687185,1513.82,1809.33)">
+                            <path d="M915.297,2505.09C1064.42,2409.14 1002.26,2181.21 707.284,2181.21C443.926,2181.21 165.029,2349.97 377.806,2474.14C477.846,2532.53 695.18,2646.72 915.297,2505.09Z" style="fill:none;stroke:rgb(0,224,180);stroke-width:1.06px;"/>
+                        </g>
+                        <g transform="matrix(-0.558613,0.0787174,0.195378,0.543644,1540.89,2164.02)">
+                            <path d="M915.297,2505.09C1064.42,2409.14 1002.26,2181.21 707.284,2181.21C443.926,2181.21 165.029,2349.97 377.806,2474.14C477.846,2532.53 695.18,2646.72 915.297,2505.09Z" style="fill:none;stroke:rgb(0,224,180);stroke-width:1.34px;"/>
+                        </g>
+                        <g transform="matrix(-0.441928,0.0622747,0.154567,0.430086,1562.31,2444.62)">
+                            <path d="M915.297,2505.09C1064.42,2409.14 1002.26,2181.21 707.284,2181.21C443.926,2181.21 165.029,2349.97 377.806,2474.14C477.846,2532.53 695.18,2646.72 915.297,2505.09Z" style="fill:none;stroke:rgb(0,224,180);stroke-width:1.69px;"/>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -2,7 +2,7 @@
   <component
     :is="mainTag"
     :class="mainClass"
-    class="footer text-white pt-2 xs:pt-8"
+    class="footer text-white pt-2 xs:pt-8 relative overflow-hidden"
   >
     <c-section-wrapper
       v-if="$store.state.general.data != ''"
@@ -28,7 +28,7 @@
       />
     </c-section-wrapper>
 
-    <div class="container flex flex-row flex-wrap">
+    <div class="container flex flex-row flex-wrap xl:pb-8">
       <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col">
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
@@ -182,6 +182,11 @@
           </li>
         </ul>
       </div>
+      <img
+        src="~assets/slice3.svg"
+        alt="shape"
+        class="background-shape-4"
+      />
     </div>
 
     <div class="w-full lg:w-5/12 ml-auto bg-main text-black font-medium lg:pl-4 text-micro xs:text-xs">
@@ -255,3 +260,19 @@
     }
   };
 </script>
+
+<style lang="scss">
+
+  .background-shape-4 {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 530px;
+    
+    @media (min-width: 1550px) {
+      display: block;
+    }
+  }
+</style>
