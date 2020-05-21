@@ -66,7 +66,7 @@
         <scrollactive
           v-if="sections.length > 0"
           :class="{ 'is-active': menuVisible, 'is-top': !isTop }"
-          class="links list-inline justify-between align-items-stretch py-1 py-xs-0"
+          class="links list-inline justify-between align-items-stretch py-1 py-xs-0 md:items-center"
           :offset="80"
           :always-track="true"
           :duration="600"
@@ -82,22 +82,23 @@
             {{ section.title }}
           </nuxt-link>
           <nuxt-link
-            class="link scrollactive-item"
+            class="md:flex hidden empty-link scrollactive-item"
             :to="`/#x`"
           />
-        </scrollactive>
-
-        <a
-          v-if="$store.state.general.data.call_to_action_header"
-          :href="$store.state.general.data.call_to_action_header.button.hyperlink"
-          class="button-primary block py-1 px-8 bg-main text-black font-medium text-micro hover:text-darkText xs:text-base lg:text-xl"
-        >
-          <span 
-            class="hidden xs:flex"
-          >
-            {{ $store.state.general.data.call_to_action_header.button.title }}
+          <span class="link lg:-mr-8">
+            <a
+              v-if="$store.state.general.data.call_to_action_header"
+              :href="$store.state.general.data.call_to_action_header.button.hyperlink"
+              class="self-center button-primary block py-1 px-8 bg-main text-black font-medium text-micro hover:text-darkText xs:text-base lg:text-xl"
+            >
+              <span 
+                class="hidden xs:flex"
+              >
+                {{ $store.state.general.data.call_to_action_header.button.title }}
+              </span>
+            </a>
           </span>
-        </a>
+        </scrollactive>
       </div>
     </div>
   </component>
@@ -497,14 +498,13 @@ export default {
     }
 
     @media (min-width: 280px) {
-      top: 67px;
+      top: 66px;
     }
 
     @media (min-width: 360px) {
       overflow: auto;
       bottom: 0;
       height: auto;
-      top: 68px;
     }
 
     @media (min-width: 1024px) {
@@ -524,6 +524,18 @@ export default {
     @media (min-width: 1024px) {
       top: auto;
     }
+  }
+}
+
+.empty-link {
+  padding: 5px;
+
+  @media (min-width: 191px) {
+    padding: 15px 18px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 18px;
   }
 }
 
