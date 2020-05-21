@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col w-full m-auto">
-    <c-section-wrapper
+    <SectionWrapper
       v-if="api != ''"
       main-tag="div"
       :main-id="api.acf.baner_settings.is_linkable"
@@ -8,10 +8,10 @@
       class="bg-backgroundDark text-lightText flex flex-col justify-center"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
-      <c-carousel
+      <Carousel
         class="relative mb-10"
       >
-        <c-section-header
+        <SectionHeader
           :position-header="api.acf.baner_settings.title_position"
           :number-header="api.acf.baner_settings.title_number ? 1 : 0"  
           :subtitle="api.acf.baner_settings.title"
@@ -19,25 +19,25 @@
           title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
         />
-        <c-contact-button
+        <ContactButton
           :text="api.acf.baner_carousel[0].button.title"
           :link="api.acf.baner_carousel[0].button.hyperlink"
         />
-        <c-arrow-block
+        <ArrowBlock
           main-class="z-30 hidden xl:block"
           arrow-color="#FFFFFF"
           section-link="uslugi"
         />
-      </c-carousel>
-    </c-section-wrapper>
+      </Carousel>
+    </SectionWrapper>
 
-    <c-section-wrapper
+    <SectionWrapper
       v-if="api != ''"
       main-tag="section"
       :main-id="api.acf.services_settings.is_linkable"
       :main-title="api.acf.services_settings.title"
     >
-      <c-section-header 
+      <SectionHeader 
         :position-header="api.acf.services_settings.title_position"
         :number-header="api.acf.services_settings.title_number ? 1 : 0"
         :subtitle="api.acf.services_settings.title"
@@ -49,7 +49,7 @@
         class="mb-5 w-full md:w-1/2 lg:w-1/3"
         v-html="api.acf.services_settings.description"
       />
-      <c-article-list
+      <ArticleList
         :articles="api.acf.services_promoted"
         :more="api.acf.services_promoted_single.homepage"
         :cta-type="darkCTA"
@@ -60,9 +60,9 @@
         alt="shape"
         class="background-shape-2"
       >
-    </c-section-wrapper>
+    </SectionWrapper>
 
-    <c-section-wrapper
+    <SectionWrapper
       v-if="api != ''"
       main-tag="div"
       :class="{
@@ -82,9 +82,9 @@
         class="parallax-background absolute top-0 bottom-0 w-screen max-w-none bg-cover bg-no-repeat bg-fixed rounded-lg"
         :style="parallaxBackground"
       />
-    </c-section-wrapper>
+    </SectionWrapper>
 
-    <c-section-wrapper
+    <SectionWrapper
       v-if="api != ''"
       main-tag="section"
       :main-id="api.acf.technology_settings.is_linkable"
@@ -97,7 +97,7 @@
         class="background-shape-1"
       >
       <div class="relative flex-auto flex flex-col flex-auto w-full md:w-1/2">
-        <c-section-header 
+        <SectionHeader 
           :position-header="api.acf.technology_settings.title_position"
           :number-header="api.acf.technology_settings.title_number ? 2 : 0"
           :subtitle="api.acf.technology_settings.title"
@@ -106,7 +106,7 @@
           subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
           class="mb-8 lg:pr-10"
         />
-        <c-logo-list 
+        <LogoList 
           class="w-full md:w-4/5"
           :list="api.acf.technology_promoted"
         />
@@ -115,20 +115,20 @@
           class="mb-10 w-full md:w-4/5"
           v-html="api.acf.technology_settings.description"
         />
-        <c-technology-block
+        <TechnologyBlock
           class="md:absolute top-0 md:w-half-screen box-position"
           :technology-array="[api.acf.category_technology_promoted]"
         />
       </div>
-    </c-section-wrapper>
+    </SectionWrapper>
 
-    <c-section-wrapper
+    <SectionWrapper
       v-if="api != ''"
       main-tag="section"
       :main-id="api.acf.company_settings.is_linkable"
       :main-title="api.acf.company_settings.title"
     >
-      <c-section-header 
+      <SectionHeader 
         :position-header="api.acf.company_settings.title_position"
         :number-header="api.acf.company_settings.title_number ? 3 : 0"
         :subtitle="api.acf.company_settings.title"
@@ -146,22 +146,22 @@
           class="mb-10 w-full md:w-1/2 lg:w-1/3"
           v-html="api.acf.company_settings.description"
         />
-        <c-article-list
+        <ArticleList
           :articles="api.acf.company_promoted"
           :more="api.acf.company_promoted_single.homepage"
           :cta-type="lightCTA"
         />
       </div>
-    </c-section-wrapper>
+    </SectionWrapper>
 
-    <c-section-wrapper
+    <SectionWrapper
       v-if="api != ''"
       main-tag="div"
       :main-id="api.acf.projects_settings.is_linkable"
       :main-title="api.acf.projects_settings.title"
       class="bg-backgroundLight overflow-hidden"
     >
-      <c-section-header 
+      <SectionHeader 
         :position-header="api.acf.projects_settings.title_position"
         :number-header="api.acf.projects_settings.title_number ? 3 : 0"
         :subtitle="api.acf.projects_settings.title"
@@ -180,13 +180,13 @@
         alt="shape"
         class="background-shape-3"
       >
-      <c-project-slider
+      <ProjectSlider
         :slides="api.acf.projects_carousel_list"
         class="z-10"
       />
-    </c-section-wrapper>
+    </SectionWrapper>
 
-    <c-section-wrapper
+    <SectionWrapper
       v-if="api != ''"
       :main-disabled="true"
       main-tag="div"
@@ -194,42 +194,30 @@
       :main-title="api.acf.reviews_settings.title"
       class="bg-white"
     >
-      <c-section-header 
+      <SectionHeader 
         :title="api.acf.reviews_settings.header"
         :subtitle="api.acf.reviews_settings.title"
         :position-header="api.acf.reviews_settings.title_position"
         :number-header="api.acf.reviews_settings.title_number ? 4 : 0"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
-    </c-section-wrapper>
+    </SectionWrapper>
 
-    <c-section-wrapper
+    <SectionWrapper
       main-tag="div"
       class="bg-backgroundLight"
       container-class="mt-10 mb-10"
       height-auto
     >
-      <c-logo-slider
+      <LogoSlider
         :slides="api.acf.brands_slajder_list"
       />
-    </c-section-wrapper>
+    </SectionWrapper>
   </div>
 </template>
 
 <script>  
   export default {
-    components: {
-      'c-section-wrapper': () => import("~/components/section-wrapper.vue"),
-      'c-section-header': () => import("~/components/section-header.vue"),
-      'c-arrow-block': () => import("~/components/arrow-block.vue"),
-      'c-contact-button': () => import("~/components/contact-button.vue"),
-      'c-carousel': () => import("~/components/carousel.vue"),
-      'c-article-list': () => import("~/components/article-list.vue"),
-      'c-logo-list': () => import("~/components/logo-list.vue"),
-      'c-logo-slider': () => import("~/components/logo-slider.vue"),
-      'c-technology-block': () => import("~/components/technology-block.vue"),
-      'c-project-slider': () => import("~/components/project-slider.vue"),
-    },
     data() {
       return {
         darkCTA: 'dark',

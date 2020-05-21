@@ -2,11 +2,11 @@
   <div
     class="flex flex-col w-full"
   >
-    <v-header-page
+    <HeaderPage
       :title="api.acf.page_title"
       :image="api.acf.page_image"
     />
-    <v-content-page
+    <ContentPage
       :content="api.content.rendered"
     />
   </div>
@@ -14,10 +14,6 @@
 
 <script>
   export default {
-    components: {
-      'v-header-page': () => import("~/components/header-page.vue"),
-      'v-content-page': () => import("~/components/content-page.vue"),
-    },
     async asyncData ({ app , params, payload }) {
       if (payload) {
         return { 

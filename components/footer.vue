@@ -4,7 +4,7 @@
     :class="mainClass"
     class="footer text-white pt-2 xs:pt-8 relative overflow-hidden"
   >
-    <c-section-wrapper
+    <SectionWrapper
       v-if="$store.state.general.data != ''"
       main-tag="div"
       :main-title="$store.state.general.data.call_to_action_section.title"
@@ -12,7 +12,7 @@
       container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
       height-auto
     >
-      <c-section-header
+      <SectionHeader
         :position-header="true"
         :number-header="0"
         :subtitle="$store.state.general.data.call_to_action_section.title"
@@ -21,12 +21,12 @@
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
       />
-      <c-contact-button
+      <ContactButton
         class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
         :text="$store.state.general.data.call_to_action_section.button.title"
         :link="$store.state.general.data.call_to_action_section.button.hyperlink"
       />
-    </c-section-wrapper>
+    </SectionWrapper>
 
     <div class="container flex flex-row flex-wrap xl:pb-8">
       <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col">
@@ -197,17 +197,8 @@
   </component>
 </template>
 <script>
-  import cSectionWrapper from "~/components/section-wrapper.vue";
-  import cSectionHeader from "~/components/section-header.vue";
-  import cContactButton from "~/components/contact-button.vue";
-
   export default {
     name: "Footer",
-    components: {
-      cSectionWrapper,
-      cSectionHeader,
-      cContactButton,
-    },
     props: {
       mainTag: {
         type: String,

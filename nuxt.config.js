@@ -488,6 +488,10 @@ module.exports = {
       }
     }
   },
+  buildModules: [
+    // TODO: [WEBOWEB-42] Remove when upgrading to nuxt 2.13+
+    '@nuxt/components'
+  ],
   /*
    ** Generate SSR
    */
