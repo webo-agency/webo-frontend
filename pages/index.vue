@@ -59,7 +59,7 @@
         src="~assets/slice2.svg"
         alt="shape"
         class="background-shape-2"
-      />
+      >
     </c-section-wrapper>
 
     <c-section-wrapper
@@ -95,7 +95,7 @@
         src="~assets/slice4.svg"
         alt="shape"
         class="background-shape-1"
-      />
+      >
       <div class="relative flex-auto flex flex-col flex-auto w-full md:w-1/2">
         <c-section-header 
           :position-header="api.acf.technology_settings.title_position"
@@ -179,7 +179,7 @@
         src="~assets/slice1.svg"
         alt="shape"
         class="background-shape-3"
-      />
+      >
       <c-project-slider
         :slides="api.acf.projects_carousel_list"
         class="z-10"
