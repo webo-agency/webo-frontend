@@ -186,7 +186,7 @@
         src="~assets/slice3.svg"
         alt="shape"
         class="background-shape-4"
-      />
+      >
     </div>
 
     <div class="w-full lg:w-5/12 ml-auto bg-main text-black font-medium lg:pl-4 text-micro xs:text-xs">
