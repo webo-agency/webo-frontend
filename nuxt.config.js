@@ -31,7 +31,7 @@ const definedDefaultLocale = definedLocales[0]
 const API_URL = process.env.API_URL;
 const API_AFFIX = process.env.API_AFFIX;
 
-module.exports = {
+export default {
   env: {
     CONTEXT: process.env.CONTEXT,
     API_URL: API_URL,
@@ -476,22 +476,18 @@ module.exports = {
   /*
    ** Render loop
    */
-  render: {
-    compressor: true,
-    http2: {
-      push: true,
-      gzip: 9
-    },
-    bundleRenderer: {
-      directives: {
-        t: require("vue-i18n-extensions").directive
-      }
-    }
-  },
-  buildModules: [
-    // TODO: [WEBOWEB-42] Remove when upgrading to nuxt 2.13+
-    '@nuxt/components'
-  ],
+  // render: {
+  //   compressor: true,
+  //   http2: {
+  //     push: true,
+  //     gzip: 9
+  //   },
+  //   // bundleRenderer: {
+  //   //   directives: {
+  //   //     // t: require("vue-i18n-extensions").directive
+  //   //   }
+  //   // }
+  // },
   /*
    ** Generate SSR
    */
