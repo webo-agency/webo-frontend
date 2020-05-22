@@ -108,14 +108,14 @@ module.exports = {
    ** Modulesc
    */
   modules: [
-    {
-      src: "~/modules/bugsnag",
-      options: {
-        apiKey: "e84d63a6f7b1a2db9acda61d3dc7d892",
-        appType: "frontend",
-        releaseStage: process.env.CONTEXT || "developer"
-      }
-    },
+    // {
+    //   src: "~/modules/bugsnag",
+    //   options: {
+    //     apiKey: "e84d63a6f7b1a2db9acda61d3dc7d892",
+    //     appType: "frontend",
+    //     releaseStage: process.env.CONTEXT || "developer"
+    //   }
+    // },
     {
       src: "@nuxtjs/axios",
       // options: {}
