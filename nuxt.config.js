@@ -188,7 +188,7 @@ module.exports = {
       }
     },
     {
-      src: "@bazzite/nuxt-netlify",
+      src: "@aceforth/nuxt-netlify",
       options: {
         mergeSecurityHeaders: true,
         headers: {
