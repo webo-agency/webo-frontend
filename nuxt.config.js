@@ -380,6 +380,10 @@ export default {
     globPatterns: ["**/*.{js,css,html,png}"],
     dev: false
   },
+  buildModules: [
+    // TODO: Remove when upgrading to nuxt 2.13+
+    '@nuxt/components'
+  ],
   /*
    ** Build configuration
    */
