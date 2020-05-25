@@ -39,3 +39,31 @@ body{
         @apply ml-2;
     }
 }
+
+.opinion-pagination {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding-top: 30px;
+
+    @screen lg {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.swiper-pagination-bullet {
+    border-radius: 0;
+    width: 15px;
+    height: 15px;
+    margin: 0!important;
+}
+
+.swiper-pagination-bullet:not(:last-child) {
+    margin-right: 15px!important;
+}
+
+.swiper-pagination-bullet-active {
+    background: rgb(0, 224, 180);
+}
