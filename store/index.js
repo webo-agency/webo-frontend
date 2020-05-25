@@ -8,13 +8,15 @@ export const actions = {
   },
   dataInit({ dispatch }) {
     return axios.all([
+      axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/wp/v2/posts/').concat('?categories=9')),
       axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/acf/v3/options/options').concat('?lang=pl')),
       axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus').concat('?lang=pl')),
       axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus/').concat('social-media').concat('?lang=pl')),
       axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus/').concat('uslugi').concat('?lang=pl')),
-      axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus/').concat('webo').concat('?lang=pl'))
+      axios.get(process.env.API_URL.concat(process.env.API_AFFIX).concat('/menus/v1/menus/').concat('webo').concat('?lang=pl')),
     ])
-    .then(axios.spread(async (resOptions, resMenu, resSubMenu1, resSubMenu2, resSubMenu3) => {
+    .then(axios.spread(async (reviews, resOptions, resMenu, resSubMenu1, resSubMenu2, resSubMenu3) => {
+      await dispatch('reviews/init', reviews.data);
       await dispatch('general/init', resOptions.data.acf);
       await dispatch('menu/mainInit', resMenu.data);
       await dispatch('menu/submenuInit', resSubMenu1.data);
