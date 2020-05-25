@@ -205,6 +205,22 @@
 
     <SectionWrapper
       main-tag="div"
+      class="bg-white"
+      :height-auto="true"
+    >
+      <SectionHeader 
+        :title="`Mówią o <em>nas</em>`"
+        :subtitle="api.acf.reviews_settings.title"
+        :number-header="5"
+        class="w-full md:w-1/3 mb-8 lg:pr-10 lg:absolute"
+      />
+      <OpinionsSlider 
+        :slides="getFrontPage"
+      />
+    </SectionWrapper>
+
+    <SectionWrapper
+      main-tag="div"
       class="bg-backgroundLight"
       container-class="mt-10 mb-10"
       height-auto
@@ -225,6 +241,9 @@
       };
     },
     computed: {
+      getFrontPage () {
+        return this.$store.getters["reviews/getFrontPage"]
+      },
       contactData () {
         return this.$store.state.general.data
       },
@@ -320,7 +339,7 @@
       
       // console.log(data.acf); // eslint-disable-line
       // // data.id
-
+      store.commit('reviews/saveFrontPage', data.acf.reviews_promoted); 
       data.acf.contact_section = store.state.general.data.call_to_action_section;
       
       return { 
