@@ -4,7 +4,7 @@ export const state = () => ({
 
 export const mutations = {
     save(state, data) {
-        state.data = data;
+        state.data = { ...state.data, ...data };
     }
 };
 
