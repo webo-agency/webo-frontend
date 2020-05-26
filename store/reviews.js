@@ -33,7 +33,7 @@ export const mutations = {
                 
                 state.slides_reviews.push({
                     id: review.id,
-                    title: review.acf.project_promoted_title,
+                    title: review.acf.single_review_title,
                     content: review.acf.single_review_description,
                     author: review.acf.single_review_person,
                     company: review.acf.single_review_company,
