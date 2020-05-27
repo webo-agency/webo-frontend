@@ -15,7 +15,20 @@
           class="swiper-slide w-auto"
         >
           <div class="flex-auto flex flex-col items-center mx-5">
+            <a
+              v-if="entry.href"
+              :href="entry.href"
+              :title="entry.alt"
+              target="_blank"
+            >
+              <img
+                :src="entry.url"
+                :alt="entry.alt"
+                class="h-16 object-contain logo-slide-img"
+              >
+            </a>
             <img
+              v-else
               :src="entry.url"
               :alt="entry.alt"
               class="h-16 object-contain logo-slide-img"
