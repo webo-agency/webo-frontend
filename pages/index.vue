@@ -326,7 +326,8 @@
         data.acf.brands_slajder_list.push({
           id: entry.id,
           url: entry.acf.mark_logo.url,
-          alt: entry.acf.mark_logo.alt
+          alt: entry.acf.mark_logo.alt,
+          href: entry.acf.mark_url,
         });
       }
       data.acf.brands_slajder_list.reverse();
