@@ -221,8 +221,8 @@
 
     <SectionWrapper
       main-tag="div"
-      class="bg-backgroundLight"
-      container-class="mt-10 mb-10"
+      class="overflow-hidden"
+      container-class="bg-backgroundLight afterLogotypes"
       height-auto
     >
       <LogoSlider
