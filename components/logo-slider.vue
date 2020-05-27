@@ -18,7 +18,7 @@
             <img
               :src="entry.url"
               :alt="entry.alt"
-              class="h-16 object-contain"
+              class="h-16 object-contain logo-slide-img"
             >
           </div>
         </div>
@@ -63,11 +63,9 @@
               slidesPerView: 3
             },
             560: {
+              centeredSlides: false,
               slidesPerView: 2
             },
-            400: {
-              slidesPerView: 1
-            }
           },
         }
       };
@@ -75,6 +73,15 @@
   };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+  .logo-slide-img {
+    filter: grayscale(100%) brightness(167%) contrast(0%);
+    transition: filter .4s;
+
+    &:hover {
+      filter: none;
+    }
+  }
 
 </style>
