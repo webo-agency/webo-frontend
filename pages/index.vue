@@ -150,6 +150,7 @@
           :articles="api.acf.company_promoted"
           :more="api.acf.company_promoted_single.homepage"
           :cta-type="lightCTA"
+          :isMobileSlider="true"
         />
       </div>
     </SectionWrapper>
