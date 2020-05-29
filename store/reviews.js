@@ -29,7 +29,7 @@ export const mutations = {
         const reviewsArray = stateData.reverse();
 
         reviewsArray.filter((review, reviewIndex) => {
-            if(review.id === state.front_page[reviewIndex]) {
+            if(review.id === state.front_page[reviewIndex] && review.acf.single_review_title !== '') {
                 
                 state.slides_reviews.push({
                     id: review.id,

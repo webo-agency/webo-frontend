@@ -60,10 +60,10 @@ export default {
         autoplay: 2000,
         slidesPerView: 2,
         spaceBetween: 50,
-        pagination:  {
+        pagination: this.slides.length > 1 ?  {
             el: '.opinion-pagination',
             clickable: true,
-        }, //{el: '.swiper-pagination', clickable: true}
+        } : false,
         breakpoints: {
           768: {
               slidesPerView: 1
@@ -74,10 +74,10 @@ export default {
         autoplay: 2000,
         slidesPerView: 1,
         spaceBetween: 50,
-        pagination: {
+        pagination: this.slides.length > 4 ? {
             el: '.opinion-pagination',
             clickable: true,
-        }, //{el: '.swiper-pagination', clickable: true}
+        } : false,
       },
     };
   },

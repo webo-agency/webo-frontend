@@ -208,6 +208,7 @@
       main-tag="div"
       class="bg-white"
       :height-auto="true"
+      v-if="getFrontPage.length !== 0"
     >
       <SectionHeader 
         :title="`Mówią o <em>nas</em>`"
