@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 import * as module from './modules.js';
-import * as head from './modules.js';
+import * as head from './head.js';
 import * as generate from './generate.js';
 import * as manifest from './manifest.js';
 import * as build from './build.js';
