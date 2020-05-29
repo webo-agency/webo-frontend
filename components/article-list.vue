@@ -4,7 +4,27 @@
     :id="mainId"
     :class="mainClass"
   >
-    <div class="w-full flex flex-col xs:flex-row flex-wrap">
+    <ArticleSlider
+      v-if="isMobileSlider"
+      class="md:hidden p-0"
+    >
+      <article-block
+        v-for="(item, index) in articleListInject"
+        :key="index"
+        :article="item"
+        main-class="mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0 swiper-slide w-auto"
+      />
+      <article-block
+        v-if="JSON.stringify(more) != '{}'"
+        :article="moreInject"
+        main-class="mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0 swiper-slide w-auto"
+        :cta-type="ctaType"
+      />
+    </ArticleSlider>
+    <div
+      class="w-full flex flex-col xs:flex-row flex-wrap"
+      :class="{'hidden md:flex' : isMobileSlider}"
+    >
       <article-block
         v-for="(item, index) in articleListInject"
         :key="index"
@@ -68,6 +88,11 @@
         type: String,
         default: "",
         required: false
+      },
+      isMobileSlider: {
+        type: Boolean,
+        default: false,
+        required: false,
       }
     },
     computed: {
