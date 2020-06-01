@@ -33,7 +33,7 @@
     "netlify-cli": "^2.51.0",
     "node-sass": "^4.14.1",
     "npm": "^6.14.5",
-    "nuxt": "2.12.2",
+    "nuxt": "^2.12.2",
     "nuxt-compress": "^1.1.0",
     "nuxt-i18n": "^6.11.1",
     "nuxt-netlify-http2-server-push": "^0.1.3",

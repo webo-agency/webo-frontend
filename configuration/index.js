@@ -2,7 +2,9 @@ require('dotenv').config();
 
 import * as module from './modules.js';
 import * as head from './head.js';
+import * as plugins from './plugins.js';
 import * as generate from './generate.js';
+import * as css from './css.js';
 import * as manifest from './manifest.js';
 import * as build from './build.js';
 
@@ -41,15 +43,8 @@ export default {
   /*
    ** Plugins - scripts on all pages
    */
-  plugins: [
-    { src: "~/plugins/scrollactive.js", ssr: true },
-    { src: "~/plugins/swiper.js", ssr: false },
-    // { src: "~/plugins/wpapi-extend.js", ssr: true}
-  ],
-  css: [
-    'swiper/dist/css/swiper.css',
-    '~/assets/css/styles.css'
-  ],
+  plugins: plugins.default,
+  css: css.default,
   /*
    ** Customize the progress-bar color
    */
