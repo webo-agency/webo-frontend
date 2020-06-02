@@ -53,6 +53,7 @@
         :articles="api.acf.services_promoted"
         :more="api.acf.services_promoted_single.homepage"
         :cta-type="darkCTA"
+        :article-type="articleType.service"
         class="z-10"
       />
       <img
@@ -237,7 +238,11 @@
     data() {
       return {
         darkCTA: 'dark',
-        lightCTA: 'light'
+        lightCTA: 'light',
+        articleType: {
+          service: 'service',
+          default: 'default',
+        },
       };
     },
     computed: {
