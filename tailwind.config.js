@@ -64,6 +64,7 @@ module.exports = {
         '48': '12rem',
         '56': '14rem',
         '64': '16rem',
+        'full-8/2' : 'calc((100% - 2rem)/2)',
       },
       margin: {
         '5vh': '5vh',
