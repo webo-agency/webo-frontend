@@ -67,3 +67,31 @@ body{
 .swiper-pagination-bullet-active {
     background: rgb(0, 224, 180);
 }
+
+.afterLogotypes {
+    position: relative;
+    padding: 5px 0;
+    
+    @screen xsWide {
+        padding: 1rem 0;
+    }
+    
+    @screen md {
+        padding: 2.5rem 0;
+    }
+}
+
+.afterLogotypes::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background: rgb(249, 249, 249);
+  
+    @screen sm {
+        left: 100%;
+    }
+}

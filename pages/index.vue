@@ -23,15 +23,15 @@
           :text="api.acf.baner_carousel[0].button.title"
           :link="api.acf.baner_carousel[0].button.hyperlink"
         />
-        <ArrowBlock
+        <!-- <ArrowBlock
           main-class="z-30 hidden xl:block"
           arrow-color="#FFFFFF"
           section-link="uslugi"
-        />
+        /> -->
       </Carousel>
     </SectionWrapper>
 
-    <SectionWrapper
+    <!-- <SectionWrapper
       v-if="api != ''"
       main-tag="section"
       :main-id="api.acf.services_settings.is_linkable"
@@ -151,6 +151,7 @@
           :articles="api.acf.company_promoted"
           :more="api.acf.company_promoted_single.homepage"
           :cta-type="lightCTA"
+          :is-mobile-slider="true"
         />
       </div>
     </SectionWrapper>
@@ -205,6 +206,7 @@
     </SectionWrapper>
 
     <SectionWrapper
+      v-if="getFrontPage.length !== 0"
       main-tag="div"
       class="bg-white"
       :height-auto="true"
@@ -222,14 +224,14 @@
 
     <SectionWrapper
       main-tag="div"
-      class="bg-backgroundLight"
-      container-class="mt-10 mb-10"
+      class="overflow-hidden"
+      container-class="bg-backgroundLight afterLogotypes"
       height-auto
     >
       <LogoSlider
         :slides="api.acf.brands_slajder_list"
       />
-    </SectionWrapper>
+    </SectionWrapper> -->
   </div>
 </template>
 
@@ -263,89 +265,92 @@
         };
       }
     },
-    async asyncData ({ app, store }) {
+    async asyncData ({ app, /*store*/ }) {
       
       let data = await app.$wp.frontPage(20);
-      let pages = await app.$wp.pages().perPage(20);
-      let technology = await app.$wp.technology().perPage(20);
-
-      data.acf.services_promoted = pages.filter((page) => data.acf.services_promoted.indexOf(page.id) > -1);
-  
-      data.acf.company_promoted = pages.filter((page) => data.acf.company_promoted.indexOf(page.id) > -1);
-    
-      data.acf.technology_promoted = [];
-      data.acf.technology_promoted_list.forEach((promoted) => {
-        technology.forEach((entry_list) => {
-          if(entry_list.id == promoted.term_id){
-            data.acf.technology_promoted.push([entry_list])
-          }
-        });
-      });
-
-      data.acf.category_technology_promoted = [];
-      data.acf.category_technology_promoted_list.forEach((promoted) => {
-        technology.forEach((entry_list) => {
-          if(entry_list.id == promoted.term_id){
-            data.acf.category_technology_promoted.push(entry_list);
-          }
-        });
-      });
-
-      let _childs_category_technology_promoted = [];
-      for (let cat_promoted_technology of data.acf.category_technology_promoted) {
-        cat_promoted_technology.childs = [];
-        
-        technology.forEach((technology) => {
-          if(cat_promoted_technology.id == technology.parent){
-            cat_promoted_technology.childs.push(technology);
-          } 
-        });
-
-        _childs_category_technology_promoted.push(cat_promoted_technology);
-      }
-      data.acf.category_technology_promoted = _childs_category_technology_promoted;
-
-      // data.acf.reviews_promoted = [
-      //     await app.$wp.pages().id(data.acf.reviews_promoted),
-      // ];
-
-      let projects_carousel_list = await app.$wp.posts().include(data.acf.projects_carousel);
-      data.acf.projects_carousel_list = [];
-      for(let i = 0; i < data.acf.projects_carousel.length; i++){
-        let entry = projects_carousel_list[i];
-        
-        data.acf.projects_carousel_list.push({
-          id: entry.id,
-          url: entry.acf.project_promoted_screensave.url,
-          alt: entry.acf.project_promoted_screensave.alt,
-          title: entry.acf.project_promoted_title
-        });
-      }
-      data.acf.projects_carousel_list.reverse();
-
-      let brands_slajder_list = await app.$wp.posts().include(data.acf.brands_slajder);
-      data.acf.brands_slajder_list = [];
-      for(let i = 0; i < data.acf.brands_slajder.length; i++){
-        let entry = brands_slajder_list[i];
-        
-        data.acf.brands_slajder_list.push({
-          id: entry.id,
-          url: entry.acf.mark_logo.url,
-          alt: entry.acf.mark_logo.alt
-        });
-      }
-      data.acf.brands_slajder_list.reverse();
-
-
-      // console.log(store.general); // eslint-disable-line
-      // axios.get(env.API_URL.concat('/acf/v3/options/options')).then((response) => {
-      //   console.log(response.data);  // eslint-disable-line
-      // })
       
-      // console.log(data.acf); // eslint-disable-line
-      // // data.id
-      store.commit('reviews/saveFrontPage', data.acf.reviews_promoted); 
-      data.acf.contact_section = store.state.general.data.call_to_action_section;
+      //TODO
+      // let pages = await app.$wp.pages().perPage(20);
+      // let technology = await app.$wp.technology().perPage(20);
+
+      // data.acf.services_promoted = pages.filter((page) => data.acf.services_promoted.indexOf(page.id) > -1);
+  
+      // data.acf.company_promoted = pages.filter((page) => data.acf.company_promoted.indexOf(page.id) > -1);
+    
+      // data.acf.technology_promoted = [];
+      // data.acf.technology_promoted_list.forEach((promoted) => {
+      //   technology.forEach((entry_list) => {
+      //     if(entry_list.id == promoted.term_id){
+      //       data.acf.technology_promoted.push([entry_list])
+      //     }
+      //   });
+      // });
+
+      // data.acf.category_technology_promoted = [];
+      // data.acf.category_technology_promoted_list.forEach((promoted) => {
+      //   technology.forEach((entry_list) => {
+      //     if(entry_list.id == promoted.term_id){
+      //       data.acf.category_technology_promoted.push(entry_list);
+      //     }
+      //   });
+      // });
+
+      // let _childs_category_technology_promoted = [];
+      // for (let cat_promoted_technology of data.acf.category_technology_promoted) {
+      //   cat_promoted_technology.childs = [];
+        
+      //   technology.forEach((technology) => {
+      //     if(cat_promoted_technology.id == technology.parent){
+      //       cat_promoted_technology.childs.push(technology);
+      //     } 
+      //   });
+
+      //   _childs_category_technology_promoted.push(cat_promoted_technology);
+      // }
+      // data.acf.category_technology_promoted = _childs_category_technology_promoted;
+
+      // // data.acf.reviews_promoted = [
+      // //     await app.$wp.pages().id(data.acf.reviews_promoted),
+      // // ];
+
+      // let projects_carousel_list = await app.$wp.posts().include(data.acf.projects_carousel);
+      // data.acf.projects_carousel_list = [];
+      // for(let i = 0; i < data.acf.projects_carousel.length; i++){
+      //   let entry = projects_carousel_list[i];
+        
+      //   data.acf.projects_carousel_list.push({
+      //     id: entry.id,
+      //     url: entry.acf.project_promoted_screensave.url,
+      //     alt: entry.acf.project_promoted_screensave.alt,
+      //     title: entry.acf.project_promoted_title
+      //   });
+      // }
+      // data.acf.projects_carousel_list.reverse();
+
+      // let brands_slajder_list = await app.$wp.posts().include(data.acf.brands_slajder);
+      // data.acf.brands_slajder_list = [];
+      // for(let i = 0; i < data.acf.brands_slajder.length; i++){
+      //   let entry = brands_slajder_list[i];
+        
+      //   data.acf.brands_slajder_list.push({
+      //     id: entry.id,
+      //     url: entry.acf.mark_logo.url,
+      //     alt: entry.acf.mark_logo.alt,
+      //     href: entry.acf.mark_url,
+      //   });
+      // }
+      // data.acf.brands_slajder_list.reverse();
+
+
+      // // console.log(store.general); // eslint-disable-line
+      // // axios.get(env.API_URL.concat('/acf/v3/options/options')).then((response) => {
+      // //   console.log(response.data);  // eslint-disable-line
+      // // })
+      
+      // // console.log(data.acf); // eslint-disable-line
+      // // // data.id
+      // store.commit('reviews/saveFrontPage', data.acf.reviews_promoted); 
+      // data.acf.contact_section = store.state.general.data.call_to_action_section;
       
       return { 
         api: data,
