@@ -50,6 +50,9 @@
           if(data != ''){
             removeEmpty(data[0]);
             data.content = '';
+            if(data.acf == ''){
+              data.acf = {page_title: '', page_image: '', };
+            }
             return { 
               api: data,
             }

@@ -75,14 +75,6 @@ export default [
     },
   },
   {
-    src: "nuxt-webfontloader",
-    options: {
-      google: {
-        families: ['Montserrat:400,500,700,800:latin,latin-ext&display=swap']
-      }
-    }
-  },
-  {
     src: "@aceforth/nuxt-netlify",
     options: {
       mergeSecurityHeaders: true,
