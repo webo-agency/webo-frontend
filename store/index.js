@@ -64,48 +64,48 @@ export const actions = {
       let posts = await $wp.posts();
       removeEmpty(posts);
 
-      let technology = await $wp.technology().perPage(20); //// Too much
-      removeEmpty(technology);
+      // let technology = await $wp.technology().perPage(20); //// Too much
+      // removeEmpty(technology);
 
-      data.acf.services_promoted = _filter(pages, (page) => data.acf.services_promoted.indexOf(page.id) > -1);
+      // data.acf.services_promoted = _filter(pages, (page) => data.acf.services_promoted.indexOf(page.id) > -1);
   
-      data.acf.company_promoted = _filter(pages, (page) => data.acf.company_promoted.indexOf(page.id) > -1);
+      // data.acf.company_promoted = _filter(pages, (page) => data.acf.company_promoted.indexOf(page.id) > -1);
     
-      data.acf.technology_promoted = [];
-      data.acf.technology_promoted_list.forEach((promoted) => {
-        technology.forEach((entry_list) => {
-          if(entry_list.id == promoted.term_id){
-            removeEmpty(entry_list);
-            data.acf.technology_promoted.push([entry_list])
-          }
-        });
-      });
+      // data.acf.technology_promoted = [];
+      // data.acf.technology_promoted_list.forEach((promoted) => {
+      //   technology.forEach((entry_list) => {
+      //     if(entry_list.id == promoted.term_id){
+      //       removeEmpty(entry_list);
+      //       data.acf.technology_promoted.push([entry_list])
+      //     }
+      //   });
+      // });
 
-      data.acf.category_technology_promoted = [];
-      data.acf.category_technology_promoted_list.forEach((promoted) => {
-        technology.forEach((entry_list) => {
-          if(entry_list.id == promoted.term_id){
-            removeEmpty(entry_list);
-            data.acf.category_technology_promoted.push(entry_list);
-          }
-        });
-      });
+      // data.acf.category_technology_promoted = [];
+      // data.acf.category_technology_promoted_list.forEach((promoted) => {
+      //   technology.forEach((entry_list) => {
+      //     if(entry_list.id == promoted.term_id){
+      //       removeEmpty(entry_list);
+      //       data.acf.category_technology_promoted.push(entry_list);
+      //     }
+      //   });
+      // });
 
-      let _childs_category_technology_promoted = [];
-      for (let cat_promoted_technology of data.acf.category_technology_promoted) {
-        cat_promoted_technology.childs = [];
+      // let _childs_category_technology_promoted = [];
+      // for (let cat_promoted_technology of data.acf.category_technology_promoted) {
+      //   cat_promoted_technology.childs = [];
         
-        technology.forEach((technology) => {
-          if(cat_promoted_technology.id == technology.parent){
-            removeEmpty(technology);
-            cat_promoted_technology.childs.push(technology);
-          } 
-        });
+      //   technology.forEach((technology) => {
+      //     if(cat_promoted_technology.id == technology.parent){
+      //       removeEmpty(technology);
+      //       cat_promoted_technology.childs.push(technology);
+      //     } 
+      //   });
     
 
-        _childs_category_technology_promoted.push(cat_promoted_technology);
-      }
-      data.acf.category_technology_promoted = _childs_category_technology_promoted;
+      //   _childs_category_technology_promoted.push(cat_promoted_technology);
+      // }
+      // data.acf.category_technology_promoted = _childs_category_technology_promoted;
 
       // data.acf.reviews_promoted = [
       //     await app.$wp.pages().id(data.acf.reviews_promoted),
