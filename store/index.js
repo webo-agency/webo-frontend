@@ -97,6 +97,7 @@ export const actions = {
         
         technology.forEach((technology) => {
           if(cat_promoted_technology.id == technology.parent){
+            removeEmpty(technology);
             cat_promoted_technology.childs.push(technology);
           } 
         });
