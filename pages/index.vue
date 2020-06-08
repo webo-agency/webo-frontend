@@ -193,7 +193,7 @@
       />
     </SectionWrapper>
 
-    <!-- <SectionWrapper
+    <SectionWrapper
       v-if="frontPageData != ''"
       main-tag="section"
       :main-id="frontPageData.acf.technology_settings.is_linkable"
@@ -229,7 +229,7 @@
           :technology-array="[frontPageData.acf.category_technology_promoted]"
         />
       </div>
-    </SectionWrapper> -->
+    </SectionWrapper>
 
     <SectionWrapper
       v-if="frontPageData != ''"

@@ -88,13 +88,15 @@ module.exports = {
       },
       maxHeight: {
         '500': '500px',
-        '700': '700px'
+        '700': '700px',
+        '350': '350px',
       },
       minWidth: {
         'container': '100px'
       },
       maxWidth: {
         '120': '120px',
+        '450': '450px',
       },
       flex: {
         '0-auto': '0 0 auto',
