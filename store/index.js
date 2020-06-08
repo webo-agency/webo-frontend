@@ -75,6 +75,7 @@ export const actions = {
       data.acf.technology_promoted_list.forEach((promoted) => {
         technology.forEach((entry_list) => {
           if(entry_list.id == promoted.term_id){
+            removeEmpty(entry_list);
             data.acf.technology_promoted.push([entry_list])
           }
         });
@@ -84,6 +85,7 @@ export const actions = {
       data.acf.category_technology_promoted_list.forEach((promoted) => {
         technology.forEach((entry_list) => {
           if(entry_list.id == promoted.term_id){
+            removeEmpty(entry_list);
             data.acf.category_technology_promoted.push(entry_list);
           }
         });
