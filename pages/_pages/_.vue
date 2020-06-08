@@ -47,13 +47,14 @@
           }
         } else {
           data = await app.$wp.pages().slug(params.pathMatch).param('lang', params.pages);
-          removeEmpty(data[0]);
           if(data != ''){
-            data.acf = {page_title: '', page_image: '', };
+            removeEmpty(data[0]);
             data.content = '';
             return { 
               api: data,
             }
+          } else {
+            data.acf = {page_title: '', page_image: '', };
           }
         }
       
