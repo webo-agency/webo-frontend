@@ -1,6 +1,20 @@
 import axios from 'axios'
-import filter from 'lodash/filter';
-import indexOf from 'lodash/indexOf';
+import _filter from 'lodash/filter';
+import _indexOf from 'lodash/indexOf';
+
+const removeEmpty = obj => {
+  Object.keys(obj).forEach(key => {
+    if (
+      key == '' ||
+      obj[key] == null ||
+      typeof obj[key] == 'undefined' ||
+      (Array.isArray(obj[key]) && !obj[key].length) ||
+      obj[key] == '' ||
+      obj[key] == []
+    ) { delete obj[key] } // delete
+    else if (obj[key] && typeof obj[key] === "object") removeEmpty(obj[key]); // recurse
+  });
+};
 
 export const state = () => ({
   data: {}
@@ -42,17 +56,24 @@ export const actions = {
   async initHomepage (context, $wp) {
 
       let frontpage = await $wp.frontPage(20);
+      removeEmpty(frontpage);
+
       let pages = await $wp.pages().perPage(20);
+      removeEmpty(pages);
       // let technology = await $wp.technology().perPage(20);
       let posts = await $wp.posts();
+      removeEmpty(posts);
+      
       let data = frontpage;
       
+      //_.filter(arrs, _.size);
+
       // let pages = context.app.$wp.pages().perPage(20);
       // let technology = context.app.$wp.technology().perPage(20); //// Too much
 
-      data.acf.services_promoted = filter(pages, (page) => data.acf.services_promoted.indexOf(page.id) > -1);
+      data.acf.services_promoted = _filter(pages, (page) => data.acf.services_promoted.indexOf(page.id) > -1);
   
-      data.acf.company_promoted = filter(pages, (page) => data.acf.company_promoted.indexOf(page.id) > -1);
+      data.acf.company_promoted = _filter(pages, (page) => data.acf.company_promoted.indexOf(page.id) > -1);
     
       //Was too much
       // data.acf.technology_promoted = [];
@@ -94,7 +115,7 @@ export const actions = {
 
       // let projects_carousel_list = context.app.$wp.posts().include(data.acf.projects_carousel);
       
-      let projects_carousel_list = filter(posts, (v) => indexOf(data.acf.projects_carousel, v.id) !== -1);
+      let projects_carousel_list = _filter(posts, (v) => _indexOf(data.acf.projects_carousel, v.id) !== -1);
       
       data.acf.projects_carousel_list = [];
       for(let i = 0; i < data.acf.projects_carousel.length; i++){
@@ -111,7 +132,7 @@ export const actions = {
 
       // let brands_slajder_list = posts;
       // let brands_slajder_list = context.app.$wp.posts().include(data.acf.brands_slajder);
-      let brands_slajder_list = filter(posts, (v) => indexOf(data.acf.brands_slajder, v.id) !== -1);
+      let brands_slajder_list = _filter(posts, (v) => _indexOf(data.acf.brands_slajder, v.id) !== -1);
       data.acf.brands_slajder_list = [];
       for(let i = 0; i < data.acf.brands_slajder.length; i++){
         let entry = brands_slajder_list[i];
