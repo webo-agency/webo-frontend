@@ -28,7 +28,8 @@ export default {
   env: {
     CONTEXT: process.env.CONTEXT,
     API_URL: API_URL,
-    API_AFFIX: API_AFFIX
+    API_AFFIX: API_AFFIX,
+    GOOGLE_FONTS: 'Montserrat:400,500,700,800:latin,latin-ext&display=swap'
   },
   globalName: process.env.NAME,
   head: head.default,

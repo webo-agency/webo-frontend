@@ -13,6 +13,20 @@
 </template>
 
 <script>
+  const removeEmpty = obj => {
+    Object.keys(obj).forEach(key => {
+      if (
+        key == '' ||
+        obj[key] == null ||
+        typeof obj[key] == 'undefined' ||
+        (Array.isArray(obj[key]) && !obj[key].length) ||
+        obj[key] == '' ||
+        obj[key] == []
+      ) { delete obj[key] } // delete
+      else if (obj[key] && typeof obj[key] === "object") removeEmpty(obj[key]); // recurse
+    });
+  };
+
   export default {
     async asyncData ({ app , params, payload }) {
       if (payload) {
@@ -27,11 +41,24 @@
 
         let data = await app.$wp.posts().slug(params.pathMatch).param('lang', params.pages);
         if(data != ''){
+          removeEmpty(data[0]);
           return { 
             api: data[0],
           }
         } else {
           data = await app.$wp.pages().slug(params.pathMatch).param('lang', params.pages);
+          if(data != ''){
+            removeEmpty(data[0]);
+            data.content = '';
+            if(data.acf == ''){
+              data.acf = {page_title: '', page_image: '', };
+            }
+            return { 
+              api: data,
+            }
+          } else {
+            data.acf = {page_title: '', page_image: '', };
+          }
         }
       
         return { 

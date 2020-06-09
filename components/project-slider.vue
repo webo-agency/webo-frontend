@@ -13,11 +13,13 @@
           :key="entry.id"
           class="swiper-slide w-auto"
         >
-          <div class="flex-auto">
+          <div class="flex-auto max-w-450 max-w-350">
             <img
               :src="entry.url"
               :alt="entry.alt"
               class="mb-2 w-full"
+              width="450"
+              height="450"
             >
             <h2
               class="font-bold text-xl"

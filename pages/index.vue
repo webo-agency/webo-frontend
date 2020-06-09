@@ -1,10 +1,9 @@
 <template>
   <div class="flex flex-col w-full m-auto">
     <SectionWrapper
-      v-if="api != ''"
       main-tag="div"
-      :main-id="api.acf.baner_settings.is_linkable"
-      :main-title="api.acf.baner_settings.title"
+      main-id=""
+      main-title=""
       class="bg-backgroundDark text-lightText flex flex-col justify-center"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
@@ -12,50 +11,47 @@
         class="relative mb-10"
       >
         <SectionHeader
-          :position-header="api.acf.baner_settings.title_position"
-          :number-header="api.acf.baner_settings.title_number ? 1 : 0"  
-          :subtitle="api.acf.baner_settings.title"
-          :title="api.acf.baner_carousel[0].header"
+          :position-header="true"  
+          subtitle="Witaj w webo"
+          title="Partner 
+          w projektowaniu 
+          i programowaniu 
+          *WWW*"
           title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
         />
         <ContactButton
-          :text="api.acf.baner_carousel[0].button.title"
-          :link="api.acf.baner_carousel[0].button.hyperlink"
+          text="Rozpocznij projekt"
+          link="https://www.webo.agency"
         />
-        <!-- <ArrowBlock
+        <ArrowBlock
           main-class="z-30 hidden xl:block"
           arrow-color="#FFFFFF"
           section-link="uslugi"
-        /> -->
+        />
       </Carousel>
     </SectionWrapper>
 
-    <!-- <SectionWrapper
-      v-if="api != ''"
+    <SectionWrapper
       main-tag="section"
-      :main-id="api.acf.services_settings.is_linkable"
-      :main-title="api.acf.services_settings.title"
+      main-id="uslugi"
+      main-title="Usługi"
     >
       <SectionHeader 
-        :position-header="api.acf.services_settings.title_position"
-        :number-header="api.acf.services_settings.title_number ? 1 : 0"
-        :subtitle="api.acf.services_settings.title"
-        :title="api.acf.services_settings.header"
+        :position-header="true"
+        :number-header="1"
+        subtitle="Usługi"
+        title="W czym możemy
+        Ci *pomóc*?"
         class="mb-8"
       />
       <p 
-        v-if="api.acf.services_settings.description"
         class="mb-5 w-full md:w-1/2 lg:w-1/3"
-        v-html="api.acf.services_settings.description"
-      />
-      <ArticleList
-        :articles="api.acf.services_promoted"
-        :more="api.acf.services_promoted_single.homepage"
-        :cta-type="darkCTA"
-        :article-type="articleType.service"
-        class="z-10"
-      />
+      >
+        W czym możemy
+        Ci pomóc?
+        Podziel się swoim wyzwaniem! Stwórzmy razem nowoczesną i funkcjonalną stronę internetową lub aplikację, która pozwoli Ci osiągać cele biznesowe. Skontaktuj się z nami bezpośrednio.
+      </p>
       <img
         src="~assets/slice2.svg"
         alt="shape"
@@ -64,19 +60,131 @@
     </SectionWrapper>
 
     <SectionWrapper
-      v-if="api != ''"
+      main-tag="section"
+      main-id="procesy"
+      main-title="Procesy"
+      class="bg-backgroundLight"
+      container-class="container flex flex-col mt-10 mb-10 lg:mt-section-lg"
+    >
+      <SectionHeader 
+        :position-header="false"
+        subtitle=""
+        title="Do projektów podchodzimy *kompleksowo*"
+        class="w-10/12 mb-8 text-xs"
+      />
+      <p
+        class="mb-12 w-full md:w-1/2 lg:w-1/3"
+      >
+        W Webo stawiamy na wysoką jakość usług. Dzięki dobrej organizacji pracy nie musisz martwić się o swój projekt. Nasz sprawdzony proces jest kluczem do osiągnięcia założeń technicznych, a przede wszystkim biznesowych.
+      </p>
+      <div class="w-10/12 flex flex-row flex-wrap">
+        <InformationBlock class="mb-8 w-1/3 pr-8">
+          <template slot="icon">
+            <img 
+              src="~assets/icons/corb-tag.svg"
+              width="20px"
+              alt="shape"
+            >
+          </template>
+          <template slot="title">
+            <h1>1. Planujemy</h1>
+          </template>
+          <template slot="description">
+            <p>Ustalamy zakres prac, rozwiązań technologicznych i przebieg projektu</p>
+          </template>
+        </InformationBlock>
+        <InformationBlock class="mb-8 w-1/3 pr-8">
+          <template slot="icon">
+            <img 
+              src="~assets/icons/corb-tag.svg"
+              width="20px"
+              alt="shape"
+            >
+          </template>
+          <template slot="title">
+            <h1>2. Analizujemy</h1>
+          </template>
+          <template slot="description">
+            <p>Przeprowadzamy analizę rynku, potrzeb biznesu i klientów końcowych</p>
+          </template>
+        </InformationBlock>
+        <InformationBlock class="mb-8 w-1/3 pr-8">
+          <template slot="icon">
+            <img 
+              src="~assets/icons/corb-tag.svg"
+              width="20px"
+              alt="shape"
+            >
+          </template>
+          <template slot="title">
+            <h1>3. Projektujemy</h1>
+          </template>
+          <template slot="description">
+            <p>Projektujemy architekturę informacji oraz kompleksowe rozwiązanie UX/UI</p>
+          </template>
+        </InformationBlock>
+        <InformationBlock class="mb-8 w-1/3 pr-8">
+          <template slot="icon">
+            <img 
+              src="~assets/icons/corb-tag.svg"
+              width="20px"
+              alt="shape"
+            >
+          </template>
+          <template slot="title">
+            <h1>4. Wdrażamy</h1>
+          </template>
+          <template slot="description">
+            <p>Instalujemy zaprojektowane rozwiązanie w wybranym środowisku (technologii)</p>
+          </template>
+        </InformationBlock>
+        <InformationBlock class="mb-8 w-1/3 pr-8">
+          <template slot="icon">
+            <img 
+              src="~assets/icons/corb-tag.svg"
+              width="20px"
+              alt="shape"
+            >
+          </template>
+          <template slot="title">
+            <h1>5. Testujemy</h1>
+          </template>
+          <template slot="description">
+            <p>Kompleksowo sprawdzamy działanie projektu i naprawiamy wykryte błędy</p>
+          </template>
+        </InformationBlock>
+        <InformationBlock class="mb-8 w-1/3 pr-8">
+          <template slot="icon">
+            <img 
+              src="~assets/icons/corb-tag.svg"
+              width="20px"
+              alt="shape"
+            >
+          </template>
+          <template slot="title">
+            <h1>6. Rozwijamy</h1>
+          </template>
+          <template slot="description">
+            <p>Wsparcie techniczne i prace nad ulepszaniem działającego produktu</p>
+          </template>
+        </InformationBlock>
+      </div>
+    </SectionWrapper>
+
+    <SectionWrapper
+      v-if="frontPageData != ''"
       main-tag="div"
       :class="{
         'flex': true,
         'flex-col': true,
         'overflow-hidden': true,
-        'bg-backgroundDark text-lightText': api.acf.visualisation_background_color == 'black',
-        'bg-white text-darkText': api.acf.visualisation_background_color == 'white',
+        'bg-backgroundDark text-lightText': frontPageData.acf.visualisation_background_color == 'black',
+        'bg-white text-darkText': frontPageData.acf.visualisation_background_color == 'white',
         'py-10': true,
         'xs:min-h-240 md:min-h-500 lg:min-h-mobile-screen': true
       }"
       container-class="relative flex-auto"
-      :style="gradientBackground"
+      style="background-image: linear-gradient(to bottom, rgb(249, 249, 249) 50%, rgb(13, 13, 13) 50%)"
       height-auto
     >
       <div
@@ -85,11 +193,11 @@
       />
     </SectionWrapper>
 
-    <SectionWrapper
-      v-if="api != ''"
+    <!-- <SectionWrapper
+      v-if="frontPageData != ''"
       main-tag="section"
-      :main-id="api.acf.technology_settings.is_linkable"
-      :main-title="api.acf.technology_settings.title"
+      :main-id="frontPageData.acf.technology_settings.is_linkable"
+      :main-title="frontPageData.acf.technology_settings.title"
       class="bg-backgroundDark text-lightText overflow-hidden bar-bottom"
     >
       <img
@@ -99,83 +207,93 @@
       >
       <div class="relative flex-auto flex flex-col flex-auto w-full md:w-1/2">
         <SectionHeader 
-          :position-header="api.acf.technology_settings.title_position"
-          :number-header="api.acf.technology_settings.title_number ? 2 : 0"
-          :subtitle="api.acf.technology_settings.title"
-          :title="api.acf.technology_settings.header"
+          :position-header="frontPageData.acf.technology_settings.title_position"
+          :number-header="2"
+          :subtitle="frontPageData.acf.technology_settings.title"
+          :title="frontPageData.acf.technology_settings.header"
           title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
           subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
           class="mb-8 lg:pr-10"
         />
         <LogoList 
           class="w-full md:w-4/5"
-          :list="api.acf.technology_promoted"
+          :list="frontPageData.acf.technology_promoted"
         />
         <p
-          v-if="api.acf.technology_settings.description"
+          v-if="frontPageData.acf.technology_settings.description"
           class="mb-10 w-full md:w-4/5"
-          v-html="api.acf.technology_settings.description"
+          v-html="frontPageData.acf.technology_settings.description"
         />
         <TechnologyBlock
           class="md:absolute top-0 md:w-half-screen box-position"
-          :technology-array="[api.acf.category_technology_promoted]"
+          :technology-array="[frontPageData.acf.category_technology_promoted]"
         />
       </div>
-    </SectionWrapper>
+    </SectionWrapper> -->
 
     <SectionWrapper
-      v-if="api != ''"
+      v-if="frontPageData != ''"
       main-tag="section"
-      :main-id="api.acf.company_settings.is_linkable"
-      :main-title="api.acf.company_settings.title"
+      :main-id="frontPageData.acf.company_settings.is_linkable"
+      :main-title="frontPageData.acf.company_settings.title"
     >
       <SectionHeader 
-        :position-header="api.acf.company_settings.title_position"
-        :number-header="api.acf.company_settings.title_number ? 3 : 0"
-        :subtitle="api.acf.company_settings.title"
-        :title="api.acf.company_settings.header"
+        :position-header="frontPageData.acf.company_settings.title_position"
+        :number-header="3"
+        :subtitle="frontPageData.acf.company_settings.title"
+        :title="frontPageData.acf.company_settings.header"
         class="w-full md:w-2/3 mb-8 lg:pr-10 md:pl-20"
       />
       <div class="relative md:pl-20">
         <img
-          :src="api.acf.company_graphic.url"
-          :alt="api.acf.company_graphic.alt"
+          :src="frontPageData.acf.company_graphic.url"
+          :alt="frontPageData.acf.company_graphic.alt"
           class="absolute h-full rounded-lg z-10 object-cover img-list-left"
         >
         <p
-          v-if="api.acf.company_settings.description"
+          v-if="frontPageData.acf.company_settings.description"
           class="mb-10 w-full md:w-1/2 lg:w-1/3"
-          v-html="api.acf.company_settings.description"
-        />
-        <ArticleList
-          :articles="api.acf.company_promoted"
-          :more="api.acf.company_promoted_single.homepage"
-          :cta-type="lightCTA"
-          :is-mobile-slider="true"
+          v-html="frontPageData.acf.company_settings.description"
         />
       </div>
     </SectionWrapper>
 
+    <div class="bg-backgroundDark">
+      <img 
+        alt="Proces - in nutshell"
+        src="~assets/section_360px.svg"
+        class="lg:hidden w-full"
+        width="100%"
+      >
+
+      <img 
+        alt="Proces - big view"
+        src="~assets/section_1920px.svg"
+        class="hidden lg:block w-full"
+        width="100%"
+      >
+    </div>
+
     <SectionWrapper
-      v-if="api != ''"
+      v-if="frontPageData != ''"
       main-tag="div"
-      :main-id="api.acf.projects_settings.is_linkable"
-      :main-title="api.acf.projects_settings.title"
+      :main-id="frontPageData.acf.projects_settings.is_linkable"
+      :main-title="frontPageData.acf.projects_settings.title"
       class="bg-backgroundLight overflow-hidden"
     >
       <SectionHeader 
-        :position-header="api.acf.projects_settings.title_position"
-        :number-header="api.acf.projects_settings.title_number ? 3 : 0"
-        :subtitle="api.acf.projects_settings.title"
-        :title="api.acf.projects_settings.header"
+        :position-header="frontPageData.acf.projects_settings.title_position"
+        :number-header="3"
+        :subtitle="frontPageData.acf.projects_settings.title"
+        :title="frontPageData.acf.projects_settings.header"
         title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
       <p 
-        v-if="api.acf.projects_settings.description"
+        v-if="frontPageData.acf.projects_settings.description"
         class="mb-10 w-full md:w-1/2 lg:w-1/3"
-        v-html="api.acf.projects_settings.description"
+        v-html="frontPageData.acf.projects_settings.description"
       />
       <img
         src="~assets/slice1.svg"
@@ -183,24 +301,24 @@
         class="background-shape-3"
       >
       <ProjectSlider
-        :slides="api.acf.projects_carousel_list"
+        :slides="frontPageData.acf.projects_carousel_list"
         class="z-10"
       />
     </SectionWrapper>
 
     <SectionWrapper
-      v-if="api != ''"
+      v-if="frontPageData != ''"
       :main-disabled="true"
       main-tag="div"
-      :main-id="api.acf.reviews_settings.is_linkable"
-      :main-title="api.acf.reviews_settings.title"
+      :main-id="frontPageData.acf.reviews_settings.is_linkable"
+      :main-title="frontPageData.acf.reviews_settings.title"
       class="bg-white"
     >
       <SectionHeader 
-        :title="api.acf.reviews_settings.header"
-        :subtitle="api.acf.reviews_settings.title"
-        :position-header="api.acf.reviews_settings.title_position"
-        :number-header="api.acf.reviews_settings.title_number ? 4 : 0"
+        :title="frontPageData.acf.reviews_settings.header"
+        :subtitle="frontPageData.acf.reviews_settings.title"
+        :position-header="frontPageData.acf.reviews_settings.title_position"
+        :number-header="4"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
     </SectionWrapper>
@@ -213,7 +331,7 @@
     >
       <SectionHeader 
         :title="`Mówią o <em>nas</em>`"
-        :subtitle="api.acf.reviews_settings.title"
+        :subtitle="frontPageData.acf.reviews_settings.title"
         :number-header="5"
         class="w-full md:w-1/3 mb-8 lg:pr-10 lg:absolute"
       />
@@ -229,9 +347,9 @@
       height-auto
     >
       <LogoSlider
-        :slides="api.acf.brands_slajder_list"
+        :slides="frontPageData.acf.brands_slajder_list"
       />
-    </SectionWrapper> -->
+    </SectionWrapper>
   </div>
 </template>
 
@@ -251,111 +369,28 @@
       getFrontPage () {
         return this.$store.getters["reviews/getFrontPage"]
       },
+      frontPageData() {
+          return this.$store.state.data  //look i added the name of the toolbar module
+      },
       contactData () {
         return this.$store.state.general.data
       },
       gradientBackground(){
         return {
-          "background-image": `linear-gradient(to bottom, ${this.api.acf.visualisation_background_color} 50%, ${this.api.acf.visualisation_second_background_color} 50%)`
+          "background-image": `linear-gradient(to bottom, ${this.$store.state.data.acf.visualisation_background_color} 50%, ${this.$store.state.data.acf.visualisation_second_background_color} 50%)`
         }
       },
       parallaxBackground() {
         return {
-          "background-image": `url(${this.api.acf.visualisation_image.url})`
+          "background-image": `url(${this.$store.state.data.acf.visualisation_image.url})`
         };
       }
     },
-    async asyncData ({ app, /*store*/ }) {
-      
-      let data = await app.$wp.frontPage(20);
-      
-      //TODO
-      // let pages = await app.$wp.pages().perPage(20);
-      // let technology = await app.$wp.technology().perPage(20);
-
-      // data.acf.services_promoted = pages.filter((page) => data.acf.services_promoted.indexOf(page.id) > -1);
+    async fetch ({ app, store }) {
   
-      // data.acf.company_promoted = pages.filter((page) => data.acf.company_promoted.indexOf(page.id) > -1);
-    
-      // data.acf.technology_promoted = [];
-      // data.acf.technology_promoted_list.forEach((promoted) => {
-      //   technology.forEach((entry_list) => {
-      //     if(entry_list.id == promoted.term_id){
-      //       data.acf.technology_promoted.push([entry_list])
-      //     }
-      //   });
-      // });
+      await store.dispatch('initHomepage', app.$wp);
 
-      // data.acf.category_technology_promoted = [];
-      // data.acf.category_technology_promoted_list.forEach((promoted) => {
-      //   technology.forEach((entry_list) => {
-      //     if(entry_list.id == promoted.term_id){
-      //       data.acf.category_technology_promoted.push(entry_list);
-      //     }
-      //   });
-      // });
-
-      // let _childs_category_technology_promoted = [];
-      // for (let cat_promoted_technology of data.acf.category_technology_promoted) {
-      //   cat_promoted_technology.childs = [];
-        
-      //   technology.forEach((technology) => {
-      //     if(cat_promoted_technology.id == technology.parent){
-      //       cat_promoted_technology.childs.push(technology);
-      //     } 
-      //   });
-
-      //   _childs_category_technology_promoted.push(cat_promoted_technology);
-      // }
-      // data.acf.category_technology_promoted = _childs_category_technology_promoted;
-
-      // // data.acf.reviews_promoted = [
-      // //     await app.$wp.pages().id(data.acf.reviews_promoted),
-      // // ];
-
-      // let projects_carousel_list = await app.$wp.posts().include(data.acf.projects_carousel);
-      // data.acf.projects_carousel_list = [];
-      // for(let i = 0; i < data.acf.projects_carousel.length; i++){
-      //   let entry = projects_carousel_list[i];
-        
-      //   data.acf.projects_carousel_list.push({
-      //     id: entry.id,
-      //     url: entry.acf.project_promoted_screensave.url,
-      //     alt: entry.acf.project_promoted_screensave.alt,
-      //     title: entry.acf.project_promoted_title
-      //   });
-      // }
-      // data.acf.projects_carousel_list.reverse();
-
-      // let brands_slajder_list = await app.$wp.posts().include(data.acf.brands_slajder);
-      // data.acf.brands_slajder_list = [];
-      // for(let i = 0; i < data.acf.brands_slajder.length; i++){
-      //   let entry = brands_slajder_list[i];
-        
-      //   data.acf.brands_slajder_list.push({
-      //     id: entry.id,
-      //     url: entry.acf.mark_logo.url,
-      //     alt: entry.acf.mark_logo.alt,
-      //     href: entry.acf.mark_url,
-      //   });
-      // }
-      // data.acf.brands_slajder_list.reverse();
-
-
-      // // console.log(store.general); // eslint-disable-line
-      // // axios.get(env.API_URL.concat('/acf/v3/options/options')).then((response) => {
-      // //   console.log(response.data);  // eslint-disable-line
-      // // })
-      
-      // // console.log(data.acf); // eslint-disable-line
-      // // // data.id
-      // store.commit('reviews/saveFrontPage', data.acf.reviews_promoted); 
-      // data.acf.contact_section = store.state.general.data.call_to_action_section;
-      
-      return { 
-        api: data,
-        // promoted: data2
-      }
+      store.commit('reviews/saveFrontPage',  store.state.data.acf.reviews_promoted);     
     },
     head() {
       return {
