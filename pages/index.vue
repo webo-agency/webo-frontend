@@ -75,7 +75,7 @@
       <p
         class="mb-12 w-full md:w-1/2 lg:w-1/3"
       >
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla nesciunt in atque non dicta ullam aut at accusamus voluptatibus consequuntur doloribus beatae consequatur, laboriosam delectus temporibus unde minima debitis autem.
+        W Webo stawiamy na wysoką jakość usług. Dzięki dobrej organizacji pracy nie musisz martwić się o swój projekt. Nasz sprawdzony proces jest kluczem do osiągnięcia założeń technicznych, a przede wszystkim biznesowych.
       </p>
       <div class="w-10/12 flex flex-row flex-wrap">
         <InformationBlock class="mb-8 w-1/3 pr-8">
@@ -87,10 +87,10 @@
             >
           </template>
           <template slot="title">
-            <h1>1. Analizujemy</h1>
+            <h1>1. Planujemy</h1>
           </template>
           <template slot="description">
-            <p>Przetestuj swoją stronę i sprawdź co wymaga poprawy</p>
+            <p>Ustalamy zakres prac, rozwiązań technologicznych i przebieg projektu</p>
           </template>
         </InformationBlock>
         <InformationBlock class="mb-8 w-1/3 pr-8">
@@ -102,10 +102,10 @@
             >
           </template>
           <template slot="title">
-            <h1>2. Planujemy</h1>
+            <h1>2. Analizujemy</h1>
           </template>
           <template slot="description">
-            <p>Pomożemy Ci efektywnie zarządzać stroną i dbać o jej działanie</p>
+            <p>Przeprowadzamy analizę rynku, potrzeb biznesu i klientów końcowych</p>
           </template>
         </InformationBlock>
         <InformationBlock class="mb-8 w-1/3 pr-8">
@@ -117,10 +117,10 @@
             >
           </template>
           <template slot="title">
-            <h1>3. Wdrażamy</h1>
+            <h1>3. Projektujemy</h1>
           </template>
           <template slot="description">
-            <p>Pomożemy Ci efektywnie zarządzać stroną i dbać o jej działanie</p>
+            <p>Projektujemy architekturę informacji oraz kompleksowe rozwiązanie UX/UI</p>
           </template>
         </InformationBlock>
         <InformationBlock class="mb-8 w-1/3 pr-8">
@@ -135,7 +135,7 @@
             <h1>4. Wdrażamy</h1>
           </template>
           <template slot="description">
-            <p>Pomożemy Ci efektywnie zarządzać stroną i dbać o jej działanie</p>
+            <p>Instalujemy zaprojektowane rozwiązanie w wybranym środowisku (technologii)</p>
           </template>
         </InformationBlock>
         <InformationBlock class="mb-8 w-1/3 pr-8">
@@ -150,7 +150,7 @@
             <h1>5. Testujemy</h1>
           </template>
           <template slot="description">
-            <p>Pomożemy Ci efektywnie zarządzać stroną i dbać o jej działanie</p>
+            <p>Kompleksowo sprawdzamy działanie projektu i naprawiamy wykryte błędy</p>
           </template>
         </InformationBlock>
         <InformationBlock class="mb-8 w-1/3 pr-8">
@@ -165,7 +165,7 @@
             <h1>6. Rozwijamy</h1>
           </template>
           <template slot="description">
-            <p>Ciągłe ulepszanie Twojej strony www, dzięki optymalizacji i rozbudowie</p>
+            <p>Wsparcie techniczne i prace nad ulepszaniem działającego produktu</p>
           </template>
         </InformationBlock>
       </div>
