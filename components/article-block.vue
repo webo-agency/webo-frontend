@@ -1,12 +1,11 @@
 <template>
   <component
     :is="mainTag"
-    :class="mainClass"
-    class="mb-4"
+    :class="[mainClass, articleType === 'service' ? 'mb-8' : 'mb-4']"
   >
     <div
-      class="md:w-2/3"
-      :class="[ctaType !== null ? ctaStyle : {'text-black border border-main rounded-md p-5': dark}]"
+      class="artblock"
+      :class="[ctaType !== null ? ctaStyle : {'text-black border border-main rounded-md p-5': dark}, articleClass]"
     >
       <img
         :src="require('~/assets/icons/' + icon)"
@@ -60,6 +59,15 @@
           d="M5.766.962V22.1l-4.111-4.11a.968.968 0 00-1.372 0 .966.966 0 000 1.377l5.733 5.74a.983.983 0 00.712.284.958.958 0 00.705-.283l5.74-5.741a.978.978 0 000-1.378.976.976 0 00-1.38 0L7.69 22.1V.962a.961.961 0 10-1.923 0z" 
         /></svg>
       </a>
+      <img
+        v-if="articleType === 'service'"
+        :src="require('~/assets/icons/' + icon)"
+        :alt="iconAlt"
+        class="mb-4 w-auto h-12 gray-bg"
+        :class="{
+          'xs:ml-6': list.length
+        }"
+      >
     </div>
   </component>
 </template>
@@ -92,7 +100,12 @@ export default {
       type: String,
       default: "",
       required: false
-    }
+    },
+    articleType: {
+      type: String,
+      default: "default",
+      required: false,
+    },
   }, 
   computed: {
     ctaStyle: function() {
@@ -105,6 +118,15 @@ export default {
           default:
             return 'text-black rounded-md p-5';
         }
+    },
+    articleClass: function() {
+      switch(this.articleType) {
+        case "service":
+          return '';
+        
+        default:
+          return 'md:w-2/3'
+      }
     },
     header: function(){
       return this.article.title ? this.$md.renderInline(this.article.title) : '';
@@ -156,7 +178,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .em-custom >>> em{
     @apply not-italic;
     @apply text-main;
@@ -168,5 +190,20 @@ export default {
     right: -35px;
     top: 0;
     width: 11px;
+  }
+
+  .service {
+    .artblock {
+      background-color: #F9F9F9;
+      position: relative;
+      overflow: hidden;
+    }
+  }
+
+  .gray-bg {
+    filter: grayscale(100%);
+    right: 35px;
+    transform: scale(3);
+    bottom: 4px;
   }
 </style>
