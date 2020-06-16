@@ -86,8 +86,9 @@
           cta="Czytaj więcej"
         />
         <ServiceBlock
-          title="Powiedz nam czego potrzebujesz"
+          title="Powiedz nam czego *potrzebujesz*"
           cta="Porozmawiajmy"
+          :isDark="true"
         />
       </div>
     </SectionWrapper>

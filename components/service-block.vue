@@ -1,8 +1,8 @@
 <template>
   <div class="mb-8 flex-initial w-full sm:w-1/2 xs:pr-4 md:pr-0'">
     <div
-      class="artblock bg-backgroundLight text-black rounded-md p-5"
-      :class="isBlockSimple ? 'flex flex-col lg:flex-row justify-between' : null"
+      class="artblock rounded-md p-5 "
+      :class="[isBlockSimple ? 'flex flex-col lg:flex-row justify-between' : null, isDark ? 'bg-backgroundDark text-white' : 'bg-backgroundLight text-black']"
     >
       <img
         v-if="icon"
@@ -11,11 +11,10 @@
         class="mb-4 w-auto h-12 ml-5"
       >
       <h1
-        class="mb-4 ml-2 lg:ml-5 text-base leading-tight md:text-2xl font-bold"
-        :class="isBlockSimple ? 'lg:w-1/2 self-center' : 'w-auto'"
-      >
-        {{ title }}
-      </h1>
+        class="mb-4 ml-2 lg:ml-5 text-base leading-tight md:text-2xl font-bold em-custom"
+        :class="isBlockSimple ? 'w-full lg:w-1/2 self-center' : 'w-auto'"
+        v-html="titleFormatted"
+      />
       <p
         v-if="description.length !== 0"
         class="mb-4 text-xs md:text-base leading-tight relative z-10 ml-2"
@@ -94,9 +93,17 @@ export default {
       type: String,
       default: 'Czytaj więcej',
       required: true,
-    }
+    },
+    isDark: {
+      type: Boolean,
+      default: false,
+      required: false,
+    },
   },
   computed: {
+    titleFormatted () {
+      return this.title ? this.$md.renderInline(this.title) : ''
+    },
     isBlockSimple() {
       return this.description.length === 0 && this.facilities.length === 0;
     },
@@ -104,7 +111,12 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+  
+  .em-custom >>> em {
+    @apply not-italic;
+    @apply text-main;
+  }
 
   .artblock {
     position: relative;
@@ -126,12 +138,9 @@ export default {
     bottom: 4px;
   }
 
-  .facility {
-      
-    &:not(:first-child) {
-      @media screen and (min-width: 1024px) {
-        margin-left: 3rem;
-      }
+  @media screen and (min-width: 1024px) {
+    .facility:not(:first-child) {
+      margin-left: 3rem;
     }
   }
 </style>
