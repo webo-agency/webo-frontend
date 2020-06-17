@@ -52,11 +52,45 @@
         Ci pomóc?
         Podziel się swoim wyzwaniem! Stwórzmy razem nowoczesną i funkcjonalną stronę internetową lub aplikację, która pozwoli Ci osiągać cele biznesowe. Skontaktuj się z nami bezpośrednio.
       </p>
-      <img
-        src="~assets/slice2.svg"
-        alt="shape"
-        class="background-shape-2"
-      >
+      <div class="w-100 flex flex-row flex-wrap">
+        <ServiceBlock
+          title="Strony www"
+          description="Zbieranie leadów, widoczna marka"
+          icon="window-search.svg"
+          :facilities="['Wysoka funkcjonalność']"
+          cta="Czytaj więcej"
+        />
+        <ServiceBlock
+          title="E-commerce"
+          description="Sprzedaż produktów/usług"
+          icon="e-commerce.svg"
+          :facilities="['Płynny proces sprzedaży']"
+          cta="Czytaj więcej"
+        />
+        <ServiceBlock
+          title="Aplikacje"
+          description="Dostarczanie narzędzi SAAS"
+          icon="network.svg"
+          :facilities="['Ciągła dostępność', 'Intuicyjna obsługa']"
+          cta="Czytaj więcej"
+        />
+        <ServiceBlock
+          title="MVP"
+          description="Szybkie testowanie pomysłów"
+          icon="plant.svg"
+          :facilities="['Szybkie uruchomienie']"
+          cta="Czytaj więcej"
+        />
+        <ServiceBlock
+          title="Audyt i optymalizacja Twojej strony www"
+          cta="Czytaj więcej"
+        />
+        <ServiceBlock
+          title="Powiedz nam czego *potrzebujesz*"
+          cta="Porozmawiajmy"
+          :isDark="true"
+        />
+      </div>
     </SectionWrapper>
 
     <SectionWrapper
@@ -358,7 +392,11 @@
     data() {
       return {
         darkCTA: 'dark',
-        lightCTA: 'light'
+        lightCTA: 'light',
+        articleType: {
+          service: 'service',
+          default: 'default',
+        },
       };
     },
     computed: {
