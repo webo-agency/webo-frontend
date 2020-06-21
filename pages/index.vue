@@ -88,7 +88,7 @@
         <ServiceBlock
           title="Powiedz nam czego *potrzebujesz*"
           cta="Porozmawiajmy"
-          :isDark="true"
+          :is-dark="true"
         />
       </div>
     </SectionWrapper>
@@ -289,6 +289,10 @@
           class="mb-10 w-full md:w-1/2 lg:w-1/3"
           v-html="frontPageData.acf.company_settings.description"
         />
+        <!-- <article-list
+          :articles="frontPageData.acf.company_promoted"
+          :more="frontPageData.acf.company_promoted_single.homepage"
+        /> -->
       </div>
     </SectionWrapper>
 
@@ -423,8 +427,6 @@
     async fetch ({ app, store }) {
   
       await store.dispatch('initHomepage', app.$wp);
-
-      store.commit('reviews/saveFrontPage',  store.state.data.acf.reviews_promoted);     
     },
     head() {
       return {
