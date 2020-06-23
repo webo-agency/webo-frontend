@@ -218,10 +218,10 @@
           class="mb-10 w-full md:w-1/2 lg:w-1/3"
           v-html="frontPageData.company_settings.description"
         />
-        <!-- <article-list
+        <article-list
           :articles="frontPageData.company_promoted"
           :more="frontPageData.company_promoted_single.homepage"
-        /> -->
+        />
       </div>
     </SectionWrapper>
 

@@ -104,7 +104,7 @@ export const mutations = {
     }));
 
     Object.assign(_tmpData, _tmpData.company_promoted.forEach((item, index) => {
-      _tmpData.company_promoted[index] = item.acf;
+      _tmpData.company_promoted[index] = item.homepage;
     }));
 
     Object.assign(_tmpData, _tmpData.projects_carousel.forEach((item, index) => {
