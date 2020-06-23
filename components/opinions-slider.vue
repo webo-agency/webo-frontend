@@ -9,10 +9,10 @@
         <Opinion
           v-for="(opinion, index) in slides"
           :key="index"
-          :title="opinion.title"
-          :content="opinion.content"
-          :author="opinion.author"
-          :company="opinion.company"
+          :title="opinion.single_review_title"
+          :content="opinion.single_review_description"
+          :author="opinion.single_review_person"
+          :company="opinion.single_review_company"
           class="swiper-slide w-auto"
         />
       </div>
@@ -32,10 +32,10 @@
           <Opinion
             v-for="opinion in slide"
             :key="opinion.id"
-            :title="opinion.title"
-            :content="opinion.content"
-            :author="opinion.author"
-            :company="opinion.company"
+            :title="opinion.single_review_title"
+            :content="opinion.single_review_description"
+            :author="opinion.single_review_person"
+            :company="opinion.single_review_company"
           />
         </div>
         <div class="opinion-pagination" />

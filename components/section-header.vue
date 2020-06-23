@@ -10,7 +10,7 @@
       <em
         v-if="positionHeader"
         class="text-main not-italic font-bold"
-      >{{ !numberHeader && positionHeader ? '-' : (numberHeader > 9 ? numberHeader : '0' + numberHeader ) }}/ </em>
+      >{{ !numberHeader ? '-' : (numberHeader > 9 ? numberHeader : '0' + numberHeader ) }}/ </em>
       <span v-html="subtitleFormatted" />
     </h2>
     <h1

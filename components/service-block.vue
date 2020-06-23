@@ -30,7 +30,7 @@
           :key="key"
           class="text-xs md:text-base facility"
         >
-          {{ item }}
+          {{ item.entry ? item.entry : item }}
         </li>
       </ul>
       <a

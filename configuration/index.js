@@ -87,5 +87,6 @@ export default {
   /*
    ** Generate SSR
    */
-  generate: generate.default
+  generate: generate.default,
+  telemetry: false
 };

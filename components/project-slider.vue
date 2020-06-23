@@ -15,8 +15,8 @@
         >
           <div class="flex-auto max-w-450 max-w-350">
             <img
-              :src="entry.url"
-              :alt="entry.alt"
+              :src="entry.project_promoted_screensave.url"
+              :alt="entry.project_promoted_screensave.alt"
               class="mb-2 w-full"
               width="450"
               height="450"
@@ -24,7 +24,7 @@
             <h2
               class="font-bold text-xl"
             >
-              {{ entry.title }}
+              {{ entry.project_promoted_title }}
             </h2>
           </div>
         </div>
