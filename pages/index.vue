@@ -180,7 +180,7 @@
         />
         <LogoList 
           class="w-full md:w-4/5"
-          :list="frontPageData.technology_promoted"
+          :list="frontPageData.technology_promoted_list"
         />
         <p
           v-if="frontPageData.technology_settings.description"
@@ -189,7 +189,7 @@
         />
         <TechnologyBlock
           class="md:absolute top-0 md:w-half-screen box-position"
-          :technology-array="[frontPageData.category_technology_promoted]"
+          :technologies="frontPageData.category_technology_promoted_list"
         />
       </div>
     </SectionWrapper>

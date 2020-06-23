@@ -5,13 +5,13 @@
   >
     <ul class="flex flex-wrap">
       <li 
-        v-for="entry in listFiltered"
+        v-for="entry in list"
         :key="entry.id"
         class="flex-initial px-1 mr-6 mb-6"
       > 
         <img
-          :src="entry[0].acf.logo.url"
-          :alt="entry[0].acf.logo.alt"
+          :src="entry.logo.url"
+          :alt="entry.logo.alt"
           class="h-logo"
         >
       </li>
@@ -38,13 +38,5 @@ export default {
       required: false
     }
   },
-  computed: {
-      listFiltered() {
-        let _tmpList = this.list.filter(function(entry) {
-          return entry[0].logo != false
-        });
-        return _tmpList;
-      }
-  }
 };
 </script>

@@ -118,7 +118,12 @@ export const mutations = {
     Object.assign(_tmpData, _tmpData.services_promoted.forEach((item, index) => {
       _tmpData.services_promoted[index] = item.acf.homepage;
     }));
-    
+
+    Object.assign(_tmpData, _tmpData.technology_promoted_list.forEach((item, index) => {
+      _tmpData.technology_promoted_list[index] = item.acf;
+    }));
+
+
     Object.assign(_tmpData.services_promoted_single, _tmpData.services_promoted_single.homepage);
     
     Object.assign(_tmpData.company_promoted_single, _tmpData.company_promoted_single.homepage);

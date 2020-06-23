@@ -5,7 +5,7 @@
   >
     <ul class="bg-backgroundDark rounded-lg rounded-r-none md:pt-12 md:px-5 lg:px-12 flex flex-wrap">
       <li 
-        v-for="technology in technologyArrayFiltered"
+        v-for="technology in technologies"
         :key="technology.id"
         class="flex-initial w-full sm:w-1/2 md:w-full lg:w-1/2 flex flex-col pr-5 mb-10"
       > 
@@ -53,21 +53,10 @@ export default {
       default: "md:border border-main rounded-lg md:border-r-0 rounded-r-none md:p-4 md:pr-0",
       required: false
     },
-    technologyArray: {
+    technologies: {
       type: Array,
       default: () => [],
       required: false
-    }
-  },
-  computed: {
-    technologyArrayFiltered() {
-      // console.log(this.technologyArray); // eslint-disable-line
-      if(this.technologyArray.length){
-        return this.technologyArray[0];
-      } else {
-        return []
-      }
-      
     }
   }
 };
