@@ -89,6 +89,7 @@ export const state = () => ({
     url: "https://api.webo.agency/wp-content/uploads/2020/03/marvin-meyer-SYTO3xs06fU-unsplash_1-scaled.jpg"
   },
   visualisation_second_background_color: "#0d0d0d",
+  technologies: []
 });
 
 export const mutations = {
@@ -129,6 +130,15 @@ export const mutations = {
     Object.assign(_tmpData.company_promoted_single, _tmpData.company_promoted_single.homepage);
 
     Object.assign($state, _tmpData);
+  },
+  saveTechnology($state, data) {
+    let _tmpData = data;
+
+    Object.assign(_tmpData, _tmpData.forEach((item, index) => {
+      delete _tmpData[index].yoast_head;
+    }));
+
+    Object.assign($state.technologies, _tmpData);
   }
 };
 

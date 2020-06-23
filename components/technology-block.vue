@@ -5,7 +5,7 @@
   >
     <ul class="bg-backgroundDark rounded-lg rounded-r-none md:pt-12 md:px-5 lg:px-12 flex flex-wrap">
       <li 
-        v-for="technology in technologies"
+        v-for="technology in promotedTechnologies"
         :key="technology.id"
         class="flex-initial w-full sm:w-1/2 md:w-full lg:w-1/2 flex flex-col pr-5 mb-10"
       > 
@@ -21,9 +21,10 @@
         <p class="mb-5">
           {{ technology.description }}
         </p>
+
         <ul class="flex flex-row flex-wrap">
           <li
-            v-for="technologyChild in technology.childs"
+            v-for="technologyChild in technologyChildsFilter(technology.term_taxonomy_id, technologies)"
             :key="technologyChild.id"
             class="flex-initial mr-5 mb-2"
             :class="{
@@ -53,11 +54,30 @@ export default {
       default: "md:border border-main rounded-lg md:border-r-0 rounded-r-none md:p-4 md:pr-0",
       required: false
     },
+    promotedTechnologies: {
+      type: Array,
+      default: () => [],
+      required: false
+    },
     technologies: {
       type: Array,
       default: () => [],
       required: false
     }
+  },
+  methods: {
+    technologyChildsFilter(parentId, allTechnologies) {
+      let _array = [];
+console.log(allTechnologies);// eslint-disable-line
+      for(var key in allTechnologies) {
+        if(allTechnologies[key].parent == parentId){
+          _array.push(allTechnologies[key]);
+        }
+      }
+      
+      return _array;
+    }
   }
 };
 </script>
+

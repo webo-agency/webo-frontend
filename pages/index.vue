@@ -189,7 +189,8 @@
         />
         <TechnologyBlock
           class="md:absolute top-0 md:w-half-screen box-position"
-          :technologies="frontPageData.category_technology_promoted_list"
+          :technologies="frontPageData.technologies"
+          :promoted-technologies="frontPageData.category_technology_promoted_list"
         />
       </div>
     </SectionWrapper>
@@ -291,7 +292,7 @@
     </SectionWrapper>
 
     <SectionWrapper
-      v-if="frontPageData.reviews_promoted.length !== 0"
+      v-if="frontPageData.reviews_promoted.length"
       main-tag="div"
       class="bg-white"
       :height-auto="true"
@@ -308,12 +309,14 @@
     </SectionWrapper>
 
     <SectionWrapper
+      v-if="frontPageData.brands_slajder.length"
       main-tag="div"
       class="overflow-hidden"
       container-class="bg-backgroundLight afterLogotypes"
       height-auto
     >
       <LogoSlider
+        v-if="frontPageData.brands_slajder.length"
         :slides="frontPageData.brands_slajder"
       />
     </SectionWrapper>
@@ -355,7 +358,9 @@
     },
     async fetch ({ app, store }) {
       let data = await app.$wp.frontPage();
+      let technology = await app.$wp.technology().perPage(40);
       store.commit('homepage/save', data);
+      store.commit('homepage/saveTechnology', technology);
     },
     head() {
       return {
