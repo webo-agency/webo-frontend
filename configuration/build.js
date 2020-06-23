@@ -49,22 +49,22 @@ export default {
     delete vueRule.loader;
     delete vueRule.options;
   },
-  html :{
-    minify: {
-      collapseWhitespace: true,
-      conservativeCollapse: false,
-      collapseBooleanAttributes: true,
-      decodeEntities: true,
-      minifyCSS: true,
-      minifyJS: true,
-      processConditionalComments: true,
-      removeEmptyAttributes: true,
-      removeRedundantAttributes: true,
-      trimCustomFragments: true,
-      useShortDoctype: true,
-      removeComments: true
-    }
-  },
+  // html :{
+  //   minify: {
+  //     collapseWhitespace: true,
+  //     conservativeCollapse: false,
+  //     collapseBooleanAttributes: true,
+  //     decodeEntities: true,
+  //     minifyCSS: true,
+  //     minifyJS: true,
+  //     processConditionalComments: true,
+  //     removeEmptyAttributes: true,
+  //     removeRedundantAttributes: true,
+  //     trimCustomFragments: true,
+  //     useShortDoctype: true,
+  //     removeComments: true
+  //   }
+  // },
   postcss: {
     'postcss-nested': {},
     'postcss-responsive-type': {}
