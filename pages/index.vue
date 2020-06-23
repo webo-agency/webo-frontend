@@ -48,35 +48,37 @@
       </p>
       <div class="w-100 flex flex-row flex-wrap">
         <ServiceBlock
-          title="Strony www"
-          description="Zbieranie leadów, widoczna marka"
+          :title="getSectionServices.blocks[0].title"
+          :description="getSectionServices.blocks[0].description"
+          :facilities="getSectionServices.blocks[0].list"
           icon="window-search.svg"
-          :facilities="['Wysoka funkcjonalność']"
           cta="Czytaj więcej"
         />
         <ServiceBlock
-          title="E-commerce"
-          description="Sprzedaż produktów/usług"
+          :title="getSectionServices.blocks[1].title"
+          :description="getSectionServices.blocks[1].description"
+          :facilities="getSectionServices.blocks[1].list"
           icon="e-commerce.svg"
-          :facilities="['Płynny proces sprzedaży']"
           cta="Czytaj więcej"
         />
         <ServiceBlock
-          title="Aplikacje"
-          description="Dostarczanie narzędzi SAAS"
+          :title="getSectionServices.blocks[2].title"
+          :description="getSectionServices.blocks[2].description"
+          :facilities="getSectionServices.blocks[2].list"
           icon="network.svg"
-          :facilities="['Ciągła dostępność', 'Intuicyjna obsługa']"
           cta="Czytaj więcej"
         />
         <ServiceBlock
-          title="MVP"
-          description="Szybkie testowanie pomysłów"
+          :title="getSectionServices.blocks[3].title"
+          :description="getSectionServices.blocks[3].description"
+          :facilities="getSectionServices.blocks[3].list"
           icon="plant.svg"
-          :facilities="['Szybkie uruchomienie']"
           cta="Czytaj więcej"
         />
         <ServiceBlock
-          title="Audyt i optymalizacja Twojej strony www"
+          :title="getSectionServices.blocks[4].title"
+          :description="getSectionServices.blocks[4].description"
+          :facilities="getSectionServices.blocks[4].list"
           cta="Czytaj więcej"
         />
         <ServiceBlock
@@ -86,7 +88,7 @@
         />
       </div>
     </SectionWrapper>
-    {{ frontPageData }}
+
     <SectionWrapper
       main-tag="section"
       main-id="procesy"
