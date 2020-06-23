@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col w-full m-auto">
     <SectionWrapper
-      main-tag="div"
-      main-id=""
-      main-title=""
+      :main-tag="getSectionBaner.mainTag"
+      :main-id="getSectionBaner.mainId"
+      :main-title="getSectionBaner.mainTitle"
       class="bg-backgroundDark text-lightText flex flex-col justify-center"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
@@ -11,46 +11,40 @@
         class="relative mb-10"
       >
         <SectionHeader
-          :position-header="true"  
-          subtitle="Witaj w webo"
-          title="Partner 
-          w projektowaniu 
-          i programowaniu 
-          *WWW*"
+          :position-header="getSectionBaner.positionHeader"  
+          :subtitle="getSectionBaner.title"
+          :title="getSectionBaner.header"
           title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
         />
         <ContactButton
-          text="Rozpocznij projekt"
-          link="https://www.webo.agency"
+          :text="getSectionBaner.button.title"
+          :link="getSectionBaner.button.hyperlink"
         />
         <ArrowBlock
           main-class="z-30 hidden xl:block"
           arrow-color="#FFFFFF"
-          section-link="uslugi"
+          :section-link="getSectionServices.mainId"
         />
       </Carousel>
     </SectionWrapper>
 
     <SectionWrapper
-      main-tag="section"
-      main-id="uslugi"
-      main-title="Usługi"
+      :main-tag="getSectionServices.mainTag"
+      :main-id="getSectionServices.mainId"
+      :main-title="getSectionServices.mainTitle"
     >
       <SectionHeader 
         :position-header="true"
-        :number-header="1"
-        subtitle="Usługi"
-        title="W czym możemy
-        Ci *pomóc*?"
+        :number-header="getSectionServices.title_number"
+        :subtitle="getSectionServices.title"
+        :title="getSectionServices.header"
         class="mb-8"
       />
       <p 
         class="mb-5 w-full md:w-1/2 lg:w-1/3"
       >
-        W czym możemy
-        Ci pomóc?
-        Podziel się swoim wyzwaniem! Stwórzmy razem nowoczesną i funkcjonalną stronę internetową lub aplikację, która pozwoli Ci osiągać cele biznesowe. Skontaktuj się z nami bezpośrednio.
+        {{ getSectionServices.description }}
       </p>
       <div class="w-100 flex flex-row flex-wrap">
         <ServiceBlock
@@ -92,7 +86,7 @@
         />
       </div>
     </SectionWrapper>
-
+    {{ frontPageData }}
     <SectionWrapper
       main-tag="section"
       main-id="procesy"
@@ -227,7 +221,7 @@
       />
     </SectionWrapper>
 
-    <!-- <SectionWrapper
+    <SectionWrapper
       v-if="frontPageData != ''"
       main-tag="section"
       :main-id="frontPageData.acf.technology_settings.is_linkable"
@@ -263,7 +257,7 @@
           :technology-array="[frontPageData.acf.category_technology_promoted]"
         />
       </div>
-    </SectionWrapper> -->
+    </SectionWrapper>
 
     <SectionWrapper
       v-if="frontPageData != ''"
@@ -289,10 +283,10 @@
           class="mb-10 w-full md:w-1/2 lg:w-1/3"
           v-html="frontPageData.acf.company_settings.description"
         />
-        <!-- <article-list
+        <article-list
           :articles="frontPageData.acf.company_promoted"
           :more="frontPageData.acf.company_promoted_single.homepage"
-        /> -->
+        />
       </div>
     </SectionWrapper>
 
@@ -362,19 +356,19 @@
     </SectionWrapper>
 
     <SectionWrapper
-      v-if="getFrontPage.length !== 0"
+      v-if="frontPageReviews.length !== 0"
       main-tag="div"
       class="bg-white"
       :height-auto="true"
     >
       <SectionHeader 
         :title="`Mówią o <em>nas</em>`"
-        :subtitle="frontPageData.acf.reviews_settings.title"
+        :subtitle="frontPageReviews.acf.reviews_settings.title"
         :number-header="5"
         class="w-full md:w-1/3 mb-8 lg:pr-10 lg:absolute"
       />
       <OpinionsSlider 
-        :slides="getFrontPage"
+        :slides="getFrontPageReviews"
       />
     </SectionWrapper>
 
@@ -392,6 +386,8 @@
 </template>
 
 <script>  
+  import { mapGetters } from 'vuex'
+
   export default {
     data() {
       return {
@@ -404,23 +400,27 @@
       };
     },
     computed: {
-      getFrontPage () {
-        return this.$store.getters["reviews/getFrontPage"]
-      },
+       ...mapGetters([
+        'getSectionBaner',
+        'getSectionServices'
+      ]),
       frontPageData() {
-          return this.$store.state.data  //look i added the name of the toolbar module
+        return this.$store.state.index  //look i added the name of the toolbar module
+      },
+      frontPageReviews () {
+        return this.$store.getters["reviews/getFrontPage"]
       },
       contactData () {
         return this.$store.state.general.data
       },
       gradientBackground(){
         return {
-          "background-image": `linear-gradient(to bottom, ${this.$store.state.data.acf.visualisation_background_color} 50%, ${this.$store.state.data.acf.visualisation_second_background_color} 50%)`
+          "background-image": `linear-gradient(to bottom, ${this.$store.state.index.acf.visualisation_background_color} 50%, ${this.$store.state.index.acf.visualisation_second_background_color} 50%)`
         }
       },
       parallaxBackground() {
         return {
-          "background-image": `url(${this.$store.state.data.acf.visualisation_image.url})`
+          "background-image": `url(${this.$store.state.index.acf.visualisation_image.url})`
         };
       }
     },

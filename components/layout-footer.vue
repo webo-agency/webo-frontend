@@ -198,7 +198,7 @@
 </template>
 <script>
   export default {
-    name: "Footer",
+    name: "LayoutFooter",
     props: {
       mainTag: {
         type: String,

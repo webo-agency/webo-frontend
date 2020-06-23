@@ -106,7 +106,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "LayoutHeader",
   props: {
     mainTag: {
       type: String,

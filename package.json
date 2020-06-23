@@ -52,7 +52,8 @@
     "wpapi-extensions": "^1.0.10"
   },
   "scripts": {
-    "dev": "nuxt build && nuxt",
+    "start": "nuxt build && nuxt",
+    "dev": "nuxt",
     "dev-debug": "cross-env NODE_ENV=debug node --inspect-brk node_modules/.bin/nuxt",
     "build": "nuxt build",
     "analyze": "nuxt build --analyze",
