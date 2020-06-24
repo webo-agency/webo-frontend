@@ -295,7 +295,7 @@
     <SectionWrapper
       v-if="frontPageData.reviews_promoted.length"
       main-tag="div"
-      class="bg-white"
+      class="overflow-hidden bg-white"
       :height-auto="true"
     >
       <SectionHeader 
