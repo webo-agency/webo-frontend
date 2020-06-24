@@ -9,7 +9,7 @@
       class="md:hidden p-0"
     >
       <article-block
-        v-for="(item, index) in articleListInject"
+        v-for="(item, index) in articles"
         :key="index"
         :article="item"
         main-class="mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0 swiper-slide w-auto"
@@ -26,7 +26,7 @@
       :class="{'hidden md:flex' : isMobileSlider}"
     >
       <article-block
-        v-for="(item, index) in articleListInject"
+        v-for="(item, index) in articles"
         :key="index"
         :article="item"
         main-class="flex-initial w-full sm:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
@@ -96,9 +96,6 @@
       }
     },
     computed: {
-      articleListInject: function(){
-        return this.articles
-      },
       moreInject: function(){
         return this.more
       }

@@ -68,7 +68,7 @@ export default {
   methods: {
     technologyChildsFilter(parentId, allTechnologies) {
       let _array = [];
-console.log(allTechnologies);// eslint-disable-line
+
       for(var key in allTechnologies) {
         if(allTechnologies[key].parent == parentId){
           _array.push(allTechnologies[key]);

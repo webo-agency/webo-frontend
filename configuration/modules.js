@@ -23,17 +23,17 @@ export default [
       autoInit: false,
     }
   },
-  // {
-  //   src: "nuxt-compress",
-  //   options: {
-  //     gzip: {
-  //       cache: true
-  //     },
-  //     brotli: {
-  //       threshold: 10240
-  //     }
-  //   }
-  // },
+  {
+    src: "nuxt-compress",
+    options: {
+      gzip: {
+        cache: true
+      },
+      brotli: {
+        threshold: 10240
+      }
+    }
+  },
   {
     src: "@nuxtjs/pwa",
     options: {
