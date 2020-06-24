@@ -8,9 +8,9 @@
       class="w-full overflow-hidden relative"
     >
       <div class="swiper-wrapper">
-        <slot></slot>
+        <slot />
       </div>
-      <div class="rightTransparency"></div>
+      <div class="rightTransparency" />
     </div>
   </component>
 </template>

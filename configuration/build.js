@@ -49,7 +49,7 @@ export default {
     delete vueRule.loader;
     delete vueRule.options;
   },
-  // html :{
+  // html :{ //Wysypana stopka jak włączone !! Nie włączać bez testów
   //   minify: {
   //     collapseWhitespace: true,
   //     conservativeCollapse: false,

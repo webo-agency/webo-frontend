@@ -222,6 +222,7 @@
         <article-list
           :articles="frontPageData.company_promoted"
           :more="frontPageData.company_promoted_single.homepage"
+          :is-mobile-slider="true"
         />
       </div>
     </SectionWrapper>
