@@ -88,5 +88,6 @@ export default {
    ** Generate SSR
    */
   generate: generate.default,
+  mode: 'spa',
   telemetry: false
 };
