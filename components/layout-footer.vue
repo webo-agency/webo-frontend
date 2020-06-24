@@ -5,9 +5,9 @@
     class="footer text-white pt-2 xs:pt-8 relative overflow-hidden"
   >
     <SectionWrapper
-      v-if="$store.state.general.data != ''"
+      v-if="footerData != ''"
       main-tag="div"
-      :main-title="$store.state.general.data.call_to_action_section.title"
+      :main-title="footerData.call_to_action_section.title"
       class="bg-backgroundDark text-lightText"
       container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
       height-auto
@@ -15,16 +15,16 @@
       <SectionHeader
         :position-header="true"
         :number-header="0"
-        :subtitle="$store.state.general.data.call_to_action_section.title"
-        :title="$store.state.general.data.call_to_action_section.text"
+        :subtitle="footerData.call_to_action_section.title"
+        :title="footerData.call_to_action_section.text"
         title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
       />
       <ContactButton
         class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
-        :text="$store.state.general.data.call_to_action_section.button.title"
-        :link="$store.state.general.data.call_to_action_section.button.hyperlink"
+        :text="footerData.call_to_action_section.button.title"
+        :link="footerData.call_to_action_section.button.hyperlink"
       />
     </SectionWrapper>
 
@@ -77,26 +77,26 @@
       <div class="w-full w-full sm:w-1/3 lg:order-1 flex flex-col mt-0 xs:mt-8 lg:mt-0 mb-2 xs:mb-6 text-xs xs:text-base">
         <div class="mb-8">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            {{ $store.state.general.data.adress.city }}
+            {{ footerData.adress.city }}
           </h2>
 
           <address class="address leading-loose not-italic">
-            {{ $store.state.general.data.adress.street }}<br>
-            {{ $store.state.general.data.adress.zip_code }} {{ $store.state.general.data.adress.city }}
+            {{ footerData.adress.street }}<br>
+            {{ footerData.adress.zip_code }} {{ footerData.adress.city }}
           </address>
 
-          <a :href="$store.state.general.data.telephone.link">
-            {{ $store.state.general.data.telephone.title }}
+          <a :href="footerData.telephone.link">
+            {{ footerData.telephone.title }}
           </a>
         </div>
 
         <p class="mb-5 leading-tight">
-          {{ $store.state.general.data.call_to_action_footer.description }}
+          {{ footerData.call_to_action_footer.description }}
           <a 
             class="block text-main text-overflow" 
-            :href="$store.state.general.data.call_to_action_footer.link.link"
+            :href="footerData.call_to_action_footer.link.link"
           >
-            {{ $store.state.general.data.call_to_action_footer.link.title }}
+            {{ footerData.call_to_action_footer.link.title }}
           </a>
         </p>
 
@@ -191,7 +191,7 @@
 
     <div class="w-full lg:w-5/12 ml-auto bg-main text-black font-medium lg:pl-4 text-micro xs:text-xs">
       <div class="container">
-        {{ copyrightDate }} {{ $store.state.general.data.company_short }}. <br class="block xs:hidden">{{ $store.state.general.data.copyright }}
+        {{ copyrightDate }} {{ footerData.company_short }}. <br class="block xs:hidden">{{ footerData.copyright }}
       </div>
     </div>
   </component>
@@ -218,6 +218,9 @@
       };
     },
     computed: {
+      footerData () {
+        return this.$store.getters["general/getFooterData"]
+      },
       submenuServices: function(){
         return this.$store.getters['menu/submenuServices'];
       },

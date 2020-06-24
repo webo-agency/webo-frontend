@@ -131,6 +131,7 @@ export const mutations = {
 
     Object.assign($state, _tmpData);
   },
+  
   saveTechnology($state, data) {
     let _tmpData = data;
 
