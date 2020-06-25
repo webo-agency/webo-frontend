@@ -53,16 +53,16 @@ export const actions = {
       await dispatch('general/init', resOptions.data.acf);
 
       filterData(resMenu.data);
-      await dispatch('menu/mainInit', resMenu.data);
+      await dispatch('menu/initMain', resMenu.data);
 
       filterData(resSubMenu1.data);
-      await dispatch('menu/submenuInit', resSubMenu1.data);
+      await dispatch('menu/initSocialMedia', resSubMenu1.data);
 
       filterData(resSubMenu2.data);
-      await dispatch('menu/submenuInit', resSubMenu2.data);
+      await dispatch('menu/initServices', resSubMenu2.data);
 
       filterData(resSubMenu3.data);
-      await dispatch('menu/submenuInit', resSubMenu3.data);
+      await dispatch('menu/initCompany', resSubMenu3.data);
     }));
   },
 }

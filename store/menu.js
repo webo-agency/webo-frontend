@@ -1,40 +1,78 @@
 import orderBy from 'lodash/orderBy';
 
 export const state = () => ({
-    mainmenu: {},
-    submenu: {}
+    main: {},
+    services: {
+        name: "",
+        items: []
+    },
+    company: {
+        name: "",
+        items: []
+    },
+    socialMedia: {
+        name: "",
+        items: []
+    },
 });
 
 export const mutations = {
-    saveMenu(state, data) {
-        // console.log(data); // eslint-disable-line
-        state.mainmenu = data;
+    saveMain($state, data) {
+        Object.assign($state.main, data);
     },
-    saveSubmenu(state, data) {
-        state.submenu[data.slug] = data;
+    saveServices($state, data) {
+        Object.assign($state.services, data);
+    },
+    saveCompany($state, data) {
+        Object.assign($state.company, data);
+    },
+    saveSocialMedia($state, data) {
+        Object.assign($state.socialMedia, data);
     }
 };
 
 export const actions = {
-    mainInit (context, data) {
-        context.commit('saveMenu', data);
+    initMain (context, data) {
+        context.commit('saveMain', data);
     },
-    submenuInit (context, data) {
-        context.commit('saveSubmenu', data);
+    initServices (context, data) {
+        context.commit('saveServices', data);
+    },
+    initCompany (context, data) {
+        context.commit('saveCompany', data);
+    },
+    initSocialMedia (context, data) {
+        context.commit('saveSocialMedia', data);
     }
 }
 
 export const getters = {
-    submenuServices: function(state){
+    menuMain: function($state){
         //menu_order
-        return orderBy(state.submenu["uslugi"].items, ['menu_order'], ['asc', 'desc'])
-      },
-      submenuWebo: function(state){
+        return $state.menu
+    },
+    menuServices: function($state){
         //menu_order
-        return orderBy(state.submenu["webo"].items, ['menu_order'], ['asc', 'desc'])
-      },
-      submenuSocialMedia: function(state){
+        return $state.services;
+    },
+    menuServicesChild: function($state){
         //menu_order
-        return orderBy(state.submenu["social-media"].items, ['menu_order'], ['asc', 'desc'])
-      }
+        return orderBy($state.services.items, ['menu_order'], ['asc', 'desc'])
+    },
+    menuCompany: function($state){
+        //menu_order
+        return $state.company;
+    },
+    menuCompanyChild: function($state){
+        //menu_order
+        return orderBy($state.company.items, ['menu_order'], ['asc', 'desc'])
+    },
+    menuSocialMedia: function($state){
+        //menu_order
+        return $state.socialMedia;
+    },
+    menuSocialMediaChilds: function($state){
+        //menu_order
+        return orderBy($state.socialMedia.items, ['menu_order'], ['asc', 'desc'])
+    }
 }

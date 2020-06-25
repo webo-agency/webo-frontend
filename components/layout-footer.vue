@@ -32,12 +32,12 @@
       <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col">
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            {{ $store.state.menu.submenu.uslugi.name }}
+            {{ menuServices.name }}
           </h2>
 
           <ul class="w-full lg:w-2/3 flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
             <li 
-              v-for="(item, index) in submenuServices"
+              v-for="(item, index) in menuServices.items"
               :key="index"
               class="w-full xs:w-1/2 mb-2 xs:mb-1 md:mb-0"
             >
@@ -53,12 +53,12 @@
         </div>
         <div class="w-full lg:w-4/5">
           <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
-            {{ $store.state.menu.submenu.webo.name }}
+            {{ menuCompany.name }}
           </h2>
 
           <ul class="flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
             <li 
-              v-for="(item, index) in submenuWebo"
+              v-for="(item, index) in menuCompany.items"
               :key="index"
               class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0"
             >
@@ -103,7 +103,7 @@
 
         <ul class="flex flex-wrap">
           <li 
-            v-for="(item, index) in submenuSocialMedia"
+            v-for="(item, index) in menuSocialMedia.items"
             :key="index"
             class="flex-initial mr-2 mb-4"
             :class="item.icon.value"
@@ -221,14 +221,17 @@
       footerData () {
         return this.$store.getters["general/getFooterData"]
       },
-      submenuServices: function(){
-        return this.$store.getters['menu/submenuServices'];
+      menuData () {
+        return this.$store.getters["menu/menuData"]
       },
-      submenuWebo: function(){
-        return this.$store.getters['menu/submenuWebo'];
+      menuServices: function(){
+        return this.$store.getters['menu/menuServices'];
       },
-      submenuSocialMedia: function(){
-        return this.$store.getters['menu/submenuSocialMedia'];
+      menuCompany: function(){
+        return this.$store.getters['menu/menuCompany'];
+      },
+      menuSocialMedia: function(){
+        return this.$store.getters['menu/menuSocialMedia'];
       }
     },
     methods: {
