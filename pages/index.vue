@@ -357,10 +357,14 @@
       }
     },
     async fetch ({ app, store }) {
-      let data = await app.$wp.frontPage();
-      let technology = await app.$wp.technology().perPage(40);
-      store.commit('homepage/save', data);
-      store.commit('homepage/saveTechnology', technology);
+  
+      await app.$wp.namespace( 'wuxt' ).v1().frontPage().then(function(data){
+         store.commit('homepage/save', data);
+      }); 
+
+      await app.$wp.namespace( 'wp/v2' ).technology().perPage(20).get().then(function(data){
+        store.commit('homepage/saveTechnology', data);
+      }); 
     },
     head() {
       return {

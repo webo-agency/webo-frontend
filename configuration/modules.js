@@ -163,15 +163,8 @@ export default [
   {
     src: 'wp-nuxt', 
     options:  {
-      endpoint: `${process.env.API_URL}${process.env.API_AFFIX}`,
-      customRoutes: [
-        {
-          extension: 'wp/v2',
-          route: 'technology',
-          name: 'technology'
-        }
-      ],
-      extensions: true // For additional functions of wpapi-extensions
+      discover: true,
+      endpoint: `${process.env.API_URL}${process.env.API_AFFIX}`
     },
   },
   {
