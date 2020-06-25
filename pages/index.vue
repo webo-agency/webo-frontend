@@ -194,132 +194,134 @@
         />
       </div>
     </SectionWrapper>
-    <!--<SectionWrapper
-      v-if="frontPageData != ''"
-      main-tag="section"
-      :main-id="frontPageData.company_settings.is_linkable"
-      :main-title="frontPageData.company_settings.is_linkable ? frontPageData.company_settings.title : ''"
-    >
-      <SectionHeader 
-        :position-header="frontPageData.company_settings.title_position"
-        :number-header="3"
-        :subtitle="frontPageData.company_settings.title"
-        :title="frontPageData.company_settings.header"
-        class="w-full md:w-2/3 mb-8 lg:pr-10 md:pl-20"
-      />
-      <div class="relative md:pl-20">
-        <img
-          :src="frontPageData.company_graphic.url"
-          :alt="frontPageData.company_graphic.alt"
-          class="absolute h-full rounded-lg z-10 object-cover img-list-left"
+    <clent-only>
+      <SectionWrapper
+        v-if="frontPageData != ''"
+        main-tag="section"
+        :main-id="frontPageData.company_settings.is_linkable"
+        :main-title="frontPageData.company_settings.is_linkable ? frontPageData.company_settings.title : ''"
+      >
+        <SectionHeader 
+          :position-header="frontPageData.company_settings.title_position"
+          :number-header="3"
+          :subtitle="frontPageData.company_settings.title"
+          :title="frontPageData.company_settings.header"
+          class="w-full md:w-2/3 mb-8 lg:pr-10 md:pl-20"
+        />
+        <div class="relative md:pl-20">
+          <img
+            :src="frontPageData.company_graphic.url"
+            :alt="frontPageData.company_graphic.alt"
+            class="absolute h-full rounded-lg z-10 object-cover img-list-left"
+          >
+          <p
+            v-if="frontPageData.company_settings.description"
+            class="mb-10 w-full md:w-1/2 lg:w-1/3"
+            v-html="frontPageData.company_settings.description"
+          />
+          <article-list
+            :articles="frontPageData.company_promoted"
+            :more="frontPageData.company_promoted_single.homepage"
+            :is-mobile-slider="true"
+          />
+        </div>
+      </SectionWrapper>
+
+      <div class="bg-backgroundDark">
+        <img 
+          alt="Proces - in nutshell"
+          src="~assets/section_360px.svg"
+          class="lg:hidden w-full"
+          width="100%"
         >
-        <p
-          v-if="frontPageData.company_settings.description"
-          class="mb-10 w-full md:w-1/2 lg:w-1/3"
-          v-html="frontPageData.company_settings.description"
-        />
-        <article-list
-          :articles="frontPageData.company_promoted"
-          :more="frontPageData.company_promoted_single.homepage"
-          :is-mobile-slider="true"
-        />
+
+        <img 
+          alt="Proces - big view"
+          src="~assets/section_1920px.svg"
+          class="hidden lg:block w-full"
+          width="100%"
+        >
       </div>
-    </SectionWrapper>
 
-    <div class="bg-backgroundDark">
-      <img 
-        alt="Proces - in nutshell"
-        src="~assets/section_360px.svg"
-        class="lg:hidden w-full"
-        width="100%"
+      <SectionWrapper
+        v-if="frontPageData != ''"
+        main-tag="div"
+        :main-id="frontPageData.projects_settings.is_linkable"
+        :main-title="frontPageData.projects_settings.is_linkable ? frontPageData.projects_settings.title : ''"
+        class="bg-backgroundLight overflow-hidden"
       >
+        <SectionHeader 
+          :position-header="frontPageData.projects_settings.title_position"
+          :number-header="3"
+          :subtitle="frontPageData.projects_settings.title"
+          :title="frontPageData.projects_settings.header"
+          title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
+          subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
+          class="w-full md:w-1/3 mb-8 lg:pr-10"
+        />
+        <p 
+          v-if="frontPageData.projects_settings.description"
+          class="mb-10 w-full md:w-1/2 lg:w-1/3"
+          v-html="frontPageData.projects_settings.description"
+        />
+        <img
+          src="~assets/slice1.svg"
+          alt="shape"
+          class="background-shape-3"
+        >
+        <ProjectSlider
+          :slides="frontPageData.projects_carousel"
+          class="z-10"
+        />
+      </SectionWrapper>
 
-      <img 
-        alt="Proces - big view"
-        src="~assets/section_1920px.svg"
-        class="hidden lg:block w-full"
-        width="100%"
+      <SectionWrapper
+        v-if="frontPageData != ''"
+        :main-disabled="true"
+        main-tag="div"
+        :main-id="frontPageData.reviews_settings.is_linkable"
+        :main-title="frontPageData.reviews_settings.is_linkable ? frontPageData.reviews_settings.title : ''"
+        class="bg-white"
       >
-    </div>
+        <SectionHeader 
+          :title="frontPageData.reviews_settings.header"
+          :subtitle="frontPageData.reviews_settings.title"
+          :position-header="frontPageData.reviews_settings.title_position"
+          :number-header="4"
+          class="w-full md:w-1/3 mb-8 lg:pr-10"
+        />
+      </SectionWrapper>
 
-    <SectionWrapper
-      v-if="frontPageData != ''"
-      main-tag="div"
-      :main-id="frontPageData.projects_settings.is_linkable"
-      :main-title="frontPageData.projects_settings.is_linkable ? frontPageData.projects_settings.title : ''"
-      class="bg-backgroundLight overflow-hidden"
-    >
-      <SectionHeader 
-        :position-header="frontPageData.projects_settings.title_position"
-        :number-header="3"
-        :subtitle="frontPageData.projects_settings.title"
-        :title="frontPageData.projects_settings.header"
-        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
-        subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
-        class="w-full md:w-1/3 mb-8 lg:pr-10"
-      />
-      <p 
-        v-if="frontPageData.projects_settings.description"
-        class="mb-10 w-full md:w-1/2 lg:w-1/3"
-        v-html="frontPageData.projects_settings.description"
-      />
-      <img
-        src="~assets/slice1.svg"
-        alt="shape"
-        class="background-shape-3"
+      <SectionWrapper
+        v-if="frontPageData.reviews_promoted.length"
+        main-tag="div"
+        class="overflow-hidden bg-white"
+        :height-auto="true"
       >
-      <ProjectSlider
-        :slides="frontPageData.projects_carousel"
-        class="z-10"
-      />
-    </SectionWrapper>
+        <SectionHeader 
+          :title="`Mówią o <em>nas</em>`"
+          :subtitle="frontPageData.reviews_settings.title"
+          :number-header="5"
+          class="w-full md:w-1/3 mb-8 lg:pr-10 lg:absolute"
+        />
+        <OpinionsSlider 
+          :slides="frontPageData.reviews_promoted"
+        />
+      </SectionWrapper>
 
-    <SectionWrapper
-      v-if="frontPageData != ''"
-      :main-disabled="true"
-      main-tag="div"
-      :main-id="frontPageData.reviews_settings.is_linkable"
-      :main-title="frontPageData.reviews_settings.is_linkable ? frontPageData.reviews_settings.title : ''"
-      class="bg-white"
-    >
-      <SectionHeader 
-        :title="frontPageData.reviews_settings.header"
-        :subtitle="frontPageData.reviews_settings.title"
-        :position-header="frontPageData.reviews_settings.title_position"
-        :number-header="4"
-        class="w-full md:w-1/3 mb-8 lg:pr-10"
-      />
-    </SectionWrapper>
-
-    <SectionWrapper
-      v-if="frontPageData.reviews_promoted.length"
-      main-tag="div"
-      class="overflow-hidden bg-white"
-      :height-auto="true"
-    >
-      <SectionHeader 
-        :title="`Mówią o <em>nas</em>`"
-        :subtitle="frontPageData.reviews_settings.title"
-        :number-header="5"
-        class="w-full md:w-1/3 mb-8 lg:pr-10 lg:absolute"
-      />
-      <OpinionsSlider 
-        :slides="frontPageData.reviews_promoted"
-      />
-    </SectionWrapper>
-
-    <SectionWrapper
-      v-if="frontPageData.brands_slajder.length"
-      main-tag="div"
-      class="overflow-hidden"
-      container-class="bg-backgroundLight afterLogotypes"
-      height-auto
-    >
-      <LogoSlider
+      <SectionWrapper
         v-if="frontPageData.brands_slajder.length"
-        :slides="frontPageData.brands_slajder"
-      />
-    </SectionWrapper>-->
+        main-tag="div"
+        class="overflow-hidden"
+        container-class="bg-backgroundLight afterLogotypes"
+        height-auto
+      >
+        <LogoSlider
+          v-if="frontPageData.brands_slajder.length"
+          :slides="frontPageData.brands_slajder"
+        />
+      </SectionWrapper>
+    </clent-only>
   </div>  
 </template>
 
