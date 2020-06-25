@@ -3,10 +3,12 @@
     class="flex flex-col w-full"
   >
     <HeaderPage
+      v-if="api.acf"
       :title="api.acf.page_title"
       :image="api.acf.page_image"
     />
     <ContentPage
+      v-if="api.content"
       :content="api.content.rendered"
     />
   </div>
