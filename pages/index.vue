@@ -187,14 +187,14 @@
           class="mb-10 w-full md:w-4/5"
           v-html="frontPageData.technology_settings.description"
         />
-        <!--<TechnologyBlock
+        <TechnologyBlock
           class="md:absolute top-0 md:w-half-screen box-position"
           :technologies="frontPageData.technologies"
           :promoted-technologies="frontPageData.category_technology_promoted_list"
-        />-->
+        />
       </div>
     </SectionWrapper>
-    <SectionWrapper
+    <!--<SectionWrapper
       v-if="frontPageData != ''"
       main-tag="section"
       :main-id="frontPageData.company_settings.is_linkable"
@@ -319,7 +319,7 @@
         v-if="frontPageData.brands_slajder.length"
         :slides="frontPageData.brands_slajder"
       />
-    </SectionWrapper>
+    </SectionWrapper>-->
   </div>  
 </template>
 
