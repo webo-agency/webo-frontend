@@ -22,16 +22,18 @@
               target="_blank"
             >
               <picture>
-                <source
-                  :data-srcset="`${entry.mark_logo.url}?webp`"
-                  type="image/webp"
+                <!-- <source
+                  :srcset="`${entry.mark_logo.url}`"
+                  :media="`(min-width: ${entry.mark_logo.sizes['medium_large-width']})`"
+                  :type="`${entry.mark_logo.mime_type}`"
                 >
                 <source
-                  :data-srcset="`${entry.mark_logo.url}`"
-                  type="image/png"
-                >
+                  :srcset="`${entry.mark_logo.sizes.medium}`"
+                  :media="`(min-width: ${entry.mark_logo.sizes['medium-width']})`"
+                  :type="`${entry.mark_logo.mime_type}`"
+                > -->
                 <img 
-                  :src="`${entry.mark_logo.url}?webp`" 
+                  :src="`${entry.mark_logo.url}`" 
                   class="h-16 object-contain logo-slide-img lazyload" 
                   :alt="entry.mark_logo.alt"
                 >

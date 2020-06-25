@@ -1,3 +1,5 @@
+import { join } from 'path'
+
 export default {
   extractCSS: true,
   cssSourceMap: false,
@@ -66,6 +68,13 @@ export default {
     }
   },
   postcss: {
+    plugins: {
+      tailwindcss: join(__dirname, '..', 'tailwind.config.js'),
+      'postcss-import': {},
+      'postcss-url': {},
+      'postcss-preset-env': this.preset,
+      'cssnano': { preset: 'default' }
+    },
     'postcss-nested': {},
     'postcss-responsive-type': {}
   },
