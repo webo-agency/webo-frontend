@@ -264,10 +264,12 @@
         alt="shape"
         class="background-shape-3"
       >
-      <!-- <ProjectSlider
-        :slides="frontPageData.projects_carousel"
-        class="z-10"
-      /> -->
+      <client-only>
+        <ProjectSlider
+          :slides="frontPageData.projects_carousel"
+          class="z-10"
+        />
+      </client-only>
     </SectionWrapper>
 
     <SectionWrapper
@@ -297,9 +299,11 @@
         :number-header="5"
         class="w-full md:w-1/3 mb-8 lg:pr-10 lg:absolute"
       />
-      <!-- <OpinionsSlider 
-        :slides="frontPageData.reviews_promoted"
-      /> -->
+      <client-only>
+        <OpinionsSlider 
+          :slides="frontPageData.reviews_promoted"
+        />
+      </client-only>
     </SectionWrapper>
 
     <SectionWrapper
@@ -308,10 +312,12 @@
       container-class="bg-backgroundLight afterLogotypes"
       height-auto
     >
-      <!-- <LogoSlider
-        v-if="frontPageData.brands_slajder.length"
-        :slides="frontPageData.brands_slajder"
-      /> -->
+      <client-only>
+        <LogoSlider
+          v-if="frontPageData.brands_slajder.length"
+          :slides="frontPageData.brands_slajder"
+        />
+      </client-only>
     </SectionWrapper>
   </div>  
 </template>

@@ -62,43 +62,44 @@
         >
           Menu
         </button>
-
-        <scrollactive
-          v-if="sections.length > 0"
-          :class="{ 'is-active': menuVisible, 'is-top': !isTop }"
-          class="links list-inline justify-between align-items-stretch py-1 py-xs-0 md:items-center"
-          :offset="80"
-          :always-track="true"
-          :duration="600"
-        >
-          <nuxt-link
-            v-for="(section, index) in sections"
-            :key="index"
-            :ref="`#${section.id}`"
-            :class="{ 'is-top': !isTop }"
-            class="link scrollactive-item"
-            :to="`/#${section.id}`"
+        <client-only>
+          <scrollactive
+            v-if="sections.length > 0"
+            :class="{ 'is-active': menuVisible, 'is-top': !isTop }"
+            class="links list-inline justify-between align-items-stretch py-1 py-xs-0 md:items-center"
+            :offset="80"
+            :always-track="true"
+            :duration="600"
           >
-            {{ section.title }}
-          </nuxt-link>
-          <nuxt-link
-            class="md:flex hidden empty-link scrollactive-item"
-            :to="`/#x`"
-          />
-          <span class="link lg:-mr-8">
-            <a
-              v-if="$store.state.general.data.call_to_action_header"
-              :href="$store.state.general.data.call_to_action_header.button.hyperlink"
-              class="self-center button-primary block py-1 px-8 bg-main text-black font-medium text-micro hover:text-darkText xs:text-base lg:text-xl"
+            <nuxt-link
+              v-for="(section, index) in sections"
+              :key="index"
+              :ref="`#${section.id}`"
+              :class="{ 'is-top': !isTop }"
+              class="link scrollactive-item"
+              :to="`/#${section.id}`"
             >
-              <span 
-                class="hidden xs:flex"
+              {{ section.title }}
+            </nuxt-link>
+            <nuxt-link
+              class="md:flex hidden empty-link scrollactive-item"
+              :to="`/#x`"
+            />
+            <span class="link lg:-mr-8">
+              <a
+                v-if="$store.state.general.data.call_to_action_header"
+                :href="$store.state.general.data.call_to_action_header.button.hyperlink"
+                class="self-center button-primary block py-1 px-8 bg-main text-black font-medium text-micro hover:text-darkText xs:text-base lg:text-xl"
               >
-                {{ $store.state.general.data.call_to_action_header.button.title }}
-              </span>
-            </a>
-          </span>
-        </scrollactive>
+                <span 
+                  class="hidden xs:flex"
+                >
+                  {{ $store.state.general.data.call_to_action_header.button.title }}
+                </span>
+              </a>
+            </span>
+          </scrollactive>
+        </client-only>
       </div>
     </div>
   </component>
