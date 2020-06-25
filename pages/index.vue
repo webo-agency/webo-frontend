@@ -156,7 +156,7 @@
         :style="parallaxBackground"
       />
     </SectionWrapper>
-
+    <!--
     <SectionWrapper
       main-tag="section"
       :main-id="frontPageData.technology_settings.is_linkable"
@@ -187,11 +187,11 @@
           class="mb-10 w-full md:w-4/5"
           v-html="frontPageData.technology_settings.description"
         />
-        <!-- <TechnologyBlock
+        <TechnologyBlock
           class="md:absolute top-0 md:w-half-screen box-position"
           :technologies="frontPageData.technologies"
           :promoted-technologies="frontPageData.category_technology_promoted_list"
-        /> -->
+        />
       </div>
     </SectionWrapper>
     <SectionWrapper
@@ -319,8 +319,8 @@
         v-if="frontPageData.brands_slajder.length"
         :slides="frontPageData.brands_slajder"
       />
-    </SectionWrapper> 
-  </div>
+    </SectionWrapper> -->
+  </div>  
 </template>
 
 <script>  

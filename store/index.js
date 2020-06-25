@@ -31,6 +31,13 @@ export const getters = {}
 
 export const actions = {
    async nuxtServerInit({ dispatch }, { app }) {
+    // app.$wp.transport({
+    //   put: function( wpreq, data ) { 
+    //     filterData(data);
+    //     return wpreq;
+    //   },
+    // });
+    
     app.$wp.namespace( 'wp/v2' ).posts().categories(9).perPage(20).get().then(function(data){
       filterData(data);
       dispatch('reviews/init', data);
