@@ -3,14 +3,28 @@ require('dotenv').config();
 import { availableLanguage, defaultLanguage } from './languages.js';
 
 export default [
-  // {
-  //   src: "~/modules/bugsnag",
-  //   options: {
-  //     apiKey: "e84d63a6f7b1a2db9acda61d3dc7d892",
-  //     appType: "frontend",
-  //     releaseStage: process.env.CONTEXT || "developer"
-  //   }
-  // },
+  {
+    src: '@nuxtjs/dotenv', 
+    options:  { 
+      only: [
+        'API_URL',
+        'API_AFFIX',
+        'CONTEXT'
+      ]
+    },
+  },
+  {
+    src: "nuxt-bugsnag",
+    options: {
+      apiKey: "e84d63a6f7b1a2db9acda61d3dc7d892",
+      appType: "frontend",
+      reporterOptions: {
+        releaseStage: process.env.NODE_ENV,
+        autoAssignRelease: true
+      },
+      publishRelease: true
+    }
+  },
   {
     src: "@nuxtjs/axios",
     // options: {}
@@ -37,12 +51,11 @@ export default [
   {
     src: "@nuxtjs/pwa",
     options: {
-      // workbox: {
-      //   publicPath: '/static/',
-      // },
-      // manifest: {
-      //   publicPath: "/static/",
-      // },
+      workbox: {
+      },
+      manifest: {
+        display: 'browser'
+      },
       iconSrc: "~/assets/symbol.png",
       icon: {
         sizes: [512, 192, 380]
@@ -160,6 +173,27 @@ export default [
       html: true
     }
   },
+  { 
+    src: '@bazzite/nuxt-optimized-images',
+    options:  {
+      inlineImageLimit: -1,
+      handleImages: ['jpeg', 'png', 'svg', 'webp', 'gif'],
+      optimizeImages: true,
+      optimizeImagesInDev: false,
+      defaultImageLoader: 'img-loader',
+      mozjpeg: {
+        quality: 85
+      },
+      optipng: false,
+      pngquant: {
+        speed: 7,
+        quality: [0.65, 0.8]
+      },
+      webp: {
+        quality: 85
+      }
+    }
+  },
   {
     src: 'wp-nuxt', 
     options:  {
@@ -167,14 +201,5 @@ export default [
       endpoint: `${process.env.API_URL}${process.env.API_AFFIX}`
     },
   },
-  {
-    src: '@nuxtjs/dotenv', 
-    options:  { 
-      only: [
-        'API_URL',
-        'API_AFFIX',
-        'CONTEXT'
-      ]
-    },
-  }
+  
 ]

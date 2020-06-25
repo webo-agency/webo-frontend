@@ -52,9 +52,9 @@ export default {
   html :{
     minify: {
       collapseWhitespace: true,
-      conservativeCollapse: false,
-      collapseBooleanAttributes: false,
-      decodeEntities: false,
+      conservativeCollapse: true,
+      collapseBooleanAttributes: true,
+      decodeEntities: true,
       minifyCSS: true,
       minifyJS: true,
       processConditionalComments: true,
@@ -62,7 +62,7 @@ export default {
       removeRedundantAttributes: true,
       trimCustomFragments: true,
       useShortDoctype: true,
-      removeComments: false
+      removeComments: true
     }
   },
   postcss: {

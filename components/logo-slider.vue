@@ -21,11 +21,21 @@
               :title="entry.mark_logo.alt"
               target="_blank"
             >
-              <img
-                :src="entry.mark_logo.url"
-                :alt="entry.mark_logo.alt"
-                class="h-16 object-contain logo-slide-img"
-              >
+              <picture>
+                <source
+                  :data-srcset="`${entry.mark_logo.url}?webp`"
+                  type="image/webp"
+                >
+                <source
+                  :data-srcset="`${entry.mark_logo.url}`"
+                  type="image/png"
+                >
+                <img 
+                  :src="`${entry.mark_logo.url}?webp`" 
+                  class="h-16 object-contain logo-slide-img lazyload" 
+                  :alt="entry.mark_logo.alt"
+                >
+              </picture>
             </a>
             <img
               v-else
