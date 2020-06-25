@@ -30,22 +30,11 @@
   export default {
     async asyncData ({ app , params, payload }) {
 
-      if(!payload || typeof payload == 'undefined'){
-         return { 
-            api: {data: {acf: {page_title: '', page_image: '', }}},
-          }
-      }
-
-      if (payload) {
+      if (payload && payload.data && payload.data.acf && payload.data.acf.page_title && payload.data.acf.page_image) {
         return { 
           api: payload 
         }
       } else {
-        // // pages: 'en', pathMatch: 'demo'
-        // console.log(params); // eslint-disable-line  
-        // let xdata = await app.$wp.pages().slug(params.pathMatch).param('lang', params.pages);
-        // console.log(JSON.stringify(xdata)); // eslint-disable-line  
-
         let data = await app.$wp.posts().slug(params.pathMatch).param('lang', params.pages);
         if(data != ''){
           removeEmpty(data[0]);
@@ -53,25 +42,11 @@
             api: data[0],
           }
         } else {
-          data = await app.$wp.pages().slug(params.pathMatch).param('lang', params.pages);
-          if(data != ''){
-            removeEmpty(data[0]);
-            data.content = '';
-            if(data.acf == ''){
-              data.acf = {page_title: '', page_image: '', };
-            }
-            return { 
-              api: data,
-            }
-          } else {
-            data.acf = {page_title: '', page_image: '', };
+          return { 
+            api: {data: {acf: {page_title: '', page_image: '', }}},
           }
         }
-      
-        return { 
-          api: data[0],
-        }
       }
-    },
+    }
   };
 </script>
