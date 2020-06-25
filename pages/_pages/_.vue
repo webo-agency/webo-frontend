@@ -29,6 +29,13 @@
 
   export default {
     async asyncData ({ app , params, payload }) {
+
+      if(!payload || typeof payload == 'undefined'){
+         return { 
+            api: {data: {acf: {page_title: '', page_image: '', }}},
+          }
+      }
+
       if (payload) {
         return { 
           api: payload 
