@@ -111,7 +111,7 @@
         {{ frontPageData.process_settings.description }}
       </p>
       <div 
-        v-if="frontPageData.process_list.length"
+        v-show="frontPageData.process_list.length"
         class="w-10/12 flex flex-row flex-wrap"
       >
         <InformationBlock 
@@ -183,7 +183,6 @@
           :list="frontPageData.technology_promoted_list"
         />
         <p
-          v-if="frontPageData.technology_settings.description"
           class="mb-10 w-full md:w-4/5"
           v-html="frontPageData.technology_settings.description"
         />
@@ -196,7 +195,6 @@
     </SectionWrapper>
     
     <SectionWrapper
-      v-if="frontPageData != ''"
       main-tag="section"
       :main-id="frontPageData.company_settings.is_linkable"
       :main-title="frontPageData.company_settings.is_linkable ? frontPageData.company_settings.title : ''"
@@ -215,7 +213,6 @@
           class="absolute h-full rounded-lg z-10 object-cover img-list-left"
         >
         <p
-          v-if="frontPageData.company_settings.description"
           class="mb-10 w-full md:w-1/2 lg:w-1/3"
           v-html="frontPageData.company_settings.description"
         />
@@ -244,7 +241,6 @@
     </div>
 
     <SectionWrapper
-      v-if="frontPageData != ''"
       main-tag="div"
       :main-id="frontPageData.projects_settings.is_linkable"
       :main-title="frontPageData.projects_settings.is_linkable ? frontPageData.projects_settings.title : ''"
@@ -260,7 +256,6 @@
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
       <p 
-        v-if="frontPageData.projects_settings.description"
         class="mb-10 w-full md:w-1/2 lg:w-1/3"
         v-html="frontPageData.projects_settings.description"
       />
@@ -276,7 +271,6 @@
     </SectionWrapper>
 
     <SectionWrapper
-      v-if="frontPageData != ''"
       :main-disabled="true"
       main-tag="div"
       :main-id="frontPageData.reviews_settings.is_linkable"
@@ -293,7 +287,6 @@
     </SectionWrapper>
 
     <SectionWrapper
-      v-if="frontPageData.reviews_promoted.length"
       main-tag="div"
       class="overflow-hidden bg-white"
       :height-auto="true"
@@ -310,7 +303,6 @@
     </SectionWrapper>
 
     <SectionWrapper
-      v-if="frontPageData.brands_slajder.length"
       main-tag="div"
       class="overflow-hidden"
       container-class="bg-backgroundLight afterLogotypes"
