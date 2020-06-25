@@ -90,7 +90,7 @@
         />
       </div>
     </SectionWrapper>
-
+<!-- 
     <SectionWrapper
       main-tag="section"
       :main-id="frontPageData.process_settings.is_linkable"
@@ -320,7 +320,7 @@
         v-if="frontPageData.brands_slajder.length"
         :slides="frontPageData.brands_slajder"
       />
-    </SectionWrapper>
+    </SectionWrapper> -->
   </div>
 </template>
 
