@@ -49,42 +49,42 @@ export default {
     delete vueRule.loader;
     delete vueRule.options;
   },
-  // html :{ //Wysypana stopka jak włączone !! Nie włączać bez testów
-  //   minify: {
-  //     collapseWhitespace: true,
-  //     conservativeCollapse: false,
-  //     collapseBooleanAttributes: false,
-  //     decodeEntities: false,
-  //     minifyCSS: true,
-  //     minifyJS: true,
-  //     processConditionalComments: true,
-  //     removeEmptyAttributes: true,
-  //     removeRedundantAttributes: true,
-  //     trimCustomFragments: true,
-  //     useShortDoctype: true,
-  //     removeComments: false
-  //   }
-  // },
+  html :{
+    minify: {
+      collapseWhitespace: true,
+      conservativeCollapse: false,
+      collapseBooleanAttributes: false,
+      decodeEntities: false,
+      minifyCSS: true,
+      minifyJS: true,
+      processConditionalComments: true,
+      removeEmptyAttributes: true,
+      removeRedundantAttributes: true,
+      trimCustomFragments: true,
+      useShortDoctype: true,
+      removeComments: false
+    }
+  },
   postcss: {
     'postcss-nested': {},
     'postcss-responsive-type': {}
   },
-  // terser: {
-  //   parallel: true,
-  //   cache: false,
-  //   sourceMap: false,
-  //   extractComments: {
-  //     filename: 'LICENSES',
-  //     banner: () => {
-  //       return false;
-  //     },
-  //   },
-  //   terserOptions: {
-  //     mangle: true,
-  //     compress: true,
-  //     output: {
-  //       comments: /^\**!|@preserve|@license|@cc_on/,
-  //     }
-  //   }
-  // }
+  terser: {
+    parallel: true,
+    cache: false,
+    sourceMap: false,
+    extractComments: {
+      filename: 'LICENSES',
+      banner: () => {
+        return false;
+      },
+    },
+    terserOptions: {
+      mangle: true,
+      compress: true,
+      output: {
+        comments: /^\**!|@preserve|@license|@cc_on/,
+      }
+    }
+  }
 }
