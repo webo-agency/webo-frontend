@@ -80,8 +80,6 @@ export default {
       },
     },
     terserOptions: {
-      mangle: true,
-      compress: true,
       output: {
         comments: /^\**!|@preserve|@license|@cc_on/,
       }
