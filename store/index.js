@@ -31,39 +31,40 @@ export const getters = {}
 
 export const actions = {
    async nuxtServerInit({ dispatch }, { app }) {
-    // app.$wp.transport({
-    //   put: function( wpreq, data ) { 
-    //     filterData(data);
-    //     return wpreq;
-    //   },
-    // });
+    await app.$wp.transport({
+      put: function( wpreq, data ) { 
+        console.log(data); // eslint-disable-line
+        filterData(data);
+        return wpreq;
+      },
+    });
     
-    app.$wp.namespace( 'wp/v2' ).posts().categories(9).perPage(20).get().then(function(data){
+    await app.$wp.namespace( 'wp/v2' ).posts().categories(9).perPage(20).get().then(function(data){
       filterData(data);
       dispatch('reviews/init', data);
     }); 
 
-    app.$wp.namespace( 'menus/v1' ).locations().id('primary').then(function(data){
+    await app.$wp.namespace( 'menus/v1' ).locations().id('primary').then(function(data){
       filterData(data);
       dispatch('menu/initCompany', data);
     }); 
 
-    app.$wp.namespace( 'menus/v1' ).locations().id('social').then(function(data){
+    await app.$wp.namespace( 'menus/v1' ).locations().id('social').then(function(data){
       filterData(data);
       dispatch('menu/initSocialMedia', data);
     }); 
 
-    app.$wp.namespace( 'menus/v1' ).locations().id('footer').then(function(data){
+    await app.$wp.namespace( 'menus/v1' ).locations().id('footer').then(function(data){
       filterData(data);
       dispatch('menu/initServices', data);
     }); 
   
-    app.$wp.namespace( 'acf/v3' ).options().id('options').then(function(data){
+    await app.$wp.namespace( 'acf/v3' ).options().id('options').then(function(data){
       filterData(data);
       dispatch('general/init', data.acf);
     }); 
 
-    app.$wp.namespace( 'wp/v2' ).technology().perPage(20).get().then(function(data){
+    await app.$wp.namespace( 'wp/v2' ).technology().perPage(20).get().then(function(data){
       filterData(data);
       dispatch('technology/initTechnology', data);
     }); 
