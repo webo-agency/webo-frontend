@@ -2,7 +2,7 @@ import {
     isEmpty as _isEmpty
 } from 'lodash'
 
-const filterWords = ['$yoast', 'meta', '{}'];
+const filterWords = ['yoast_head', 'meta', '{}'];
 
 const filterData = obj => {
   Object.keys(obj).forEach(key => {

@@ -3,7 +3,7 @@
     :is="mainTag"
     :id="mainId"
     :disabled="mainDisabled"
-    :class="{'min-h-mobile-screen' : !heightAuto, 'relative': true}"
+    :class="{'lg:min-h-mobile-screen' : !heightAuto, 'relative': true}"
     v-bind="$attrs"
   >
     <div 
