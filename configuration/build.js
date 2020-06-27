@@ -80,7 +80,6 @@ export default {
   },
   terser: {
     parallel: true,
-    mangle: true,
     cache: false,
     sourceMap: false,
     extractComments: {
@@ -89,7 +88,7 @@ export default {
         return false;
       },
     },
-    terserOptions: {
+    terserOptions: { 
       output: {
         comments: /^\**!|@preserve|@license|@cc_on/,
       }
