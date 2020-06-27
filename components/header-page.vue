@@ -5,13 +5,11 @@
     :class="mainClass"
     :style="`background-image: url(${image});background-blend-mode: overlay;background-color: rgba(0, 0, 0, 0.8);background-attachment: fixed;background-size: cover;`"
   >
-    <client-only>
-      <h1
-        v-if="title"
-        class="em-custom font-extrabold container text-5xl lg:text-7xl leading-none text-white"
-        v-html="$md.renderInline(title)"
-      />
-    </client-only>
+    <h1
+      v-if="title"
+      class="em-custom font-extrabold container text-5xl lg:text-7xl leading-none text-white"
+      v-html="$md.renderInline(title)"
+    />
   </component>
 </template>
 
