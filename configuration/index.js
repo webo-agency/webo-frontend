@@ -89,7 +89,9 @@ export default {
    */
   generate: generate.default,
   render: {
-    compressor: true,
+    compressor: {
+      level: 9
+    },
     bundleRenderer: {
       directives: {
          t: require("vue-i18n-extensions").directive
