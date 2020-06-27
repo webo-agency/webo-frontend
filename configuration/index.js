@@ -78,15 +78,31 @@ export default {
   //     push: true,
   //     gzip: 9
   //   },
-  //   // bundleRenderer: {
-  //   //   directives: {
-  //   //     // t: require("vue-i18n-extensions").directive
-  //   //   }
-  //   // }
+    // bundleRenderer: {
+    //   directives: {
+    //     // t: require("vue-i18n-extensions").directive
+    //   }
+    // }
   // },
   /*
    ** Generate SSR
    */
   generate: generate.default,
+  render: {
+    compressor: true,
+    bundleRenderer: {
+      directives: {
+         t: require("vue-i18n-extensions").directive
+      }
+    },
+    http2:{
+      push: true,
+      pushAssets: (req, res, publicPath, preloadFiles) => preloadFiles
+      .filter(f => f.asType === 'script' && f.file === 'runtime.js')
+      .map(f => `<${publicPath}${f.file}>; rel=preload; crossorigin=anonymous; as=${f.asType}`)
+    },
+    injectScripts: false,
+    crossorigin: 'anonymous'
+  },
   telemetry: false
 };

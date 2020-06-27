@@ -92,7 +92,7 @@ export default [
       mergeSecurityHeaders: true,
       headers: {
         '/static/*': [
-          'Cache-Control: public, max-age=31557600'
+          'Cache-Control: public, max-age=31557600',
         ],
         '/static/*.css': [
           'Cache-Control: public, max-age=31557600'
@@ -149,10 +149,10 @@ export default [
     src: "nuxt-netlify-http2-server-push",
     options: {
       resources: [
-        { path: 'favicon.ico', as: 'image' },
-        { path: 'static/*.js', as: 'script' },
-        { path: 'static/*.css', as: 'style' },
-        { path: 'static/images/img/*.gif', as: 'image' },
+        { path: 'favicon.ico', as: 'image', crossorigin: 'anonymous' },
+        { path: 'static/*.js', as: 'script', crossorigin: 'anonymous' },
+        { path: 'static/*.css', as: 'style', crossorigin: 'anonymous' },
+        { path: 'static/images/img/*.gif', as: 'image', crossorigin: 'anonymous' },
         { path: 'static/fonts/*.woff', as: 'font', type: 'font/woff', crossorigin: 'anonymous' },
         { path: 'static/fonts/*.woff2', as: 'font', type: 'font/woff2', crossorigin: 'anonymous' },
       ]
