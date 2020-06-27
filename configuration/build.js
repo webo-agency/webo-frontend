@@ -31,6 +31,16 @@ export default {
       });
     }
 
+    // config.module.rules.push({
+    //   test: /\.(postcss)$/,
+    //   use: [
+    //     'css-loader',
+    //     {
+    //       loader: 'postcss-loader'
+    //     }
+    //   ]
+    // });
+
     // if (isDev) {
     //   config.devtool = isClient ? "eval-source-map" : "inline-source-map";
     // }
@@ -56,11 +66,11 @@ export default {
       tailwindcss: join(__dirname, '..', 'tailwind.config.js'),
       'postcss-import': {},
       'postcss-url': {},
+      'postcss-nested': {},
+      'postcss-responsive-type': {},
       'postcss-preset-env': this.preset,
       'cssnano': { preset: 'default' }
     },
-    'postcss-nested': {},
-    'postcss-responsive-type': {}
   },
   html: {
     minify: {

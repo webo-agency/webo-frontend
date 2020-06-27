@@ -257,7 +257,7 @@
   };
 </script>
 
-<style lang="scss">
+<style lang="postcss">
 
   .background-shape-4 {
     display: none;

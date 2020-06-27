@@ -43,8 +43,7 @@
   };
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
   .rightTransparency {
     position: absolute;
     top: 0;

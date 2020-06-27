@@ -98,7 +98,7 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 
   .logo-slide-img {
     filter: grayscale(100%) brightness(167%) contrast(0%);

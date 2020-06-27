@@ -379,7 +379,7 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
   .parallax-background{
     left: 15px;
     filter: brightness(0.5);

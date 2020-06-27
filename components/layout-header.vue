@@ -181,7 +181,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .header {
   position: relative;
   display: none;

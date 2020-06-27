@@ -232,7 +232,7 @@
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 .contact {
   display: flex;
   flex-direction: row;

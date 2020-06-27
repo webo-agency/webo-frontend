@@ -178,7 +178,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
   .em-custom >>> em{
     @apply not-italic;
     @apply text-main;
@@ -192,12 +192,10 @@ export default {
     width: 11px;
   }
 
-  .service {
-    .artblock {
+  .service .artblock {
       background-color: #F9F9F9;
       position: relative;
       overflow: hidden;
-    }
   }
 
   .gray-bg {

@@ -95,7 +95,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="postcss" scoped>
 
   .empty-opinion-space {
     display: none;
