@@ -96,8 +96,9 @@ body{
     }
 }
 
-@supports (-webkit-touch-callout: none) {
+// Fix for iOS mobile
+@media (max-width: 1360px) {
     .bg-fixes{
-        background-attachment: scroll;
+        background-attachment: initial;
     }
 }
