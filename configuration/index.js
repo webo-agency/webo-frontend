@@ -103,7 +103,6 @@ export default {
       .filter(f => f.asType === 'script' && f.file === 'runtime.js')
       .map(f => `<${publicPath}${f.file}>; rel=preload; crossorigin=anonymous; as=${f.asType}`)
     },
-    injectScripts: false,
     crossorigin: 'anonymous'
   },
   telemetry: false
