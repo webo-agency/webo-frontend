@@ -23,6 +23,7 @@ export default {
 
         res.map(singleResponse => {
           singleResponse.data.forEach((page) => {
+            if(!page.link.includes(rootRequest.data.home))
              _routeArray.push({
               route: `${page.link.replace(rootRequest.data.home,"").replace(/\/$/, "")}`, //SLUG FIX - No translation at the moment available from WP Multilanguage
               name: `${page.slug}___${singleResponse.config.code}`,

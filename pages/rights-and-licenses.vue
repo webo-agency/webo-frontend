@@ -10,7 +10,8 @@
         <li>
           Pliki JS -> <a 
             ref="noreferrer nofollow"
-            href="/static/LICENSES"
+            href="https://www.webo.agency/static/LICENSES"
+            rel="noopener noreferrer"
             target="_blank"
           >LICENCJE</a>
         </li>
