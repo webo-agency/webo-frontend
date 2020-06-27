@@ -37,6 +37,13 @@ jobs:
         with:
           args: deploy --dir=public --prod
 
+      - name: Purge cache
+        uses: jakejarvis/cloudflare-purge-action@master
+        if: success()
+        env:
+          CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+
       - name: Discord notification - failure
         uses: Ilshidur/action-discord@0.0.2
         env:
