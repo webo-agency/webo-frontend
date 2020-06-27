@@ -11,13 +11,17 @@
         v-if="positionHeader"
         class="text-main not-italic font-bold"
       >{{ !numberHeader ? '-' : (numberHeader > 9 ? numberHeader : '0' + numberHeader ) }}/ </em>
-      <span v-html="subtitleFormatted" />
+      <client-only>
+        <span v-html="subtitleFormatted" />
+      </client-only>
     </h2>
-    <h1
-      :class="titleClass"
-      class="em-custom font-extrabold"
-      v-html="titleFormatted"
-    />
+    <client-only>
+      <h1
+        :class="titleClass"
+        class="em-custom font-extrabold"
+        v-html="titleFormatted"
+      />
+    </client-only>
   </component>
 </template>
 

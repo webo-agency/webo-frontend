@@ -4,10 +4,12 @@
     v-if="content"
     :class="mainClass"
   >
-    <div
-      class="content container mb-5 md:mb-10 lg:mb-20"
-      v-html="content"
-    />
+    <client-only>
+      <div
+        class="content container mb-5 md:mb-10 lg:mb-20"
+        v-html="content"
+      />
+    </client-only>
   </component>
 </template>
 

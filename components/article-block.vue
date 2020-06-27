@@ -15,20 +15,22 @@
           'xs:ml-6': list.length
         }"
       >
-      <h1
-        class="mb-4 text-base leading-tight"
-        :class="{
-          'md:text-2xl font-medium' : !ctaType,
-          'md:text-3xl em-custom font-bold' : ctaType,
-          'xs:ml-6': list.length
-        }"
-        v-html="$md.renderInline(header)"
-      />
-      <p
-        v-if="paragraph != ''"
-        class="mb-4 text-xs md:text-base leading-tight"
-        v-html="$md.renderInline(paragraph)"
-      />
+      <client-only>
+        <h1
+          class="mb-4 text-base leading-tight"
+          :class="{
+            'md:text-2xl font-medium' : !ctaType,
+            'md:text-3xl em-custom font-bold' : ctaType,
+            'xs:ml-6': list.length
+          }"
+          v-html="$md.renderInline(header)"
+        />
+        <p
+          v-if="paragraph != ''"
+          class="mb-4 text-xs md:text-base leading-tight"
+          v-html="$md.renderInline(paragraph)"
+        />
+      </client-only>
       <ul class="flex flex-col font-medium list-dash mb-5 break-all xs:break-normal text-xs xs:text-base">
         <li
           v-for="(item, index) in list"

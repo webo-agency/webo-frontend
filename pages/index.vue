@@ -214,10 +214,12 @@
           :alt="frontPageData.company_graphic.alt"
           class="absolute h-full rounded-lg z-10 object-cover img-list-left"
         >
-        <p
-          class="mb-10 w-full md:w-1/2 lg:w-1/3"
-          v-html="frontPageData.company_settings.description"
-        />
+        <client-only>
+          <p
+            class="mb-10 w-full md:w-1/2 lg:w-1/3"
+            v-html="frontPageData.company_settings.description"
+          />
+        </client-only>
         <article-list
           :articles="frontPageData.company_promoted"
           :more="frontPageData.company_promoted_single.homepage"
@@ -257,10 +259,12 @@
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
         class="w-full md:w-1/3 mb-8 lg:pr-10"
       />
-      <p 
-        class="mb-10 w-full md:w-1/2 lg:w-1/3"
-        v-html="frontPageData.projects_settings.description"
-      />
+      <client-only>
+        <p 
+          class="mb-10 w-full md:w-1/2 lg:w-1/3"
+          v-html="frontPageData.projects_settings.description"
+        />
+      </client-only>
       <img
         src="~assets/slice1.svg"
         alt="shape"
