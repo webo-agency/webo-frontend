@@ -25,7 +25,7 @@
         v-html="$md.renderInline(header)"
       />
       <p
-        v-if="paragraph != ''"
+        v-show="paragraph != ''"
         class="mb-4 text-xs md:text-base leading-tight"
         v-html="$md.renderInline(paragraph)"
       />
@@ -39,7 +39,7 @@
         </li>
       </ul>
       <a
-        v-if="link != '' || link != ''"
+        v-show="link != ''"
         class="text-main font-bold relative"
         :href="link"
         :class="[ctaType !== '' ? 'text-xl' : 'text-xs', { 'xs:ml-6' : list.length }]"
@@ -60,7 +60,7 @@
         /></svg>
       </a>
       <img
-        v-if="articleType === 'service'"
+        v-show="articleType === 'service'"
         :src="require('~/assets/icons/' + icon)"
         :alt="iconAlt"
         class="mb-4 w-auto h-12 gray-bg"

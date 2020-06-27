@@ -5,7 +5,6 @@
     class="footer text-white pt-2 xs:pt-8 relative overflow-hidden"
   >
     <SectionWrapper
-      v-if="footerData != ''"
       main-tag="div"
       :main-title="footerData.call_to_action_section.title"
       class="bg-backgroundDark text-lightText"
@@ -115,7 +114,7 @@
               :title="item.title"
             >
               <svg
-                v-if="item.icon.value === 'fb'"
+                v-show="item.icon.value === 'fb'"
                 width="30"
                 height="30"
                 viewBox="0 0 4 7"
@@ -137,7 +136,7 @@
               </svg>
 
               <svg
-                v-if="item.icon.value === 'in'"
+                v-show="item.icon.value === 'in'"
                 width="30"
                 height="30"
                 viewBox="0 0 7 7"
@@ -161,7 +160,7 @@
               </svg>
 
               <svg
-                v-if="item.icon.value === 'li'"
+                v-show="item.icon.value === 'li'"
                 width="30"
                 height="30"
                 viewBox="0 0 24 24"
