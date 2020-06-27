@@ -32,8 +32,9 @@ export default {
     GOOGLE_FONTS: 'Montserrat:400,500,700,800:latin,latin-ext&display=swap'
   },
   globalName: process.env.NAME,
+  components: true,
   head: head.default,
-  modern: !process.env.NODE_ENV !== 'production' && 'client',
+  // modern: !process.env.NODE_ENV !== 'production' && 'client',
   /*
    ** Modulesc
    */
@@ -61,10 +62,6 @@ export default {
     globPatterns: ["**/*.{js,css,html,png}"],
     dev: false
   },
-  buildModules: [
-    // TODO: Remove when upgrading to nuxt 2.13+
-    '@nuxt/components'
-  ],
   /*
    ** Build configuration
    */
@@ -93,6 +90,6 @@ export default {
    ** Generate SSR
    */
   generate: generate.default,
-  mode: 'spa',
+  target: 'static',
   telemetry: false
 };

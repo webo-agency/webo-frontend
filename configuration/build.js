@@ -1,5 +1,4 @@
 import { join } from 'path'
-var StringReplacePlugin = require("string-replace-webpack4-plugin");
 
 export default {
   extractCSS: true,
@@ -22,21 +21,6 @@ export default {
     if (isClient && !isDev) {
       config.optimization.splitChunks.maxSize = 250000
     }
-
-    config.module.rules.push({ 
-      test: /\.html$/,
-      exclude: /app.html||node_modules||static/,
-      loader: StringReplacePlugin.replace({
-          replacements: [
-              {
-                  pattern: /<\/html>.*/gmi,
-                  replacement: function () {
-                      return '</html>';
-                  }
-              }
-          ]})
-      });
-  
 
     if (isDev) {
       config.module.rules.push({
@@ -93,8 +77,5 @@ export default {
         comments: /^\**!|@preserve|@license|@cc_on/,
       }
     }
-  },
-  plugins: [
-    new StringReplacePlugin()
-  ]
+  }
 }
