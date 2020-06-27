@@ -62,6 +62,22 @@ export default {
     'postcss-nested': {},
     'postcss-responsive-type': {}
   },
+  html: {
+    minify: {
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      collapseBooleanAttributes: true,
+      decodeEntities: true,
+      minifyCSS: true,
+      minifyJS: true,
+      processConditionalComments: true,
+      removeEmptyAttributes: true,
+      removeRedundantAttributes: true,
+      trimCustomFragments: true,
+      useShortDoctype: true,
+      removeComments: true
+    }
+  },
   terser: {
     parallel: true,
     cache: false,
