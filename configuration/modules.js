@@ -51,7 +51,7 @@ export default [
   {
     src: "@nuxtjs/pwa",
     options: {
-      workbox: false,
+      workbox: {},
       manifest: {
         display: 'browser'
       },
