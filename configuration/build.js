@@ -1,4 +1,5 @@
 import { join } from 'path'
+var StringReplacePlugin = require("string-replace-webpack4-plugin");
 
 export default {
   extractCSS: true,
@@ -21,6 +22,21 @@ export default {
     if (isClient && !isDev) {
       config.optimization.splitChunks.maxSize = 250000
     }
+
+    config.module.rules.push({ 
+      test: /\.html$/,
+      exclude: /app.html||node_modules||static/,
+      loader: StringReplacePlugin.replace({
+          replacements: [
+              {
+                  pattern: /<\/html>.*/gmi,
+                  replacement: function () {
+                      return '</html>';
+                  }
+              }
+          ]})
+      });
+  
 
     if (isDev) {
       config.module.rules.push({
@@ -51,22 +67,6 @@ export default {
     delete vueRule.loader;
     delete vueRule.options;
   },
-  html :{
-    minify: {
-      collapseWhitespace: true,
-      conservativeCollapse: true,
-      collapseBooleanAttributes: true,
-      decodeEntities: true,
-      minifyCSS: true,
-      minifyJS: true,
-      processConditionalComments: true,
-      removeEmptyAttributes: true,
-      removeRedundantAttributes: true,
-      trimCustomFragments: true,
-      useShortDoctype: true,
-      removeComments: true
-    }
-  },
   postcss: {
     plugins: {
       tailwindcss: join(__dirname, '..', 'tailwind.config.js'),
@@ -93,5 +93,8 @@ export default {
         comments: /^\**!|@preserve|@license|@cc_on/,
       }
     }
-  }
+  },
+  plugins: [
+    new StringReplacePlugin()
+  ]
 }
