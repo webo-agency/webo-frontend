@@ -53,12 +53,12 @@ export default {
   },
   html :{
     minify: {
-      collapseWhitespace: true,
+      // collapseWhitespace: true,
       conservativeCollapse: false,
       collapseBooleanAttributes: false,
       decodeEntities: false,
       minifyCSS: true,
-      minifyJS: true,
+      // minifyJS: true,
       processConditionalComments: true,
       removeEmptyAttributes: true,
       removeRedundantAttributes: true,
@@ -78,20 +78,20 @@ export default {
     'postcss-nested': {},
     'postcss-responsive-type': {}
   },
-  terser: {
-    parallel: true,
-    cache: false,
-    sourceMap: false,
-    extractComments: {
-      filename: 'LICENSES',
-      banner: () => {
-        return false;
-      },
-    },
-    terserOptions: {
-      output: {
-        comments: /^\**!|@preserve|@license|@cc_on/,
-      }
-    }
-  }
+  // terser: {
+  //   parallel: true,
+  //   cache: false,
+  //   sourceMap: false,
+  //   extractComments: {
+  //     filename: 'LICENSES',
+  //     banner: () => {
+  //       return false;
+  //     },
+  //   },
+  //   terserOptions: {
+  //     output: {
+  //       comments: /^\**!|@preserve|@license|@cc_on/,
+  //     }
+  //   }
+  // }
 }
