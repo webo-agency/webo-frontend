@@ -51,6 +51,22 @@ export default {
     delete vueRule.loader;
     delete vueRule.options;
   },
+  html :{
+    minify: {
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      collapseBooleanAttributes: true,
+      decodeEntities: true,
+      minifyCSS: true,
+      minifyJS: true,
+      processConditionalComments: true,
+      removeEmptyAttributes: true,
+      removeRedundantAttributes: true,
+      trimCustomFragments: true,
+      useShortDoctype: true,
+      removeComments: true
+    }
+  },
   postcss: {
     plugins: {
       tailwindcss: join(__dirname, '..', 'tailwind.config.js'),
@@ -64,6 +80,7 @@ export default {
   },
   terser: {
     parallel: true,
+    mangle: true,
     cache: false,
     sourceMap: false,
     extractComments: {
