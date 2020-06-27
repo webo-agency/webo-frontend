@@ -10,13 +10,13 @@
         alt="iconAlt"
         class="mb-4 w-auto h-12 ml-5"
       >
-      <client-only>
-        <h1
-          class="mb-4 ml-2 lg:ml-5 text-base leading-tight md:text-2xl font-bold em-custom"
-          :class="isBlockSimple ? 'w-full lg:w-1/2 self-center' : 'w-auto'"
-          v-html="titleFormatted"
-        />
-      </client-only>
+    
+      <h1
+        class="mb-4 ml-2 lg:ml-5 text-base leading-tight md:text-2xl font-bold em-custom"
+        :class="isBlockSimple ? 'w-full lg:w-1/2 self-center' : 'w-auto'"
+        v-html="titleFormatted"
+      />
+
       <p
         v-if="description.length !== 0"
         class="mb-4 text-xs md:text-base leading-tight relative z-10 ml-2"
