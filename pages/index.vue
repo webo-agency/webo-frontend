@@ -224,21 +224,24 @@
       </div>
     </SectionWrapper>
 
-    <div class="bg-backgroundDark">
-      <img 
-        alt="Proces - in nutshell"
-        src="~assets/section_360px.svg"
-        class="lg:hidden w-full"
-        width="100%"
-      >
-
-      <img 
-        alt="Proces - big view"
-        src="~assets/section_1920px.svg"
-        class="hidden lg:block w-full"
-        width="100%"
-      >
-    </div>
+    <SectionWrapper
+      main-tag="section"
+      class="counters"
+      :main-title="'Webo w liczbach'"
+    > 
+      <div class="md:pl-20 text-white">
+        <SectionHeader 
+          :number-header="4"
+          :title="'Webo w <em>liczbach</em>'"
+          title-class="'text-small-header'"
+          class="w-full md:w-2/3 mb-8 lg:pr-10 text-white"
+        />
+        <p class="mb-10 w-full md:w-1/2 lg:w-1/3">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+        </p>
+        <CountersList :counters="counters" />
+      </div>
+    </SectionWrapper>
 
     <SectionWrapper
       main-tag="div"
@@ -332,6 +335,14 @@
           service: 'service',
           default: 'default',
         },
+        counters: [
+          { id: 0, count: '+50', title: 'Wykonanych projektów' },
+          { id: 1, count: '10', title: 'Lat doświadczenia' },
+          { id: 2, count: '8', title: 'Firm i instytucji,<br> które wspieramy' },
+          { id: 3, count: '20', title: 'Wspieranych rozwiązań Open Source' },
+          { id: 4, count: '500', title: 'Godzin zaoszczędzonych na automatyzacji' },
+          { id: 5, count: '1500', title: 'Wybronionych ataków na infrastrukturę' }
+        ]
       };
     },
     computed: {
@@ -454,6 +465,22 @@
     @media (min-width: 768px) {
       top: 0;
       transform: translate(-6%, 58%);
+    }
+  }
+
+  .counters {
+    background: url('~assets/counters-mobile.svg') no-repeat;
+    background-position: 100% center;
+    background-size: cover;
+    
+    @media (min-width: 768px) {
+      background: url('~assets/counters.svg') no-repeat;
+      background-position: 69% center;
+      background-size: cover;
+    }
+
+    @media (min-width: 1500px) {
+      background-position: center;
     }
   }
 </style>
