@@ -1,3 +1,5 @@
+var WPAPI = require( 'wpapi' );
+
 import {
     isEmpty as _isEmpty
 } from 'lodash'
@@ -30,37 +32,52 @@ export const mutations = {}
 export const getters = {}
 
 export const actions = {
-   async nuxtServerInit({ dispatch }, { app }) {
-    
-    await app.$wp.namespace( 'wp/v2' ).posts().categories(9).perPage(20).get().then(function(data){
-      filterData(data);
-      dispatch('reviews/init', data);
-    }); 
+  async nuxtServerInit({ dispatch }, { app, env }) {
+    app.$wp = await WPAPI.discover( `${env.API_URL}${env.API_AFFIX}` );
 
-    await app.$wp.namespace( 'menus/v1' ).locations().id('primary').then(function(data){
-      filterData(data);
-      dispatch('menu/initCompany', data);
-    }); 
-
-    await app.$wp.namespace( 'menus/v1' ).locations().id('social').then(function(data){
-      filterData(data);
-      dispatch('menu/initSocialMedia', data);
-    }); 
-
-    await app.$wp.namespace( 'menus/v1' ).locations().id('footer').then(function(data){
-      filterData(data);
-      dispatch('menu/initServices', data);
-    }); 
-  
-    await app.$wp.namespace( 'acf/v3' ).options().id('options').then(function(data){
-      filterData(data);
-      dispatch('general/init', data.acf);
-    }); 
-
-    await app.$wp.namespace( 'wp/v2' ).technology().perPage(20).get().then(function(data){
-      filterData(data);
-      dispatch('technology/initTechnology', data);
-    }); 
-    
+    return Promise.all([
+      new Promise((resolve) => {
+        app.$wp.namespace( 'wp/v2' ).posts().categories(9).perPage(20).get().then(function(data){
+          filterData(data);
+          dispatch('reviews/init', data);
+          resolve();
+        })
+      }),
+      new Promise((resolve) => {
+        app.$wp.namespace( 'menus/v1' ).locations().id('primary').then(function(data){
+          filterData(data);
+          dispatch('menu/initCompany', data);
+          resolve();
+        })
+      }),
+      new Promise((resolve) => {
+        app.$wp.namespace( 'menus/v1' ).locations().id('social').then(function(data){
+          filterData(data);
+          dispatch('menu/initSocialMedia', data);
+          resolve();
+        })
+      }),
+      new Promise((resolve) => {
+        app.$wp.namespace( 'menus/v1' ).locations().id('footer').then(function(data){
+          filterData(data);
+          dispatch('menu/initServices', data);
+          resolve();
+        })
+      }),
+      new Promise((resolve) => {
+        app.$wp.namespace( 'acf/v3' ).options().id('options').then(function(data){
+          filterData(data);
+          dispatch('general/init', data.acf);
+          resolve();
+        })
+      }),
+      new Promise((resolve) => {
+        app.$wp.namespace( 'wp/v2' ).technology().perPage(20).get().then(function(data){
+          filterData(data);
+          dispatch('technology/initTechnology', data);
+          resolve();
+        })
+      })
+    ])
   },
 }

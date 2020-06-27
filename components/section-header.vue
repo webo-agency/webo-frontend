@@ -12,16 +12,14 @@
         class="text-main not-italic font-bold"
       >{{ !numberHeader ? '-' : (numberHeader > 9 ? numberHeader : '0' + numberHeader ) }}/ </em>
 
-        <span v-html="subtitleFormatted" />
-
+      <span v-html="subtitleFormatted" />
     </h2>
 
-      <h1
-        :class="titleClass"
-        class="em-custom font-extrabold"
-        v-html="titleFormatted"
-      />
- 
+    <h1
+      :class="titleClass"
+      class="em-custom font-extrabold"
+      v-html="titleFormatted"
+    />
   </component>
 </template>
 

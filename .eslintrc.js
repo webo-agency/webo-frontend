@@ -15,4 +15,7 @@ module.exports = {
   plugins: [
     "vue"
   ],
+  rules: {
+    "vue/no-v-html": "off"
+  }
 };

@@ -200,5 +200,7 @@ export default [
       endpoint: `${process.env.API_URL}${process.env.API_AFFIX}`
     },
   },
-  
+  {
+    src: 'nuxt-spa-store-init'
+  }
 ]
