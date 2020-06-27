@@ -3,41 +3,43 @@
     :is="mainTag"
     :class="mainClass"
   >
-    <ul class="bg-backgroundDark rounded-lg rounded-r-none md:pt-12 md:px-5 lg:px-12 flex flex-wrap">
-      <li 
-        v-for="technology in promotedTechnologies"
-        :key="technology.id"
-        class="flex-initial w-full sm:w-1/2 md:w-full lg:w-1/2 flex flex-col pr-5 mb-10"
-      > 
-        <h2 
-          v-if="typeof technology.acf.color != 'undefined'"
-          class="font-medium mb-3"
-          :class="{
-            [`text-${technology.acf.color}`]: typeof technology.acf.color != 'undefined'
-          }"
-        >
-          {{ technology.name }}
-        </h2>
-        <p class="mb-5">
-          {{ technology.description }}
-        </p>
-
-        <ul class="flex flex-row flex-wrap">
-          <li
-            v-for="technologyChild in technologyChildsFilter(technology.term_taxonomy_id, technologies)"
-            :key="technologyChild.id"
-            class="flex-initial mr-5 mb-2"
+    <client-only>
+      <ul class="bg-backgroundDark rounded-lg rounded-r-none md:pt-12 md:px-5 lg:px-12 flex flex-wrap">
+        <li 
+          v-for="(technology, index) in promotedTechnologies"
+          :key="index"
+          class="flex-initial w-full sm:w-1/2 md:w-full lg:w-1/2 flex flex-col pr-5 mb-10"
+        > 
+          <h2 
+            v-if="typeof technology.acf.color != 'undefined'"
+            class="font-medium mb-3"
             :class="{
-              [`text-${technology.acf.color}`]: technology.acf.color
+              [`text-${technology.acf.color}`]: typeof technology.acf.color != 'undefined'
             }"
           >
-            <span>
-              {{ technologyChild.name }}
-            </span>
-          </li>
-        </ul>
-      </li>
-    </ul>
+            {{ technology.name }}
+          </h2>
+          <p class="mb-5">
+            {{ technology.description }}
+          </p>
+
+          <ul class="flex flex-row flex-wrap">
+            <li
+              v-for="(technologyChild, index_child) in technologyChildsFilter(technology.term_taxonomy_id, technologies)"
+              :key="index_child"
+              class="flex-initial mr-5 mb-2"
+              :class="{
+                [`text-${technology.acf.color}`]: technology.acf.color
+              }"
+            >
+              <span>
+                {{ technologyChild.name }}
+              </span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </client-only>
   </component>
 </template>
 <script>
