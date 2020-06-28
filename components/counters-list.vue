@@ -1,10 +1,10 @@
 <template>
   <ul class="flex flex-wrap max-w-85%">
     <CounterItem
-      v-for="item in counters"
-      :key="item.id"
-      :count-value="item.count"
-      :count-title="item.title"
+      v-for="(item, index) in counters"
+      :key="`${index}-${item.counter_title}`"
+      :count-value="item.counter_value"
+      :count-title="item.counter_title"
     />
   </ul>
 </template>
