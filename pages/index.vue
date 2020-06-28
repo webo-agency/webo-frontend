@@ -227,19 +227,21 @@
     <SectionWrapper
       main-tag="section"
       class="counters"
-      :main-title="'Webo w liczbach'"
+      :main-title="frontPageData.counters_settings.header"
     > 
       <div class="md:pl-20 text-white">
         <SectionHeader 
           :number-header="4"
-          :title="'Webo w <em>liczbach</em>'"
-          title-class="'text-small-header'"
+          :title="frontPageData.counters_settings.header"
+          title-class="text-small-header"
           class="w-full md:w-2/3 mb-8 lg:pr-10 text-white"
         />
-        <p class="mb-10 w-full md:w-1/2 lg:w-1/3">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+        <p
+          class="mb-10 w-full md:w-1/2 lg:w-1/3"
+          v-html="frontPageData.counters_settings.description"
+        >
         </p>
-        <CountersList :counters="counters" />
+        <CountersList :counters="frontPageData.counters_promoted" />
       </div>
     </SectionWrapper>
 
@@ -335,14 +337,6 @@
           service: 'service',
           default: 'default',
         },
-        counters: [
-          { id: 0, count: '+50', title: 'Wykonanych projektów' },
-          { id: 1, count: '10', title: 'Lat doświadczenia' },
-          { id: 2, count: '8', title: 'Firm i instytucji,<br> które wspieramy' },
-          { id: 3, count: '20', title: 'Wspieranych rozwiązań Open Source' },
-          { id: 4, count: '500', title: 'Godzin zaoszczędzonych na automatyzacji' },
-          { id: 5, count: '1500', title: 'Wybronionych ataków na infrastrukturę' }
-        ]
       };
     },
     computed: {
