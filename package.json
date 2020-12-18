@@ -3,6 +3,10 @@
   "description": "Company website",
   "license": "MIT",
   "private": true,
+  "homepage": "https://www.webo.agency",
+  "bugs": {
+    "url": "https://github.com/webo-agency/webo-frontend/issues"
+  },
   "contributors": [
     {
       "name": "Patryk Padus",
@@ -34,7 +38,6 @@
     "lodash": "^4.17.15",
     "netlify-cli": "^2.53.0",
     "normalize.css": "^8.0.1",
-    "npm": "^6.14.5",
     "nuxt": "^2.13.0",
     "nuxt-bugsnag": "^4.1.0",
     "nuxt-compress": "^1.1.0",
