@@ -5,7 +5,7 @@
   >
     <div 
       v-swiper:articles="sliderOptions"
-      class="w-full overflow-hidden relative"
+      class="relative w-full overflow-hidden"
     >
       <div class="swiper-wrapper">
         <slot />
@@ -52,6 +52,6 @@
     width: 20%;
     height: 100%;
     background: rgba(255,255,255,.6);
-    z-index: 9999;
+    z-index: 9;
   }
 </style>
