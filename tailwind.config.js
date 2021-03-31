@@ -101,6 +101,7 @@ module.exports = {
       maxWidth: {
         '120': '120px',
         '450': '450px',
+        '85%': '85%',
       },
       flex: {
         '0-auto': '0 0 auto',
