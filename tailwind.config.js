@@ -53,7 +53,8 @@ module.exports = {
         '7xl': '5rem',
         'big-header': '100px',
         'medium-header': '60px',
-        'small-header': '35px'
+        'small-header': '35px',
+        'base-header': '28px',
       },
       spacing: {
         px: '1px',
