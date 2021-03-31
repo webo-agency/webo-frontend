@@ -53,7 +53,8 @@ module.exports = {
         '7xl': '5rem',
         'big-header': '100px',
         'medium-header': '80px',
-        'small-header': '35px'
+        'small-header': '35px',
+        'big-paragraph': '25px',
       },
       spacing: {
         px: '1px',
@@ -101,6 +102,7 @@ module.exports = {
       maxWidth: {
         '120': '120px',
         '450': '450px',
+        '85%': '85%',
       },
       flex: {
         '0-auto': '0 0 auto',

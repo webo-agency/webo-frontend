@@ -225,21 +225,26 @@
       </div>
     </SectionWrapper>
 
-    <div class="bg-backgroundDark">
-      <img 
-        alt="Proces - in nutshell"
-        src="~assets/section_360px.svg"
-        class="lg:hidden w-full"
-        width="100%"
-      >
-
-      <img 
-        alt="Proces - big view"
-        src="~assets/section_1920px.svg"
-        class="hidden lg:block w-full"
-        width="100%"
-      >
-    </div>
+    <SectionWrapper
+      main-tag="section"
+      class="counters"
+      :main-title="frontPageData.counters_settings.header"
+    > 
+      <div class="md:pl-20 text-white">
+        <SectionHeader 
+          :number-header="4"
+          :title="frontPageData.counters_settings.header"
+          title-class="text-small-header"
+          class="w-full md:w-2/3 mb-8 lg:pr-10 text-white"
+        />
+        <p
+          class="mb-10 w-full md:w-1/2 lg:w-1/3"
+          v-html="frontPageData.counters_settings.description"
+        >
+        </p>
+        <CountersList :counters="frontPageData.counters_promoted" />
+      </div>
+    </SectionWrapper>
 
     <SectionWrapper
       main-tag="div"
@@ -453,6 +458,22 @@
     @media (min-width: 768px) {
       top: 0;
       transform: translate(-6%, 58%);
+    }
+  }
+
+  .counters {
+    background: url('~assets/counters-mobile.svg') no-repeat;
+    background-position: 100% center;
+    background-size: cover;
+    
+    @media (min-width: 768px) {
+      background: url('~assets/counters.svg') no-repeat;
+      background-position: 69% center;
+      background-size: cover;
+    }
+
+    @media (min-width: 1500px) {
+      background-position: center;
     }
   }
 </style>
