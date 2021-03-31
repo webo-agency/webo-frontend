@@ -26,7 +26,7 @@
       />
       <p
         v-show="paragraph != ''"
-        class="mb-4 text-xs leading-tight md:text-base"
+        class="mb-4 text-sm md:text-base"
         v-html="$md.renderInline(paragraph)"
       />
       <ul class="flex flex-col mb-5 text-xs font-medium break-all list-dash xs:break-normal xs:text-base">

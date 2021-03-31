@@ -213,7 +213,7 @@
         >
         
         <p
-          class="w-full mb-10 md:w-1/2 lg:w-1/3"
+          class="w-full mb-10 text-sm md:w-1/2 lg:w-1/3 md:text-base"
           v-html="frontPageData.company_settings.description"
         />
         
