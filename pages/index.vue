@@ -221,14 +221,14 @@
           :articles="frontPageData.company_promoted"
           :more="frontPageData.company_promoted_single.homepage"
           :is-mobile-slider="true"
-          mainClass="-ml-4"
-          ctaType="light"
+          :main-class="'-ml-4'"
+          :cta-type="'light'"
         />
         <article-block
           v-if="JSON.stringify(frontPageData.company_promoted_single.homepage) != '{}'"
           :article="frontPageData.company_promoted_single.homepage"
           main-class="w-auto mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0 swiper-slide md:hidden"
-          ctaType="light"
+          :cta-type="'light'"
         />
       </div>
     </SectionWrapper>
@@ -248,8 +248,7 @@
         <p
           class="w-full mb-10 md:w-1/2 lg:w-1/3"
           v-html="frontPageData.counters_settings.description"
-        >
-        </p>
+        />
         <CountersList :counters="frontPageData.counters_promoted" />
       </div>
     </SectionWrapper>

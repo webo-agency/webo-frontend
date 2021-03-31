@@ -46,6 +46,7 @@
       >
         {{ linkTitle }}
         <svg
+          v-if="ctaType !== ''"
           viewBox="0 0 14 26"
           width="14"
           height="26"
@@ -55,7 +56,6 @@
           clip-rule="evenodd"
           stroke-linejoin="round"
           stroke-miterlimit="2"
-          v-if="ctaType !== ''"
         ><path
           d="M5.766.962V22.1l-4.111-4.11a.968.968 0 00-1.372 0 .966.966 0 000 1.377l5.733 5.74a.983.983 0 00.712.284.958.958 0 00.705-.283l5.74-5.741a.978.978 0 000-1.378.976.976 0 00-1.38 0L7.69 22.1V.962a.961.961 0 10-1.923 0z" 
         /></svg>
