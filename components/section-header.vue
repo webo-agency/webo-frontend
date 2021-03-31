@@ -9,7 +9,7 @@
     >
       <em
         v-if="positionHeader"
-        class="text-main not-italic font-bold"
+        class="not-italic font-bold text-main"
       >{{ !numberHeader ? '-' : (numberHeader > 9 ? numberHeader : '0' + numberHeader ) }}/ </em>
 
       <span v-html="subtitleFormatted" />
@@ -17,7 +17,7 @@
 
     <h1
       :class="titleClass"
-      class="em-custom font-extrabold"
+      class="font-bold em-custom"
       v-html="titleFormatted"
     />
   </component>
