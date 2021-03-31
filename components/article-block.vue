@@ -19,7 +19,7 @@
         class="mb-4 text-base font-bold leading-tight"
         :class="{
           'md:text-2xl' : !ctaType,
-          'text-3xl em-custom lg:pr-16' : ctaType,
+          'text-base-header lg:text-small-header em-custom lg:pr-16' : ctaType,
           'xs:ml-6': list.length
         }"
         v-html="$md.renderInline(header)"
@@ -42,7 +42,7 @@
         v-show="link != ''"
         class="relative font-bold text-main"
         :href="link"
-        :class="[ctaType !== '' ? 'text-xl' : 'text-xs', { 'xs:ml-6' : list.length }]"
+        :class="[ctaType !== '' ? 'text-base md:text-2xl' : 'text-xs', { 'xs:ml-6' : list.length }]"
       >
         {{ linkTitle }}
         <svg
