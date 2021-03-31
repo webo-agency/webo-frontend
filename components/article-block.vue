@@ -42,7 +42,7 @@
         v-show="link != ''"
         class="relative font-bold text-main"
         :href="link"
-        :class="[ctaType !== '' ? 'text-xl' : 'text-xs', { 'xs:ml-6' : list.length }]"
+        :class="[ctaType !== '' ? 'text-base md:text-2xl' : 'text-xs', { 'xs:ml-6' : list.length }]"
       >
         {{ linkTitle }}
         <svg
