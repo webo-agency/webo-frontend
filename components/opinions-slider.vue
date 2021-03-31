@@ -3,8 +3,10 @@
     <div
       v-swiper:opinionsSM="opinionOptionsSM"
       class="m-0 lg:hidden"
+      @slideChangeTransitionStart="onSwipeStart"
+      @slideChangeTransitionEnd="onSwipeEnd"
     >
-      <div class="swiper-wrapper lg:flex-wrap justify-between h-auto">
+      <div class="justify-between h-auto swiper-wrapper lg:flex-wrap">
         <div class="empty-opinion-space" />
         <Opinion
           v-for="(opinion, index) in slides"
@@ -13,20 +15,20 @@
           :content="opinion.single_review_description"
           :author="opinion.single_review_person"
           :company="opinion.single_review_company"
-          class="swiper-slide w-auto"
+          class="w-auto swiper-slide"
         />
       </div>
       <div class="opinion-pagination" />
     </div>
     <div
       v-swiper:opinionsLG="opinionOptionsLG"
-      class="m-0 hidden lg:block"
+      class="hidden m-0 lg:block"
     >
-      <div class="swiper-wrapper justify-between h-auto pb-8">
+      <div class="justify-between h-auto pb-8 swiper-wrapper">
         <div
           v-for="(slide, index) in generateSlideBoards"
           :key="index"
-          class="flex flex-wrap justify-between swiper-slide w-auto"
+          class="flex flex-wrap justify-between w-auto swiper-slide"
         >
           <div class="empty-opinion-space" />
           <Opinion
@@ -81,6 +83,14 @@ export default {
       },
     };
   },
+    methods: {
+      onSwipeStart() {
+        console.log('opinion slide change start');
+      },
+      onSwipeEnd() {
+        console.log('opinion slide change end');
+      },
+    },
   computed: {
     generateSlideBoards() {
         const slideSize = 4;

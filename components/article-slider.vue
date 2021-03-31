@@ -6,11 +6,14 @@
     <div 
       v-swiper:articles="sliderOptions"
       class="relative w-full overflow-hidden"
+      @sliderMove="onSwipeStart"
+      @slideChangeTransitionEnd="onSwipeEnd"
     >
       <div class="swiper-wrapper">
         <slot />
       </div>
-      <div class="rightTransparency" />
+      <div class="relative -mt-8 swiper-pagination lg:hidden" />
+      <div class="rightTransparency" :class="{'invisible': isSwiping}" />
     </div>
   </component>
 </template>
@@ -35,23 +38,21 @@
         sliderOptions: {
           autoplay: 2000,
           slidesPerView: 1.2,
-          pagination: false,
-          loop: true,
-        }
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
+        },
+        isSwiping: false
       };
+    },
+    methods: {
+      onSwipeStart() {
+        this.isSwiping = true;
+      },
+      onSwipeEnd() {
+        this.isSwiping = false;
+      },
     },
   };
 </script>
-
-<style scoped>
-  .rightTransparency {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 20%;
-    height: 100%;
-    background: rgba(255,255,255,.6);
-    z-index: 9;
-  }
-</style>
