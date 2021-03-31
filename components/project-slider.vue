@@ -31,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="swiper-pagination d-lg-none" />
+      <div class="relative mt-8 swiper-pagination" />
     </div>
       <div class="hidden rightTransparency sm:block" :class="{'invisible': isSwiping}" />
   </component>
@@ -68,7 +68,10 @@
           autoplay: 2000,
           slidesPerView: 'auto',
           spaceBetween: 50,
-          pagination: false, //{el: '.swiper-pagination', clickable: true}
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
         },
         isSwiping: false
       };
@@ -102,7 +105,7 @@
 
     @screen xl {
       display: block;
-      width: 22%;
+      width: 21%;
     }
   }
 </style>

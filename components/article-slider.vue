@@ -12,6 +12,7 @@
       <div class="swiper-wrapper">
         <slot />
       </div>
+      <div class="relative -mt-8 swiper-pagination lg:hidden" />
       <div class="rightTransparency" :class="{'invisible': isSwiping}" />
     </div>
   </component>
@@ -37,8 +38,10 @@
         sliderOptions: {
           autoplay: 2000,
           slidesPerView: 1.2,
-          pagination: false,
-          loop: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+          }
         },
         isSwiping: false
       };
