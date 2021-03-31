@@ -1,11 +1,11 @@
 <template>
   <li class="counter-item">
     <div class="counter-item__inner">
-      <div class="text-small-header text-main font-bold">
+      <div class="font-bold text-small-header text-main">
         {{ countValue }}
       </div>
       <h3
-        class="font-bold text-base lg:text-big-paragraph"
+        class="text-base font-bold lg:text-big-paragraph"
         v-html="countTitle"
       />
     </div>
@@ -30,7 +30,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
   .counter-item {
     flex: 0 0 100%;
     max-width: 100%;
@@ -45,13 +45,13 @@ export default {
       flex: 0 0 33%;
       max-width: 33%;
     }
+  }
 
-    &__inner {
-      width: 200px;
+  .counter-item__inner {
+    width: 200px;
 
-      @screen md {   
-        width: 230px;
-      }
+    @screen md {   
+      width: 230px;
     }
   }
 </style>

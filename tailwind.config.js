@@ -52,9 +52,8 @@ module.exports = {
         'micro': '10px',
         '7xl': '5rem',
         'big-header': '100px',
-        'medium-header': '80px',
-        'small-header': '35px',
-        'big-paragraph': '25px',
+        'medium-header': '60px',
+        'small-header': '35px'
       },
       spacing: {
         px: '1px',

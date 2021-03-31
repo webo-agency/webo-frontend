@@ -6,35 +6,29 @@
   >
     <ArticleSlider
       v-if="isMobileSlider"
-      class="md:hidden p-0"
+      class="p-0 md:hidden"
     >
       <article-block
         v-for="(item, index) in articles"
         :key="index"
         :article="item"
-        main-class="mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0 swiper-slide w-auto"
-      />
-      <article-block
-        v-if="JSON.stringify(more) != '{}'"
-        :article="moreInject"
-        main-class="mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0 swiper-slide w-auto"
-        :cta-type="ctaType"
+        main-class="w-auto mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0 swiper-slide"
       />
     </ArticleSlider>
     <div
-      class="w-full flex flex-col xs:flex-row flex-wrap"
+      class="flex flex-col flex-wrap w-full xs:flex-row"
       :class="{'hidden md:flex' : isMobileSlider}"
     >
       <article-block
         v-for="(item, index) in articles"
         :key="index"
         :article="item"
-        main-class="flex-initial w-full sm:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
+        main-class="flex-initial w-full mt-5 mb-5 sm:w-1/2 lg:w-1/3 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
       />
       <article-block
         v-if="JSON.stringify(more) != '{}'"
         :article="moreInject"
-        main-class="flex-initial w-full sm:w-1/2 lg:w-1/3 mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
+        main-class="flex-initial w-full mt-5 mb-5 sm:w-1/2 lg:w-1/3 md:mt-10 md:mb-10 xs:pr-4 md:pr-0"
         :cta-type="ctaType"
       />
     </div>

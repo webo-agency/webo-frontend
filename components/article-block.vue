@@ -10,26 +10,26 @@
       <img
         :src="require('~/assets/icons/' + icon)"
         :alt="iconAlt"
-        class="mb-4 w-auto h-12"
+        class="w-auto h-12 mb-4"
         :class="{
           'xs:ml-6': list.length
         }"
       >
       <h1
-        class="mb-4 text-base leading-tight"
+        class="mb-4 text-base font-bold leading-tight"
         :class="{
-          'md:text-2xl font-medium' : !ctaType,
-          'md:text-3xl em-custom font-bold' : ctaType,
+          'md:text-2xl' : !ctaType,
+          'text-3xl em-custom lg:pr-16' : ctaType,
           'xs:ml-6': list.length
         }"
         v-html="$md.renderInline(header)"
       />
       <p
         v-show="paragraph != ''"
-        class="mb-4 text-xs md:text-base leading-tight"
+        class="mb-4 text-xs leading-tight md:text-base"
         v-html="$md.renderInline(paragraph)"
       />
-      <ul class="flex flex-col font-medium list-dash mb-5 break-all xs:break-normal text-xs xs:text-base">
+      <ul class="flex flex-col mb-5 text-xs font-medium break-all list-dash xs:break-normal xs:text-base">
         <li
           v-for="(item, index) in list"
           :key="index"
@@ -40,7 +40,7 @@
       </ul>
       <a
         v-show="link != ''"
-        class="text-main font-bold relative"
+        class="relative font-bold text-main"
         :href="link"
         :class="[ctaType !== '' ? 'text-xl' : 'text-xs', { 'xs:ml-6' : list.length }]"
       >
@@ -49,12 +49,13 @@
           viewBox="0 0 14 26"
           width="14"
           height="26"
-          class="arrow-right fill-current"
+          class="fill-current arrow-right"
           xmlns="http://www.w3.org/2000/svg"
           fill-rule="evenodd"
           clip-rule="evenodd"
           stroke-linejoin="round"
           stroke-miterlimit="2"
+          v-if="ctaType !== ''"
         ><path
           d="M5.766.962V22.1l-4.111-4.11a.968.968 0 00-1.372 0 .966.966 0 000 1.377l5.733 5.74a.983.983 0 00.712.284.958.958 0 00.705-.283l5.74-5.741a.978.978 0 000-1.378.976.976 0 00-1.38 0L7.69 22.1V.962a.961.961 0 10-1.923 0z" 
         /></svg>
@@ -63,7 +64,7 @@
         v-show="articleType === 'service'"
         :src="require('~/assets/icons/' + icon)"
         :alt="iconAlt"
-        class="mb-4 w-auto h-12 gray-bg"
+        class="w-auto h-12 mb-4 gray-bg"
         :class="{
           'xs:ml-6': list.length
         }"
@@ -125,7 +126,7 @@ export default {
           return '';
         
         default:
-          return 'md:w-2/3'
+          return 'md:w-11/12'
       }
     },
     header: function(){

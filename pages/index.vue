@@ -4,7 +4,7 @@
       main-tag="div"
       :main-id="frontPageData.baner_settings.is_linkable"
       :main-title="frontPageData.baner_settings.is_linkable ? frontPageData.baner_settings.title : ''"
-      class="bg-backgroundDark text-lightText flex flex-col justify-center"
+      class="flex flex-col justify-center bg-backgroundDark text-lightText"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
       <Carousel
@@ -15,7 +15,7 @@
           :number-header="parseInt(frontPageData.baner_settings.title_number)"
           :subtitle="frontPageData.baner_settings.title"
           :title="frontPageData.baner_carousel[0].header"
-          title-class="leading-none text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
+          title-class="text-xl leading-none xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
           class="mb-8"
         />
         <ContactButton
@@ -43,11 +43,11 @@
         class="mb-8"
       />
       <p
-        class="mb-5 w-full md:w-1/2 lg:w-1/3"
+        class="w-full mb-5 md:w-1/2 lg:w-1/3"
       >
         {{ frontPageData.services_settings.description }}
       </p>
-      <div class="w-100 flex flex-row flex-wrap">
+      <div class="flex flex-row flex-wrap w-100">
         <ServiceBlock
           :title="frontPageData.services_promoted[0].title"
           :description="frontPageData.services_promoted[0].description"
@@ -105,18 +105,18 @@
         class="w-10/12 mb-8 text-xs"
       />
       <p
-        class="mb-12 w-full md:w-1/2 lg:w-1/3"
+        class="w-full mb-12 md:w-1/2 lg:w-1/3"
       >
         {{ frontPageData.process_settings.description }}
       </p>
       <div 
         v-show="frontPageData.process_list.length"
-        class="w-10/12 flex flex-row flex-wrap"
+        class="flex flex-row flex-wrap w-10/12"
       >
         <InformationBlock 
           v-for="(item, key) in frontPageData.process_list"
           :key="key"
-          class="w-full md:w-1/2 lg:w-1/3 mb-8 pr-8"
+          class="w-full pr-8 mb-8 md:w-1/2 lg:w-1/3"
         >
           <template slot="icon">
             <img 
@@ -151,7 +151,7 @@
       height-auto
     >
       <div
-        class="parallax-background absolute top-0 bottom-0 w-screen max-w-none bg-cover bg-no-repeat bg-fixed rounded-lg"
+        class="absolute top-0 bottom-0 w-screen bg-fixed bg-no-repeat bg-cover rounded-lg parallax-background max-w-none"
         :style="parallaxBackground"
       />
     </SectionWrapper>
@@ -160,20 +160,20 @@
       main-tag="section"
       :main-id="frontPageData.technology_settings.is_linkable"
       :main-title="frontPageData.technology_settings.is_linkable ? frontPageData.technology_settings.title : ''"
-      class="bg-backgroundDark text-lightText overflow-hidden bar-bottom"
+      class="overflow-hidden bg-backgroundDark text-lightText bar-bottom"
     >
       <img
         src="~assets/slice4.svg"
         alt="shape"
         class="background-shape-1"
       >
-      <div class="relative flex-auto flex flex-col flex-auto w-full md:w-1/2">
+      <div class="relative flex flex-col flex-auto w-full md:w-1/2">
         <SectionHeader 
           :position-header="frontPageData.technology_settings.title_position"
           :number-header="2"
           :subtitle="frontPageData.technology_settings.title"
           :title="frontPageData.technology_settings.header"
-          title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
+          title-class="text-xl leading-tight xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
           subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
           class="mb-8 lg:pr-10"
         />
@@ -182,11 +182,11 @@
           :list="frontPageData.technology_promoted_list"
         />
         <p
-          class="mb-10 w-full md:w-4/5"
+          class="w-full mb-10 md:w-4/5"
           v-html="frontPageData.technology_settings.description"
         />
         <TechnologyBlock
-          class="md:absolute top-0 md:w-half-screen box-position"
+          class="top-0 md:absolute md:w-half-screen box-position"
           :technologies="frontPageData.technologies"
           :promoted-technologies="frontPageData.category_technology_promoted_list"
         />
@@ -203,17 +203,17 @@
         :number-header="3"
         :subtitle="frontPageData.company_settings.title"
         :title="frontPageData.company_settings.header"
-        class="w-full md:w-2/3 mb-8 lg:pr-10 md:pl-20"
+        class="w-full mb-8 md:w-2/3 lg:pr-10 md:pl-20"
       />
       <div class="relative md:pl-20">
         <img
           :src="frontPageData.company_graphic.url"
           :alt="frontPageData.company_graphic.alt"
-          class="absolute h-full rounded-lg z-10 object-cover img-list-left"
+          class="absolute z-10 object-cover h-full rounded-lg img-list-left"
         >
         
         <p
-          class="mb-10 w-full md:w-1/2 lg:w-1/3"
+          class="w-full mb-10 md:w-1/2 lg:w-1/3"
           v-html="frontPageData.company_settings.description"
         />
         
@@ -221,6 +221,14 @@
           :articles="frontPageData.company_promoted"
           :more="frontPageData.company_promoted_single.homepage"
           :is-mobile-slider="true"
+          mainClass="-ml-4"
+          ctaType="light"
+        />
+        <article-block
+          v-if="JSON.stringify(frontPageData.company_promoted_single.homepage) != '{}'"
+          :article="frontPageData.company_promoted_single.homepage"
+          main-class="w-auto mt-5 mb-5 md:mt-10 md:mb-10 xs:pr-4 md:pr-0 swiper-slide md:hidden"
+          ctaType="light"
         />
       </div>
     </SectionWrapper>
@@ -230,15 +238,15 @@
       class="counters"
       :main-title="frontPageData.counters_settings.header"
     > 
-      <div class="md:pl-20 text-white">
+      <div class="text-white md:pl-20">
         <SectionHeader 
           :number-header="4"
           :title="frontPageData.counters_settings.header"
           title-class="text-small-header"
-          class="w-full md:w-2/3 mb-8 lg:pr-10 text-white"
+          class="w-full mb-8 text-white md:w-2/3 lg:pr-10"
         />
         <p
-          class="mb-10 w-full md:w-1/2 lg:w-1/3"
+          class="w-full mb-10 md:w-1/2 lg:w-1/3"
           v-html="frontPageData.counters_settings.description"
         >
         </p>
@@ -250,20 +258,20 @@
       main-tag="div"
       :main-id="frontPageData.projects_settings.is_linkable"
       :main-title="frontPageData.projects_settings.is_linkable ? frontPageData.projects_settings.title : ''"
-      class="bg-backgroundLight overflow-hidden"
+      class="overflow-hidden bg-backgroundLight"
     >
       <SectionHeader 
         :position-header="frontPageData.projects_settings.title_position"
         :number-header="3"
         :subtitle="frontPageData.projects_settings.title"
         :title="frontPageData.projects_settings.header"
-        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
+        title-class="text-xl leading-tight xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
-        class="w-full md:w-1/3 mb-8 lg:pr-10"
+        class="w-full mb-8 md:w-1/3 lg:pr-10"
       />
       
       <p 
-        class="mb-10 w-full md:w-1/2 lg:w-1/3"
+        class="w-full mb-10 md:w-1/2 lg:w-1/3"
         v-html="frontPageData.projects_settings.description"
       />
       
@@ -291,7 +299,7 @@
         :subtitle="frontPageData.reviews_settings.title"
         :position-header="frontPageData.reviews_settings.title_position"
         :number-header="4"
-        class="w-full md:w-1/3 mb-8 lg:pr-10"
+        class="w-full mb-8 md:w-1/3 lg:pr-10"
       />
     </SectionWrapper>
 
@@ -304,7 +312,7 @@
         :title="`Mówią o <em>nas</em>`"
         :subtitle="frontPageData.reviews_settings.title"
         :number-header="5"
-        class="w-full md:w-1/3 mb-8 lg:pr-10 lg:absolute"
+        class="w-full mb-8 md:w-1/3 lg:pr-10 lg:absolute"
       />
       
       <OpinionsSlider 
