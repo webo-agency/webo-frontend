@@ -1,5 +1,8 @@
 <template>
-  <div class="flex-initial w-full mb-8 sm:w-1/2 xs:pr-4 md:pr-0'">
+  <div
+    v-in-viewport.once="'-100px 0px'"
+    class="flex-initial w-full mb-8 sm:w-1/2 xs:pr-4 viewport-box"
+  >
     <div
       class="h-full p-5 rounded-md artblock"
       :class="[isBlockSimple ? 'flex flex-col lg:flex-row justify-between' : null, isDark ? 'bg-backgroundDark text-white' : 'bg-backgroundLight text-black']"
