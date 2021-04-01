@@ -1,31 +1,31 @@
 <template>
-  <div class="mb-8 flex-initial w-full sm:w-1/2 xs:pr-4 md:pr-0'">
+  <div class="flex-initial w-full mb-8 sm:w-1/2 xs:pr-4 md:pr-0'">
     <div
-      class="artblock rounded-md p-5 "
+      class="p-5 rounded-md artblock "
       :class="[isBlockSimple ? 'flex flex-col lg:flex-row justify-between' : null, isDark ? 'bg-backgroundDark text-white' : 'bg-backgroundLight text-black']"
     >
       <img
         v-if="icon"
         :src="require('~/assets/icons/' + icon)"
         alt="iconAlt"
-        class="mb-4 w-auto h-12 ml-5"
+        class="w-auto h-12 mb-4 ml-5"
       >
     
       <h1
-        class="mb-4 ml-2 lg:ml-5 text-base leading-tight md:text-2xl font-bold em-custom"
+        class="mb-4 ml-2 text-base font-bold leading-tight lg:ml-5 md:text-2xl em-custom"
         :class="isBlockSimple ? 'w-full lg:w-1/2 self-center' : 'w-auto'"
         v-html="titleFormatted"
       />
 
       <p
         v-if="description.length !== 0"
-        class="mb-4 text-xs md:text-base leading-tight relative z-10 ml-2"
+        class="relative z-10 mb-4 ml-2 text-xs leading-block lg:ml-5 md:text-base"
       >
         {{ description }}
       </p>
       <ul
         v-if="facilities.length !== 0"
-        class="flex flex-col lg:flex-row font-bold list-dash mb-5 break-all xs:break-normal text-xs xs:text-base relative z-10"
+        class="relative z-10 flex flex-col mb-5 text-xs font-bold break-all lg:flex-row list-dash xs:break-normal xs:text-base"
       >
         <li
           v-for="(item, key) in facilities"
@@ -36,7 +36,7 @@
         </li>
       </ul>
       <a
-        class="text-main font-bold relative ml-2 lg:ml-5" 
+        class="relative ml-2 font-bold text-main lg:ml-5" 
         href="#"
         :class="isBlockSimple ? 'lg:self-center' : ''"
       >
@@ -45,7 +45,7 @@
           viewBox="0 0 14 26"
           width="14"
           height="26"
-          class="arrow-right fill-current inline-block"
+          class="inline-block fill-current arrow-right"
           xmlns="http://www.w3.org/2000/svg"
           fill-rule="evenodd"
           clip-rule="evenodd"
@@ -61,7 +61,7 @@
         v-if="icon"
         :src="require('~/assets/icons/' + icon)"
         alt="iconAlt"
-        class="mb-4 w-auto h-12 gray-bg z-0"
+        class="z-0 w-auto h-12 mb-4 gray-bg"
       >
     </div>
   </div>

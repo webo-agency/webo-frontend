@@ -48,6 +48,9 @@ module.exports = {
       width: {
         'half-screen': '50vw'
       },
+      lineHeight: {
+        'block': '22px',
+      },
       fontSize: {
         'micro': '10px',
         '7xl': '5rem',
