@@ -95,13 +95,14 @@
       :main-id="frontPageData.process_settings.is_linkable"
       :main-title="frontPageData.process_settings.is_linkable ? frontPageData.process_settings.title : ''"
       class="bg-backgroundLight"
-      container-class="container flex flex-col mt-10 mb-10 lg:mt-section-lg"
+      container-class="container flex flex-col mt-10 mb-10"
     >
       <SectionHeader 
         :position-header="frontPageData.process_settings.title_position"
         :number-header="parseInt(frontPageData.process_settings.title_number)"
         :subtitle="frontPageData.process_settings.title"
         :title="frontPageData.process_settings.header"
+        :title-class="'text-xl lg:text-small-header'"
         class="w-10/12 mb-8 text-xs"
       />
       <p
@@ -120,8 +121,8 @@
         >
           <template slot="icon">
             <img 
-              src="~assets/icons/corb-tag.svg"
-              width="20px"
+              :src="require('~/assets/icons/' + icon(item.process_list_icon.icon))"
+              width="48px"
               alt="shape"
             >
           </template>
@@ -344,6 +345,40 @@
           default: 'default',
         },
       };
+    },
+    methods: {
+
+      icon: function(icon){
+        
+        switch (icon) {
+          case 'a':
+            return 'window-search.svg'
+          case 'b':
+            return 'ring-arrow.svg'
+          case 'c':
+            return 'laptop-tag.svg'
+          case 'd':
+            return 'corb-tag.svg'
+          case 'e':
+            return 'people-group.svg'
+          case 'f':
+            return 'square-dashes.svg'
+          case 'g':
+            return 'square-lines.svg'
+          case 'h':
+            return 'shield-pattern.svg'
+          case 'i':
+            return 'flask-liquid.svg'
+          case 'Linie':
+            return 'curves.svg'
+          case 'Analiza':
+            return 'analyze.svg'
+          case 'Test':
+            return 'test.svg'
+          default:
+            return 'question-mark.svg'
+        }
+      },
     },
     computed: {
       frontPageData() {
