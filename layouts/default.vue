@@ -5,11 +5,11 @@
       main-tag="header"
       dark-theme
     />
-    <main class="flex flex-row relative flex-auto bg-white break-all xs:break-normal">
+    <main class="relative flex flex-row flex-auto break-all bg-white xs:break-normal">
       <nuxt />
     </main>
     <LayoutFooter
-      main-class="flex-0-auto bg-white mt-auto bg-backgroundDark"
+      main-class="mt-auto bg-white flex-0-auto bg-backgroundDark"
       main-tag="footer"
     />
   </div>
