@@ -94,7 +94,7 @@
       main-tag="section"
       :main-id="frontPageData.process_settings.is_linkable"
       :main-title="frontPageData.process_settings.is_linkable ? frontPageData.process_settings.title : ''"
-      class="bg-backgroundLight"
+      class="overflow-hidden bg-backgroundLight"
       container-class="container flex flex-col mt-10 mb-10"
     >
       <SectionHeader 
@@ -134,6 +134,56 @@
           </template>
         </InformationBlock>
       </div>
+      <div class="background-slice-6">
+        <img
+          v-in-viewport.once=""
+          svg-inline
+          src="~/assets/slice6.svg"
+          alt="shape"
+          class="mb-8 xl:mb-4"
+        />
+     
+        <a
+          v-show="link != ''"
+          class="relative items-center hidden text-base font-bold text-main right-more xl:text-lg lg:flex"
+          :href="frontPageData.process_link.process_link_href"
+        >
+          {{frontPageData.process_link.process_link_title}}
+          <svg
+            viewBox="0 0 14 26"
+            width="14"
+            height="26"
+            class="ml-8 fill-current arrow-right"
+            xmlns="http://www.w3.org/2000/svg"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            stroke-linejoin="round"
+            stroke-miterlimit="2"
+          ><path
+            d="M5.766.962V22.1l-4.111-4.11a.968.968 0 00-1.372 0 .966.966 0 000 1.377l5.733 5.74a.983.983 0 00.712.284.958.958 0 00.705-.283l5.74-5.741a.978.978 0 000-1.378.976.976 0 00-1.38 0L7.69 22.1V.962a.961.961 0 10-1.923 0z" 
+          /></svg>
+        </a>
+      </div>
+        <a
+          v-show="link != ''"
+          class="relative flex items-center text-base font-bold text-main xl:text-lg lg:hidden"
+          :href="frontPageData.process_link.process_link_href"
+        >
+          {{frontPageData.process_link.process_link_title}}
+          <svg
+            viewBox="0 0 14 26"
+            width="14"
+            height="26"
+            class="ml-8 fill-current arrow-right"
+            xmlns="http://www.w3.org/2000/svg"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            stroke-linejoin="round"
+            stroke-miterlimit="2"
+          ><path
+            d="M5.766.962V22.1l-4.111-4.11a.968.968 0 00-1.372 0 .966.966 0 000 1.377l5.733 5.74a.983.983 0 00.712.284.958.958 0 00.705-.283l5.74-5.741a.978.978 0 000-1.378.976.976 0 00-1.38 0L7.69 22.1V.962a.961.961 0 10-1.923 0z" 
+          /></svg>
+        </a>
     </SectionWrapper> 
 
     <SectionWrapper
@@ -500,6 +550,59 @@
     @media (min-width: 768px) {
       top: 0;
       transform: translate(-6%, 58%);
+    }
+  }
+
+  .background-slice-6 {
+    display: none;
+    position: absolute;
+    
+    @media (min-width: 1024px) {
+      display: block;
+      right: -70px;
+      width: 25%;
+      bottom: 0;
+    }
+    
+    @media (min-width: 1280px) {
+      bottom: 10%;
+      right: -70px;
+    }
+    
+    @media (min-width: 1600px) {
+      width: 23%;
+    }
+  }
+
+  .main-stroke {
+    stroke: #bfbfbf;
+    transition: stroke .4s ease-out;
+  }
+
+  .fill-dot {
+    fill: #bfbfbf;
+    transition: fill .4s ease-out;
+  }
+
+  .in-viewport .main-stroke {
+    stroke: #00e0b4;
+  }
+
+  .in-viewport .fill-dot {
+    fill: #00e0b4;
+  }
+
+  .right-more {
+    
+    @media (min-width: 1024px) {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+    
+    @media (min-width: 1280px) {
+      bottom: unset;
     }
   }
 
