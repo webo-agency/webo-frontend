@@ -114,8 +114,17 @@ body{
     z-index: 9;
     opacity: 1;
     transition: opacity .2s;
-  }
+}
 
-  .rightTransparency.invisible {
+.rightTransparency.invisible {
     opacity: 0;
-  }
+}
+
+.viewport-box {
+    opacity: 0;
+    transition: opacity .4s ease-out;
+}
+
+.viewport-box.in-viewport {
+    opacity: 1;
+}
