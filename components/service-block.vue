@@ -1,7 +1,7 @@
 <template>
   <div class="flex-initial w-full mb-8 sm:w-1/2 xs:pr-4 md:pr-0'">
     <div
-      class="p-5 rounded-md artblock "
+      class="h-full p-5 rounded-md artblock"
       :class="[isBlockSimple ? 'flex flex-col lg:flex-row justify-between' : null, isDark ? 'bg-backgroundDark text-white' : 'bg-backgroundLight text-black']"
     >
       <img
@@ -12,14 +12,14 @@
       >
     
       <h1
-        class="mb-4 ml-2 text-base font-bold leading-tight lg:ml-5 md:text-2xl em-custom"
+        class="ml-2 text-base font-bold leading-tight lg:ml-5 md:text-2xl em-custom"
         :class="isBlockSimple ? 'w-full lg:w-1/2 self-center' : 'w-auto'"
         v-html="titleFormatted"
       />
 
       <p
         v-if="description.length !== 0"
-        class="relative z-10 mb-4 ml-2 text-xs leading-block lg:ml-5 md:text-base"
+        class="relative z-10 my-4 ml-2 text-xs leading-block lg:ml-5 md:text-base"
       >
         {{ description }}
       </p>
