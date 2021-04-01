@@ -7,11 +7,11 @@
       'is-dark' : darkTheme,
       [mainClass]: true
     }"
-    class="header px-xs-35 z-40"
+    class="z-40 header px-xs-35"
   >
     <div class="container flex flex-row flex-wrap justify-between">
       <nuxt-link
-        class="homepage py-2 px-xs-0 py-xs-2 w-xs-auto nuxt-link-active flex-grow-0 flex-shrink"
+        class="flex-grow-0 flex-shrink py-2 homepage px-xs-0 py-xs-2 w-xs-auto nuxt-link-active"
         to="/"
       >
         <svg
@@ -52,11 +52,11 @@
 
       <div
         :class="{ 'is-menu-empty': sections.length < 1 }"
-        class="menu flex justify-between items-center m-sm-auto m-hg-0 px-0 pr-xs-0 pl-xs-3"
+        class="flex items-center justify-between px-0 menu m-sm-auto m-hg-0 pr-xs-0 pl-xs-3"
       >
         <button
           v-if="sections.length > 0"
-          class="button lg:hidden px-1"
+          class="px-1 button lg:hidden"
           @click="showMenu"
           @touch="showMenu"
         >
@@ -66,7 +66,7 @@
         <scrollactive
           v-if="sections.length > 0"
           :class="{ 'is-active': menuVisible, 'is-top': !isTop }"
-          class="links list-inline justify-between align-items-stretch py-1 py-xs-0 md:items-center"
+          class="justify-between py-1 links list-inline align-items-stretch py-xs-0 md:items-center"
           :offset="80"
           :always-track="true"
           :duration="600"
@@ -82,14 +82,14 @@
             {{ section.title }}
           </nuxt-link>
           <nuxt-link
-            class="md:flex hidden empty-link scrollactive-item"
+            class="hidden md:flex empty-link scrollactive-item"
             :to="`/#x`"
           />
           <span class="link lg:-mr-8">
             <a
               v-if="$store.state.general.data.call_to_action_header"
               :href="$store.state.general.data.call_to_action_header.button.hyperlink"
-              class="self-center button-primary block py-1 px-8 bg-main text-black font-medium text-micro hover:text-darkText xs:text-base lg:text-xl"
+              class="self-center block px-8 py-1 font-medium text-black button-primary bg-main text-micro hover:text-darkText xs:text-base lg:text-xl"
             >
               <span 
                 class="hidden xs:flex"
@@ -449,7 +449,6 @@ export default {
 .links {
   display: flex;
   z-index: 2000;
-  background: #ffffff;
   flex-direction: column;
   margin: 0;
   visibility: hidden;
