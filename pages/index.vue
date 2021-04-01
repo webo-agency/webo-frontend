@@ -4,7 +4,7 @@
       main-tag="div"
       :main-id="frontPageData.baner_settings.is_linkable"
       :main-title="frontPageData.baner_settings.is_linkable ? frontPageData.baner_settings.title : ''"
-      class="flex flex-col justify-center bg-backgroundDark text-lightText"
+      class="flex flex-col justify-center bg-baner text-lightText"
       container-class="flex-col mt-10 mb-10 lg:mt-15vh"
     >
       <Carousel
@@ -15,18 +15,14 @@
           :number-header="parseInt(frontPageData.baner_settings.title_number)"
           :subtitle="frontPageData.baner_settings.title"
           :title="frontPageData.baner_carousel[0].header"
-          title-class="text-xl leading-none xs:text-4xl sm:text-5xl md:text-5xl lg:text-big-header"
-          class="mb-8"
+          title-class="text-xl leading-none xs:text-4xl sm:text-5xl md:text-5xl lg:text-large-header"
+          class="mb-16"
         />
         <ContactButton
           :text="frontPageData.baner_carousel[0].button.title"
           :link="frontPageData.baner_carousel[0].button.hyperlink"
         />
-        <ArrowBlock
-          main-class="z-30 hidden xl:block"
-          arrow-color="#FFFFFF"
-          :section-link="frontPageData.services_settings.is_linkable"
-        />
+        
       </Carousel>
     </SectionWrapper>
 
@@ -144,7 +140,6 @@
         />
      
         <a
-          v-show="link != ''"
           class="relative items-center hidden text-base font-bold text-main right-more xl:text-lg lg:flex"
           :href="frontPageData.process_link.process_link_href"
         >
@@ -165,7 +160,6 @@
         </a>
       </div>
         <a
-          v-show="link != ''"
           class="relative flex items-center text-base font-bold text-main xl:text-lg lg:hidden"
           :href="frontPageData.process_link.process_link_href"
         >
@@ -604,6 +598,11 @@
     @media (min-width: 1280px) {
       bottom: unset;
     }
+  }
+
+  .bg-baner {
+    background: url('~assets/baner-top.png') no-repeat;
+    background-size: cover;
   }
 
   .counters {
