@@ -128,3 +128,8 @@ body{
 .viewport-box.in-viewport {
     opacity: 1;
 }
+
+.arrow-right {
+  transform: rotate(-90deg);
+  width: 11px;
+}

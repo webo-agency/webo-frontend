@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 10417 11288" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:1.5;">
+    <g>
+        <path d="M392.804,4242.58c104.596,-614.116 639.846,-1082.27 1283.57,-1082.27" style="fill:none;stroke:#00e0b4;stroke-width:34.71px;stroke-dasharray:138.88,104.17,0,0;" class="main-stroke"/>
+        <path d="M392.804,4238.83l0,6876.25" style="fill:none;stroke:#00e0b4;stroke-width:34.71px;stroke-dasharray:138.88,104.17,0,0;" class="main-stroke"/>
+        <circle cx="392.804" cy="6527.42" r="217.013" style="fill:#fff;stroke:#00e0b4;stroke-width:34.71px;" class="main-stroke"/>
+        <circle cx="397.063" cy="6527.42" r="130.208" class="fill-dot"/>
+        <path d="M10023.9,1692.2c0,-720.554 -585,-1305.55 -1305.56,-1305.55l-7008.5,-0c-720.554,-0 -1305.55,585 -1305.55,1305.55l-0,166.667c-0,720.554 585,1305.55 1305.55,1305.55l7008.5,-0c720.558,-0 1305.56,-585 1305.56,-1305.55l0,-166.667Z" style="fill:none;stroke:#00e0b4;stroke-width:34.71px;stroke-dasharray:138.88,104.17,0,0;" class="main-stroke"/>
+        <g>
+            <circle cx="3129.2" cy="386.646" r="217.012" style="fill:#fff;stroke:#00e0b4;stroke-width:34.71px;" class="main-stroke"/>
+            <circle cx="3133.46" cy="386.646" r="130.208" class="fill-dot"/>
+        </g>
+        <g>
+            <circle cx="7643.08" cy="386.646" r="217.013" style="fill:#fff;stroke:#00e0b4;stroke-width:34.71px;" class="main-stroke"/>
+            <circle cx="7647.33" cy="386.646" r="130.208" class="fill-dot"/>
+        </g>
+        <g>
+            <circle cx="10023.9" cy="1775.53" r="217.012" style="fill:#fff;stroke:#00e0b4;stroke-width:34.71px;" class="main-stroke"/>
+            <circle cx="10023.9" cy="1776.05" r="130.208" class="fill-dot"/>
+        </g>
+        <g>
+            <circle cx="7643.08" cy="3164.42" r="217.013" style="fill:#fff;stroke:#00e0b4;stroke-width:34.71px;" class="main-stroke"/>
+            <circle cx="7647.33" cy="3164.42" r="130.208" class="fill-dot"/>
+        </g>
+        <g>
+            <circle cx="3129.2" cy="3164.42" r="217.012" style="fill:#fff;stroke:#00e0b4;stroke-width:34.71px;" class="main-stroke"/>
+            <circle cx="3133.46" cy="3164.42" r="130.208" class="fill-dot"/>
+        </g>
+    </g>
+</svg>
