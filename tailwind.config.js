@@ -55,6 +55,7 @@ module.exports = {
         'micro': '10px',
         '7xl': '5rem',
         'big-header': '100px',
+        'large-header': '80px',
         'medium-header': '60px',
         'small-header': '35px',
         'base-header': '28px',
@@ -109,6 +110,7 @@ module.exports = {
       },
       flex: {
         '0-auto': '0 0 auto',
+        '0-60': '0 0 60%',
       },
       listStyleType: {
         none: 'none',
