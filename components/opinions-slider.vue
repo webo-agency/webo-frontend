@@ -52,7 +52,7 @@ export default {
     margin: 0 auto;
 
     @screen md {
-      max-width: 450px;
+      max-width: 700px;
     }
   }
 
