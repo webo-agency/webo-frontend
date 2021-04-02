@@ -103,23 +103,6 @@ body{
     }
 }
 
-.rightTransparency {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 20%;
-    height: 100%;
-    background: rgba(255,255,255,.6);
-    z-index: 9;
-    opacity: 1;
-    transition: opacity .2s;
-}
-
-.rightTransparency.invisible {
-    opacity: 0;
-}
-
 .viewport-box {
     opacity: 0;
     transition: opacity .4s ease-out;

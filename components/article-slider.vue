@@ -5,16 +5,15 @@
   >
     <div 
       v-swiper:articles="sliderOptions"
-      class="relative w-full overflow-hidden"
+      class="relative w-full"
       @sliderMove="onSwipeStart"
       @slideChangeTransitionEnd="onSwipeEnd"
     >
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper" :class="{'is-swiping': isSwiping}">
         <slot />
       </div>
-      <div class="relative -mt-8 swiper-pagination lg:hidden" />
-      <div class="rightTransparency" :class="{'invisible': isSwiping}" />
     </div>
+      <div class="relative swiper-pagination lg:hidden" />
   </component>
 </template>
 
@@ -56,3 +55,16 @@
     },
   };
 </script>
+
+<style lang="postcss" scoped>
+
+  .swiper-slide-next {
+    opacity: .4;
+    transition: opacity .4s ease-out;
+  }
+
+  .is-swiping .swiper-slide-next {
+    opacity: 1;
+  }
+  
+</style>

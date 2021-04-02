@@ -112,27 +112,54 @@
       </p>
       <div 
         v-show="frontPageData.process_list.length"
-        class="flex flex-row flex-wrap w-10/12"
+        class="md:w-10/12 "
       >
-        <InformationBlock 
-          v-for="(item, key) in frontPageData.process_list"
-          :key="key"
-          class="w-full pr-8 mb-8 md:w-1/2 lg:w-1/3"
+        <ArticleSlider
+          class="p-0 md:hidden"
         >
-          <template slot="icon">
-            <img 
-              :src="require('~/assets/icons/' + icon(item.process_list_icon.icon))"
-              width="48px"
-              alt="shape"
-            >
-          </template>
-          <template slot="title">
-            <h1>{{ key+1 }}. {{ item.process_list_title }}</h1>
-          </template>
-          <template slot="description">
-            <p>{{ item.process_list_description }}</p>
-          </template>
-        </InformationBlock>
+          <InformationBlock 
+            v-for="(item, key) in frontPageData.process_list"
+            :key="key"
+            class="w-full pr-8 mb-8 md:w-1/2 lg:w-1/3 swiper-slide"
+          >
+            <template slot="icon">
+              <img 
+                :src="require('~/assets/icons/' + icon(item.process_list_icon.icon))"
+                width="48px"
+                alt="shape"
+              >
+            </template>
+            <template slot="title">
+              <h1>{{ key+1 }}. {{ item.process_list_title }}</h1>
+            </template>
+            <template slot="description">
+              <p>{{ item.process_list_description }}</p>
+            </template>
+          </InformationBlock>
+        </ArticleSlider>
+
+        <div class="flex-row flex-wrap hidden md:flex">
+          <InformationBlock 
+            v-for="(item, key) in frontPageData.process_list"
+            :key="key"
+            class="w-full pr-8 mb-8 md:w-1/2 lg:w-1/3 swiper-slide"
+          >
+            <template slot="icon">
+              <img 
+                :src="require('~/assets/icons/' + icon(item.process_list_icon.icon))"
+                width="48px"
+                alt="shape"
+              >
+            </template>
+            <template slot="title">
+              <h1>{{ key+1 }}. {{ item.process_list_title }}</h1>
+            </template>
+            <template slot="description">
+              <p>{{ item.process_list_description }}</p>
+            </template>
+          </InformationBlock>
+        </div>
+
       </div>
       <div class="background-slice-6">
         <img
@@ -164,7 +191,7 @@
         </a>
       </div>
         <a
-          class="relative flex items-center text-base font-bold text-main xl:text-lg lg:hidden"
+          class="relative flex items-center mt-8 text-base font-bold text-main xl:text-lg lg:hidden"
           :href="frontPageData.process_link.process_link_href"
         >
           {{frontPageData.process_link.process_link_title}}

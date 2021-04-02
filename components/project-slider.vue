@@ -9,7 +9,7 @@
       @sliderMove="onSwipeStart"
       @slideChangeTransitionEnd="onSwipeEnd"
     >
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper project-slider" :class="{'is-swiping': isSwiping}">
         <div
           v-for="entry in slides"
           :key="entry.id"
@@ -33,7 +33,6 @@
       </div>
       <div class="relative mt-8 swiper-pagination" />
     </div>
-      <div class="hidden rightTransparency sm:block" :class="{'invisible': isSwiping}" />
   </component>
 </template>
 
@@ -87,25 +86,30 @@
   };
 </script>
 
-<style scoped>
-  .rightTransparency {
-    width: 15%;
-
-    @screen sm {
-      width: 22%;
-    }
-
-    @screen md {
-      width: 35%;
-    }
+<style lang="postcss" scoped>
+  
+  .swiper-slide-next {
+    opacity: .4;
+    transition: opacity .4s ease-out;
 
     @screen lg {
-      display: none;
-    }
-
-    @screen xl {
-      display: block;
-      width: 21%;
+      opacity: 1;
     }
   }
+
+  .swiper-slide-next + .swiper-slide {
+    @screen xl {
+      transition: opacity .4s ease-out;
+      opacity: .4;
+    }
+  }
+
+  .is-swiping .swiper-slide-next {
+    opacity: 1;
+  }
+
+  .is-swiping .swiper-slide-next + .swiper-slide {
+    opacity: 1;
+  }
+
 </style>
