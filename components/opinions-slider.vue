@@ -2,7 +2,7 @@
   <div>
     <div
       v-swiper:opinionsSM="opinionOptions"
-      class="m-0 opinion-slider"
+      class="m-0 overflow-hidden opinion-slider"
     >
       <div class="swiper-wrapper">
         <Opinion
