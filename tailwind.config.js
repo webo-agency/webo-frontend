@@ -50,6 +50,7 @@ module.exports = {
       },
       lineHeight: {
         'block': '22px',
+        '12': '3rem',
       },
       fontSize: {
         'micro': '10px',
@@ -134,6 +135,9 @@ module.exports = {
         indigo: false,
         purple: false,
         pink: false,
+      },
+      zIndex: {
+        'negative': '-1',
       }
     },
   },
