@@ -22,11 +22,6 @@
           :text="frontPageData.baner_carousel[0].button.title"
           :link="frontPageData.baner_carousel[0].button.hyperlink"
         />
-        <ArrowBlock
-          main-class="z-30 hidden xl:block"
-          arrow-color="#FFFFFF"
-          :section-link="frontPageData.services_settings.is_linkable"
-        />
       </Carousel>
     </SectionWrapper>
 
