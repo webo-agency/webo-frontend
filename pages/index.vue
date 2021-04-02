@@ -384,12 +384,11 @@
       :height-auto="true"
     >
       <SectionHeader 
-        :title="`Mówią o <em>nas</em>`"
-        :subtitle="frontPageData.reviews_settings.title"
+        :title="frontPageData.reviews_settings.header"
+        :subtitle="frontPageData.reviews_settings.description"
         :number-header="5"
-        class="w-full mb-8 md:w-1/3 lg:pr-10 lg:absolute"
+        class="w-full mb-8 text-center"
       />
-      
       <OpinionsSlider 
         :slides="frontPageData.reviews_promoted"
       />
