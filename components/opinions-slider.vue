@@ -3,8 +3,6 @@
     <div
       v-swiper:opinionsSM="opinionOptions"
       class="m-0 opinion-slider"
-      @slideChangeTransitionStart="onSwipeStart"
-      @slideChangeTransitionEnd="onSwipeEnd"
     >
       <div class="swiper-wrapper">
         <Opinion
@@ -50,8 +48,12 @@ export default {
 <style lang="postcss" scoped>
 
   .opinion-slider {
-    max-width: 450px;
+    max-width: 300px;
     margin: 0 auto;
+
+    @screen md {
+      max-width: 450px;
+    }
   }
 
   .opinion-slide {

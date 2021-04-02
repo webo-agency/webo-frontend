@@ -387,7 +387,8 @@
         :title="frontPageData.reviews_settings.header"
         :subtitle="frontPageData.reviews_settings.description"
         :number-header="5"
-        class="w-full mb-8 text-center"
+        :title-class="'text-base-header leading-8 md:leading-12 md:text-5xl'"
+        class="w-full mb-16 text-center"
       />
       <OpinionsSlider 
         :slides="frontPageData.reviews_promoted"
