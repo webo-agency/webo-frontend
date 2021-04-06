@@ -53,6 +53,7 @@ module.exports = {
         '12': '3rem',
       },
       fontSize: {
+        'btn': '14px',
         'micro': '10px',
         '7xl': '5rem',
         'big-header': '100px',
