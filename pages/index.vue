@@ -21,6 +21,7 @@
         <ContactButton
           :text="frontPageData.baner_carousel[0].button.title"
           :link="frontPageData.baner_carousel[0].button.hyperlink"
+          :main-class="'button-primary button-with-line button-with-line-dark'"
         />
       </Carousel>
     </SectionWrapper>

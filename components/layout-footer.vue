@@ -2,13 +2,13 @@
   <component
     :is="mainTag"
     :class="mainClass"
-    class="footer text-white pt-2 xs:pt-8 relative overflow-hidden"
+    class="relative pt-2 overflow-hidden text-white footer xs:pt-8"
   >
     <SectionWrapper
       main-tag="div"
       :main-title="footerData.call_to_action_section.title"
       class="bg-backgroundDark text-lightText"
-      container-class="mt-4 xs:mt-10 mb-4 lg:mb-10 flex-col md:flex-row items-start"
+      container-class="flex-col items-start mt-4 mb-4 xs:mt-10 lg:mb-10 md:flex-row"
       height-auto
     >
       <SectionHeader
@@ -16,29 +16,30 @@
         :number-header="0"
         :subtitle="footerData.call_to_action_section.title"
         :title="footerData.call_to_action_section.text"
-        title-class="leading-tight text-xl xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
+        title-class="text-xl leading-tight xs:text-4xl sm:text-5xl md:text-5xl lg:text-small-header"
         subtitle-class="text-xs xs:text-base md:text-sm lg:text-base"
-        class="mb-8 md:mb-0 w-full md:w-2/3 lg:w-1/3"
+        class="w-full mb-8 md:mb-0 md:w-2/3 lg:w-1/3"
       />
       <ContactButton
-        class="mb-4 xs:mb-8 lg:mb-0 mt-auto md:mb-0 md:ml-auto lg:ml-0"
+        class="mt-auto mb-4 xs:mb-8 lg:mb-0 md:mb-0 md:ml-auto lg:ml-0"
         :text="footerData.call_to_action_section.button.title"
         :link="footerData.call_to_action_section.button.hyperlink"
+        :main-class="'button-primary button-with-line button-with-line-dark'"
       />
     </SectionWrapper>
 
     <div class="container flex flex-row flex-wrap xl:pb-8">
-      <div class="flex flex-col w-full lg:w-2/3 lg:order-2 flex flex-col">
+      <div class="flex flex-col w-full lg:w-2/3 lg:order-2">
         <div class="w-full lg:w-4/5">
-          <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
+          <h2 class="mb-1 text-base font-medium xs:ml-4 xs:text-xl">
             {{ menuServices.name }}
           </h2>
 
-          <ul class="w-full lg:w-2/3 flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
+          <ul class="flex flex-row flex-wrap w-full mb-4 text-xs font-medium break-all lg:w-2/3 list-dash xs:mb-10 xs:break-normal xs:text-base">
             <li 
               v-for="(item, index) in menuServices.items"
               :key="index"
-              class="w-full xs:w-1/2 mb-2 xs:mb-1 md:mb-0"
+              class="w-full mb-2 xs:w-1/2 xs:mb-1 md:mb-0"
             >
               <a 
                 :href="item.url"
@@ -51,15 +52,15 @@
           </ul>
         </div>
         <div class="w-full lg:w-4/5">
-          <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
+          <h2 class="mb-1 text-base font-medium xs:ml-4 xs:text-xl">
             {{ menuCompany.name }}
           </h2>
 
-          <ul class="flex flex-row flex-wrap font-medium list-dash mb-4 xs:mb-10 break-all xs:break-normal text-xs xs:text-base">
+          <ul class="flex flex-row flex-wrap mb-4 text-xs font-medium break-all list-dash xs:mb-10 xs:break-normal xs:text-base">
             <li 
               v-for="(item, index) in menuCompany.items"
               :key="index"
-              class="w-full xs:w-1/2 lg:w-1/3 mb-2 xs:mb-1 md:mb-0"
+              class="w-full mb-2 xs:w-1/2 lg:w-1/3 xs:mb-1 md:mb-0"
             >
               <a 
                 :href="item.url"
@@ -73,13 +74,13 @@
         </div>
       </div>
 
-      <div class="w-full w-full sm:w-1/3 lg:order-1 flex flex-col mt-0 xs:mt-8 lg:mt-0 mb-2 xs:mb-6 text-xs xs:text-base">
+      <div class="flex flex-col w-full mt-0 mb-2 text-xs sm:w-1/3 lg:order-1 xs:mt-8 lg:mt-0 xs:mb-6 xs:text-base">
         <div class="mb-8">
-          <h2 class="xs:ml-4 mb-1 font-medium text-base xs:text-xl">
+          <h2 class="mb-1 text-base font-medium xs:ml-4 xs:text-xl">
             {{ footerData.adress.city }}
           </h2>
 
-          <address class="address leading-loose not-italic">
+          <address class="not-italic leading-loose address">
             {{ footerData.adress.street }}<br>
             {{ footerData.adress.zip_code }} {{ footerData.adress.city }}
           </address>
@@ -104,7 +105,7 @@
           <li 
             v-for="(item, index) in menuSocialMedia.items"
             :key="index"
-            class="flex-initial mr-2 mb-4"
+            class="flex-initial mb-4 mr-2"
             :class="item.icon.value"
           >
             <a 
@@ -188,7 +189,7 @@
       >
     </div>
 
-    <div class="w-full lg:w-5/12 ml-auto bg-main text-black font-medium lg:pl-4 text-micro xs:text-xs">
+    <div class="w-full ml-auto font-medium text-black lg:w-5/12 bg-main lg:pl-4 text-micro xs:text-xs">
       <div class="container">
         {{ copyrightDate }} {{ footerData.company_short }}. <br class="block xs:hidden">{{ footerData.copyright }}
       </div>

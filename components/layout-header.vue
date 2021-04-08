@@ -86,17 +86,12 @@
             :to="`/#x`"
           />
           <span class="link lg:-mr-8">
-            <a
+            <ContactButton
               v-if="$store.state.general.data.call_to_action_header"
               :href="$store.state.general.data.call_to_action_header.button.hyperlink"
-              class="self-center block px-8 py-1 font-medium text-black button-primary bg-main text-micro hover:text-darkText xs:text-base lg:text-xl"
-            >
-              <span 
-                class="hidden xs:flex"
-              >
-                {{ $store.state.general.data.call_to_action_header.button.title }}
-              </span>
-            </a>
+              :text="$store.state.general.data.call_to_action_header.button.title"
+              :main-class="'button-outline-primary button-with-line button-with-line-primary button-small'"
+            />
           </span>
         </scrollactive>
       </div>
@@ -419,30 +414,6 @@ export default {
       max-height: none;
       margin: 0 !important;
     }
-  }
-}
-
-.button {
-  background: transparent;
-  font-size: 10px;
-  padding: 5px 0 5px;
-  font-weight: 700;
-  -webkit-appearance: none;
-  width: 100%;
-  border-radius: 5px;
-  max-width: 169px;
-  margin: auto;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-
-  @media (min-width: 191px) {
-    padding: 3px 10px;
-    font-size: 12px;
-  }
-
-  @media (min-width: 360px) {
-    font-size: 16px;
-    width: auto;
-    border: 0;
   }
 }
 
