@@ -1,7 +1,7 @@
 <template>
   <div
     v-in-viewport.once="'-100px 0px'"
-    class="flex-initial w-full mb-8 sm:w-1/2 xs:pr-4 viewport-box"
+    class="flex-initial w-full mb-8 sm:w-1/2 xs:pr-4 viewport-box service-block"
   >
     <div
       class="h-full p-5 rounded-md artblock"
@@ -28,7 +28,7 @@
       </p>
       
       <a
-        class="relative ml-2 font-bold text-main lg:ml-5" 
+        class="relative ml-2 font-bold text-main lg:ml-5 more-button" 
         href="#"
         :class="isBlockSimple ? 'lg:self-center' : ''"
       >
@@ -105,7 +105,31 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="postcss" scoped>
+
+  .service-block { 
+    
+    &:not(:last-child, :nth-last-child(2)) {
+      
+      @screen lg {
+      
+        .more-button {
+          visibility: hidden;
+        }
+
+        &:hover {
+
+          h1 {
+            @apply text-main;
+          }
+
+          .more-button {
+            visibility: visible;
+          }
+        }
+      }
+    }
+  }
   
   .em-custom >>> em {
     @apply not-italic;
