@@ -97,6 +97,13 @@
     }
   }
 
+  .swiper-slide-active {
+
+    h2 {
+      @apply text-main;
+    }
+  }
+
   .swiper-slide-next + .swiper-slide {
     @screen xl {
       transition: opacity .4s ease-out;
