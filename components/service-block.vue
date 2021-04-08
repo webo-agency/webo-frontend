@@ -26,18 +26,7 @@
       >
         {{ description }}
       </p>
-      <ul
-        v-if="facilities.length !== 0"
-        class="relative z-10 flex flex-col mb-5 text-xs font-bold break-all lg:flex-row list-dash xs:break-normal xs:text-base"
-      >
-        <li
-          v-for="(item, key) in facilities"
-          :key="key"
-          class="text-xs md:text-base facility"
-        >
-          {{ item.entry ? item.entry : item }}
-        </li>
-      </ul>
+      
       <a
         class="relative ml-2 font-bold text-main lg:ml-5" 
         href="#"
