@@ -216,7 +216,7 @@
         'bg-backgroundDark text-lightText': frontPageData.visualisation_background_color == 'black',
         'bg-white text-darkText': frontPageData.visualisation_background_color == 'white',
         'py-10': true,
-        'xs:min-h-240 md:min-h-500 lg:min-h-mobile-screen': true
+        'xs:min-h-360 md:min-h-500 lg:min-h-mobile-screen': true
       }"
       container-class="relative flex-auto"
       style="background-image: linear-gradient(to bottom, rgb(249, 249, 249) 50%, rgb(13, 13, 13) 50%)"

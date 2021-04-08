@@ -92,7 +92,7 @@ module.exports = {
         'section-lg': '150px'
       },
       minHeight: {
-        '240': '240px',
+        '360': '360px',
         '500': '500px',
         '700': '700px',
         'mobile-screen': '640px'
