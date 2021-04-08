@@ -49,18 +49,20 @@ body{
 }
 
 .swiper-pagination-bullet {
-    border-radius: 0;
-    width: 15px;
-    height: 15px;
+    border-radius: 4px;
+    width: 11px;
+    height: 11px;
     margin: 0!important;
+    transition: transform .2s ease-out;
 }
 
 .swiper-pagination-bullet:not(:last-child) {
-    margin-right: 15px!important;
+    margin-right: 10px!important;
 }
 
 .swiper-pagination-bullet-active {
     background: rgb(0, 224, 180);
+    transform: scale(1.37)
 }
 
 .afterLogotypes {
