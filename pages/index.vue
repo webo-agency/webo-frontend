@@ -155,7 +155,6 @@
             </template>
           </InformationBlock>
         </div>
-
       </div>
       <div class="background-slice-6">
         <img
@@ -164,13 +163,13 @@
           src="~/assets/slice6.svg"
           alt="shape"
           class="mb-8 xl:mb-4"
-        />
+        >
      
         <a
           class="relative items-center hidden text-base font-bold text-main right-more xl:text-lg lg:flex"
           :href="frontPageData.process_link.process_link_href"
         >
-          {{frontPageData.process_link.process_link_title}}
+          {{ frontPageData.process_link.process_link_title }}
           <svg
             viewBox="0 0 14 26"
             width="14"
@@ -186,25 +185,25 @@
           /></svg>
         </a>
       </div>
-        <a
-          class="relative flex items-center mt-8 text-base font-bold text-main xl:text-lg lg:hidden"
-          :href="frontPageData.process_link.process_link_href"
-        >
-          {{frontPageData.process_link.process_link_title}}
-          <svg
-            viewBox="0 0 14 26"
-            width="14"
-            height="26"
-            class="ml-8 fill-current arrow-right"
-            xmlns="http://www.w3.org/2000/svg"
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            stroke-linejoin="round"
-            stroke-miterlimit="2"
-          ><path
-            d="M5.766.962V22.1l-4.111-4.11a.968.968 0 00-1.372 0 .966.966 0 000 1.377l5.733 5.74a.983.983 0 00.712.284.958.958 0 00.705-.283l5.74-5.741a.978.978 0 000-1.378.976.976 0 00-1.38 0L7.69 22.1V.962a.961.961 0 10-1.923 0z" 
-          /></svg>
-        </a>
+      <a
+        class="relative flex items-center mt-8 text-base font-bold text-main xl:text-lg lg:hidden"
+        :href="frontPageData.process_link.process_link_href"
+      >
+        {{ frontPageData.process_link.process_link_title }}
+        <svg
+          viewBox="0 0 14 26"
+          width="14"
+          height="26"
+          class="ml-8 fill-current arrow-right"
+          xmlns="http://www.w3.org/2000/svg"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="2"
+        ><path
+          d="M5.766.962V22.1l-4.111-4.11a.968.968 0 00-1.372 0 .966.966 0 000 1.377l5.733 5.74a.983.983 0 00.712.284.958.958 0 00.705-.283l5.74-5.741a.978.978 0 000-1.378.976.976 0 00-1.38 0L7.69 22.1V.962a.961.961 0 10-1.923 0z" 
+        /></svg>
+      </a>
     </SectionWrapper> 
 
     <SectionWrapper
@@ -224,8 +223,13 @@
     >
       <div
         class="absolute top-0 bottom-0 w-screen bg-fixed bg-no-repeat bg-cover rounded-lg parallax-background max-w-none"
-        :style="parallaxBackground"
-      />
+      >
+        <img 
+          :alt="frontPageData.visualisation_background_color"
+          :src="this.$store.state.homepage.visualisation_image.url" 
+          class="fixed inset-0"
+        >
+      </div>
     </SectionWrapper>
     
     <SectionWrapper
@@ -417,6 +421,33 @@
         },
       };
     },
+    computed: {
+      frontPageData() {
+        return this.$store.getters['homepage/getStoreData']  //look i added the name of the toolbar module
+      },
+      frontPageReviews () {
+        return this.$store.getters["reviews/getFrontPage"]
+      },
+      contactData () {
+        return this.$store.state.general.data
+      },
+      gradientBackground(){
+        return {
+          "background-image": `linear-gradient(to bottom, ${this.$store.state.homepage.visualisation_background_color} 50%, ${this.$store.state.homepage.visualisation_second_background_color} 50%)`
+        }
+      },
+    },
+    async fetch ({ app, store }) {
+  
+      await app.$wp.namespace( 'wuxt' ).v1().frontPage().then(function(data){
+         store.commit('homepage/save', data);
+      }); 
+
+      await app.$wp.namespace( 'wp/v2' ).technology().perPage(20).get().then(function(data){
+        store.commit('homepage/saveTechnology', data);
+      }); 
+    },
+    mounted() {  /*  */ },
     methods: {
 
       icon: function(icon){
@@ -451,37 +482,6 @@
         }
       },
     },
-    computed: {
-      frontPageData() {
-        return this.$store.getters['homepage/getStoreData']  //look i added the name of the toolbar module
-      },
-      frontPageReviews () {
-        return this.$store.getters["reviews/getFrontPage"]
-      },
-      contactData () {
-        return this.$store.state.general.data
-      },
-      gradientBackground(){
-        return {
-          "background-image": `linear-gradient(to bottom, ${this.$store.state.homepage.visualisation_background_color} 50%, ${this.$store.state.homepage.visualisation_second_background_color} 50%)`
-        }
-      },
-      parallaxBackground() {
-        return {
-          "background-image": `url(${this.$store.state.homepage.visualisation_image.url})`
-        };
-      }
-    },
-    async fetch ({ app, store }) {
-  
-      await app.$wp.namespace( 'wuxt' ).v1().frontPage().then(function(data){
-         store.commit('homepage/save', data);
-      }); 
-
-      await app.$wp.namespace( 'wp/v2' ).technology().perPage(20).get().then(function(data){
-        store.commit('homepage/saveTechnology', data);
-      }); 
-    },
     head() {
       return {
         title: `webo - Welcome in home of innovation`,
@@ -492,15 +492,15 @@
           }
         ]
       };
-    },
-    mounted() {  /*  */ }
+    }
   };
 </script>
 
 <style lang="postcss" scoped>
   .parallax-background{
+    /* clip: rect(auto, auto, auto, auto); */
+    clip-path: inset(0 0px);
     left: 15px;
-    filter: brightness(0.5);
   }
 
   .img-list-left{
@@ -508,7 +508,6 @@
     object-position: -45vw;
     left: -15px;
     transform: translate(-100%, 0);
-    filter: brightness(0.2);
   }
 
   @media (min-width: 1024px) {
