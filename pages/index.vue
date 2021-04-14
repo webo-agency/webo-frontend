@@ -25,7 +25,7 @@
         />
       </Carousel>
       <IconsBoard 
-        :section="0"
+        :layout="0"
       />
     </SectionWrapper>
 
