@@ -1,24 +1,26 @@
 <template>
-    <div :class="`icons-board icons-board--${section}`">
-        <template 
-            v-for="(icon, index) in 3"
-        >
-            <img
-                :key="index"
-                svg-inline
-                src="~/assets/icons/rounded-square.svg"
-                class="icon"
-            />
-        </template>
-    </div>
+  <div :class="`icons-board icons-board--${section}`">
+    <template 
+      v-for="(icon, index) in 3"
+    >
+      <img
+        :key="index"
+        svg-inline
+        src="~/assets/icons/rounded-square.svg"
+        alt="decoration"
+        class="icon"
+      >
+    </template>
+  </div>
 </template>
 
 <script>
 export default {
     name: "IconsBoard",
     props: {
-        section: {
-            default: "",
+        layout: {
+            default: 0,
+            type: Number,
             required: true
         }
     }
@@ -28,13 +30,13 @@ export default {
 <style lang="postcss" scoped>
 
     .icons-board {
-        position: absolute;
-        width: 100%;
-        height: 100%;
+        @apply absolute;
+        @applu w-full;
+        @applu h-full;
 
         .icon {
+            @apply absolute;
             width: 20px;
-            position: absolute;
         }
 
         &--0 {
