@@ -31,8 +31,8 @@ export default {
 
     .icons-board {
         @apply absolute;
-        @applu w-full;
-        @applu h-full;
+        @apply w-full;
+        @apply h-full;
 
         .icon {
             @apply absolute;
