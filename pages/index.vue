@@ -4,11 +4,11 @@
       main-tag="div"
       :main-id="frontPageData.baner_settings.is_linkable"
       :main-title="frontPageData.baner_settings.is_linkable ? frontPageData.baner_settings.title : ''"
-      class="flex flex-col justify-center bg-baner text-lightText"
-      container-class="flex-col mt-10 mb-10 lg:mt-15vh"
+      class="flex flex-col justify-center h-screen overflow-hidden bg-baner text-lightText md:h-auto"
+      container-class="relative flex-col mt-10 mb-10 lg:mt-15vh"
     >
       <Carousel
-        class="relative mb-10"
+        class="relative z-10 mb-10"
       >
         <SectionHeader
           :position-header="frontPageData.baner_settings.title_position"  
@@ -24,6 +24,9 @@
           :main-class="'button-primary button-with-line button-with-line-dark'"
         />
       </Carousel>
+      <IconsBoard 
+        :section="0"
+      />
     </SectionWrapper>
 
     <SectionWrapper
