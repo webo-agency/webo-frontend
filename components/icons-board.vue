@@ -1,5 +1,5 @@
 <template>
-  <div :class="`icons-board icons-board--${section}`">
+  <div :class="`icons-board icons-board--${layout}`">
     <template 
       v-for="(icon, index) in 3"
     >
