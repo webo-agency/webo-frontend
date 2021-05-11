@@ -61,6 +61,7 @@ module.exports = {
         'medium-header': '60px',
         'small-header': '35px',
         'base-header': '28px',
+        'big-paragraph': '25px',
       },
       spacing: {
         px: '1px',
