@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="icon mb-2">
+    <div class="mb-2 md:mb-5 icon">
       <slot name="icon" />
     </div>
-    <div class="title mb-2">
+    <div class="mb-3 title">
       <slot name="title" />
     </div>
-    <div class="description mb-2">
+    <div class="mb-2 description">
       <slot name="description" />
     </div>
   </div>
@@ -25,12 +25,17 @@ export default {
 }; 
 </script>
 
-<style scoped>
+<style scoped lang="postcss">
   .icon >>> *{
     
   }
 
   .title >>> *{
     font-weight: 700;
+    font-size: 16px;
+
+    @screen md {
+      font-size: 25px;
+    }
   }
 </style>
