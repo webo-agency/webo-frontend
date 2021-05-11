@@ -109,19 +109,19 @@
     }
   }
 
-  .swiper-slide-next + .swiper-slide {
-    /* @screen xl { */
+  /* .swiper-slide-next + .swiper-slide {
+    @screen xl {
       transition: opacity .4s ease-out;
       opacity: .4;
-    /* } */
-  }
+    }
+  } */
 
-  .is-swiping .swiper-slide-next {
+  /* .is-swiping .swiper-slide-next {
     opacity: 1;
   }
 
   .is-swiping .swiper-slide-next + .swiper-slide {
     opacity: 1;
-  }
+  } */
 
 </style>
