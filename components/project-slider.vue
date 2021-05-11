@@ -65,12 +65,17 @@
       return {
         projectsOption: {
           autoplay: 2000,
-          slidesPerView: 'auto',
+          slidesPerView: 3,
           spaceBetween: 50,
           pagination: {
             el: '.swiper-pagination',
             clickable: true
-          }
+          },
+          breakpoints: {
+            768: {
+              slidesPerView: 1,
+            },
+          },
         },
         isSwiping: false
       };
@@ -88,14 +93,14 @@
 
 <style lang="postcss" scoped>
   
-  .swiper-slide-next {
+  /* .swiper-slide-next {
     opacity: .4;
     transition: opacity .4s ease-out;
 
     @screen lg {
       opacity: 1;
     }
-  }
+  } */
 
   .swiper-slide-active {
 
@@ -105,10 +110,10 @@
   }
 
   .swiper-slide-next + .swiper-slide {
-    @screen xl {
+    /* @screen xl { */
       transition: opacity .4s ease-out;
       opacity: .4;
-    }
+    /* } */
   }
 
   .is-swiping .swiper-slide-next {
