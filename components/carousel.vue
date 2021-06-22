@@ -11,7 +11,7 @@
         <slot />
       </div>
       <div 
-        class="hidden md:block"
+        class="flex-1 hidden md:block"
       >
         <img
           svg-inline
