@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col w-full m-auto">
+  <div class="flex flex-col w-full m-auto overflow-hidden">
     <SectionWrapper
       main-tag="div"
       :main-id="frontPageData.baner_settings.is_linkable"
@@ -47,6 +47,11 @@
         {{ frontPageData.services_settings.description }}
       </p>
       <div class="flex flex-row flex-wrap w-100">
+        <img
+          src="~assets/webo-gray-icon-1.svg"
+          alt="shape"
+          class="hidden gray-logo-1 xl:block"
+        >
         <ServiceBlock
           :title="frontPageData.services_promoted[0].title"
           :description="frontPageData.services_promoted[0].description"
@@ -612,5 +617,12 @@
     @media (min-width: 1500px) {
       background-position: center;
     }
+  }
+
+  .gray-logo-1 {
+    position: absolute;
+    right: 0;
+    width: 741px;
+    transform: translate(33%, -18%);
   }
 </style>
