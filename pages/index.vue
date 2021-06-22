@@ -241,11 +241,6 @@
       :main-title="frontPageData.technology_settings.is_linkable ? frontPageData.technology_settings.title : ''"
       class="overflow-hidden bg-backgroundDark text-lightText bar-bottom"
     >
-      <img
-        src="~assets/slice4.svg"
-        alt="shape"
-        class="background-shape-1"
-      >
       <div class="relative flex flex-col flex-auto w-full md:w-1/2">
         <SectionHeader 
           :position-header="frontPageData.technology_settings.title_position"
@@ -352,12 +347,6 @@
         class="w-full mb-10 md:w-1/2 lg:w-1/3"
         v-html="frontPageData.projects_settings.description"
       />
-      
-      <img
-        src="~assets/slice1.svg"
-        alt="shape"
-        class="background-shape-3"
-      >
       
       <ProjectSlider
         :slides="frontPageData.projects_carousel"
@@ -539,17 +528,6 @@
     }
   }
 
-  .background-shape-1 {
-    position: absolute;
-    width: 404px;
-    transform: translate(-450px, 50%);
-    top: -23%;
-    
-    @media (min-width: 1920px) {
-      transform: translate(-500px, 50%);
-    }
-  }
-
   .background-shape-2 {
     position: absolute;
     left: 0;
@@ -559,20 +537,6 @@
     
     @media (min-width: 1920px) {
       top: 50%;
-    }
-  }
-
-  .background-shape-3 {
-    position: absolute;
-    right: 0;
-    transform: translate(50%, -50%);
-    top: 50%;
-    z-index: 0;
-    width: 502px;
-    
-    @media (min-width: 768px) {
-      top: 0;
-      transform: translate(-6%, 58%);
     }
   }
 
